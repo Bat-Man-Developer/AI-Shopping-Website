@@ -89,7 +89,7 @@ session_start();
 		
 		<!---Search Bar--->
 		<div class="search-bar">
-			<form action="search.php" method="post">
+			<form method="post">
   				<input type="text" id="searchInput" placeholder="Search...">
 		  		<button id="searchButton">Search</button>
 			</form>
