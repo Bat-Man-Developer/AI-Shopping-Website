@@ -79,17 +79,15 @@ session_start();
 					<p id="result"></p>
 					<p id="voicerecognitionhelplink">Need Help?<a href="voicerecognitionhelp.php">Voice Command List</a><p>
         </div>
-
 				<!------ Js for Voice Recognition Output ----->
 				<script src="js/getvoicerecognitionoutput.js"></script>
 
 				<!------ Js for Toggle Menu ----->
 				<script src="js/getheadertogglemenu.js"></script>
 			</div>
-			
-	
 		</div>
-		<!--search-bar + recomendations-->
+		
+		<!---Search Bar--->
 		<div class="search-bar">
 			<form action="search.php" method="post">
   				<input type="text" id="searchInput" placeholder="Search...">
@@ -97,5 +95,13 @@ session_start();
 			</form>
   			<div id="suggestionsContainer"></div>
 		</div>
-		</body>
-</html>
+		
+		<!--- Chat Bot--->
+		<div id="chat-container">
+			<h1>Chatbot</h1>
+			<div id="chat-log"></div>
+			<input type="text" id="user-input" placeholder="Type hello for menu..." autofocus />
+			<button class="btn" id="chatbotbtn">Send</button>
+		</div>
+		<!------ Js for Chat Bot----->
+		<script src="js/getchatbot.js"></script>
