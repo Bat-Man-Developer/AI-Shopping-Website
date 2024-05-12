@@ -91,8 +91,10 @@ session_start();
 		</div>
 		<!--search-bar + recomendations-->
 		<div class="search-bar">
-  			<input type="text" id="searchInput" placeholder="Search...">
-		  	<button id="searchButton">Search</button>
+			<form action="search.php" method="post">
+  				<input type="text" id="searchInput" placeholder="Search...">
+		  		<button id="searchButton">Search</button>
+			</form>
   			<div id="suggestionsContainer"></div>
 		</div>
 		</body>

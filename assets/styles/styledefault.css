@@ -204,10 +204,13 @@ h4{
 }
 
 .search-bar {
+	width: 100%;
 	display: flex;
 	align-items: center;
-	justify-content: center;
+	justify-content: space-around;
 	margin-bottom: 20px;
+	padding: 9px;
+
   }
   
   #searchInput {
@@ -220,7 +223,7 @@ h4{
   
   #searchButton {
 	padding: 8px 16px;
-	background-color: #4CAF50;
+	background-color: #1c0ed8;
 	color: white;
 	border: none;
 	border-radius: 4px;
