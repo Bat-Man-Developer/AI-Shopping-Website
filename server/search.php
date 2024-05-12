@@ -1,15 +1,16 @@
 <?php
-$conn = new PDO("mysql:host=localhost;dbname=newstuffsa_database",'root','');
+// Establish database connection
+$conn = new PDO("mysql:host=localhost;dbname=newstuffsa_database", 'root', '');
 
-if (isset($_POST["searchButton"])){
+if (isset($_POST["searchButton"])) {
     $str = $_POST["searchInput"];
-    $sth = $conn->prepare("SELECT * FROM 'newstuffsa_database' WHERE fldproductname = '$str'");
 
-    $sth->setFetchMode(PDO::FETCH_ASSOC);
+    // Prepare SQL query with placeholders to prevent SQL injection
+    $sth = $conn->prepare("SELECT * FROM newstuffsa_table WHERE fldproductname = :str");
+    $sth->bindParam(':str', $str); // Bind parameter to avoid SQL injection
     $sth->execute();
 
-    if ($row = $sth->fetch()){
-        ?>
+    if ($row = $sth->fetch(PDO::FETCH_ASSOC)) { ?>
         <br><br><br>
         <table>
             <tr>
@@ -17,17 +18,12 @@ if (isset($_POST["searchButton"])){
                 <th>Description</th>
             </tr>
             <tr>
-                <td><?php echo $row->Name; ?></td>
-                <td><?php echo $row->Description;?></td>
+                <td><?php echo $row['fldproductname']; ?></td>
+                <td><?php echo $row['fldproductdescription']; ?></td>
             </tr>
         </table>
-        <?php
+    <?php } else {
+        echo "Product not found";
     }
-    
-        else{
-            echo "product not found";
-        } 
-
 }
-
 ?>
