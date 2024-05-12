@@ -6,7 +6,7 @@ if (isset($_POST["searchButton"])) {
     $str = $_POST["searchInput"];
 
     // Prepare SQL query with placeholders to prevent SQL injection
-    $sth = $conn->prepare("SELECT * FROM newstuffsa_table WHERE fldproductname = :str");
+    $sth = $conn->prepare("SELECT * FROM products WHERE fldproductname = :str");
     $sth->bindParam(':str', $str); // Bind parameter to avoid SQL injection
     $sth->execute();
 
