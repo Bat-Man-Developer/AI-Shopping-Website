@@ -1,0 +1,2105 @@
+/*-----------All Size Screen-----------*/
+	* {
+		margin: 0px;
+		padding: 0px;
+		box-sizing: border-box;
+	}
+
+	body{
+		font-family: 'Poppins', sans-serif;
+		margin:4px, 4px;
+		padding:4px;
+		overflow-x: auto;
+		overflow-y: auto;
+	}
+
+	.adminbtn input{
+		max-width: 50%;
+	}
+
+	#admineditbtn{
+		max-width: 50%;
+	}
+
+	#refreshbtn{
+		display: block;
+		margin: auto;
+		max-width: 20%;
+	}
+
+	.btn{
+		display: inline-block;
+		background: rgb(18, 58, 190);
+		color: #fff;
+		padding: 2px 8px;
+		margin: 30px 0;
+		border-radius: 30px;
+		transition: background 0.5s;
+		width: fit-content;
+		height: fit-content;
+	}
+	.btn:hover{
+		background: #083475;
+	}
+
+	.form-select{
+		max-width: 50%;
+	}
+
+	#form-optional{
+		font-size: xx-small;
+		color: #4b76eb;
+	}
+
+/*-------Admin-Header-page-------*/
+	.sidenav { 
+		margin-top: 5px;
+		margin-left: -200px;
+		height: 100vh;
+		width: 200px;
+		position: fixed;
+		z-index: 1;
+		top: 0;
+		left: 0;
+		background-color: silver;
+		transition: 0.5s;
+		padding-top: 60px;
+	}
+
+	.sidenav .logo{
+		width: 150px; 
+		height: 140px;
+		border: solid #fff;
+		margin-bottom: 30px;
+		box-shadow: 5px 5px 5px rgb(0, 0, 0);
+	}
+
+	.sidenav img{
+		width: 146px; 
+		height: 133px; 
+		align-self: left;
+		border-radius: 50px;
+		box-shadow: 5px 5px 5px rgb(0, 0, 0);
+	}
+
+	.sidenav img:hover{
+		width: 147px; 
+		height: 135px;
+		margin-left: -38px;
+		margin-top: -10px;
+		box-shadow: -3px 5px -5px rgb(0, 0, 0);
+	}
+
+	.sidenav a {
+		padding: 8px 8px 8px 32px;
+		text-decoration: none;
+		font-size: 18px;
+		font-family: verdana;
+		color: #818181;
+		display: block;
+		transition: 0.3s;
+	}
+
+	.sidenav a:hover {
+		color: #f1f1f1;
+	}
+
+	.topnavbar{
+		width: 100vw;
+		height: 150px;
+		position: fixed;
+		background-color: silver;
+	}
+
+	.topnavbar ul{
+		background-color: silver;
+		color: white;
+		margin-top: 5px;
+	}
+
+	.topnavbar a{
+		padding: 10px;
+	}
+
+	#adminmenuicon{
+		display: flex;
+		cursor: pointer;
+		box-shadow: 0px 5px 10px rgb(0, 0, 0);
+		border: solid #fff;
+		border-radius: 50px;
+		background-color: silver;
+		font-family: verdana;
+		color: #fff;
+		text-decoration: none;
+		transition: 1s;
+		width: fit-content;
+		height: fit-content;
+		font-size: 50%;
+		position: absolute;
+		top: 0%;
+		margin-top: 2px;
+		margin-left: 80%;
+	}
+
+	.signout{
+		cursor: pointer;
+		box-shadow: 0px 5px 10px rgb(0, 0, 0);
+		border: solid #fff;
+		border-radius: 50px;	
+		font-family: verdana;
+		color: #fff;
+		text-decoration: none;
+		transition: 1s;
+		background-color: silver;
+		width: fit-content;
+		height: fit-content;
+		font-size: 50%;
+		margin-left: 5%;
+	}
+
+	.notificationquantity{
+		background-color: red;
+		color: #fff;
+		padding: 2px 5px;
+		border-radius: 50%;
+		margin: -5px;
+	}
+
+	.notificationpic{
+		cursor: pointer;
+		object-position: 0px 0px;
+		box-shadow: 0px 5px 10px rgb(0, 0, 0);
+		border: solid #fff;
+		border-radius: 50px;
+		background-color: silver;
+		transition: 1s;
+		width: 35px;
+		height: 35px;
+		margin-left: 5%;
+	}
+
+	.notificationpic:hover{
+		background-color: rgb(68, 91, 165);
+	}
+
+	.signout:hover{
+		color:rgb(68, 91, 165);
+	}
+
+	#adminmenuicon:hover{
+		color:rgb(68, 91, 165);
+	}
+
+/*---------Admin-Footer-page------------*/
+	.footer{
+		background: silver;
+		color: #8a8a8a;
+		width: 100vw;
+		height: 100vh;
+	}
+
+	.footer p{
+		color: #8a8a8a;
+	}
+
+	.copyright{
+		font-size: 14px;
+		text-align: center;
+	}
+
+/*----------Admin-login-page------------*/
+	.loginpage{
+		padding: 50px 0;
+		background: radial-gradient(#fff,#ffd6d6);
+	}
+
+	.logincontainer{
+		width: 100vw;
+		height: fit-content;
+	}
+
+	.formcontainer{
+		background: #fff;
+		width: fit-content;
+		height: fit-content;
+		text-align: center;
+		padding: 20px 0;
+		margin: auto;
+	}
+
+	.formbtn{
+		display: inline-block;
+	}
+
+	.formcontainer form{
+		width: 100%;
+		height: 100%;
+		padding: 0 20px;
+		transition: transform 1s;
+	}
+
+	form input{
+		align-content: center;
+		width: 50%;
+		margin: 5px auto;
+		border: 1px solid #ccc;
+	}
+
+	form .btn{
+		width: 50%;
+		padding: 5px;
+		cursor: pointer;
+		margin: 10px 0;
+		border: solid rgb(15, 62, 214);
+		background-color: grey;
+	}
+
+	form .btn:hover{
+		background-color: rgb(95, 93, 93);
+	}
+
+	form .btn:focus{
+		outline: none;
+	}
+
+	#loginform{
+		width: 100%;
+		margin: 5px auto;
+		text-align: center;
+		padding: 20px;
+		border-top: 1px solid #0e47e4;
+	}
+
+	form a{
+		font-size: 12px;
+	}
+
+	#loginform{
+		color: black;
+	}
+
+/*---------- Layouts ---------*/
+	.adminbtn{
+		text-align: center;
+		margin-top: 20px;
+	}
+
+	.adminbtn #cancelbtn{
+		background-color: blue;
+		border-color: grey;
+	}
+
+	.adminbtn #cancelbtn:hover{
+		background-color: grey;
+	}
+
+	.adminbtn #deletebtn{
+		background-color: red;
+		border-color: grey;
+	}
+
+	.adminbtn #deletebtn:hover{
+		background-color: grey;
+	}
+
+/*----Dashboard-Page --------*/
+	.dashboard{
+		width: 100vw;
+		height: 100vh;
+		margin-top: 150px;
+	}
+	.dashboardcontainer{
+		border: solid silver;
+		border-width: 10px;
+		border-style: double;
+		width: 100vw;
+		height: fit-content;
+		margin-left: 0px;
+	}
+
+	.dashboardcontainer h3{
+		font-family: sans-serif;
+		font-size: large;
+		font-weight: bold;
+		text-align: center;
+		color: #000;
+	}
+
+	.dashboardadmininfo{
+		border: dotted #ccc;
+		border-width: 5px;
+		border-style: double;
+		width: 100%;
+		height: fit-content;
+	}
+
+	.dashboardadmininfo p{
+		word-spacing: 40px;
+		font-size: 12px;
+		font-weight: 10px;
+		color: #000;
+		font-weight: bold;
+		margin-top: 7px;
+		margin-left: 2px;
+	}
+
+	.dashboardadmininfo span{
+		word-spacing: 1px;
+		font-size: 12px;
+		font-weight: 18;
+	}
+
+	.admindashboardcontainer #dashboardwelcome{
+		font-family: verdana;
+		font-style: italic;
+		font-size: large;
+		color: #555;
+		text-align: center;
+	}
+
+	.admindashboardcontainer a{
+		border-style: groove;
+		border-color: grey;
+	}
+
+	.admindashboardcontainer a:hover{
+		background-color: grey;
+		border-style: groove;
+	}
+
+/*---------Admin Orders Page---------*/
+	.adminorderstable{
+		font-family: 'Courier New'; 
+		font-size: small;
+		font-style: normal;
+		width: 100%;
+	}
+
+	.adminorderstable td{
+		text-align: center;
+	}
+
+/*----------Admin View Order Items Page--------*/
+	.adminvieworderitemstable{
+		font-family: 'Courier New'; 
+		font-size: large;
+		font-style: normal;
+		width: 100%;
+	}
+
+	.adminvieworderitemstable td{
+		text-align: center;
+	}
+
+	.adminvieworderitemstable img{
+		width: 70px;
+		height: 70px;
+	}
+
+/*----------Admin Edit Orders Page--------*/
+	.admineditorderstablecontainer select{
+		width: 550px;
+	}
+
+/*----------Admin Delete Orders Page--------*/
+	.admindeleteorderstablecontainer img{
+		width: 70px;
+		height: 70px;
+	}
+
+	.admindeleteorderstable p{
+		text-align: center;
+		color: red;
+		font-size: larger;
+		font-family: Verdana;
+	}
+
+/*----------Admin Products Page--------*/
+	.adminproductstable{
+		font-family: 'Courier New'; 
+		font-size: large;
+		font-style: normal;
+		width: 100%;
+	}
+
+	.adminproductstable td{
+		text-align: center;
+	}
+
+	.adminproductstable img{
+		width: 70px;
+		height: 70px;
+	}
+
+/*----------Admin Edit Products Page--------*/
+	.admineditproductstable img{
+		width: 70px;
+		height: 70px;
+	}
+
+/*----------Admin Delete Products Page--------*/
+	.admindeleteproductstablecontainer img{
+		width: 70px;
+		height: 70px;
+	}
+
+	.admindeleteproductstable p{
+		text-align: center;
+		color: red;
+		font-size: larger;
+		font-family: Verdana;
+	}
+
+/*----------Admin Add Products Page--------*/
+	.adminaddproductstablecontainer select{
+		width: 100%;
+	}
+
+/*----------Admin Security Surveilence Page--------*/
+	.securitysurveilencecontainer{
+    max-width: 100%;
+    margin: 20px auto;
+    padding: 0 20px;
+    text-align: center;
+  }
+
+  .chartcontainer{
+    margin-bottom: 20px;
+  }
+
+/*----------Admin Local Network Traffic Page--------*/
+	.adminlocalnetworktraffictable{
+		font-family: 'Courier New'; 
+		font-size: 10px;
+		font-style: normal;
+		width: 100%;
+		text-align: center;
+	}
+
+	.adminlocalnetworktraffictitle{
+		text-align: center;
+		font-size: medium;
+	}
+
+/*----------Admin IDS Page--------*/
+	.adminidstable{
+		font-family: 'Courier New'; 
+		font-size: small;
+		font-style: normal;
+		width: 100%;
+	}
+
+	.adminidstitle{
+		text-align: center;
+	}
+
+/*----------Help--------*/
+	#contact-page span{
+		color: #ff523b;
+	}
+
+/*-------media query for less than 1300 screen size----*/
+@media only screen and (max-width: 1300px){
+/*-------Admin-Header-page-------*/
+	.sidenav {
+		margin-top: 4px;
+		padding-top: 30px;
+	}
+
+	.sidenav .logo{
+		width: 87px; 
+		height: 82px;
+		margin-top: 55px;
+		margin-bottom: 35px;
+	}
+
+	.sidenav img{
+		width: 83px; 
+		height: 79.5px; 
+	}
+
+	.sidenav img:hover{
+		width: 83.5px; 
+		height: 74.5px;
+		margin-left: -34px;
+		margin-top: -10px;
+	}
+
+	.sidenav a {
+		font-size: 15px;
+	}
+
+/*----Dashboard-Page --------*/
+	.dashboardcontainer h3{
+		font-size: x-large;
+	}
+
+	.dashboardadmininfo p{
+		word-spacing: 5px;
+		font-size: 24px;
+	}
+
+	.dashboardadmininfo span{
+		word-spacing: 0.5px;
+		font-size: 25px;
+	}
+
+	.admindashboardcontainer #dashboardwelcome{
+		font-size: x-large;
+	}
+
+/*---------Admin Orders Page---------*/
+	.adminorderstable{ 
+		font-size: 26px;
+	}
+
+	.adminorderstable tr td #btn{
+		text-indent: center;
+		width: 1px;
+	}
+
+/*----------Admin View Order Items Page--------*/
+	.adminvieworderitemstable{
+		font-size: 24px;
+	}
+
+/*----------Admin Edit Orders Page--------*/
+	.admineditorderstablecontainer{
+		font-size: large;
+	}
+	.admineditorderstablecontainer select{
+		width: 70px;
+	}
+
+	.admineditorderstablecontainer input #editbtn{
+		width: 50px;
+	}
+
+/*----------Admin Delete Orders Page--------*/
+	.admindeleteorderstablecontainer img{
+		width: 70px;
+		height: 70px;
+	}
+
+	.admindeleteorderstable p{
+		text-align: center;
+		color: red;
+		font-size: large;
+		font-family: Verdana;
+	}
+
+/*----------Admin Products Page--------*/
+	.adminproductstable{
+		font-size: 20px;
+	}
+
+/*----------Admin Edit Products Page--------*/
+	.admineditproductstablecontainer{
+		font-size: large;
+	}
+
+/*----------Admin Add Products Page--------*/
+	.adminaddproductstablecontainer {
+		font-size: large;
+	}
+
+	.adminaddproductstablecontainer select{
+		width: 100px;
+	}
+
+	.adminaddproductstablecontainer label{
+		width: 80px;
+	}
+}
+
+/*-------media query for less than 1200 screen size----*/
+@media only screen and (max-width: 1200px){
+/*-------Admin-Header-page-------*/
+	.sidenav .logo{
+		width: 87px; 
+		height: 82px;
+		margin-top: 55px;
+		margin-bottom: 35px;
+	}
+
+	.sidenav img{
+		width: 83px; 
+		height: 79.5px; 
+	}
+
+	.sidenav img:hover{
+		width: 83.5px; 
+		height: 74.5px;
+	}
+
+	.sidenav a {
+		font-size: 15px;
+	}
+
+/*----Dashboard-Page --------*/
+	.dashboardcontainer h3{
+		font-size: large;
+	}
+
+	.dashboardadmininfo p{
+		word-spacing: 5px;
+		font-size: 17px;
+		margin-top: 7px;
+		margin-left: 2px;
+	}
+
+	.dashboardadmininfo span{
+		word-spacing: 0.5px;
+		font-size: 17px;
+	}
+
+	.admindashboardcontainer #dashboardwelcome{
+		font-size: large;
+	}
+
+/*---------Admin Orders Page---------*/
+	.adminorderstable{
+		font-family: 'Courier New'; 
+		font-size: 22px;
+		font-style: normal;
+	}
+
+	.adminorderstable tr td #btn{
+		text-indent: center;
+		width: 1px;
+	}
+
+/*----------Admin View Order Items Page--------*/
+	.adminvieworderitemstable{
+		font-size: 22px;
+	}
+
+/*----------Admin Edit Orders Page--------*/
+	.admineditorderstablecontainer{
+		font-size: small;
+	}
+	.admineditorderstablecontainer select{
+		width: 70px;
+	}
+
+	.admineditorderstablecontainer input #editbtn{
+		width: 50px;
+	}
+
+/*----------Admin Products Page--------*/
+	.adminproductstable{
+		font-size: 16px;
+	}
+
+/*----------Admin Edit Products Page--------*/
+	.admineditproductstablecontainer{
+		font-size: xx-small;
+	}
+
+	.admindeleteproductstable p{
+		font-size: larger;
+	}
+
+/*----------Admin Add Products Page--------*/
+	.adminaddproductstablecontainer {
+		font-size: xx-small;
+	}
+
+	.adminaddproductstablecontainer select{
+		width: 100px;
+	}
+
+	.adminaddproductstablecontainer label{
+		width: 80px;
+	}
+}
+
+/*-------media query for less than 1100 screen size----*/
+@media only screen and (max-width: 1100px){
+/*-------Admin-Header-page-------*/
+	.sidenav .logo{
+		width: 87px; 
+		height: 82px;
+		margin-top: 55px;
+		margin-bottom: 35px;
+	}
+
+	.sidenav img{
+		width: 83px; 
+		height: 79.5px; 
+	}
+
+	.sidenav img:hover{
+		width: 83.5px; 
+		height: 74.5px;
+	}
+
+/*----Dashboard-Page --------*/
+	.dashboardcontainer h3{
+		font-size: large;
+	}
+
+	.dashboardadmininfo p{
+		word-spacing: 5px;
+		font-size: 17px;
+		margin-top: 7px;
+		margin-left: 2px;
+	}
+
+	.dashboardadmininfo span{
+		word-spacing: 0.5px;
+		font-size: 17px;
+	}
+
+	.admindashboardcontainer #dashboardwelcome{
+		font-size: large;
+	}
+
+/*---------Admin Orders Page---------*/
+	.adminorderstable{
+		font-family: 'Courier New'; 
+		font-size: 18px;
+		font-style: normal;
+	}
+
+	.adminorderstable tr td #btn{
+		text-indent: center;
+		width: 1px;
+	}
+
+/*----------Admin View Order Items Page--------*/
+	.adminvieworderitemstable{
+		font-size: 18px;
+	}
+
+/*----------Admin Edit Orders Page--------*/
+	.admineditorderstablecontainer{
+		font-size: small;
+	}
+	.admineditorderstablecontainer select{
+		width: 70px;
+	}
+
+	.admineditorderstablecontainer input #editbtn{
+		width: 50px;
+	}
+
+/*----------Admin Products Page--------*/
+	.adminproductstable{
+		font-size: 12px;
+	}
+
+/*----------Admin Edit Products Page--------*/
+	.admineditproductstablecontainer{
+		font-size: xx-small;
+	}
+
+/*----------Admin Add Products Page--------*/
+	.adminaddproductstablecontainer {
+		font-size: xx-small;
+	}
+
+	.adminaddproductstablecontainer select{
+		width: 100px;
+	}
+
+	.adminaddproductstablecontainer label{
+		width: 80px;
+	}
+}
+
+/*-------media query for less than 1000 screen size----*/
+@media only screen and (max-width: 1000px){
+/*-------Admin-Header-page-------*/
+	.sidenav .logo{
+		width: 87px; 
+		height: 82px;
+		margin-top: 55px;
+		margin-bottom: 35px;
+	}
+
+	.sidenav img{
+		width: 83px; 
+		height: 79.5px; 
+	}
+
+	.sidenav img:hover{
+		width: 83.5px; 
+		height: 74.5px;
+	}
+
+	.sidenav a {
+		font-size: 15px;
+	}
+
+/*----Dashboard-Page --------*/
+	.dashboardcontainer h3{
+		font-size: large;
+	}
+
+	.dashboardadmininfo p{
+		word-spacing: 5px;
+		font-size: 17px;
+	}
+
+	.dashboardadmininfo span{
+		word-spacing: 0.5px;
+		font-size: 17px;
+	}
+
+	.admindashboardcontainer #dashboardwelcome{
+		font-size: large;
+	}
+
+/*---------Admin Orders Page---------*/
+	.adminorderstable{ 
+		font-size: 14px;
+	}
+
+	.adminorderstable tr td #btn{
+		text-indent: center;
+		width: 1px;
+	}
+
+/*----------Admin View Order Items Page--------*/
+	.adminvieworderitemstable{
+		font-size: 10px;
+	}
+
+/*----------Admin Edit Orders Page--------*/
+	.admineditorderstablecontainer{
+		font-size: small;
+	}
+	.admineditorderstablecontainer select{
+		width: 70px;
+	}
+
+	.admineditorderstablecontainer input #editbtn{
+		width: 50px;
+	}
+
+/*----------Admin Products Page--------*/
+	.adminproductstable{
+		font-size: 10px;
+	}
+
+/*----------Admin Edit Products Page--------*/
+	.admineditproductstablecontainer{
+		font-size: xx-small;
+	}
+
+/*----------Admin Add Products Page--------*/
+	.adminaddproductstablecontainer {
+		font-size: xx-small;
+	}
+
+	.adminaddproductstablecontainer select{
+		width: 100px;
+	}
+
+	.adminaddproductstablecontainer label{
+		width: 80px;
+	}
+}
+
+/*-------media query for less than 900 screen size----*/
+@media only screen and (max-width: 900px){
+/*-------Admin-Header-page-------*/
+	.sidenav .logo{
+		width: 87px; 
+		height: 82px;
+		margin-top: 55px;
+		margin-bottom: 35px;
+	}
+
+	.sidenav img{
+		width: 83px; 
+		height: 79.5px; 
+	}
+
+	.sidenav img:hover{
+		width: 83.5px; 
+		height: 74.5px;
+	}
+
+	.sidenav a {
+		font-size: 15px;
+	}
+
+/*----Dashboard-Page --------*/
+	.dashboardcontainer h3{
+		font-size: large;
+	}
+
+	.dashboardadmininfo p{
+		word-spacing: 5px;
+		font-size: 14px;
+	}
+
+	.dashboardadmininfo span{
+		word-spacing: 0.5px;
+		font-size: 12px;
+	}
+
+	.admindashboardcontainer #dashboardwelcome{
+		font-size: small;
+	}
+
+/*---------Admin Orders Page---------*/
+	.adminorderstable{
+		font-size: 9px;
+	}
+
+	.adminorderstable tr td #btn{
+		text-indent: center;
+		width: 1px;
+	}
+
+/*----------Admin View Order Items Page--------*/
+	.adminvieworderitemstable{
+		font-size: 7px;
+	}
+
+	.adminvieworderitemstable td img{
+		width: 20px;
+		height: 15px;
+	}
+
+/*----------Admin Edit Orders Page--------*/
+	.admineditorderstablecontainer{
+		font-size: small;
+	}
+	.admineditorderstablecontainer select{
+		width: 70px;
+	}
+
+	.admineditorderstablecontainer input #editbtn{
+		width: 50px;
+	}
+
+/*----------Admin Products Page--------*/
+	.adminproductstable{
+		font-size: 7px;
+	}
+
+	.adminproductstable img{
+		width: 20px;
+		height: 15px;
+	}
+
+/*----------Admin Edit Products Page--------*/
+	.admineditproductstablecontainer{
+		font-size: small;
+	}
+
+/*----------Admin Add Products Page--------*/
+	.adminaddproductstablecontainer {
+		font-size: xx-small;
+	}
+
+	.adminaddproductstablecontainer select{
+		width: 100px;
+	}
+
+	.adminaddproductstablecontainer label{
+		width: 80px;
+	}
+
+/*----------Admin Local Network Traffic Page--------*/
+	.adminlocalnetworktraffictable{ 
+		font-size: 6px;
+	}
+}
+
+/*-------media query for less than 800 screen size----*/
+@media only screen and (max-width: 800px){
+/*-------Admin-Header-page-------*/
+	.sidenav .logo{
+		width: 87px; 
+		height: 82px;
+		margin-top: 55px;
+		margin-bottom: 35px;
+	}
+
+	.sidenav img{
+		width: 83px; 
+		height: 79.5px; 
+	}
+
+	.sidenav img:hover{
+		width: 83.5px; 
+		height: 74.5px;
+	}
+
+	.sidenav a {
+		font-size: 15px;
+	}
+
+/*----Dashboard-Page --------*/
+	.dashboardcontainer h3{
+		font-size: large;
+	}
+
+	.dashboardadmininfo p{
+		word-spacing: 5px;
+		font-size: 14px;
+	}
+
+	.dashboardadmininfo span{
+		word-spacing: 0.5px;
+		font-size: 12px;
+	}
+
+	.admindashboardcontainer #dashboardwelcome{
+		font-size: small;
+	}
+
+/*---------Admin Orders Page---------*/
+	.adminorderstable{
+		font-size: 9px;
+	}
+
+	.adminorderstable tr td #btn{
+		text-indent: center;
+		width: 1px;
+	}
+
+/*----------Admin Edit Orders Page--------*/
+	.admineditorderstablecontainer{
+		font-size: small;
+	}
+	.admineditorderstablecontainer select{
+		width: 70px;
+	}
+
+	.admineditorderstablecontainer input #editbtn{
+		width: 50px;
+	}
+
+/*----------Admin Edit Products Page--------*/
+	.admineditproductstablecontainer{
+		font-size: small;
+	}
+
+/*----------Admin Add Products Page--------*/
+	.adminaddproductstablecontainer {
+		font-size: xx-small;
+	}
+
+	.adminaddproductstablecontainer select{
+		width: 100px;
+	}
+
+	.adminaddproductstablecontainer label{
+		width: 80px;
+	}
+}
+
+/*-------media query for less than 750 screen size----*/
+@media only screen and (max-width: 750px){
+/*-------Admin-Header-page-------*/
+	.sidenav .logo{
+		width: 87px; 
+		height: 82px;
+		margin-top: 55px;
+		margin-bottom: 35px;
+	}
+
+	.sidenav img{
+		width: 83px; 
+		height: 79.5px;
+	}
+
+	.sidenav img:hover{
+		width: 83.5px; 
+		height: 74.5px;
+	}
+
+	.sidenav a {
+		font-size: 15px;
+	}
+
+/*----Dashboard-Page --------*/
+	.dashboardcontainer h3{
+		font-size: large;
+	}
+
+	.dashboardadmininfo p{
+		word-spacing: 5px;
+		font-size: 14px;
+	}
+
+	.dashboardadmininfo span{
+		word-spacing: 0.5px;
+		font-size: 12px;
+	}
+
+	.admindashboardcontainer #dashboardwelcome{
+		font-size: small;
+	}
+
+/*---------Admin Orders Page---------*/
+	.adminorderstable{
+		font-size: 9px;
+	}
+
+	.adminorderstable tr td #btn{
+		text-indent: center;
+		width: 1px;
+	}
+
+/*----------Admin Edit Orders Page--------*/
+	.admineditorderstablecontainer{
+		font-size: small;
+	}
+	.admineditorderstablecontainer select{
+		width: 70px;
+	}
+
+	.admineditorderstablecontainer input #editbtn{
+		width: 50px;
+	}
+
+/*----------Admin Edit Products Page--------*/
+	.admineditproductstablecontainer{
+		font-size: small;
+	}
+
+/*----------Admin Add Products Page--------*/
+	.adminaddproductstablecontainer {
+		font-size: xx-small;
+	}
+
+	.adminaddproductstablecontainer select{
+		width: 100px;
+	}
+
+	.adminaddproductstablecontainer label{
+		width: 80px;
+	}
+}
+
+/*-------media query for less than 700 screen size----*/
+@media only screen and (max-width: 700px){
+/*-------Admin-Header-page-------*/
+	.sidenav .logo{
+		width: 87px; 
+		height: 82px;
+		margin-top: 55px;
+		margin-bottom: 35px;
+	}
+
+	.sidenav img{
+		width: 83px; 
+		height: 79.5px;
+	}
+
+	.sidenav img:hover{
+		width: 83.5px; 
+		height: 74.5px;
+	}
+
+	.sidenav a {
+		font-size: 15px;
+	}
+
+/*----Dashboard-Page --------*/
+	.dashboardcontainer h3{
+		font-size: large;
+	}
+
+	.dashboardadmininfo p{
+		word-spacing: 5px;
+		font-size: 14px;
+	}
+
+	.dashboardadmininfo span{
+		word-spacing: 0.5px;
+		font-size: 12px;
+	}
+
+	.admindashboardcontainer #dashboardwelcome{
+		font-size: small;
+	}
+
+/*---------Admin Orders Page---------*/
+	.adminorderstable{
+		font-size: 9px;
+	}
+
+	.adminorderstable tr td #btn{
+		text-indent: center;
+		width: 1px;
+	}
+
+/*----------Admin Edit Orders Page--------*/
+	.admineditorderstablecontainer{
+		font-size: small;
+	}
+	.admineditorderstablecontainer select{
+		width: 70px;
+	}
+
+	.admineditorderstablecontainer input #editbtn{
+		width: 50px;
+	}
+
+/*----------Admin Edit Products Page--------*/
+	.admineditproductstablecontainer{
+		font-size: small;
+	}
+
+/*----------Admin Add Products Page--------*/
+	.adminaddproductstablecontainer {
+		font-size: xx-small;
+	}
+
+	.adminaddproductstablecontainer select{
+		width: 100px;
+	}
+
+	.adminaddproductstablecontainer label{
+		width: 80px;
+	}
+}
+
+/*-------media query for less than 650 screen size----*/
+@media only screen and (max-width: 650px){
+/*-------Admin-Header-page-------*/
+	.sidenav .logo{
+		width: 87px; 
+		height: 82px;
+		margin-top: 55px;
+		margin-bottom: 35px;
+	}
+
+	.sidenav img{
+		width: 83px; 
+		height: 79.5px; 
+	}
+
+	.sidenav img:hover{
+		width: 83.5px; 
+		height: 74.5px;
+	}
+
+	.sidenav a {
+		font-size: 15px;
+	}
+
+/*----Dashboard-Page --------*/
+	.dashboardcontainer h3{
+		font-size: large;
+	}
+
+	.dashboardadmininfo p{
+		word-spacing: 5px;
+		font-size: 14px;
+	}
+
+	.dashboardadmininfo span{
+		word-spacing: 0.5px;
+		font-size: 12px;
+	}
+
+	.admindashboardcontainer #dashboardwelcome{
+		font-size: small;
+	}
+
+/*---------Admin Orders Page---------*/
+	.adminorderstable{
+		font-size: 9px;
+	}
+
+	.adminorderstable tr td #btn{
+		text-indent: center;
+		width: 1px;
+	}
+
+/*----------Admin Edit Orders Page--------*/
+	.admineditorderstablecontainer{
+		font-size: small;
+	}
+	.admineditorderstablecontainer select{
+		width: 70px;
+	}
+
+	.admineditorderstablecontainer input #editbtn{
+		width: 50px;
+	}
+
+/*----------Admin Edit Products Page--------*/
+	.admineditproductstablecontainer{
+		font-size: small;
+	}
+
+/*----------Admin Delete Products Page--------*/
+	.admindeleteproductstable p{
+		font-size: larger;
+	}
+
+/*----------Admin Add Products Page--------*/
+	.adminaddproductstablecontainer {
+		font-size: xx-small;
+	}
+}
+
+/*-------media query for less than 600 screen size----*/
+@media only screen and (max-width: 600px){
+/*-------Admin-Header-page-------*/
+	.sidenav .logo{
+		width: 87px; 
+		height: 82px;
+		margin-top: 55px;
+		margin-bottom: 35px;
+	}
+
+	.sidenav img{
+		width: 83px; 
+		height: 79.5px;
+	}
+
+	.sidenav img:hover{
+		width: 83.5px; 
+		height: 74.5px;
+	}
+
+	.sidenav a {
+		font-size: 15px;
+	}
+
+/*----Dashboard-Page --------*/
+	.dashboardcontainer h3{
+		font-size: large;
+	}
+
+	.dashboardadmininfo p{
+		word-spacing: 5px;
+		font-size: 14px;
+	}
+
+	.dashboardadmininfo span{
+		word-spacing: 0.5px;
+		font-size: 12px;
+	}
+
+	.admindashboardcontainer #dashboardwelcome{
+		font-size: small;
+	}
+
+/*---------Admin Orders Page---------*/
+	.adminorderstable{
+		font-size: 9px;
+	}
+
+	.adminorderstable tr td #btn{
+		text-indent: center;
+		width: 1px;
+	}
+
+/*----------Admin View Order Items Page--------*/
+	.adminvieworderitemstable{
+		font-size: 5px;
+	}
+
+/*----------Admin Edit Orders Page--------*/
+	.admineditorderstablecontainer{
+		font-size: small;
+	}
+	.admineditorderstablecontainer select{
+		width: 70px;
+	}
+
+	.admineditorderstablecontainer input #editbtn{
+		width: 50px;
+	}
+
+/*----------Admin Products Page--------*/
+	.adminproductstable{
+		font-size: 5px;
+	}
+
+/*----------Admin Add Products Page--------*/
+	.adminaddproductstablecontainer {
+		font-size: xx-small;
+	}
+
+	.adminaddproductstablecontainer select{
+		width: 100px;
+	}
+
+	.adminaddproductstablecontainer label{
+		width: 80px;
+	}
+}
+
+/*-------media query for less than 550 screen size----*/
+@media only screen and (max-width: 550px){
+/*-------Admin-Header-page-------*/
+	.sidenav .logo{
+		width: 87px; 
+		height: 82px;
+		margin-top: 55px;
+		margin-bottom: 35px;
+	}
+
+	.sidenav img{
+		width: 83px; 
+		height: 79.5px;
+	}
+
+	.sidenav img:hover{
+		width: 83.5px; 
+		height: 74.5px;
+	}
+
+	.sidenav a {
+		font-size: 15px;
+	}
+
+/*----Dashboard-Page --------*/
+	.dashboardcontainer h3{
+		font-size: large;
+	}
+
+	.dashboardadmininfo p{
+		word-spacing: 5px;
+		font-size: 14px;
+		font-weight: 10px;
+	}
+
+	.dashboardadmininfo span{
+		word-spacing: 0.5px;
+		font-size: 12px;
+	}
+
+	.admindashboardcontainer #dashboardwelcome{
+		font-size: small;
+	}
+
+/*---------Admin Orders Page---------*/
+	.adminorderstable{
+		font-size: 9px;
+	}
+
+	.adminorderstable tr td #btn{
+		text-indent: center;
+		width: 1px;
+	}
+
+/*----------Admin Edit Orders Page--------*/
+	.admineditorderstablecontainer{
+		font-size: small;
+	}
+	.admineditorderstablecontainer select{
+		width: 70px;
+	}
+
+	.admineditorderstablecontainer input #editbtn{
+		width: 50px;
+	}
+
+/*----------Admin Add Products Page--------*/
+	.adminaddproductstablecontainer {
+		font-size: xx-small;
+	}
+
+	.adminaddproductstablecontainer select{
+		width: 100px;
+	}
+
+	.adminaddproductstablecontainer label{
+		width: 80px;
+	}
+}
+
+/*-------media query for less than 500 screen size----*/
+@media only screen and (max-width: 500px){
+/*-------Admin-Header-page-------*/
+	.sidenav .logo{
+		width: 87px; 
+		height: 82px;
+		margin-top: 55px;
+		margin-bottom: 35px;
+	}
+
+	.sidenav img{
+		width: 83px; 
+		height: 79.5px;
+	}
+
+	.sidenav img:hover{
+		width: 83.5px; 
+		height: 74.5px;
+	}
+
+	.sidenav a {
+		font-size: 15px;
+	}
+
+/*----Dashboard-Page --------*/
+	.dashboardcontainer h3{
+		font-size: large;
+	}
+
+	.dashboardadmininfo p{
+		word-spacing: 5px;
+		font-size: 14px;
+	}
+
+	.dashboardadmininfo span{
+		word-spacing: 0.5px;
+		font-size: 12px;
+	}
+
+	.admindashboardcontainer #dashboardwelcome{
+		font-size: small;
+	}
+
+/*---------Admin Orders Page---------*/
+	.adminorderstable{
+		font-size: 9px;
+	}
+
+	.adminorderstable tr td #btn{
+		text-indent: center;
+		width: 1px;
+	}
+
+/*----------Admin Edit Orders Page--------*/
+	.admineditorderstablecontainer{
+		font-size: small;
+	}
+	.admineditorderstablecontainer select{
+		width: 70px;
+	}
+
+	.admineditorderstablecontainer input #editbtn{
+		width: 50px;
+	}
+
+/*----------Admin Add Products Page--------*/
+	.adminaddproductstablecontainer {
+		font-size: xx-small;
+	}
+
+	.adminaddproductstablecontainer select{
+		width: 100px;
+	}
+
+	.adminaddproductstablecontainer label{
+		width: 80px;
+	}
+
+/*----------Admin Local Network Traffic Page--------*/
+	.adminlocalnetworktraffictable{ 
+		font-size: 4px;
+	}
+}
+
+/*-------media query for less than 450 screen size----*/
+@media only screen and (max-width: 450px){
+/*-------Admin-Header-page-------*/
+	.sidenav .logo{
+		width: 87px; 
+		height: 82px;
+		margin-top: 55px;
+		margin-bottom: 35px;
+	}
+
+	.sidenav img{
+		width: 83px; 
+		height: 79.5px;
+	}
+
+	.sidenav img:hover{
+		width: 83.5px; 
+		height: 74.5px;
+	}
+
+	.sidenav a {
+		font-size: 15px;
+	}
+
+/*----Dashboard-Page --------*/
+	.dashboardcontainer h3{
+		font-size: large;
+	}
+
+	.dashboardadmininfo p{
+		word-spacing: 5px;
+		font-size: 14px;
+	}
+
+	.dashboardadmininfo span{
+		word-spacing: 0.5px;
+		font-size: 12px;
+	}
+
+	.admindashboardcontainer #dashboardwelcome{
+		font-size: small;
+	}
+
+/*---------Admin Orders Page---------*/
+	.adminorderstable{
+		font-size: 9px;
+	}
+
+	.adminorderstable tr td #btn{
+		text-indent: center;
+		width: 1px;
+	}
+
+/*----------Admin Edit Orders Page--------*/
+	.admineditorderstablecontainer{
+		font-size: small;
+	}
+	.admineditorderstablecontainer select{
+		width: 70px;
+	}
+
+	.admineditorderstablecontainer input #editbtn{
+		width: 50px;
+	}
+
+/*----------Admin Add Products Page--------*/
+	.adminaddproductstablecontainer {
+		font-size: xx-small;
+	}
+
+	.adminaddproductstablecontainer select{
+		width: 100px;
+	}
+
+	.adminaddproductstablecontainer label{
+		width: 80px;
+	}
+}
+
+/*-------media query for less than 400 screen size----*/
+@media only screen and (max-width: 400px){
+/*-------Admin-Header-page-------*/
+	.sidenav .logo{
+		width: 87px; 
+		height: 82px;
+		margin-top: 55px;
+		margin-bottom: 35px;
+	}
+
+	.sidenav img{
+		width: 83px; 
+		height: 79.5px;
+	}
+
+	.sidenav img:hover{
+		width: 83.5px; 
+		height: 74.5px;
+	}
+
+	.sidenav a {
+		font-size: 15px;
+	}
+
+/*----Dashboard-Page --------*/
+	.dashboardcontainer h3{
+		font-size: large;
+	}
+
+	.dashboardadmininfo p{
+		word-spacing: 5px;
+		font-size: 14px;
+	}
+
+	.dashboardadmininfo span{
+		word-spacing: 0.5px;
+		font-size: 12px;
+	}
+
+	.admindashboardcontainer #dashboardwelcome{
+		font-size: small;
+	}
+
+/*---------Admin Orders Page---------*/
+	.adminorderstable{
+		font-size: 7px;
+	}
+
+	.adminorderstable tr td #btn{
+		text-indent: center;
+		width: 1px;
+	}
+
+/*----------Admin View Order Items Page--------*/
+	.adminvieworderitemstable{
+		font-size: 4px;
+	}
+
+/*----------Admin Edit Orders Page--------*/
+	.admineditorderstablecontainer{
+		font-size: small;
+	}
+	.admineditorderstablecontainer select{
+		width: 70px;
+	}
+
+	.admineditorderstablecontainer input #editbtn{
+		width: 50px;
+	}
+
+/*----------Admin Products Page--------*/
+	.adminproductstable{
+		font-size: 4px;
+	}
+
+/*----------Admin Add Products Page--------*/
+	.adminaddproductstablecontainer {
+		font-size: xx-small;
+	}
+
+	.adminaddproductstablecontainer select{
+		width: 100px;
+	}
+
+	.adminaddproductstablecontainer label{
+		width: 80px;
+	}
+}
+
+/*-------media query for less than 350 screen size----*/
+@media only screen and (max-width: 350px){
+/*-------Admin-Header-page-------*/
+  .sidenav{
+		width: 100px;
+	}
+	.sidenav .logo{
+		width: 37px; 
+		height: 35px;
+		margin-top: 55px;
+		margin-bottom: 35px;
+	}
+
+	.sidenav img{
+		width: 32px; 
+		height: 30px;
+	}
+
+	.sidenav img:hover{
+		width: 32px; 
+		height: 30px;
+	}
+
+	.sidenav a {
+		font-size: 5px;
+	}
+
+/*---------Admin-Footer-page------------*/
+	.copyright{
+		font-size: 10px;
+	}
+
+
+/*----------Admin-login-page------------*/
+	.logincontainer h1{
+		font-size: 14px;
+	}
+
+	.logincontainer h2{
+		font-size: 19px;
+	}
+
+/*----Dashboard-Page --------*/
+	.dashboardcontainer h3{
+		font-size: small;
+	}
+
+	.dashboardadmininfo p{
+		word-spacing: 5px;
+		font-size: 10px;
+	}
+
+	.dashboardadmininfo span{
+		word-spacing: 0.5px;
+		font-size: 12px;
+	}
+
+	.admindashboardcontainer #dashboardwelcome{
+		font-size: small;
+	}
+
+/*---------Admin Orders Page---------*/
+	.adminorderstable{
+		font-size: 4px;
+	}
+
+	.adminorderstable #btn{
+		text-indent: center;
+		width: 1px;
+		font-size: 1px;
+	}
+
+/*----------Admin View Order Items Page--------*/
+	.adminvieworderitemstable{
+		font-size: 2px;
+	}
+
+/*----------Admin Edit Orders Page--------*/
+	.admineditorderstablecontainer{
+		font-size: xx-small;
+	}
+	.admineditorderstablecontainer select{
+		width: 70px;
+	}
+
+	.admineditorderstablecontainer .btn{
+		max-width: 100%;
+	}
+
+/*----------Admin Products Page--------*/
+	.adminproductstable{
+		font-size: 2px;
+	}
+
+/*----------Admin Edit Products Page--------*/
+	.admineditproductstablecontainer{
+		font-size: xx-small;
+	}
+
+	.admineditproductstable img{
+		width: 20px;
+		height: 15px;
+	}
+
+/*----------Admin Delete Products Page--------*/
+	.admindeleteproductstablecontainer img{
+		width: 20px;
+		height: 15px;
+	}
+
+	.admindeleteproductstablecontainer{
+		font-size: xx-small;
+	}
+
+/*----------Admin Add Products Page--------*/
+	.adminaddproductstablecontainer {
+		font-size: xx-small;
+	}
+
+	.adminaddproductstablecontainer select{
+		width: 100px;
+	}
+
+	.adminaddproductstablecontainer label{
+		width: 80px;
+	}
+}
+
+/*-------media query for less than 300 screen size----*/
+@media only screen and (max-width: 300px){
+/*-------Admin-Header-page-------*/
+	.sidenav .logo{
+		width: 37px; 
+		height: 35px;
+		margin-top: 55px;
+		margin-bottom: 35px;
+	}
+
+	.sidenav img{
+		width: 32px; 
+		height: 30px;
+	}
+
+	.sidenav img:hover{
+		width: 32px; 
+		height: 30px;
+	}
+
+	.sidenav a {
+		font-size: 5px;
+	}
+
+/*----Dashboard-Page --------*/
+	.dashboardcontainer h3{
+		font-size: small;
+	}
+
+	.dashboardadmininfo p{
+		word-spacing: 5px;
+		font-size: 10px;
+	}
+
+	.dashboardadmininfo span{
+		word-spacing: 0.5px;
+		font-size: 12px;
+	}
+
+	.admindashboardcontainer #dashboardwelcome{
+		font-size: small;
+	}
+
+/*---------Admin Orders Page---------*/
+	.adminorderstable{ 
+		font-size: 4px;
+	}
+
+	.adminorderstable #btn{
+		text-indent: center;
+		width: 1px;
+		font-size: 1px;
+	}
+
+/*----------Admin Edit Orders Page--------*/
+	.admineditorderstablecontainer{
+		font-size: xx-small;
+	}
+	.admineditorderstablecontainer select{
+		width: 70px;
+	}
+
+	.admineditorderstablecontainer .btn{
+		max-width: 100%;
+	}
+
+/*----------Admin Add Products Page--------*/
+	.adminaddproductstablecontainer {
+		font-size: xx-small;
+	}
+
+	.adminaddproductstablecontainer select{
+		width: 100px;
+	}
+
+	.adminaddproductstablecontainer label{
+		width: 80px;
+	}
+}
+
+/*-------media query for less than 280 screen size----*/
+@media only screen and (max-width: 280px){
+/*-------Admin-Header-page-------*/
+	.sidenav .logo{
+		width: 37px; 
+		height: 35px;
+		margin-top: 55px;
+		margin-bottom: 35px;
+	}
+
+	.sidenav img{
+		width: 32px; 
+		height: 30px;
+	}
+
+	.sidenav img:hover{
+		width: 32px; 
+		height: 30px;
+	}
+
+	.sidenav a {
+		font-size: 5px;
+	}
+
+/*----Dashboard-Page --------*/
+	.dashboardcontainer h3{
+		font-size: small;
+	}
+
+	.dashboardadmininfo p{
+		word-spacing: 10px;
+		font-size: 12px;
+	}
+
+	.dashboardadmininfo span{
+		word-spacing: 1px;
+		font-size: 12px;
+	}
+
+	.admindashboardcontainer #dashboardwelcome{
+		font-size: large;
+	}
+}
+
+/*-------media query for less than 260 screen size----*/
+@media only screen and (max-width: 260px){
+/*-------Admin-Header-page-------*/
+	.sidenav .logo{
+		width: 37px; 
+		height: 35px;
+		margin-top: 55px;
+		margin-bottom: 35px;
+	}
+
+	.sidenav img{
+		width: 32px; 
+		height: 30px;
+	}
+
+	.sidenav img:hover{
+		width: 32px; 
+		height: 30px;
+	}
+
+	.sidenav a {
+		font-size: 5px;
+	}
+
+/*----Dashboard-Page --------*/
+	.dashboardcontainer h3{
+		font-size: small;
+	}
+
+	.dashboardadmininfo p{
+		word-spacing: 10px;
+		font-size: 12px;
+	}
+
+	.dashboardadmininfo span{
+		word-spacing: 1px;
+		font-size: 12px;
+	}
+
+	.admindashboardcontainer #dashboardwelcome{
+		font-size: large;
+	}
+}
+
+/*-------media query for less than 240 screen size----*/
+@media only screen and (max-width: 240px){
+/*-------Admin-Header-page-------*/
+	.sidenav .logo{
+		width: 37px; 
+		height: 35px;
+		margin-top: 55px;
+		margin-bottom: 35px;
+	}
+
+	.sidenav img{
+		width: 32px; 
+		height: 30px;
+	}
+
+	.sidenav img:hover{
+		width: 32px; 
+		height: 30px;
+	}
+
+	.sidenav a {
+		font-size: 5px;
+	}
+
+	.dashboardcontainer h3{
+		font-size: xx-small;
+	}
+
+	.dashboardadmininfo p{
+		word-spacing: 10px;
+		font-size: 8px;
+	}
+
+	.dashboardadmininfo span{
+		word-spacing: 1px;
+		font-size: 8px;
+	}
+
+	.admindashboardcontainer #dashboardwelcome{
+		font-size: small;
+	}
+}

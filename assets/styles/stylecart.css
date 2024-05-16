@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo+Bhaijaan|Ubuntu');
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: 'Ubuntu', sans-serif;
+}
+.width30 {
+  width: 30%;
+}
+.width70 {
+  width: 70%; 
+}
+.floatL{
+  float: left;
+}
+.floatR{
+  float: right;
+
+}
+.error{
+  color: #FF0000;
+}
+
+.cartcustomerinfocontainer{
+  position: relative;
+  background-image: url("../images/Rose background3.jpeg");
+}
+
+.cart table{
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.cart .productinfo{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cart .productinfo p{
+  margin: 3px;
+}
+
+.cart th{
+  text-align: left;
+  padding: 5px 10px;
+  color: #fff;
+  background-color: rgb(51, 112, 243);
+  font-weight: normal;
+}
+
+.cart td{
+  padding: 10px 5px;
+}
+
+.cart td img{
+  width: 80px;
+  height: 80px;
+  margin-right: 10px;
+}
+
+.cart td input{
+  width: 40px;
+  height: 30px;
+  padding: 5px;
+}
+
+.cart td:last-child{
+  text-align: right;
+}
+.cart th:last-child{
+  text-align: right;
+}
+
+.cart td a{
+  color: rgb(51, 112, 243);
+  font-size: 12px;
+}
+
+.cart .editbtn{
+  color: rgb(51, 112, 243);
+  text-decoration: none;
+  font-size: 15px;
+  background-color: white;
+  border: none;
+}
+
+.cart .removebutton{
+  color: rgb(51, 112, 243);
+  text-decoration: none;
+  font-size: 14px;
+  background-color: white;
+  border: none;
+  width: 100%;
+}
+
+.carttotal{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.carttotal table{
+  border-top: 3px solid rgb(51, 112, 243);
+  width: 100%;
+  max-width: 500px;
+}
+
+.cartbtncontainer{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.cartbtn{
+  display: inline-block;
+  color: white;
+  background: rgb(46, 131, 187);
+  border-color: grey;
+  border-width: 5px;
+  border-radius: 30px;
+  font-weight: bold; 
+  font-family: verdana;
+  transition: background 0.5s;
+  box-shadow: 5px 5px 5px rgb(0, 0, 0);
+  margin: 10px;
+  padding: 10px;
+  margin-right: 0px;
+  width: fit-content;
+  cursor: pointer;
+}
+
+.cartbtn:hover{
+  background: rgb(29, 89, 129);
+}
+
+.boxStyle{
+  padding: 20px; 
+  border-radius: 25px; 
+  border-top: 6px solid #dc3545;
+  border-bottom: 6px solid #28a745;
+}
+
+.shippingandbillinginfo{
+  text-align: center;
+  border-style: solid;
+  border-color: grey;
+  font-family: Verdana;
+}
+
+.shippingandbillinginfo #billingcountry{
+  width: 550px;
+}
+
+.shippingandbillinginfo #shippingcountry{
+  width: 550px;
+}
+
+.courierinfo{
+  text-align: center;
+  border-style: solid;
+  border-color: grey;
+  font-family: Verdana;
+  font-size: medium;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.discountinfo{
+  text-align: center;
+  border-style: solid;
+  border-color: grey;
+  font-family: Verdana;
+  font-size: medium;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+/*-------media query for less than 900 screen size----*/
+@media only screen and (max-width: 900px){
+  .shippingandbillinginfo #billingcountry{
+    width: 350px;
+  }
+  
+  .shippingandbillinginfo #shippingcountry{
+    width: 350px;
+  }
+}
+
+/*-------media query for less than 600 screen size----*/
+@media only screen and (max-width: 600px){
+  .shippingandbillinginfo #billingcountry{
+    width: 200px;
+  }
+  
+  .shippingandbillinginfo #shippingcountry{
+    width: 200px;
+  }
+}
+
+/*-------media query for less than 300 screen size----*/
+@media only screen and (max-width: 300px){
+  .shippingandbillinginfo #billingcountry{
+    width: 150px;
+  }
+  
+  .shippingandbillinginfo #shippingcountry{
+    width: 150px;
+  }
+}
