@@ -89,7 +89,7 @@ session_start();
 		
 		<!---Search Bar--->
 		<div class="search-bar">
-			<form method="POST" action="server/getallproducts.php">
+			<form method="POST" action="products.php">
   				<input type="text" name= "searchProductString" id="searchInput" placeholder="Search...">
 		  		<button type="submit" id="searchButton">Search</button>
 			</form>
