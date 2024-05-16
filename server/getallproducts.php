@@ -37,8 +37,8 @@ if(isset($_POST['searchProductString'])){
   $totalnumberofpages = ceil($totalrecords / $totalrecordsperpage);
 
   //4. get all products
-  $stmt1 = $conn->prepare("SELECT * FROM products WHERE fldproductdepartment = ? LIMIT $offset,$totalrecordsperpage");
-  $stmt1->bind_param("s",$department);
+  $stmt1 = $conn->prepare("SELECT * FROM products WHERE fldproductname = ? LIMIT $offset,$totalrecordsperpage");
+  $stmt1->bind_param("s",$searchProductString);
   $stmt1->execute();
   $allproducts = $stmt1->get_result();// This is an array
 
