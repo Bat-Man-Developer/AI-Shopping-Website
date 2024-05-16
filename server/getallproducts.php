@@ -1,7 +1,7 @@
 <?php
 include('connection.php');
 //Search section by category or type
-if(isset($_POST['search']) && isset($_POST['department'])){
+if(isset($_POST['searchProductString'])){
   //1.determine page number
   if(isset($_GET['pagenumber']) && $_GET['pagenumber'] != ""){
     //if user has already entered page then page number is the one that they selected
@@ -13,11 +13,12 @@ if(isset($_POST['search']) && isset($_POST['department'])){
   }
 
   //Department Stored In Variable
-  $department = $_POST['department'];
+  $searchProductString = $_POST['searchProductString'];
 
   //2. return number of products
-  $stmt = $conn->prepare("SELECT COUNT(*) AS fldtotalrecords FROM products WHERE fldproductdepartment = ?");
-  $stmt->bind_param("s",$department);
+
+  $stmt = $conn->prepare("SELECT COUNT(*) AS fldtotalrecords FROM products WHERE fldproductname = ?");
+  $stmt->bind_param("s",$searchProductString);
   if($stmt->execute()){
     $stmt->bind_result($totalrecords);
     $stmt->store_result();
