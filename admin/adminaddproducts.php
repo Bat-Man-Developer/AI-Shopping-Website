@@ -41,7 +41,7 @@ include('adminserver/getadminaddproducts.php');
                   <div class="form-group">
                     <label>Product Department
                       <select class="form-select" required name="fldproductdepartment">
-                        <option value="">no selction...</option>
+                        <option value="">no selection...</option>
                         <option value="Automotive">Automotive</option>
                         <option value="DIY">DIY</option>
                         <option value="Baby, Toddler & Kids">Baby, Toddler & Kids</option>
@@ -84,7 +84,7 @@ include('adminserver/getadminaddproducts.php');
                     <p id="form-optional">[optional]</p>
                     <label>Product Gender
                       <select class="form-select" name="fldproductgender">
-                        <option value="">no selction...</option>
+                        <option value="">no selection...</option>
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
                         <option value="Unisex">Unisex</option>
@@ -95,6 +95,7 @@ include('adminserver/getadminaddproducts.php');
                     <p id="form-optional">[optional]</p>
                     <label>Product Size
                       <select class="form-select" name="fldproductsize">
+                        <option value="">no selection...</option>
                         <option value="X-Small">X-Small</option>
                         <option value="Small">Small</option>
                         <option value="Medium">Medium</option>
@@ -106,7 +107,7 @@ include('adminserver/getadminaddproducts.php');
                   <div class="form-group">
                     <label>Product Stock
                       <select class="form-select" required name="fldproductstock">
-                        <option value="">no selction...</option>
+                        <option value="">no selection...</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -188,7 +189,7 @@ include('adminserver/getadminaddproducts.php');
                   <div class="form-group">
                     <p id="form-optional">[optional]</p>
                     <label>Product Discount
-                      <input type="text" class="form-control" name="fldproductdiscount" placeholder="Product Discount (0.05) %"/>
+                      <input type="number" class="form-control" name="fldproductdiscount" placeholder="Product Discount (50%)" min="0" max="100"/>
                     </label>
                   </div>
                   <div class="form-group">
@@ -200,28 +201,28 @@ include('adminserver/getadminaddproducts.php');
                   <h1 class="admintitle" id="admintitle">Product Specifications</h1><br>
                   <div class="form-group">
                     <label>Product Length
-                      <input type="text" class="form-control" name="fldproductlength" placeholder="Product Length (cm)" required/>
+                      <input type="number" class="form-control" name="fldproductlength" placeholder="Product Length (mm)" required/>
                     </label>
                   </div>
                   <div class="form-group">
                     <label>Product Width
-                      <input type="text" class="form-control" name="fldproductwidth" placeholder="Product Width (cm)" required/>
+                      <input type="number" class="form-control" name="fldproductwidth" placeholder="Product Width (mm)" required/>
                     </label>
                   </div>
                   <div class="form-group">
                     <label>Product Height
-                      <input type="text" class="form-control" name="fldproductheight" placeholder="Product Height (cm)" required/>
+                      <input type="number" class="form-control" name="fldproductheight" placeholder="Product Height (mm)" required/>
                     </label>
                   </div>
                   <div class="form-group">
                     <label>Product Weight
-                      <input type="text" class="form-control" name="fldproductweight" placeholder="Product Weight (kg)" required/>
+                      <input type="number" class="form-control" name="fldproductweight" placeholder="Product Weight (kg)" required/>
                     </label>
                   </div>
                   <div class="form-group">
                     <label>Product Fragile
                       <select class="form-select" required name="fldproductfragile">
-                        <option value="">no selction...</option>
+                        <option value="">no selection...</option>
                         <option value="Yes">Yes</option>
                         <option value="No">No</option>
                       </select>
@@ -253,7 +254,7 @@ include('adminserver/getadminaddproducts.php');
                   </div>
                   <div class="form-group">
                     <label>Product Postal Code
-                      <input type="text" class="form-control" name="fldproductpostalcode" placeholder="Product Postal Code" required/>
+                      <input type="number" class="form-control" name="fldproductpostalcode" placeholder="Product Postal Code" required/>
                     </label>
                   </div>
                   <div class="form-group">

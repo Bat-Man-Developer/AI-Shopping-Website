@@ -15,7 +15,7 @@ if(isset($_POST['productsellersaddproductsbtn'])){
   $productstock = $_POST['fldproductstock'];
   $productdescription = $_POST['fldproductdescription'];
   $productprice = $_POST['fldproductprice'];
-  $productdiscount = $_POST['fldproductdiscount'];
+  $productdiscount = $_POST['fldproductdiscount']/100;
   $productdiscountcode = $_POST['fldproductdiscountcode'];
   $productlength = $_POST['fldproductlength'];
   $productwidth = $_POST['fldproductwidth'];

@@ -189,7 +189,7 @@ include('adminserver/getadminaddproducts.php');
                   <div class="form-group">
                     <p id="form-optional">[optional]</p>
                     <label>Product Discount
-                      <input type="text" class="form-control" name="fldproductdiscount" placeholder="Product Discount"/>
+                      <input type="number" class="form-control" name="fldproductdiscount" placeholder="Product Discount (50%)" min="0" max="100"/>
                     </label>
                   </div>
                   <div class="form-group">
@@ -201,22 +201,22 @@ include('adminserver/getadminaddproducts.php');
                   <h1 class="admintitle" id="admintitle">Product Specifications</h1><br>
                   <div class="form-group">
                     <label>Product Length
-                      <input type="text" class="form-control" name="fldproductlength" placeholder="Product Length (cm)" required/>
+                      <input type="number" class="form-control" name="fldproductlength" placeholder="Product Length (mm)" required/>
                     </label>
                   </div>
                   <div class="form-group">
                     <label>Product Width
-                      <input type="text" class="form-control" name="fldproductwidth" placeholder="Product Width (cm)" required/>
+                      <input type="number" class="form-control" name="fldproductwidth" placeholder="Product Width (mm)" required/>
                     </label>
                   </div>
                   <div class="form-group">
                     <label>Product Height
-                      <input type="text" class="form-control" name="fldproductheight" placeholder="Product Height (cm)" required/>
+                      <input type="number" class="form-control" name="fldproductheight" placeholder="Product Height (mm)" required/>
                     </label>
                   </div>
                   <div class="form-group">
                     <label>Product Weight
-                      <input type="text" class="form-control" name="fldproductweight" placeholder="Product Weight (kg)" required/>
+                      <input type="number" class="form-control" name="fldproductweight" placeholder="Product Weight (kg)" required/>
                     </label>
                   </div>
                   <div class="form-group">
@@ -254,7 +254,7 @@ include('adminserver/getadminaddproducts.php');
                   </div>
                   <div class="form-group">
                     <label>Product Postal Code
-                      <input type="text" class="form-control" name="fldproductpostalcode" placeholder="Product Postal Code" required/>
+                      <input type="number" class="form-control" name="fldproductpostalcode" placeholder="Product Postal Code" required/>
                     </label>
                   </div>
                   <div class="form-group">

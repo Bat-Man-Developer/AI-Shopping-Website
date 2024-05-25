@@ -32,6 +32,8 @@ if(isset($_POST['productreviewbtn'])){//If Product Review Button Is Clicked
 
   //if there is a user already registered with this email
   if($num_rows != 0){
+    $totalproductreviews = 0;
+    $addproductreviewrating = 0;
     //Look for product most rated value in database
     $stmt1 = $conn->prepare("SELECT * FROM productreviews WHERE fldproductid=?");
     $stmt1->bind_param('i',$productid);

@@ -10,7 +10,6 @@ if(isset($_GET['fldproductid'])){
   if($stmt2->execute()){
     // This is an array of 1 product
     $product = $stmt2->get_result();
-
     //Look for product most viewed value in database
     $stmt3 = $conn->prepare("SELECT * FROM products WHERE fldproductid=?");
     $stmt3->bind_param('i',$productid);
@@ -23,7 +22,6 @@ if(isset($_GET['fldproductid'])){
     else{
       header('index.php?error=Something Went Wrong!! Contact Support Team.');
     }
-
     //Update product most viewed column in products table
     $stmt4 = $conn->prepare("UPDATE products SET fldproductmostviewed=? WHERE fldproductid=?");
     $stmt4->bind_param('ii',$productmostviewed,$productid);

@@ -51,7 +51,7 @@ include('adminserver/getadmineditsellersproducts.php');
                   <p><?php echo "Department: ".$productsellers['fldproductdepartment']; ?></p>
                   <p><?php echo "Category: ".$productsellers['fldproductcategory']; ?></p>
                   <p><?php echo "Type: ".$productsellers['fldproducttype']; ?></p>
-                  <p><?php echo "Discount: ".$productsellers['fldproductdiscount']."%"; ?></p>
+                  <p><?php $discount = $productsellers['fldproductdiscount']*100; echo "Discount: ".$discount."%"; ?></p>
                   <p><?php echo "Address: ".$productsellers['fldproductaddressline1'].", ".$productsellers['fldproductpostalcode'].", ".$productsellers['fldproductcity'].", ".$productsellers['fldproductcountry']; ?></p>
                 </div>
                 <form id="admineditproductsform" method="POST" action="admineditsellersproducts.php" style="text-align: center;">
@@ -173,12 +173,12 @@ include('adminserver/getadmineditsellersproducts.php');
                   </div>
                   <div class="form-group">
                     <label>Product Price
-                      <input type="text" class="form-control" name="fldproductprice" value="<?php echo $productsellers['fldproductprice']; ?>" required/>
+                      <input type="number" class="form-control" name="fldproductprice" value="<?php echo $productsellers['fldproductprice']; ?>" required/>
                     </label>
                   </div>
                   <div class="form-group">
                     <label>Product Discount
-                      <input type="text" class="form-control" name="fldproductdiscount" value="<?php echo $productsellers['fldproductdiscount']; ?>"/>
+                      <input type="number" class="form-control" name="fldproductdiscount" value="<?php echo $productsellers['fldproductdiscount']*100; ?>" min="0" max="100"/>
                     </label>
                   </div>
                   <div class="form-group">
@@ -189,22 +189,22 @@ include('adminserver/getadmineditsellersproducts.php');
                   <h1 class="admintitle" id="admintitle">Product Specifications</h1><br>
                   <div class="form-group">
                     <label>Product Length
-                      <input type="text" class="form-control" name="fldproductlength" value="<?php echo $productsellers['fldproductlength']; ?>" required/>
+                      <input type="number" class="form-control" name="fldproductlength" value="<?php echo $productsellers['fldproductlength']; ?>" required/>
                     </label>
                   </div>
                   <div class="form-group">
                     <label>Product Width
-                      <input type="text" class="form-control" name="fldproductwidth" value="<?php echo $productsellers['fldproductwidth']; ?>" required/>
+                      <input type="number" class="form-control" name="fldproductwidth" value="<?php echo $productsellers['fldproductwidth']; ?>" required/>
                     </label>
                   </div>
                   <div class="form-group">
                     <label>Product Height
-                      <input type="text" class="form-control" name="fldproductheight" value="<?php echo $productsellers['fldproductheight']; ?>" required/>
+                      <input type="number" class="form-control" name="fldproductheight" value="<?php echo $productsellers['fldproductheight']; ?>" required/>
                     </label>
                   </div>
                   <div class="form-group">
                     <label>Product Weight
-                      <input type="text" class="form-control" name="fldproductweight" value="<?php echo $productsellers['fldproductweight']; ?>" required/>
+                      <input type="number" class="form-control" name="fldproductweight" value="<?php echo $productsellers['fldproductweight']; ?>" required/>
                     </label>
                   </div>
                   <div class="form-group">
@@ -239,7 +239,7 @@ include('adminserver/getadmineditsellersproducts.php');
                   </div>
                   <div class="form-group">
                     <label>Product Postal Code
-                      <input type="text" class="form-control" name="fldproductpostalcode" value="<?php echo $productsellers['fldproductpostalcode']; ?>" required/>
+                      <input type="number" class="form-control" name="fldproductpostalcode" value="<?php echo $productsellers['fldproductpostalcode']; ?>" required/>
                     </label>
                   </div>
                   <div class="form-group">

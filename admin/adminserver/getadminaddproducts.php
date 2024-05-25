@@ -3,8 +3,8 @@ include('adminconnection.php');
 //Add New Product
 if(isset($_POST['adminaddproductsbtn'])){
   $productid = $_POST['fldproductid'];
-  $productsellersid = $_SESSION['fldproductsellersid'];
-  $productowner = $_SESSION['fldproductowner'];
+  $productsellersid = 0;
+  $productowner = "newstuffsa";
   $productname = $_POST['fldproductname'];
   $productdepartment = $_POST['fldproductdepartment'];
   $productcategory = $_POST['fldproductcategory'];
@@ -15,7 +15,7 @@ if(isset($_POST['adminaddproductsbtn'])){
   $productstock = $_POST['fldproductstock'];
   $productdescription = $_POST['fldproductdescription'];
   $productprice = $_POST['fldproductprice'];
-  $productdiscount = $_POST['fldproductdiscount'];
+  $productdiscount = $_POST['fldproductdiscount']/100;
   $productdiscountcode = $_POST['fldproductdiscountcode'];
   $productlength = $_POST['fldproductlength'];
   $productwidth = $_POST['fldproductwidth'];
@@ -169,7 +169,7 @@ if(isset($_POST['adminaddproductsbtn'])){
   }
 
   // Check if file already exists
-  if(file_exists($target_file)){
+  if(file_exists($target_file && $target_file1 && $target_file2 && $target_file3 && $target_file4 && $target_file5 && $target_file6)){
     $uploadOk = 0;
     header('location: ../admin/adminaddproducts.php?errormessage=Error Occured, File Already Exists.');
   }

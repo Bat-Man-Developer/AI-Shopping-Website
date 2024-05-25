@@ -24,7 +24,7 @@ include('server/getproductdetails.php');
 		  <div class="container">
 		    <div class="navbar">
 			    <div class="logocontainer">
-				    <a href="index.php"><img class="logo" src="assets/images/WhatsApp Image 2024-05-16 at 20.22.35_819aecad.jpg" alt="Snow" align="left"></a>
+				    <a href="index.php"><img class="logo" src="assets/images/newstufflogo_pic.png" alt="Snow" align="left"></a>
 			    </div>
 			    <nav>
 						<ul id="menuitems">
@@ -94,10 +94,11 @@ include('server/getproductdetails.php');
 	<!------------- Website Messages----------->
 	<p style="color: red; font-weight: bold; text-align: center" class="text-center"><?php if(isset($_GET['error'])){ echo $_GET['error']; }?></p>
 	<p style="color: green" class="text-center"><?php if(isset($_GET['message'])){ echo $_GET['message']; }?></p>
+	<!-------------Product Details ----------->
 	<div class="row">
 		<?php while($row = $product->fetch_assoc()) { ?>
 			<div class="col-2">
-				<img class = "shop-item-image" src="assets/images/<?php echo $row['fldproductimage']; ?>" alt="Snow" width="50%" id="ProductImg">
+				<img class = "shop-item-image" src="assets/images/<?php echo $row['fldproductimage']; ?>" alt="Snow" width="50%" id="ProductImg"><p style="color: red; float:left; margin-left: 15%; margin-top: 20%">-6%<p>
 				<div class="small-img-row">
 					<div class="small-img-col">
 						<img src="assets/images/<?php echo $row['fldproductimage1']; ?>" alt="Snow" width="100%" class="small-img">
@@ -115,8 +116,8 @@ include('server/getproductdetails.php');
 			</div>
 			<div class="col-2">
 				<p>Home / Product-Details</p>
-				<h1 class = "shop-item-title"><?php echo $row['fldproductname']; ?></h1>
-				<h4 class = "shop-item-price" style="margin-left: 10px; font-size: large">R <?php $discount = $row['fldproductdiscount']*100; if(isset($row['fldproductprice'])){ echo $row['fldproductprice']." / ".$discount."% OFF"; }else{ echo $row['fldproductprice']; } ?></h4><br>
+				<h1 class="shop-item-title"><?php echo $row['fldproductname']; ?></h1>
+				<h4 class="shop-item-price" style="margin-left: 10px; font-size: large">R <?php $discount = $row['fldproductdiscount']*100; if(isset($row['fldproductprice'])){ echo $row['fldproductprice']." / ".$discount."% OFF"; }else{ echo $row['fldproductprice']; } ?></h4><br>
 				<h4 class = "shop-item-stock" style="margin-left: 10px; color: red; font-weight: bold"><?php echo $row['fldproductstock']; ?> left in stock</h4><br>
 				<?php if($row['fldproductmostrated'] == 0) { ?>
 				<div class="rating">
@@ -197,7 +198,7 @@ include('server/getproductdetails.php');
 
 				<h3>Product Reviews <i class="fa fa-indent"></i></h3><br>
 				<!--------- Display Product Reviews --------->
-				<section id="productreviews" class="productreviews container my-5 py-3" style="color: grey">
+				<section id="productreviews" class="productreviewscontainer" style="color: grey">
 					<table class="reviewdisplaycontainer">
 						<tr>
 							<th>Country</th>
@@ -307,7 +308,7 @@ include('server/getproductdetails.php');
 								</div>
 								<div class="form-group">
 									<label>Review
-										<input type="text" class="form-control" name="fldproductreviewcomment" placeholder="write comment here..." required/>
+										<input type="text" class="form-control" id="productreviewinput" name="fldproductreviewcomment" placeholder="write comment here..." required/>
 									</label>
 								</div>
 								<div class="form-group">

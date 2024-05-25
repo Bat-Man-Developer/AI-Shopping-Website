@@ -3,7 +3,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="footer-col-2">
-						<img src="assets/images/WhatsApp Image 2024-05-16 at 20.22.35_819aecad.jpg" alt="Snow">
+						<img src="assets/images/newstufflogo_pic.png" alt="Snow">
 						<p class="footerlogoslogan">Always 10 Steps Ahead. We Deliver Success With Ease.</p>
 					</div>
 				</div>
