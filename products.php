@@ -21,7 +21,7 @@ include('layouts/header.php');
 
 		<div class="displayallproducts">
 			<div class="image-container">
-				<p class="image-text"><?php $discount = $row['fldproductdiscount']*100; if(isset($row['fldproductdiscount'])){ echo $discount."% OFF"; } ?><p>
+				<p class="image-text"><?php $discount = $row['fldproductdiscount']*100; if(isset($row['fldproductdiscount']) && $discount != 0){ echo $discount."% OFF"; } ?><p>
 				<a href="<?php echo "productdetails.php?fldproductid=".$row['fldproductid']."&fldproductmostviewed=1"; ?>"><img class="shop-item-image" src="assets/images/<?php echo $row['fldproductimage']; ?>" alt="Snow"></a>
 				<a href="<?php echo "productdetails.php?fldproductid=".$row['fldproductid']."&fldproductmostviewed=1"; ?>"><h4><?php echo $row['fldproductname']; ?></h4></a>
 				<?php if($row['fldproductmostrated'] == 0) { ?>
@@ -81,7 +81,7 @@ include('layouts/header.php');
 						<i class="fa fa-star-o"></i>
 					</div>
 				<?php } ?>
-				<p>R <?php echo $row['fldproductprice']; ?></p>
+				<p><?php if(isset($row['fldproductprice']) && $row['fldproductdiscount'] != 0){ $discount = $row['fldproductprice']-($row['fldproductdiscount']*$row['fldproductprice']); echo "<del>WAS R".$row['fldproductprice']."</del> / "." NOW R".$discount; }else{ echo "R".$row['fldproductprice']; } ?></p>
 			</div>
 		</div>
 		<?php } ?>

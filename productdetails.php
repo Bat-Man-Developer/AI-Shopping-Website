@@ -97,7 +97,7 @@ include('server/getproductdetails.php');
 				<?php while($row = $product->fetch_assoc()) { ?>
 					<div class="col-2">
 						<div class="image-container">
-							<p class="image-text"><?php $discount = $row['fldproductdiscount']*100; if(isset($row['fldproductdiscount'])){ echo $discount."% OFF"; } ?><p>
+							<p class="image-text"><?php $discount = $row['fldproductdiscount']*100; if(isset($row['fldproductdiscount']) && $discount != 0){ echo $discount."% OFF"; } ?><p>
 							<img class = "shop-item-image" src="assets/images/<?php echo $row['fldproductimage']; ?>" alt="Snow" width="50%" id="ProductImg">
 						</div>
 						<div class="small-img-row">
@@ -118,7 +118,7 @@ include('server/getproductdetails.php');
 					<div class="col-3">
 						<p>Home / Product-Details</p>
 						<h1 class="shop-item-title"><?php echo $row['fldproductname']; ?></h1>
-						<h4 class="shop-item-price" style="margin-left: 10px; font-size: large"><?php if(isset($row['fldproductprice'])){ $discount = $row['fldproductprice']-($row['fldproductdiscount']*$row['fldproductprice']); echo "<del>WAS R".$row['fldproductprice']."</del> / "." NOW R".$discount; }else{ echo "R".$row['fldproductprice']; } ?></h4><br>
+						<h4 class="shop-item-price" style="margin-left: 10px; font-size: large"><?php if(isset($row['fldproductprice']) && $row['fldproductdiscount'] != 0){ $discount = $row['fldproductprice']-($row['fldproductdiscount']*$row['fldproductprice']); echo "<del>WAS R".$row['fldproductprice']."</del> / "." NOW R".$discount; }else{ echo "R".$row['fldproductprice']; } ?></h4><br>
 						<h4 class = "shop-item-stock" style="margin-left: 10px; color: red; font-weight: bold"><?php echo $row['fldproductstock']; ?> left in stock</h4><br>
 						<?php if($row['fldproductmostrated'] == 0) { ?>
 						<div class="rating">
@@ -358,7 +358,7 @@ include('server/getproductdetails.php');
 
 				<div class="col-4">
 					<div class="image-container">
-						<p class="image-text"><?php $discount = $row['fldproductdiscount']*100; if(isset($row['fldproductdiscount'])){ echo $discount."% OFF"; } ?><p>
+						<p class="image-text"><?php $discount = $row['fldproductdiscount']*100; if(isset($row['fldproductdiscount']) && $discount != 0){ echo $discount."% OFF"; } ?><p>
 						<a href="<?php echo "productdetails.php?fldproductid=".$row['fldproductid']."&fldproductmostviewed=1"; ?>"><img class="shop-item-image" src="assets/images/<?php echo $row['fldproductimage']; ?>" alt="Snow"></a>
 						<a href="<?php echo "productdetails.php?fldproductid=".$row['fldproductid']."&fldproductmostviewed=1"; ?>"><h4><?php echo $row['fldproductname']; ?></h4></a>
 						<?php if($row['fldproductmostrated'] == 0) { ?>
@@ -418,7 +418,7 @@ include('server/getproductdetails.php');
 								<i class="fa fa-star-o"></i>
 							</div>
 						<?php } ?>
-						<p>R <?php echo $row['fldproductprice']; ?></p>
+						<p><?php if(isset($row['fldproductprice']) && $row['fldproductdiscount'] != 0){ $discount = $row['fldproductprice']-($row['fldproductdiscount']*$row['fldproductprice']); echo "<del>WAS R".$row['fldproductprice']."</del> / "." NOW R".$discount; }else{ echo "R".$row['fldproductprice']; } ?></p>
 					</div>
 				</div>
 				<?php } ?>

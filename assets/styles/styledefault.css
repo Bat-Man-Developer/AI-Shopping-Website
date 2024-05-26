@@ -57,6 +57,7 @@ h4{
 	min-width: 200px;
 	margin-bottom: 50px;
 	transition: transform 0.5s;
+	text-align: center;
 }
 
 .col-4 img{
@@ -632,6 +633,7 @@ ul{
 	padding: 10px;
 	min-width: 200px;
 	transition: transform 0.5s;
+	text-align: center;
 }
 
 .displayallproducts img{
