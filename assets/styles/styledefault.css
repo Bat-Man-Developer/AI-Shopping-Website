@@ -672,49 +672,48 @@ ul{
 	justify-content: space-between;
 	margin: 100px auto 50px;
 }
-
-.single-product{
+.small-container{
 	margin-top: 80px;
 }
-
-.single-product .col-2 img{
+.small-container .col-2 img{
 	padding: 0;
 }
-.single-product .col-2{
+.small-container .col-3{
 	padding: 20px;
+	text-align: center;
 }
-.single-product h4{
+.small-container h4{
 	margin: 20px 0;
 	font-size: 22px;
 	font-weight: bold;
 }
-.single-product select{
-	display: block;
-	padding: 10px;
-	margin-top: 20px;
-}
-.single-product input{
-	width: 50px;
-	height: 40px;
-	padding-left: 10px;
-	font-size: 20px;
-	margin-right: 10px;
-	border: 1px solid rgb(22, 115, 255);
-}
-input:focus{
-	outline: none;
-}
-.single-product .fa{
-	color: rgb(22, 115, 255);
-	margin-left: 10px;
-}
 .small-img-row{
 	display: flex;
 	justify-content: space-between;
+	margin: 5%;
 }
 .small-img-col{
 	flex-basis: 24%;
 	cursor: pointer;
+	margin: 5%;
+}
+.image-container {
+  position: relative;
+  display: inline-block;
+}
+.image-text {
+  position: absolute;
+  top: 10px; /* Adjust the value to position the text vertically */
+  left: 10px; /* Adjust the value to position the text horizontally */
+  color: red;
+  font-size: 20px;
+  font-weight: bold;
+	padding: 1%;
+}
+.image-container img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .reviewdisplaycontainer{

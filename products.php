@@ -2,7 +2,6 @@
 include('layouts/header.php');
 ?>
 <section>
-	
 	<div class="filterdropdown">
 		<label>Filter
 			<select name="type" id="filtersort">
@@ -98,8 +97,6 @@ include('layouts/header.php');
 		<span class="page-item <?php if($pagenumber >= $totalnumberofpages){ echo 'disabled';} ?>"><a class="page-link" href="<?php if($pagenumber >= $totalnumberofpages){ echo '#';}else{ echo "?pagenumber=".($pagenumber + 1);} ?>">Next</a></span>
 	</div>
 </section> 
-
-</script>
 <?php
 include('layouts/footer.php');
 ?>

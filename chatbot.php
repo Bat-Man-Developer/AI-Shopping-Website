@@ -6,7 +6,6 @@ include('layouts/header.php');
 <!------------- Website Messages----------->
 <p style="color: red; font-weight: bold; text-align: center" class="text-center"><?php if(isset($_GET['error'])){ echo $_GET['error']; }?></p>
 <p style="color: green" class="text-center"><?php if(isset($_GET['message'])){ echo $_GET['message']; }?></p>
-
 <!---------Contact-Page--------->
 <section>
   <h1>Chatbot</h1>

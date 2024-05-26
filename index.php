@@ -20,7 +20,6 @@ include('layouts/header.php');
 	  </div>
 	</div>
 </div>
-
 <!------- Promotions Slide Show ----------->
 <div class="categories">
 	<div class="small-container">

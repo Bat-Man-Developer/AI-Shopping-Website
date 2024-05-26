@@ -8,7 +8,7 @@ if(isset($_POST['loginbtn'])){
   $userpassword = md5($_POST['flduserpassword']);
 
   $stmt = $conn->prepare("SELECT flduserid,flduserimage,flduserfirstname,flduserlastname,flduseraddressline1,flduseraddressline2,flduserpostalcode,fldusercity,fldusercountry,flduseremail,flduserphonenumber,flduseridnumber,flduserpassword FROM users WHERE flduseremail = ? AND flduserpassword = ? LIMIT 1");
-  $stmt->bind_param('ss',$useremail,md5($userpassword));
+  $stmt->bind_param('ss',$useremail,$userpassword);
   if($stmt->execute()){
     $stmt->bind_result($userid,$userimage,$userfirstname,$userlastname,$useraddressline1,$useraddressline2,$userpostalcode,$usercity,$usercountry,$useremail,$userphonenumber,$useridnumber,$userpassword);
     $stmt->store_result();

@@ -58,11 +58,6 @@ include('adminserver/getadmineditsellersproducts.php');
                   <p style="color: red;"><?php if(isset($_GET['error'])){ echo $_GET['error'];} ?></p>
                   <h1 class="admintitle" id="admintitle">Product Details</h1><br>
                   <div class="form-group">
-                    <label>Product Owner
-                      <input type="text" class="form-control" name="fldproductowner" value="<?php echo $productsellers['fldproductowner']; ?>" required/>
-                    </label>
-                  </div>
-                  <div class="form-group">
                     <label>Product Name
                       <input type="text" class="form-control" name="fldproductname" value="<?php echo $productsellers['fldproductname']; ?>" required/>
                     </label>

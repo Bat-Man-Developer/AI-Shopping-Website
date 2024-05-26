@@ -41,7 +41,7 @@ $(document).ready(function() {
       window.location.href="../account.php";
     }
     else if(result == "open registration" || result == "open registration page"){
-      window.location.href="../registrations.php";
+      window.location.href="../registration.php";
     }
     else if(result == "search phones"){
       window.location.href="../products.php?fldproductdepartments=phone&fldproductcategory=phone&fldproducttype=phone";

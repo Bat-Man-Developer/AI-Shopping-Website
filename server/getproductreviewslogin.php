@@ -5,8 +5,7 @@ if(isset($_POST['productreviewsloginbtn'])){
   $productreviewspassword = md5($_POST['fldproductreviewspassword']);
 
   $stmt = $conn->prepare("SELECT flduserid,flduserfirstname,flduserlastname,flduseraddressline1,flduseraddressline2,flduserpostalcode,fldusercity,fldusercountry,flduseremail,flduserphonenumber,flduseridnumber,flduserpassword FROM users WHERE flduseremail = ? AND flduserpassword = ? LIMIT 1");
-
-  $stmt->bind_param('ss',$productreviewsemail,md5($productreviewspassword));
+  $stmt->bind_param('ss',$productreviewsemail,$productreviewspassword);
 
   if($stmt->execute()){
     $stmt->bind_result($userid,$userfirstname,$userlastname,$useraddressline1,$useraddressline2,$userpostalcode,$usercity,$usercountry,$useremail,$userphonenumber,$useridnumber,$userpassword);
@@ -40,7 +39,7 @@ if(isset($_POST['productreviewsloginbtn'])){
       header('location: ../productdetails.php?fldproductid='.$productid.'&message=Logged In Successsfully! You Can Now Submit Product Review.');
     }
     else{//Password or Email is Wrong Or not in Database
-      header('location: ../productreviewslogin.php?errormesssage=Could Not Verify Your Account!');
+      header('location: ../productreviewslogin.php?error=Could Not Verify Your Account!');
     }
   }
   else{

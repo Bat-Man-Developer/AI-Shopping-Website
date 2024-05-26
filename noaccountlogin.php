@@ -80,6 +80,8 @@ else{
 						</ul>
 					</nav>
 				</div>
+				<!------ Js for Toggle Menu ----->
+				<script src="js/getheadertogglemenu.js"></script>
 
 				<!---- Voice Recognition AI Search --->
 				<div class="voicerecognitioncontainer">
@@ -87,44 +89,37 @@ else{
 					<p id="result"></p>
 					<p id="voicerecognitionhelplink">Need Help?<a href="voicerecognitionhelp.php">Voice Command List</a><p>
         </div>
-
 				<!------ Js for Voice Recognition Output ----->
 				<script src="js/getvoicerecognitionoutput.js"></script>
-
-				<!------ Js for Toggle Menu ----->
-				<script src="js/getheadertogglemenu.js"></script>
 			</div>
 		</div>
-<!--------- no account login page ------------>
-<section class="my-5 py-5">
-	<div class="container text-center mt-3 pt-5">
-
-	<p class="mt-5 text-center" style="color: green"><?php if(isset($_GET['paymentmessage']))echo $_GET['paymentmessage']; ?></p>
-
-		<h2 class="form-weight-bold">Login to Account</h2>
-		<hr class="max-auto">
-	</div>
-	<div class="max-auto container">
-		<form id="noaccountloginform" method="POST" action="noaccountlogin.php">
-			<p style="color: red;"><?php if(isset($_GET['error'])){ echo $_GET['error'];} ?></p>
-			
-			<div class="form-group">
-				<label>Password
-					<input type="password" class="form-control" id="noaccountloginpassword" name="flduserpassword" placeholder="Password" required/>
-				</label>
+		<!--------- no account login page ------------>
+		<section class="my-5 py-5">
+			<div class="container text-center mt-3 pt-5">
+				<h2 class="form-weight-bold">Login to Account</h2>
+				<hr class="max-auto">
 			</div>
-			<div class="form-group">
-				<label>Confirm Password
-					<input type="password" class="form-control" id="noaccountloginconfirmpassword" name="flduserconfirmpassword" placeholder="Confirm Password" required/>
-				</label>
+			<div class="max-auto container">
+				<form id="noaccountloginform" method="POST" action="noaccountlogin.php">
+					<!--------- Website Message ------------>
+					<p class="mt-5 text-center" style="color: green"><?php if(isset($_GET['paymentmessage']))echo $_GET['paymentmessage']; ?></p>
+					<p style="color: red;"><?php if(isset($_GET['error'])){ echo $_GET['error'];} ?></p>
+					<div class="form-group">
+						<label>Password
+							<input type="password" class="form-control" id="noaccountloginpassword" name="flduserpassword" placeholder="Password" required/>
+						</label>
+					</div>
+					<div class="form-group">
+						<label>Confirm Password
+							<input type="password" class="form-control" id="noaccountloginconfirmpassword" name="flduserconfirmpassword" placeholder="Confirm Password" required/>
+						</label>
+					</div>
+					<div class="form-group">
+						<button type="submit" name="noaccountloginbtn" class="btn" id="noaccountloginbtn" required>Login</button>
+					</div>
+				</form>
 			</div>
-			<div class="form-group">
-				<button type="submit" name="noaccountloginbtn" class="btn" id="noaccountloginbtn" required>Login</button>
-			</div>
-		</form>
-	</div>
-</section>
-
+		</section>
 <?php
 include('layouts/footer.php');
 ?>

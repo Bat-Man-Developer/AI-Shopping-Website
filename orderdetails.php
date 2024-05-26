@@ -78,6 +78,8 @@ include('server/getorderdetails.php');
 						</ul>
 					</nav>
 				</div>
+				<!------ Js for Toggle Menu ----->
+				<script src="js/getheadertogglemenu.js"></script>
 
 				<!---- Voice Recognition AI Search --->
 				<div class="voicerecognitioncontainer">
@@ -85,66 +87,61 @@ include('server/getorderdetails.php');
 					<p id="result"></p>
 					<p id="voicerecognitionhelplink">Need Help?<a href="voicerecognitionhelp.php">Voice Command List</a><p>
         </div>
-
 				<!------ Js for Voice Recognition Output ----->
 				<script src="js/getvoicerecognitionoutput.js"></script>
-
-				<!------ Js for Toggle Menu ----->
-				<script src="js/getheadertogglemenu.js"></script>
 			</div>
 		</div>
-<!--------- Order details--------->
-<section id="orderdetails" class="orderdetails container my-5 py-3">
-	<div class="container mt-2">
-		<h2 class="font-weight-bold text-center">Your Orders</h2>
-		<hr class="mx-auto">
-	</div>
-	<table class="mt-5 pt-5">
-		<tr>
-			<th>Product</th>
-			<th>Product Price</th>
-			<th>Product Quantity</th>
-		</tr>
-		<?php foreach($orderdetails as $row) { ?>
-		<tr>
-			<td>
-				<div>
-					<img src="assets/images/<?php echo $row['fldproductimage']; ?>" alt="Snow"/>
-					<div>
-						<p class="mt-3"><?php echo $row['fldproductname']; ?></p>
-					</div>
-				</div>
-			</td>
-			<td>
-				<span><?php echo $row['fldproductprice']; ?></span>
-			</td>
-			<td>
-				<span><?php echo $row['fldproductquantity']; ?></span>
-			</td>
-		</tr>
-		<?php }?>
-	</table>
+		<!--------- Order details--------->
+		<section id="orderdetails" class="orderdetails container my-5 py-3">
+			<div class="container mt-2">
+				<h2 class="font-weight-bold text-center">Your Orders</h2>
+				<hr class="mx-auto">
+			</div>
+			<table class="mt-5 pt-5">
+				<tr>
+					<th>Product</th>
+					<th>Product Price</th>
+					<th>Product Quantity</th>
+				</tr>
+				<?php foreach($orderdetails as $row) { ?>
+				<tr>
+					<td>
+						<div>
+							<img src="assets/images/<?php echo $row['fldproductimage']; ?>" alt="Snow"/>
+							<div>
+								<p class="mt-3"><?php echo $row['fldproductname']; ?></p>
+							</div>
+						</div>
+					</td>
+					<td>
+						<span><?php echo $row['fldproductprice']; ?></span>
+					</td>
+					<td>
+						<span><?php echo $row['fldproductquantity']; ?></span>
+					</td>
+				</tr>
+				<?php }?>
+			</table>
 
-	<?php if($orderstatus == "Not Paid") {?>
-		<form method="POST" action="payment.php">
-		  <input type="hidden" name="flduseremail" value="<?php echo $useremail; ?>"/>
-		  <input type="hidden" name="fldordercost" value="<?php echo $ordercost; ?>"/>
-			<input type="hidden" name="fldcouriercost" value="<?php echo $couriercost; ?>"/>
-		  <input type="hidden" name="fldorderstatus" value="<?php echo $orderstatus; ?>"/>
-			<input type="hidden" name="fldorderid" value="<?php echo $orderid; ?>"/>
-			<input type="hidden" name="flduserid" value="<?php echo $userid; ?>"/>
-			<input type="hidden" name="protectpaymentpage" value="<?php $_SESSION['protectpaymentpage'] = "unlockpage"; echo "unlockpage" ?>"/>
-			<input type="submit" class="btn" id="paynowbtn" name="orderdetailsbtn" value="Pay Now"/>
-		</form>
-	<?php }?>
+			<?php if($orderstatus == "Not Paid") {?>
+				<form method="POST" action="payment.php">
+					<input type="hidden" name="flduseremail" value="<?php echo $useremail; ?>"/>
+					<input type="hidden" name="fldordercost" value="<?php echo $ordercost; ?>"/>
+					<input type="hidden" name="fldcouriercost" value="<?php echo $couriercost; ?>"/>
+					<input type="hidden" name="fldorderstatus" value="<?php echo $orderstatus; ?>"/>
+					<input type="hidden" name="fldorderid" value="<?php echo $orderid; ?>"/>
+					<input type="hidden" name="flduserid" value="<?php echo $userid; ?>"/>
+					<input type="hidden" name="protectpaymentpage" value="<?php $_SESSION['protectpaymentpage'] = "unlockpage"; echo "unlockpage" ?>"/>
+					<input type="submit" class="btn" id="paynowbtn" name="orderdetailsbtn" value="Pay Now"/>
+				</form>
+			<?php }?>
 
-	<?php if($orderstatus == "Paid") {?>
-		<form method="POST" action="trackorder.php">
-		  <input type="hidden" name="fldorderstatus" value="<?php echo $orderstatus; ?>"/>
-			<input type="submit" class="btn" id="trackorderbtn" name="trackorderbtn" value="Track Order"/>
-		</form>
-	<?php }?>
-
-</section>
-</body>
+			<?php if($orderstatus == "Paid") {?>
+				<form method="POST" action="trackorder.php">
+					<input type="hidden" name="fldorderstatus" value="<?php echo $orderstatus; ?>"/>
+					<input type="submit" class="btn" id="trackorderbtn" name="trackorderbtn" value="Track Order"/>
+				</form>
+			<?php }?>
+		</section>
+	</body>
 </html>

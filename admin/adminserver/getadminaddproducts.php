@@ -4,7 +4,7 @@ include('adminconnection.php');
 if(isset($_POST['adminaddproductsbtn'])){
   $productid = $_POST['fldproductid'];
   $productsellersid = 0;
-  $productowner = "newstuffsa";
+  $productowner = "Newstuffsa";
   $productname = $_POST['fldproductname'];
   $productdepartment = $_POST['fldproductdepartment'];
   $productcategory = $_POST['fldproductcategory'];

@@ -78,6 +78,8 @@ include('server/gettestimonials.php');
 						</ul>
 					</nav>
 				</div>
+				<!------ Js for Toggle Menu ----->
+				<script src="js/getheadertogglemenu.js"></script>
 
 				<!---- Voice Recognition AI Search --->
 				<div class="voicerecognitioncontainer">
@@ -85,15 +87,11 @@ include('server/gettestimonials.php');
 					<p id="result"></p>
 					<p id="voicerecognitionhelplink">Need Help?<a href="voicerecognitionhelp.php">Voice Command List</a><p>
         </div>
-
 				<!------ Js for Voice Recognition Output ----->
 				<script src="js/getvoicerecognitionoutput.js"></script>
-
-				<!------ Js for Toggle Menu ----->
-				<script src="js/getheadertogglemenu.js"></script>
 			</div>
 		</div>
-<!--------- Testimonials-page ------------>
+		<!--------- Testimonials-page ------------>
     <section class="my-5 py-5" id="account-page">
     	<div class="container my-5 py-3">
         <div class="text-center mt-3 pt-5 col-lg-6 col-md-12 col-sm-12">

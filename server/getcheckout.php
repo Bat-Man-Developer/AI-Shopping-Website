@@ -111,10 +111,10 @@ if(isset($_POST['checkoutbtn'])){
 			$stmt4->bind_param('siissiisssssssss',$productsellersid,$ordercost,$couriercost,$discountcode,$orderstatus,$userid,$shippingid,$billingidnumber,$billingphonenumber,$shippingphonenumber,$shippingcity,$shippingcountry,$shippingaddressline1,$shippingaddressline2,$orderdate,$shippingdeliverycomment);
 
 			//1.8 Update Billing & Shipping Address Table With Order Id Syncronization
-			$stmt5 = $conn->prepare("UPDATE customerbillingaddress SET fldorderid = ? WHERE fldorderid = -1 AND fldbillingemail = ?");
+			$stmt5 = $conn->prepare("UPDATE customerbillingaddress SET fldorderid = ? WHERE fldbillingemail = ?");
 			$stmt5->bind_param('is',$orderid,$billingemail);
 
-			$stmt6 = $conn->prepare("UPDATE customershippingaddress SET fldorderid = ? WHERE fldorderid = -1 AND fldshippingemail = ?");
+			$stmt6 = $conn->prepare("UPDATE customershippingaddress SET fldorderid = ? WHERE fldshippingemail = ?");
 			$stmt6->bind_param('is',$orderid,$shippingemail);
 
 			if($stmt1->execute()){
@@ -211,10 +211,10 @@ if(isset($_POST['checkoutbtn'])){
 			$stmt4->bind_param('siissiisssssssss',$productsellersid,$ordercost,$couriercost,$discountcode,$orderstatus,$userid,$shippingid,$billingidnumber,$billingphonenumber,$shippingphonenumber,$shippingcity,$shippingcountry,$shippingaddressline1,$shippingaddressline2,$orderdate,$shippingdeliverycomment);
 
 			//1.8 Update Billing & Shipping Address Table With Order Id Syncronization
-			$stmt5 = $conn->prepare("UPDATE customerbillingaddress SET fldorderid = ? WHERE fldorderid = -1 AND fldbillingemail = ?");
+			$stmt5 = $conn->prepare("UPDATE customerbillingaddress SET fldorderid = ? WHERE fldbillingemail = ?");
 			$stmt5->bind_param('is',$orderid,$billingemail);
 
-			$stmt6 = $conn->prepare("UPDATE customershippingaddress SET fldorderid = ? WHERE fldorderid = -1 AND fldshippingemail = ?");
+			$stmt6 = $conn->prepare("UPDATE customershippingaddress SET fldorderid = ? WHERE fldshippingemail = ?");
 			$stmt6->bind_param('is',$orderid,$shippingemail);
 
       if($stmt->execute()){

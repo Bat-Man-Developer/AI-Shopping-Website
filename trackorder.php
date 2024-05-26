@@ -77,6 +77,8 @@ if(!isset($_SESSION['trackorderbtn'])){
 						</ul>
 					</nav>
 				</div>
+				<!------ Js for Toggle Menu ----->
+				<script src="js/getheadertogglemenu.js"></script>
 
 				<!---- Voice Recognition AI Search --->
 				<div class="voicerecognitioncontainer">
@@ -84,41 +86,36 @@ if(!isset($_SESSION['trackorderbtn'])){
 					<p id="result"></p>
 					<p id="voicerecognitionhelplink">Need Help?<a href="voicerecognitionhelp.php">Voice Command List</a><p>
         </div>
-
 				<!------ Js for Voice Recognition Output ----->
 				<script src="js/getvoicerecognitionoutput.js"></script>
-
-				<!------ Js for Toggle Menu ----->
-				<script src="js/getheadertogglemenu.js"></script>
 			</div>
 		</div>
-<!--------- Track Order page ------------>
-<section class="my-5 py-5">
-	<div class="container text-center mt-3 pt-5">
-		<h2 class="form-weight-bold">Track Order</h2>
-		<hr class="max-auto">
-	</div>
-  <?php include('layouts/trackorderbanner.php'); ?>
-</section>
-<section class="realtimetrackingstatuscontainer">
-  <div class="form-check">
-    <label class="form-check-label">Processing Order
-      <input class="form-check-input" type="checkbox" name="realtimetrackingstatus" id="realtimetrackingstatus1" value="Processing Order" <?php if(isset($type) && $type == 'Processing Order'){ echo 'checked'; } ?>>
-    </label>
-    
-    <label class="form-check-label">Order Ready
-      <input class="form-check-input" type="checkbox" name="realtimetrackingstatus" id="realtimetrackingstatus2" value="Order Ready" <?php if(isset($type) && $type == 'Order Ready'){ echo 'checked'; } ?>>
-    </label>
+		<!--------- Track Order page ------------>
+		<section class="my-5 py-5">
+			<div class="container text-center mt-3 pt-5">
+				<h2 class="form-weight-bold">Track Order</h2>
+				<hr class="max-auto">
+			</div>
+			<?php include('layouts/trackorderbanner.php'); ?>
+		</section>
+		<section class="realtimetrackingstatuscontainer">
+			<div class="form-check">
+				<label class="form-check-label">Processing Order
+					<input class="form-check-input" type="checkbox" name="realtimetrackingstatus" id="realtimetrackingstatus1" value="Processing Order" <?php if(isset($type) && $type == 'Processing Order'){ echo 'checked'; } ?>>
+				</label>
+				
+				<label class="form-check-label">Order Ready
+					<input class="form-check-input" type="checkbox" name="realtimetrackingstatus" id="realtimetrackingstatus2" value="Order Ready" <?php if(isset($type) && $type == 'Order Ready'){ echo 'checked'; } ?>>
+				</label>
 
-    <label class="form-check-label">Shipping Order
-      <input class="form-check-input" type="checkbox" name="realtimetrackingstatus" id="realtimetrackingstatus3" value="Shipping Order" <?php if(isset($type) && $type == 'Shipping Order'){ echo 'checked'; } ?>>
-    </label>
+				<label class="form-check-label">Shipping Order
+					<input class="form-check-input" type="checkbox" name="realtimetrackingstatus" id="realtimetrackingstatus3" value="Shipping Order" <?php if(isset($type) && $type == 'Shipping Order'){ echo 'checked'; } ?>>
+				</label>
 
-    <label class="form-check-label">Delivered
-      <input class="form-check-input" type="checkbox" name="realtimetrackingstatus" id="realtimetrackingstatus4" value="Delivered" <?php if(isset($type) && $type == 'Delivered'){ echo 'checked'; } ?>>
-    </label>
-  </div>
-</section>
-
+				<label class="form-check-label">Delivered
+					<input class="form-check-input" type="checkbox" name="realtimetrackingstatus" id="realtimetrackingstatus4" value="Delivered" <?php if(isset($type) && $type == 'Delivered'){ echo 'checked'; } ?>>
+				</label>
+			</div>
+		</section>
   </body>
 </html>

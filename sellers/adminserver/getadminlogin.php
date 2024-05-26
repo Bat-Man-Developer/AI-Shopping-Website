@@ -2,13 +2,13 @@
 include('adminconnection.php');
 if(isset($_POST['productsellersloginbtn'])){
   $productsellersemail = $_POST['fldproductsellersemail'];
-  $productsellerspassword = $_POST['fldproductsellerspassword'];
+  $productsellerspassword = md5($_POST['fldproductsellerspassword']);
 
   //look up row in product sellers database where password & email match
   $stmt = $conn->prepare("SELECT fldproductsellersid,fldproductsellersfirstname,fldproductsellerslastname,fldproductsellersemail,fldproductsellerspassword FROM productsellers WHERE fldproductsellersemail = ? AND fldproductsellerspassword = ? LIMIT 1");
-  $stmt->bind_param('ss',$productsellersemail,md5($productsellerspassword));
+  $stmt->bind_param('ss',$productsellersemail,$productsellerspassword);
   if($stmt->execute()){
-    $stmt->bind_result($productsellersid,$productsellersfirstname,$productsellerslastname,$productsellersemail,md5($productsellerspassword));
+    $stmt->bind_result($productsellersid,$productsellersfirstname,$productsellerslastname,$productsellersemail,$productsellerspassword);
     $stmt->store_result();
     $stmt->fetch();
     if($stmt->num_rows() == 1){
