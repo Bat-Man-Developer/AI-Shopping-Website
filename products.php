@@ -10,7 +10,7 @@ include('layouts/header.php');
 				<option value="Highest - Lowest Price">Lowest - Highest Price</option>
 				<option value="Highest - Lowest Price">Highest - Lowest Rating</option>
 				<option value="Highest - Lowest Price">Lowest - Highest Rating</option>
-				<option value="Discount">Discount</option>
+				<option value="Relevance">Relevance</option>
 			</select>
 		</label>
 	</div>
