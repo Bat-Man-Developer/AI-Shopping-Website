@@ -335,6 +335,7 @@ include('server/getproductdetails.php');
 							</div>
 						</section>
 					</div>
+				</div>
 			</div>
 		</div>    
 
@@ -444,5 +445,5 @@ include('server/getproductdetails.php');
 			}
 		</script>
 <?php
-include('layouts/footer.php');
+	include('layouts/footer.php');
 ?>

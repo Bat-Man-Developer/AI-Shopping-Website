@@ -47,6 +47,6 @@ include('adminserver/getadminlogout.php');
         </div>
       </div>
     </section><br><br><br><br><br><br><br><br><br>
-    <script src="adminjs/adminids.js"></script>
+    <script src="adminjs/admindataanalytics.js"></script>
   </body>
 </html>

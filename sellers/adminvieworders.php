@@ -41,7 +41,7 @@ if(!isset($_SESSION['productsellerslogged_in'])){
                     <td><img src="<?php echo "../assets/images/". $orderitems['fldproductimage']; ?>"></td>
                     <td><?php echo $orderitems['fldproductname']; ?></td>
                     <td><?php echo $orderitems['fldproductquantity']; ?></td>
-                    <td><?php echo $orderitems['fldproductdiscount']; ?>%</td>
+                    <td><?php echo $orderitems['fldproductdiscount']*100; ?>%</td>
                     <td><?php echo $orderitems['fldproductprice']; ?></td>
                   </tr>
                   <?php } ?>
