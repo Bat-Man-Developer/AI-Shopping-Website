@@ -1,5 +1,5 @@
 <?php
-include('adminconnection.php');
+include('sellersconnection.php');
 if(isset($_POST['productsellersresetpasswordbtn'])){
   $productsellerspassword = $_POST['fldproductsellerspassword'];
   $productsellersconfirmpassword = $_POST['fldproductsellersconfirmpassword'];
@@ -7,11 +7,11 @@ if(isset($_POST['productsellersresetpasswordbtn'])){
 
   //1. if password dont match
   if($productsellerspassword != $productsellersconfirmpassword){
-    header('location: adminresetpassword.php?error=passwords dont match');
+    header('location: sellersresetpassword.php?error=passwords dont match');
   }
   else if(strlen($productsellerspassword) < 8)
   {//2. if password is less than 8 characters
-    header('location: adminresetpassword.php?error=password must be atleast 8 characters');
+    header('location: sellersresetpassword.php?error=password must be atleast 8 characters');
   }
   else{//3. no errors
     //3.1 check whether there is a user with this email or not
@@ -23,7 +23,7 @@ if(isset($_POST['productsellersresetpasswordbtn'])){
       $stmt->fetch();
     }
     else{
-      header('adminresetpassword.php?error=Something Went Wrong!! Contact Support Team.');
+      header('sellersresetpassword.php?error=Something Went Wrong!! Contact Support Team.');
     }
 
     //3.1.1 if there is a user already registered with this email
@@ -31,14 +31,14 @@ if(isset($_POST['productsellersresetpasswordbtn'])){
       $stmt1 = $conn->prepare("UPDATE productsellers SET fldproductsellerspassword=? WHERE fldproductsellersemail=?");
       $stmt1->bind_param('ss',md5($productsellerspassword),$productsellersemail);
       if($stmt1->execute()){
-        header('location: adminlogin.php?message=Password Has Been Reset Succesfully. Login To Account!');
+        header('location: sellerslogin.php?message=Password Has Been Reset Succesfully. Login To Account!');
       }
       else{
-        header('adminresetpassword.php?error=Something Went Wrong!! Contact Support Team.');
+        header('sellersresetpassword.php?error=Something Went Wrong!! Contact Support Team.');
       }
     }
     else{//3.1.2 if no user registered with this email before
-        header('location: adminresetpassword.php?error=Email not found!');
+        header('location: sellersresetpassword.php?error=Email not found!');
     }
   }
 }

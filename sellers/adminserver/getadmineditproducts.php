@@ -1,5 +1,5 @@
 <?php
-include('adminconnection.php');
+include('sellersconnection.php');
 //1. View Product Details
 if(isset($_GET['fldproductid'])){
   $productid = $_GET['fldproductid'];
@@ -42,12 +42,12 @@ else if($_POST['productsellerseditproductsbtn']){//Edit Product Details
   $stmt->bind_param('sssssssssssssssssssssssssi',$productname,$productdepartment,$productcategory,$producttype,$productcolor,$productgender,$productsize,$productstock,$productdescription,$productprice,$productdiscount,$productdiscountcode,$productlength,$productwidth,$productheight,$productweight,$productfragile,$productspecialhandlingreq,$productinsurancereq,$productaddressline1,$productaddressline2,$productpostalcode,$productcity,$productcountry,$productowner,$productid);
   
   if($stmt->execute()){
-    header('location: ../sellers/adminproducts.php?editmessage=Product Updated Succesfully!');
+    header('location: ../sellers/sellersproducts.php?editmessage=Product Updated Succesfully!');
   }
   else{
-    header('location: ../sellers/adminproducts.php?errormessage=Error Occured, Try Again.');
+    header('location: ../sellers/sellersproducts.php?errormessage=Error Occured, Try Again.');
   }
 }
 else{//no product id was given
-  header('location: ../sellers/adminproducts.php?errormessage=Something went wrong!');
+  header('location: ../sellers/sellersproducts.php?errormessage=Something went wrong!');
 }

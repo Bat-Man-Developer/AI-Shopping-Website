@@ -1,18 +1,18 @@
 <?php
-include('adminconnection.php');
+include('sellersconnection.php');
 if(isset($_POST['productsellersdeleteproductsbtn'])){
   $productid = $_POST['fldproductid'];
   $stmt = $conn->prepare("DELETE FROM products WHERE fldproductid = ?");
   $stmt->bind_param("i",$productid);
   if($stmt->execute()){
-    header('location: ../sellers/adminproducts.php?editmessage=Product Was Deleted Succesfully!');
+    header('location: ../sellers/sellersproducts.php?editmessage=Product Was Deleted Succesfully!');
   }
   else{
-    header('location: ../sellers/adminproducts.php?errormessage=Error Occured, Try Again.');
+    header('location: ../sellers/sellersproducts.php?errormessage=Error Occured, Try Again.');
   }
 }
 else if(isset($_POST['admincancelproductsbtn'])){
-  header('location: ../sellers/adminproducts.php');
+  header('location: ../sellers/sellersproducts.php');
 }
 else if(isset($_GET['fldproductid'])){
   $productid = $_GET['fldproductid'];

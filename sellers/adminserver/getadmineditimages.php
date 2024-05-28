@@ -1,5 +1,5 @@
 <?php
-include('adminconnection.php');
+include('sellersconnection.php');
 //Edit Product Details
 if(isset($_POST['productsellerseditimagesbtn'])){
   //The Image File
@@ -35,43 +35,43 @@ if(isset($_POST['productsellerseditimagesbtn'])){
   // Check image file sizes
   if($_FILES["fldproductimage"]["size"] > 10000000 && $_FILES["fldproductimage1"]["size"] > 10000000 && $_FILES["fldproductimage2"]["size"] > 10000000 && $_FILES["fldproductimage3"]["size"] > 10000000 && $_FILES["fldproductimage4"]["size"] > 10000000 && $_FILES["fldproductimage5"]["size"] > 10000000 && $_FILES["fldproductimage6"]["size"] > 10000000){
     $uploadOk = 0;
-    header('location: ../sellers/admineditimages.php?errormessage=Error Occured, Your File Is Too Large.');
+    header('location: ../sellers/sellerseditimages.php?errormessage=Error Occured, Your File Is Too Large.');
   }
   // Allow certain file formats
   if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
   && $imageFileType != "gif"){
     $uploadOk = 0;
-    header('location: ../sellers/admineditimages.php?errormessage=Error Occured, Only JPG, JPEG, PNG & GIF Files Are Allowed.');
+    header('location: ../sellers/sellerseditimages.php?errormessage=Error Occured, Only JPG, JPEG, PNG & GIF Files Are Allowed.');
   }
   else if($imageFileType1 != "jpg" && $imageFileType1 != "png" && $imageFileType1 != "jpeg"
   && $imageFileType1 != "gif"){
     $uploadOk = 0;
-    header('location: ../sellers/admineditimages.php?errormessage=Error Occured, Only JPG, JPEG, PNG & GIF Files Are Allowed.');
+    header('location: ../sellers/sellerseditimages.php?errormessage=Error Occured, Only JPG, JPEG, PNG & GIF Files Are Allowed.');
   }
   else if($imageFileType2 != "jpg" && $imageFileType2 != "png" && $imageFileType2 != "jpeg"
   && $imageFileType2 != "gif"){
     $uploadOk = 0;
-    header('location: ../sellers/admineditimages.php?errormessage=Error Occured, Only JPG, JPEG, PNG & GIF Files Are Allowed.');
+    header('location: ../sellers/sellerseditimages.php?errormessage=Error Occured, Only JPG, JPEG, PNG & GIF Files Are Allowed.');
   }
   else if($imageFileType3 != "jpg" && $imageFileType3 != "png" && $imageFileType3 != "jpeg"
   && $imageFileType3 != "gif"){
     $uploadOk = 0;
-    header('location: ../sellers/admineditimages.php?errormessage=Error Occured, Only JPG, JPEG, PNG & GIF Files Are Allowed.');
+    header('location: ../sellers/sellerseditimages.php?errormessage=Error Occured, Only JPG, JPEG, PNG & GIF Files Are Allowed.');
   }
   else if($imageFileType4 != "jpg" && $imageFileType4 != "png" && $imageFileType4 != "jpeg"
   && $imageFileType4 != "gif"){
     $uploadOk = 0;
-    header('location: ../sellers/admineditimages.php?errormessage=Error Occured, Only JPG, JPEG, PNG & GIF Files Are Allowed.');
+    header('location: ../sellers/sellerseditimages.php?errormessage=Error Occured, Only JPG, JPEG, PNG & GIF Files Are Allowed.');
   }
   else if($imageFileType5 != "jpg" && $imageFileType5 != "png" && $imageFileType5 != "jpeg"
   && $imageFileType5 != "gif"){
     $uploadOk = 0;
-    header('location: ../sellers/admineditimages.php?errormessage=Error Occured, Only JPG, JPEG, PNG & GIF Files Are Allowed.');
+    header('location: ../sellers/sellerseditimages.php?errormessage=Error Occured, Only JPG, JPEG, PNG & GIF Files Are Allowed.');
   }
   else if($imageFileType6 != "jpg" && $imageFileType6 != "png" && $imageFileType6 != "jpeg"
   && $imageFileType6 != "gif"){
     $uploadOk = 0;
-    header('location: ../sellers/admineditimages.php?errormessage=Error Occured, Only JPG, JPEG, PNG & GIF Files Are Allowed.');
+    header('location: ../sellers/sellerseditimages.php?errormessage=Error Occured, Only JPG, JPEG, PNG & GIF Files Are Allowed.');
   }
   else if($imageFileType == "jpg" && $imageFileType1 == "jpg" && $imageFileType2 == "jpg" && $imageFileType3 == "jpg" && $imageFileType4 == "jpg" && $imageFileType5 == "jpg" && $imageFileType6 == "jpg"){
     //Image Names
@@ -142,12 +142,12 @@ if(isset($_POST['productsellerseditimagesbtn'])){
   // Check if file already exists
   if(file_exists($target_file || $target_file1 || $target_file2 || $target_file3 || $target_file4 || $target_file5 || $target_file6)){
     $uploadOk = 0;
-    header('location: ../sellers/admineditimages.php?errormessage=Error Occured, File Already Exists.');
+    header('location: ../sellers/sellerseditimages.php?errormessage=Error Occured, File Already Exists.');
   }
   
   // Check if $uploadOk is set to 0 by an error
   if($uploadOk == 0){
-    header('location: ../sellers/admineditimages.php?errormessage=Unexpected Error, Please Try Again.');
+    header('location: ../sellers/sellerseditimages.php?errormessage=Unexpected Error, Please Try Again.');
   }
   else{// if everything is ok, try to Upload File
     if(move_uploaded_file($_FILES["fldproductimage"]["tmp_name"], $target_file)){
@@ -160,31 +160,31 @@ if(isset($_POST['productsellerseditimagesbtn'])){
 
                 }
                 else{
-                  header('location: ../sellers/admineditimages.php?errormessage=Image Upload Failed, Try Again.');
+                  header('location: ../sellers/sellerseditimages.php?errormessage=Image Upload Failed, Try Again.');
                 }
               }
               else{
-                header('location: ../sellers/admineditimages.php?errormessage=Image Upload Failed, Try Again.');
+                header('location: ../sellers/sellerseditimages.php?errormessage=Image Upload Failed, Try Again.');
               }
             }
             else{
-              header('location: ../sellers/admineditimages.php?errormessage=Image Upload Failed, Try Again.');
+              header('location: ../sellers/sellerseditimages.php?errormessage=Image Upload Failed, Try Again.');
             }
           }
           else{
-            header('location: ../sellers/admineditimages.php?errormessage=Image Upload Failed, Try Again.');
+            header('location: ../sellers/sellerseditimages.php?errormessage=Image Upload Failed, Try Again.');
           }
         }
         else{
-          header('location: ../sellers/admineditimages.php?errormessage=Image Upload Failed, Try Again.');
+          header('location: ../sellers/sellerseditimages.php?errormessage=Image Upload Failed, Try Again.');
         }
       }
       else{
-        header('location: ../sellers/admineditimages.php?errormessage=Image Upload Failed, Try Again.');
+        header('location: ../sellers/sellerseditimages.php?errormessage=Image Upload Failed, Try Again.');
       }
     }
     else{
-      header('location: ../sellers/admineditimages.php?errormessage=Image Upload Failed, Try Again.');
+      header('location: ../sellers/sellerseditimages.php?errormessage=Image Upload Failed, Try Again.');
     }
   }
 
@@ -196,10 +196,10 @@ if(isset($_POST['productsellerseditimagesbtn'])){
   $stmt->bind_param('sssssssi',$productimagename,$productimagename1,$productimagename2,$productimagename3,$productimagename4,$productimagename5,$productimagename6,$productid);
     
   if($stmt->execute()){
-    header('location: ../sellers/adminproducts.php?editmessage=Images Changed Succesfully!');
+    header('location: ../sellers/sellersproducts.php?editmessage=Images Changed Succesfully!');
   }
   else{
-    header('location: ../sellers/adminproducts.php?errormessage=Error Occured, Try Again.');
+    header('location: ../sellers/sellersproducts.php?errormessage=Error Occured, Try Again.');
   }
 }
 else{//no product id was given

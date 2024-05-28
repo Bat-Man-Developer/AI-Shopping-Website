@@ -1,5 +1,5 @@
 <?php
-include('adminconnection.php');
+include('sellersconnection.php');
 if(isset($_POST['productsellersloginbtn'])){
   $productsellersemail = $_POST['fldproductsellersemail'];
   $productsellerspassword = md5($_POST['fldproductsellerspassword']);
@@ -22,10 +22,10 @@ if(isset($_POST['productsellersloginbtn'])){
       header('location: ../sellers/dashboard.php?loginmessage=Logged In Successfully');
     }
     else{//Password or Email is Wrong Or not in Database
-      header('location: ../sellers/adminlogin.php?error=Could Not Verify Your Account!');
+      header('location: ../sellers/sellerslogin.php?error=Could Not Verify Your Account!');
     }
   }
   else{
-    header('location: ../sellers/adminlogin.php?error=Could Not Login At The Moment');
+    header('location: ../sellers/sellerslogin.php?error=Could Not Login At The Moment');
   }
 }

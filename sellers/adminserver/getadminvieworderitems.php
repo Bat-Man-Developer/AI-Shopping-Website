@@ -1,5 +1,5 @@
 <?php
-include('adminconnection.php');
+include('sellersconnection.php');
 //1. View Product Details
 if(isset($_GET['fldorderid']) && isset($_GET['fldproductsellersid'])){
   $orderid = $_GET['fldorderid'];

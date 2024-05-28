@@ -1,5 +1,5 @@
 <?php
-include('adminconnection.php');
+include('sellersconnection.php');
 if(isset($_SESSION['fldproductsellersid'])){
   $productsellersid = $_SESSION['fldproductsellersid'];
   $stmt = $conn->prepare("SELECT * FROM productsellers WHERE fldproductsellersid = ?");

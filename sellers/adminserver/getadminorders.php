@@ -1,5 +1,5 @@
 <?php
-include('adminconnection.php');
+include('sellersconnection.php');
 $productsellersid = $_SESSION['fldproductsellersid'];
 //1.determine page number
 if(isset($_GET['pagenumber']) && $_GET['pagenumber'] != ""){

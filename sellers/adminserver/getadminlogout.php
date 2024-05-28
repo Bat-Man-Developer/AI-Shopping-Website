@@ -1,6 +1,6 @@
 <?php
-include('adminconnection.php');
-//Logout Admin from Dashboard
+include('sellersconnection.php');
+//Logout Seller from Dashboard
 if(isset($_GET['productsellerslogout'])){
   if(isset($_SESSION['productsellerslogged_in'])){
     unset($_SESSION['fldproductsellersid']);
@@ -10,7 +10,7 @@ if(isset($_GET['productsellerslogout'])){
     unset($_SESSION['fldproductsellersemail']);
     unset($_SESSION['fldproductowner']);
     unset($_SESSION['productsellerslogged_in']);
-    header('location: adminlogin.php');
+    header('location: sellerslogin.php');
     exit;
   }
 }

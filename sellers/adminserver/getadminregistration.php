@@ -1,5 +1,5 @@
 <?php
-include('adminconnection.php');
+include('sellersconnection.php');
 if(isset($_POST['productsellersregistrationbtn'])){
   $productsellersimage = $_POST['fldproductsellersimage'];
   $productsellersfirstname = $_POST['fldproductsellersfirstname'];
@@ -17,11 +17,11 @@ if(isset($_POST['productsellersregistrationbtn'])){
 
   //if password dont match
   if($productsellerspassword != $productsellersconfirmpassword){
-    header('location: adminregistration.php?error=passwords dont match');
+    header('location: sellersregistration.php?error=passwords dont match');
   }
   else if(strlen($productsellerspassword) < 8)
   {//if password is less than 8 characters
-    header('location: adminregistration.php?error=password must be atleast 8 characters');
+    header('location: sellersregistration.php?error=password must be atleast 8 characters');
   }
   else{//if there is no error
     //check whether there is a user with this email or not
@@ -33,12 +33,12 @@ if(isset($_POST['productsellersregistrationbtn'])){
       $stmt->fetch();
     }
     else{
-      header('location: adminregistration.php?errormessage=Something Went Wrong, Try Again!!');
+      header('location: sellersregistration.php?errormessage=Something Went Wrong, Try Again!!');
     }
 
     //if there is a user already registered with this email
     if($num_rows != 0){
-      header('location: adminregistration.php?error=User With This Email Already Exists!');
+      header('location: sellersregistration.php?error=User With This Email Already Exists!');
     }
     else{//if no user registered with this email before
       //Create New Product Sellers
@@ -66,7 +66,7 @@ if(isset($_POST['productsellersregistrationbtn'])){
         header('location: dashboard.php?registermessage=You Registered Succesfully');
       }
       else{//account could not be created
-        header('location: adminregistration.php?error=Could Not Create An Account At The Moment');
+        header('location: sellersregistration.php?error=Could Not Create An Account At The Moment');
       }   
     }
   }
