@@ -7,7 +7,7 @@ session_start();
 			<meta charset="utf-8">
 			<meta name="viewport" content="width=device-width, initial-scale=1.0">
 			<title>NSSA SELLER</title>
-			<link rel="stylesheet" type="text/css" href="sellersassets/sellersstyles/adminstyledefault.css">
+			<link rel="stylesheet" type="text/css" href="sellersassets/sellersstyles/sellersstyledefault.css">
 			<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;1,200;1,300&display=swap" rel="stylesheet">
 			<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 			<div>

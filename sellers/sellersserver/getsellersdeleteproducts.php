@@ -11,7 +11,7 @@ if(isset($_POST['productsellersdeleteproductsbtn'])){
     header('location: ../sellers/sellersproducts.php?errormessage=Error Occured, Try Again.');
   }
 }
-else if(isset($_POST['admincancelproductsbtn'])){
+else if(isset($_POST['productsellerscancelproductsbtn'])){
   header('location: ../sellers/sellersproducts.php');
 }
 else if(isset($_GET['fldproductid'])){
