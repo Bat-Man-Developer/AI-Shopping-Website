@@ -81,7 +81,7 @@ h4{
 }
 
 .small-container{
-	max-width: 1080px;
+	max-width: 100%;
 	margin: auto;
 	padding-left: 25px;
 	padding-right: 25px;
@@ -92,10 +92,6 @@ h4{
 	align-items: center;
 	flex-wrap: wrap;
 	justify-content: space-around;
-}
-
-.categories{
-	margin: 70px 0;
 }
 
 /*------buttons design-------*/
@@ -118,10 +114,12 @@ h4{
 /*-------Header design-------*/
 .header{
 	background: radial-gradient(white);
+	width: 100%;
 }
 
 .header .row{
 	margin-top: 70px;
+	max-width: 100%;
 }
 
 .logo{
@@ -134,18 +132,26 @@ h4{
 	cursor: pointer;
 }
 
+#wishlistpic{
+	width: 27px;
+	height: 27px;
+}
+#accountpic{
+	width: 27px;
+	height: 27px;
+}
+
 .navbar{
 	display: flex;
 	align-items: center;
 	padding: 20px;
-	background: #9eddec;
+	max-width: 100%;
 }
 
 .navbar nav{
 	flex: 1;
-	text-align: right;
-	background: #9eddec;
-	width: 100px;
+	text-align: center;
+	width: 100%;
 	height: 100%;
 	line-height: 100%;
 }
@@ -210,6 +216,7 @@ h4{
 .searchProductsContainer{
 	max-width: 100%;
 	padding: 20px;
+	background: #9eddec;
 }
 
 .searchProductsDiv{
@@ -221,7 +228,7 @@ h4{
 }
   
 #searchInput{
-	width: 50%;
+	width: 80%;
 	height: fit-content;
 	padding: 8px 16px;
 	border: 1px solid #ccc;
@@ -296,7 +303,7 @@ h4{
 .cartquantity{
 	background-color: rgb(22, 115, 255);
 	color: #fff;
-	padding: 0px 3px;
+	padding: 3px;
 	border-radius: 50%;
 }
 
@@ -313,7 +320,6 @@ h4{
 	max-width: 15%;
 	max-height: 20%;
 }
-
 #voicerecognitionbtn:hover{
 	max-width: 14%;
 	max-height: 19%;
@@ -383,7 +389,22 @@ h4{
 
 /*--------- offer0 ---------*/
 .offer0{
+	max-width: 100%;
+}
+
+/*--------- Slideshow ---------*/
+.categories{
+	padding: 5px;
 	width: 100%;
+	display: flex;
+	flex: wrap;
+	align-items: center;
+	height: 30%;
+}
+
+.categories img{
+	max-width: 100%;
+	max-height: auto;
 }
 
 /*--------- offer ---------*/
@@ -1114,6 +1135,9 @@ form a{
 /*---------- media query for less than 1100 screen size --------*/
 @media only screen and (max-width: 1100px){
 /*---------- Navbar -----------*/
+.navbar nav{
+	text-align: right;
+}
 .navbar nav ul{
 	position: absolute;
 	z-index: 2;
@@ -1187,6 +1211,18 @@ margin-left: 50px;
 
 /*---------- media query for less than 800 screen size --------*/
 @media only screen and (max-width: 800px){
+/*--------- Header ---------*/
+#wishlistpic{
+	width: 25px;
+	height: 25px;
+}
+#accountpic{
+	width: 25px;
+	height: 25px;
+}
+.navbar{
+	padding: 10px;
+}
 /*--------- Chat Bot Button ---------*/
 #chatbotpicbtn{
 	bottom: 25%;
@@ -1282,6 +1318,10 @@ width: 60vw;
 	max-width: 20%;
 	max-height: 25%;
 }
+#voicerecognitionbtn:hover{
+	max-width: 19%;
+	max-height: 24%;
+}
 
 /*--------- Chat Bot Button ---------*/
 #chatbotpicbtn{
@@ -1289,6 +1329,11 @@ width: 60vw;
 	max-width: 20%;
 	max-height: 25%;
 }
+#chatbotpicbtn:hover{
+	max-width: 19%;
+	max-height: 24%;
+}
+
 /*---------- Product Details Page --------*/
 .reviewdisplaycontainer{
 font-size: x-small;
@@ -1351,12 +1396,21 @@ margin-left: 35px;
 	max-width: 25%;
 	max-height: 30%;
 }
+#voicerecognitionbtn:hover{
+	max-width: 24%;
+	max-height: 29%;
+}
 
 /*--------- Chat Bot Button ---------*/
 #chatbotpicbtn{
 	max-width: 25%;
 	max-height: 30%;
 }
+#chatbotpicbtn:hover{
+	max-width: 24%;
+	max-height: 29%;
+}
+
 /*---------- Product Details Page --------*/
 .reviewdisplaycontainer{
 	font-size: xx-small;
@@ -1442,32 +1496,35 @@ margin-left: 35px;
 	width: 75px;
 	height: 37.5px;
 }
-
+#wishlistpic{
+	width: 20px;
+	height: 20px;
+}
 #accountpic{
 	width: 20px;
 	height: 20px;
 }
-
 #cart-pic{
 	right: 0%;
 	width: 20px;
 	height: 20px;
 }
-
+.cartquantity{
+	font-size: 10px;
+}
 .menu-icon{
-	width: 28px;
+	width: 20px;
 	margin-left: 20px;
 	left: 0%;
 }
 
 .header .row{
 	margin-top: 70px;
+	width: 100%;
 }
 
 .navbar{
-	display: flex;
-	align-items: center;
-	padding: 20px;
+	padding: 5px;
 }
 
 nav{
@@ -1785,14 +1842,31 @@ form a{
 /*-------media query for less than 280 screen size----*/
 @media only screen and (max-width: 280px){
 /*-------Header design-------*/
-.header .row{
-	margin-top: 70px;
+.header .logo{
+	width: 75px;
+	height: 40px;
 }
-
+#wishlistpic{
+	width: 15px;
+	height: 15px;
+}
+#accountpic{
+	width: 15px;
+	height: 15px;
+}
+#cart-pic{
+	right: 0%;
+	width: 15px;
+	height: 15px;
+}
 .menu-icon{
-	width: 28px;
+	width: 15px;
 	margin-left: 20px;
 	left: 0%;
+}
+
+.header .row{
+	margin-top: 70px;
 }
 
 .title{
@@ -1871,51 +1945,53 @@ height: 15px;
 @media only screen and (max-width: 260px){
 /*-------Header design-------*/
 .header .logo{
-width: 55px;
-height: 25px;
+	width: 65px;
+	height: 35px;
 }
 
 .header .accountpic{
-width: 12px;
-height: 15px;
+	width: 5px;
+	height: 5px;
 }
 
 .header .cartpic{
-width: 12px;
-height: 15px;
+	width: 5px;
+	height: 5px;
+}
+
+.cartquantity{
+	font-size: 8px;
 }
 
 .header .row{
-margin-top: 70px;
+	margin-top: 70px;
 }
 
 .menu-icon{
-width: 28px;
-margin-left: 20px;
-left: 0%;
+	width: 28px;
+	margin-left: 20px;
+	left: 0%;
 }
 
 .title{
-text-align: center;
-margin: 0 auto 80px;
-position: relative;
-line-height: 60px;
-color: #555;
+	text-align: center;
+	margin: 0 auto 80px;
+	position: relative;
+	line-height: 60px;
+	color: #555;
 }
 
 .title::after{
-content: '';
-background: rgb(22, 115, 255);
-width: 80px;
-height: 5px;
-border-radius: 5px;
-position: absolute;
-bottom: 0;
-left: 50%;
-transform: translate(-50%);
+	content: '';
+	background: rgb(22, 115, 255);
+	width: 80px;
+	height: 5px;
+	border-radius: 5px;
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	transform: translate(-50%);
 }
-
-/*---------- Products Page --------*/
 
 /*----------login-page------------*/
 .loginpage{
@@ -1947,19 +2023,18 @@ transform: translate(-50%);
 @media only screen and (max-width: 250px){
 /*-------Header design-------*/
 .header .logo{
-width: 45px;
-height: 15px;
-border: solid;
+	width: 55px;
+	height: 40px;
 }
 
 .header .accountpic{
-width: 5px;
-height: 5px;
+	width: 5px;
+	height: 5px;
 }
 
 .header .cartpic{
-width: 5px;
-height: 5px;
+	width: 5px;
+	height: 5px;
 }
 }
 
@@ -1967,60 +2042,52 @@ height: 5px;
 @media only screen and (max-width: 240px){
 /*-------Header design-------*/
 .header .row{
-margin-top: 70px;
-}
-
-.navbar{
-display: flex;
-align-items: center;
-padding: 20px;
+	margin-top: 70px;
 }
 
 nav{
-flex: 1;
-text-align: right;
-background: #FFFFFF;
-width: 50%;
-height: 100%;
-line-height: 100%;
+	flex: 1;
+	text-align: right;
+	background: #FFFFFF;
+	width: 50%;
+	height: 100%;
+	line-height: 100%;
 }
 nav ul{
-display: inline-block;
-list-style-type: none;
+	display: inline-block;
+	list-style-type: none;
 }
 
 nav ul li{
-display: inline-block;
-margin-right: 20px;
+	display: inline-block;
+	margin-right: 20px;
 }
 
 .menu-icon{
-width: 28px;
-margin-left: 20px;
-left: 0%;
+	width: 28px;
+	margin-left: 20px;
+	left: 0%;
 }
 
 .title{
-text-align: center;
-margin: 0 auto 80px;
-position: relative;
-line-height: 60px;
-color: #555;
+	text-align: center;
+	margin: 0 auto 80px;
+	position: relative;
+	line-height: 60px;
+	color: #555;
 }
 
 .title::after{
-content: '';
-background: rgb(22, 115, 255);
-width: 80px;
-height: 5px;
-border-radius: 5px;
-position: absolute;
-bottom: 0;
-left: 50%;
-transform: translate(-50%);
+	content: '';
+	background: rgb(22, 115, 255);
+	width: 80px;
+	height: 5px;
+	border-radius: 5px;
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	transform: translate(-50%);
 }
-
-/*---------- Products Page --------*/
 
 /*----------login-page------------*/
 .loginpage{
@@ -2058,6 +2125,12 @@ form a{
 }
 }
 
-
+/*-------media query for less than 360 height screen size----*/
+@media only screen and (max-height: 360px){
+/*--------- Chat Bot Button ---------*/
+#chatbotpicbtn{
+	bottom: 35%;
+}
+}
   
   
