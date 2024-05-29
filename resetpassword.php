@@ -28,14 +28,16 @@ include('server/getresetpassword.php');
 			    <nav>
 						<ul id="menuitems">
 							<li class="exitmenutogglebtn" id="nav-exit" onclick="menutoggle()"><a href="#">X</a></li>
-							<li class="active"><a href="index.php"><img id="navbaricons" src="assets/images/bx-home.svg" alt="Snow">Home</a></li>
-							<li class="active"><a href="about.php"><img id="navbaricons" src="assets/images/bx-info-square.svg" alt="Snow">About</a></li>
-							<li class="active" id="departmentitems" onclick="departmentsmenutoggle()"><a href="#"><img id="navbaricons" src="assets/images/bx-store-alt.svg" alt="Snow">Shop Departments</a></li>
-							<li class="active"><a href="contact.php"><img id="navbaricons" src="assets/images/bx-phone.svg" alt="Snow">Contact</a></li>
-							<li class="active"><a href="sellers/sellerslogin.php" target="_blank" rel="noopener noreferrer"><img id="navbaricons" src="assets/images/bx-network-chart.svg" alt="Snow">Sell on NSSA</a></li>
-							<li class="active"><a href="#"><img id="navbaricons" src="assets/images/bx-buildings.svg" alt="Snow">Careers</a></li>
+							<li class="active"><a href="index.php"><img id="navbaricons" src="assets/images/bx-home.svg" alt="Snow" style="display: none">Home</a></li>
+							<li class="active"><a href="about.php"><img id="navbaricons" src="assets/images/bx-info-square.svg" alt="Snow" style="display: none">About</a></li>
+							<li class="active" id="departmentitems" onclick="departmentsmenutoggle()"><a href="#"><img id="navbaricons" src="assets/images/bx-store-alt.svg" alt="Snow" style="display: none">Shop Departments</a></li>
+							<li class="active"><a href="contact.php"><img id="navbaricons" src="assets/images/bx-phone.svg" alt="Snow" style="display: none">Contact</a></li>
+							<li class="active"><a href="sellers/sellerslogin.php" target="_blank" rel="noopener noreferrer"><img id="navbaricons" src="assets/images/bx-network-chart.svg" alt="Snow" style="display: none">Sell on NSSA</a></li>
+							<li class="active"><a href="#"><img id="navbaricons" src="assets/images/bx-buildings.svg" alt="Snow" style="display: none">Careers</a></li>
 				    </ul>
 					</nav>
+					<!---------------Wishlist Image---------------->
+					<a href="wishlist.php" style="margin-right: 3%;"><img id="wishlistpic" class="wishlistpic" src="assets/images/wishlist_pic.png" alt="Snow" width="30px" height="32px" align="left"></a>
 					<!---------------Account Image---------------->
 					<a href="login.php" style="margin-right: 3%;"><img id="accountpic" class="accountpic" src="assets/images/accounticon_pic.png" alt="Snow" width="30px" height="32px" align="left"></a>
 					<!---------------Cart Image---------------->
@@ -43,11 +45,19 @@ include('server/getresetpassword.php');
 					<?php if(isset($_SESSION['totalquantity']) && $_SESSION['totalquantity'] != 0) { ?>
 						<span class="cartquantity"><?php echo $_SESSION['totalquantity']; ?></span>
 					<?php } ?></a>
-
 					<!-- Menu icon -->
 					<img src="assets/images/menu.png" alt="Snow" class="menu-icon" onclick="menutoggle()" align="center">
 				</div>
-
+				<!---Search Bar--->
+				<div class="searchProductsContainer">
+					<form name="searchProductsForm" method="POST" action="products.php">
+						<div class="searchProductsDiv">
+								<input type="text" id="searchInput" name="searchproductstring" placeholder="Search...">
+								<button type="submit" id="searchButton">Search</button>
+								<div id="suggestionsContainer"></div>
+						</div>
+					</form>
+				</div>
 				<!-------- Departments Navbar ------->
 				<div class="departmentsnavbar" id="departmentsnavbar">
 					<nav class="departmentsnav">
@@ -75,6 +85,15 @@ include('server/getresetpassword.php');
 				</div>
 				<!------ Js for Toggle Menu ----->
 				<script src="js/getheadertogglemenu.js"></script>
+
+				<!---- Voice Recognition AI Search Button --->
+				<div class="voicerecognitioncontainer">
+          <img src="assets/images/voicerecognitionicon_pic.png" class="btn" id="voicerecognitionbtn"/>
+					<p id="result"></p>
+					<p id="voicerecognitionhelplink">Need Help?<a href="voicerecognitionhelp.php">Voice Command List</a><p>
+        </div>
+				<!------ Js for Voice Recognition Output ----->
+				<script src="js/getvoicerecognitionoutput.js"></script>
 			</div>
 		</div>
 		<!--------- reset password page ------------>

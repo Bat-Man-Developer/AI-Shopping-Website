@@ -21,21 +21,29 @@ include('layouts/header.php');
 	</div>
 </div>
 <!------- Promotions Slide Show ----------->
-<div class="categories">
-	<div class="small-container">
-		<div class="row">
-			<div class="col-3">
-				<img src="assets/images/gallery pic1.gif" alt="Snow">
-			</div>
-			<div class="col-3">
-				<img src="assets/images/gallery pic2.gif" alt="Snow">
-			</div>
-			<div class="col-3">
-				<img src="assets/images/gallery pic3.gif" alt="Snow">
-			</div>
-			</div>
-		</div>
+<div id="slideshow">
+	<div class="slide-container">
+		<p class="myslides">1st Launch 50% OFF<br>
+			<img class="picture" src="assets/images/slideshow/retailcartoons_pic.png" alt="snow">
+		</p>
+		<p class="myslides">NEWSTUFF For Everyone SALE<br>
+			<img class="picture" src="assets/images/slideshow/deliverytruck_pic.png" alt="now">
+		</p>
+		<p class="myslides">WINTER SALE UP TO 30% OFF<br>
+			<img class="picture" src="assets/images/slideshow/ecommercestore_pic.png" alt="snow">
+		</p>
+		<p class="myslides">EVERY WEEK DEALS<br>
+			<img class="picture" src="assets/images/slideshow/water_pic.png" alt="snow">
+		</p>
+		<p class="myslides">10 STEPS AHEAD DEALS<br>
+			<img class="picture" src="assets/images/slideshow/teddybear_pic.png" alt="snow">
+		</p>
+	</div>
+	<button class="slide-button prev-button" onclick="plusDivs(-1)">&#10094;</button>
+	<button class="slide-button next-button" onclick="plusDivs(1)">&#10095;</button>
 </div>
+<script src="js/slideshow_promotions.js"></script>
+
 <!------- Most Sold Products ----------->
 <div class="small-container">
 	<h2 class="title">Most Sold Products</h2>
@@ -374,8 +382,8 @@ include('layouts/header.php');
 <div class="testimonials">
 	<div class="small-container">
 		<h2 class="title">Testimonials & Suggestions</h2>
+		<h3 class="titledescription">help us improve by mentioning problems & challenges experienced in our online store.</h3><br><br><br><br><br>
 		<div class="row">
-		  <h3 class="titledescription">help us improve by mentioning problems & challenges experienced in our online store.</h3>
 			<!---import the files--->
 			<?php include('server/gettestimonials.php'); ?>
 			<?php while($row = $testimonials->fetch_assoc()) { ?>

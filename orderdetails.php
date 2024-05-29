@@ -33,14 +33,16 @@ include('server/getorderdetails.php');
 			    <nav>
 						<ul id="menuitems">
 							<li class="exitmenutogglebtn" id="nav-exit" onclick="menutoggle()"><a href="#">X</a></li>
-							<li class="active"><a href="index.php"><img id="navbaricons" src="assets/images/bx-home.svg" alt="Snow">Home</a></li>
-							<li class="active"><a href="about.php"><img id="navbaricons" src="assets/images/bx-info-square.svg" alt="Snow">About</a></li>
-							<li class="active" id="departmentitems" onclick="departmentsmenutoggle()"><a href="#"><img id="navbaricons" src="assets/images/bx-store-alt.svg" alt="Snow">Shop Departments</a></li>
-							<li class="active"><a href="contact.php"><img id="navbaricons" src="assets/images/bx-phone.svg" alt="Snow">Contact</a></li>
-							<li class="active"><a href="sellers/sellerslogin.php" target="_blank" rel="noopener noreferrer"><img id="navbaricons" src="assets/images/bx-network-chart.svg" alt="Snow">Sell on NSSA</a></li>
-							<li class="active"><a href="#"><img id="navbaricons" src="assets/images/bx-buildings.svg" alt="Snow">Careers</a></li>
+							<li class="active"><a href="index.php"><img id="navbaricons" src="assets/images/bx-home.svg" alt="Snow" style="display: none">Home</a></li>
+							<li class="active"><a href="about.php"><img id="navbaricons" src="assets/images/bx-info-square.svg" alt="Snow" style="display: none">About</a></li>
+							<li class="active" id="departmentitems" onclick="departmentsmenutoggle()"><a href="#"><img id="navbaricons" src="assets/images/bx-store-alt.svg" alt="Snow" style="display: none">Shop Departments</a></li>
+							<li class="active"><a href="contact.php"><img id="navbaricons" src="assets/images/bx-phone.svg" alt="Snow" style="display: none">Contact</a></li>
+							<li class="active"><a href="sellers/sellerslogin.php" target="_blank" rel="noopener noreferrer"><img id="navbaricons" src="assets/images/bx-network-chart.svg" alt="Snow" style="display: none">Sell on NSSA</a></li>
+							<li class="active"><a href="#"><img id="navbaricons" src="assets/images/bx-buildings.svg" alt="Snow" style="display: none">Careers</a></li>
 				    </ul>
 					</nav>
+					<!---------------Wishlist Image---------------->
+					<a href="wishlist.php" style="margin-right: 3%;"><img id="wishlistpic" class="wishlistpic" src="assets/images/wishlist_pic.png" alt="Snow" width="30px" height="32px" align="left"></a>
 					<!---------------Account Image---------------->
 					<a href="login.php" style="margin-right: 3%;"><img id="accountpic" class="accountpic" src="assets/images/accounticon_pic.png" alt="Snow" width="30px" height="32px" align="left"></a>
 					<!---------------Cart Image---------------->
@@ -48,11 +50,19 @@ include('server/getorderdetails.php');
 					<?php if(isset($_SESSION['totalquantity']) && $_SESSION['totalquantity'] != 0) { ?>
 						<span class="cartquantity"><?php echo $_SESSION['totalquantity']; ?></span>
 					<?php } ?></a>
-
 					<!-- Menu icon -->
 					<img src="assets/images/menu.png" alt="Snow" class="menu-icon" onclick="menutoggle()" align="center">
 				</div>
-
+				<!---Search Bar--->
+				<div class="searchProductsContainer">
+					<form name="searchProductsForm" method="POST" action="products.php">
+						<div class="searchProductsDiv">
+								<input type="text" id="searchInput" name="searchproductstring" placeholder="Search...">
+								<button type="submit" id="searchButton">Search</button>
+								<div id="suggestionsContainer"></div>
+						</div>
+					</form>
+				</div>
 				<!-------- Departments Navbar ------->
 				<div class="departmentsnavbar" id="departmentsnavbar">
 					<nav class="departmentsnav">
@@ -81,7 +91,7 @@ include('server/getorderdetails.php');
 				<!------ Js for Toggle Menu ----->
 				<script src="js/getheadertogglemenu.js"></script>
 
-				<!---- Voice Recognition AI Search --->
+				<!---- Voice Recognition AI Search Button --->
 				<div class="voicerecognitioncontainer">
           <img src="assets/images/voicerecognitionicon_pic.png" class="btn" id="voicerecognitionbtn"/>
 					<p id="result"></p>
@@ -123,25 +133,27 @@ include('server/getorderdetails.php');
 				<?php }?>
 			</table>
 
-			<?php if($orderstatus == "Not Paid") {?>
-				<form method="POST" action="payment.php">
-					<input type="hidden" name="flduseremail" value="<?php echo $useremail; ?>"/>
-					<input type="hidden" name="fldordercost" value="<?php echo $ordercost; ?>"/>
-					<input type="hidden" name="fldcouriercost" value="<?php echo $couriercost; ?>"/>
-					<input type="hidden" name="fldorderstatus" value="<?php echo $orderstatus; ?>"/>
-					<input type="hidden" name="fldorderid" value="<?php echo $orderid; ?>"/>
-					<input type="hidden" name="flduserid" value="<?php echo $userid; ?>"/>
-					<input type="hidden" name="protectpaymentpage" value="<?php $_SESSION['protectpaymentpage'] = "unlockpage"; echo "unlockpage" ?>"/>
-					<input type="submit" class="btn" id="paynowbtn" name="orderdetailsbtn" value="Pay Now"/>
-				</form>
-			<?php }?>
+			<div class="row">
+				<?php if($orderstatus == "Not Paid") {?>
+					<form method="POST" action="payment.php">
+						<input type="hidden" name="flduseremail" value="<?php echo $useremail; ?>"/>
+						<input type="hidden" name="fldordercost" value="<?php echo $ordercost; ?>"/>
+						<input type="hidden" name="fldcouriercost" value="<?php echo $couriercost; ?>"/>
+						<input type="hidden" name="fldorderstatus" value="<?php echo $orderstatus; ?>"/>
+						<input type="hidden" name="fldorderid" value="<?php echo $orderid; ?>"/>
+						<input type="hidden" name="flduserid" value="<?php echo $userid; ?>"/>
+						<input type="hidden" name="protectpaymentpage" value="<?php $_SESSION['protectpaymentpage'] = "unlockpage"; echo "unlockpage" ?>"/>
+						<input type="submit" class="btn" id="paynowbtn" name="orderdetailsbtn" value="Pay Now"/>
+					</form>
+				<?php }?>
 
-			<?php if($orderstatus == "Paid") {?>
-				<form method="POST" action="trackorder.php">
-					<input type="hidden" name="fldorderstatus" value="<?php echo $orderstatus; ?>"/>
-					<input type="submit" class="btn" id="trackorderbtn" name="trackorderbtn" value="Track Order"/>
-				</form>
-			<?php }?>
+				<?php if($orderstatus == "Paid") {?>
+					<form method="POST" action="trackorder.php">
+						<input type="hidden" name="fldorderstatus" value="<?php echo $orderstatus; ?>"/>
+						<input type="submit" class="btn" id="trackorderbtn" name="trackorderbtn" value="Track Order"/>
+					</form>
+				<?php }?>
+			</div>
 		</section>
 	</body>
 </html>
