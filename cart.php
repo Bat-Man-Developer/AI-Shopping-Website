@@ -16,7 +16,6 @@ if(empty($_SESSION['cart'])){
 			<title>NSSA STORE</title>
 			<link rel="stylesheet" type="text/css" href="assets/styles/styledefault.css">
 			<link rel="stylesheet" type="text/css" href="assets/styles/stylecart.css">
-			<link rel="stylesheet" type="text/css" href="assets/styles/styletrackorderbanner.css">
 			<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;1,200;1,300&display=swap" rel="stylesheet">
 			<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
@@ -89,8 +88,6 @@ if(empty($_SESSION['cart'])){
 						</ul>
 					</nav>
 				</div>
-				<!------ Js for Toggle Menu ----->
-				<script src="js/getheadertogglemenu.js"></script>
 
 				<!---- Voice Recognition AI Search Button --->
 				<div class="voicerecognitioncontainer">
@@ -98,8 +95,6 @@ if(empty($_SESSION['cart'])){
 					<p id="result"></p>
 					<p id="voicerecognitionhelplink">Need Help?<a href="voicerecognitionhelp.php">Voice Command List</a><p>
         </div>
-				<!------ Js for Voice Recognition Output ----->
-				<script src="js/getvoicerecognitionoutput.js"></script>
 			</div>
 		</div>
 		<script type="text/javascript">

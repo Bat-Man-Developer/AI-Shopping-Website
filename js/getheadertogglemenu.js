@@ -1,14 +1,11 @@
 let menuitems = document.getElementById("menuitems");
 menuitems.style.maxHeight = "0px";
 
-let departmentsnavbar = document.getElementById("departmentsnavbar");
-departmentsnavbar.style.maxHeight = "0px";
-
-let chatbotbtn = document.getElementById("chatbotcontainer");
-chatbotbtn.style.maxHeight = "0px";
-
 //Display Menu Toggle Function
 function menutoggle(){
+  let departmentsnavbar = document.getElementById("departmentsnavbar");
+  departmentsnavbar.style.maxHeight = "0px";
+
   if(menuitems.style.maxHeight == "0px")
   {
     menuitems.style.maxHeight = "fit-content"
@@ -26,6 +23,9 @@ function menutoggle(){
 
 //Display Departments Menu Toggle Function
 function departmentsmenutoggle(){
+  let departmentsnavbar = document.getElementById("departmentsnavbar");
+  departmentsnavbar.style.maxHeight = "0px";
+
   if(departmentsnavbar.style.maxHeight == "0px")
   {
     departmentsnavbar.style.maxHeight = "fit-content"

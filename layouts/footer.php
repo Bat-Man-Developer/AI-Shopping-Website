@@ -46,3 +46,7 @@
 		</div>
   </body>
 </html>
+<!------ Js for Toggle Menu ----->
+<script src="js/getheadertogglemenu.js"></script>
+<!------ Js for Voice Recognition Output ----->
+<script src="js/getvoicerecognitionoutput.js"></script>
