@@ -2,8 +2,8 @@
 include('layouts/header.php');
 ?>
 <!------------- Website Messages----------->
-<p style="color: red; font-weight: bold; text-align: center" class="text-center"><?php if(isset($_GET['error'])){ echo $_GET['error']; }?></p>
-<p style="color: green" class="text-center"><?php if(isset($_GET['message'])){ echo $_GET['message']; }?></p>
+<p class="text-center" id="webmessage_red"><?php if(isset($_GET['error'])){ echo $_GET['error']; }?></p>
+<p class="text-center" id="webmessage_green"><?php if(isset($_GET['message'])){ echo $_GET['message']; }?></p>
 <!------------- offer0 ----------->
 <div class="offer0">
 	<div class="container">

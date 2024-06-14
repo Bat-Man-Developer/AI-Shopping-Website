@@ -47,6 +47,6 @@
   </body>
 </html>
 <!------ Js for Toggle Menu ----->
-<script src="js/getheadertogglemenu.js"></script>
+<script src="js/getheadertogglemenu.js" charset="utf-8"></script>
 <!------ Js for Voice Recognition Output ----->
 <script src="js/getvoicerecognitionoutput.js"></script>

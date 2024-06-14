@@ -1,5 +1,5 @@
 /*--------- All Pages ----------*/
-* {
+*{
 	margin: 0px;
 	padding: 0px;
 	box-sizing: border-box;
@@ -96,7 +96,7 @@ h4{
 
 /*------buttons design-------*/
 .btn{
-	width: fit-content;
+	width: auto;
 	display: inline-block;
 	background: rgb(0, 104, 189);
 	color: #fff;
@@ -112,10 +112,13 @@ h4{
 }
 
 #paynowbtn{
-	width: 300px;
+	width: auto;
 }
 #trackorderbtn{
-	width: 300px;
+	width: auto;
+}
+#testimonialscommentbtn{
+	width: auto;
 }
 
 /*-------Header design-------*/
@@ -130,6 +133,7 @@ h4{
 }
 
 .logo{
+	align-items: left;
 	width: 150px;
   height: 90px;
   border: 2px solid #ffffff; /* Adding border around the logo */
@@ -139,13 +143,43 @@ h4{
 	cursor: pointer;
 }
 
+#wishlistlink{
+	margin-right: 3%;
+}
+
 #wishlistpic{
 	width: 27px;
 	height: 27px;
+  align-items: left;
 }
+
+.account_pic_link{
+	margin-right: 3%;
+}
+
 #accountpic{
 	width: 27px;
 	height: 27px;
+}
+
+#cart-pic{
+	width: 30px;
+	height: 30px;
+	align-items: left;
+}
+
+.cartquantity{
+	background-color: rgb(22, 115, 255);
+	color: #fff;
+	padding: 3px;
+	border-radius: 50%;
+}
+
+.menu-icon{
+	width: 28px;
+	margin-left: 20px;
+	align-items: center;
+	display: none;
 }
 
 .navbar{
@@ -194,7 +228,6 @@ h4{
 	display: list-item;
 	align-items: center;
 	max-width: 50%;
-	max-height: fit-content;
 	border: solid white;
 	border-width: 5px;
 	border-radius: 10%;
@@ -236,7 +269,7 @@ h4{
   
 #searchInput{
 	width: 80%;
-	height: fit-content;
+	height: auto;
 	padding: 8px 16px;
 	border: 1px solid #ccc;
 	border-radius: 4px;
@@ -247,14 +280,12 @@ h4{
 
 #searchButton{
 	padding: 8px 16px;
-	height: fit-content;
 	background-color: #176bcc;
 	color: white;
 	border: none;
 	border-radius: 4px;
 	cursor: pointer;
 	font-size: 16px;
-	width: fit-content;
 	white-space: nowrap; /* Prevent button text wrapping */
 }
 
@@ -281,12 +312,6 @@ h4{
 	color: #000;
 }
 
-.menu-icon{
-	width: 28px;
-	margin-left: 20px;
-	display: none;
-}
-
 .title{
 	text-align: center;
 	margin: 0 auto 80px;
@@ -305,13 +330,6 @@ h4{
 	bottom: 0;
 	left: 50%;
 	transform: translate(-50%);
-}
-
-.cartquantity{
-	background-color: rgb(22, 115, 255);
-	color: #fff;
-	padding: 3px;
-	border-radius: 50%;
 }
 
 /*--------- Voice Recognition ---------*/
@@ -349,7 +367,6 @@ h4{
 
 /*--------- Chat Bot Button ---------*/
 #chatbotpicbtn{
-	width: fit-content;
 	padding: 4px 7.5px;
 	display: block;
 	margin: auto;
@@ -392,6 +409,20 @@ h4{
 	margin: auto;
 	border-radius: 0%;
 	background-color: #777;
+}
+
+/*-------- website message error--------*/
+.webmessage_red{
+	color: red;
+	font-weight: bold;
+	text-align: center;
+}
+
+/*--------- website message success-------*/
+.webmessage_green{
+	color: green;
+	font-weight: bold;
+	text-align: center;
 }
 
 /*--------- offer0 ---------*/
@@ -492,8 +523,8 @@ small{
 
 /*---------testimonial--------*/
 .testimonials table{
+	width: auto;
 	font-size: auto;
-	width: fit-content;
 	border-collapse: collapse;
 }
 
@@ -898,13 +929,11 @@ form input{
 }
 
 #loginbtn{
-	max-width: fit-content;
-	max-width: -moz-fit-content;
+	max-width: auto;
 }
 
 #staffsigninbtn{
-	max-width: fit-content;
-	max-width: -moz-fit-content;
+	max-width: auto;
 	background-color: grey;
 }
 
@@ -982,7 +1011,7 @@ form a{
 .editprofileuploadbtn{
 	color: white;
 	padding: 10px;
-	width: fit-content; 
+	width: auto; 
 	background-color: blue;
 	border: solid rgb(226, 218, 218);
 	border-radius: 10%;
@@ -995,7 +1024,7 @@ form a{
 .editprofileverifybtn{
 	color: white;
 	padding: 10px;
-	width: fit-content; 
+	width: auto; 
 	background-color: rgb(250, 250, 14);
 	border: solid rgb(226, 218, 218); 
 	border-radius: 10%;
@@ -1008,7 +1037,7 @@ form a{
 .editprofilebtn{
 	color: white;
 	padding: 10px;
-	width: 20%; 
+	width: auto; 
 	background-color: rgb(18, 51, 236);
 	border: solid rgb(226, 218, 218); 
 	border-radius: 10%;
@@ -1028,7 +1057,7 @@ form a{
 	display: inline-block;
 	background-color: #cecdcd;
 	border: solid rgb(240, 240, 240);
-	height: fit-content;
+	height: auto;
 	width: 98.95vw;
 }
 
@@ -1040,9 +1069,10 @@ form a{
 	color: #fff;
 	background-color: rgb(22, 115, 255);
 	padding: 5px;
-	width: fit-content;
+	width: auto;
 	border: solid #979797;
 	border-radius: 10%;
+	cursor: pointer;
 }
 
 .submitcontactformbtn:hover{
@@ -1054,7 +1084,7 @@ form a{
 	display: inline-block;
 	background-color: #FFFFFF;
 	border: solid rgb(240, 240, 240);
-	height: fit-content;
+	height: auto;
 	width: 98.95vw;
 }
 
@@ -1138,7 +1168,7 @@ form a{
 	background-color: rgb(62, 62, 221);
 	float: right;
 	padding: 10px;
-	width: fit-content;
+	width: auto;
 	border-radius: 30px;
 	transition: background 0.5s;
 }
@@ -1456,6 +1486,30 @@ margin-left: 35px;
 
 /*-------media query for less than 350 screen size----*/
 @media only screen and (max-width: 350px){
+/*-------Header design-------*/
+.header .logo{
+	width: 75px;
+	height: 50px;
+}
+#wishlistpic{
+	width: 25px;
+	height: 25px;
+}
+#accountpic{
+	width: 25px;
+	height: 25x;
+}
+#cart-pic{
+	width: 25px;
+	height: 25px;
+}
+.cartquantity{
+	font-size: 14px;
+}
+.menu-icon{
+	width: 25px;
+}
+
 /*--------- Voice Recognition ---------*/
 #voicerecognitionbtn{
 	max-width: 25%;
@@ -1570,7 +1624,6 @@ margin-left: 35px;
 	height: 20px;
 }
 #cart-pic{
-	right: 0%;
 	width: 20px;
 	height: 20px;
 }
@@ -1579,8 +1632,6 @@ margin-left: 35px;
 }
 .menu-icon{
 	width: 20px;
-	margin-left: 20px;
-	left: 0%;
 }
 
 .header .row{
