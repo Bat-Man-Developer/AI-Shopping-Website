@@ -59,7 +59,7 @@ include('server/getproductdetails.php');
 				<div class="departmentsnavbar" id="departmentsnavbar">
 					<nav class="departmentsnav">
 						<ul class="departmentsnavitems">
-						  <li class="departmentsactive" onclick="closeallmenutoggle()"><a id="departmentsexitmenutogglebtn" href="#">Close</a></li>
+						  <li class="departmentsactive" onclick="departmentsmenutoggle()"><a id="departmentsexitmenutogglebtn" href="#">Close</a></li>
 							<li class="departmentsactive" id="departmentsnavlist"><a href="products.php?fldproductdepartment=Automotive">Automotive</a></li>
 							<li class="departmentsactive" id="departmentsnavlist"><a href="products.php?fldproductdepartment=DIY">DIY</a></li>
 							<li class="departmentsactive" id="departmentsnavlist"><a href="products.php?fldproductdepartment=Baby, Toddler & Kids">Baby, Toddler & Kids</a></li>
@@ -178,7 +178,7 @@ include('server/getproductdetails.php');
 								<i class="fa fa-star-o"></i>
 								<i class="fa fa-star-o"></i>
 							</div>
-						<?php } ?><br>
+						<?php } ?><br><br>
 
 						<form name="productdetailsform" id="productdetailsform" method="POST" action="productdetails.php">
 							<input type="hidden" name="fldproductid" value="<?php echo $row['fldproductid']; ?>"/>

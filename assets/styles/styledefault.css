@@ -196,12 +196,22 @@ h4{
 .navbar nav ul{
 	display: inline-block;
 }
+#menuitems{
+	display: inline-block;
+}
 
 .navbar nav ul li{
 	display: inline-block;
 	margin-right: 20px;
 }
+#nav-exit{
+	visibility: collapse;
+}
 
+#navbaricons{
+	width: 30px;
+	height: 40px;
+}
 .navbar .active:hover{
 	border-bottom: 3px solid rgb(23, 98, 212);
 }
@@ -238,15 +248,6 @@ h4{
 
 .departmentsactive:hover{
 	background-color: #cfcccc;
-}
-
-#navbaricons{
-	width: 30px;
-	height: 40px;
-}
-
-#nav-exit{
-	visibility: collapse;
 }
 
 .searchProductsContainer{
@@ -1238,11 +1239,17 @@ form a{
 	overflow: hidden;
 	transition: max-height 0.5s;
 }
+#menuitems{
+	display: none;
+}
 
 .navbar nav ul li{
 	display: list-item;
 	margin-top: 10px;
 	margin-bottom: 10px;
+}
+#nav-exit{
+	visibility: "visible";
 }
 
 .navbar nav ul li a{
@@ -1256,10 +1263,6 @@ form a{
 .menu-icon{
 	display: block;
 	cursor: pointer;
-}
-
-#nav-exit{
-	visibility: visible;
 }
 
 /*---------- Track Order Page --------*/

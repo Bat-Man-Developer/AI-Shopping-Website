@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 26, 2024 at 12:20 AM
+-- Generation Time: Jun 15, 2024 at 06:26 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -41,7 +41,7 @@ CREATE TABLE `admins` (
 --
 
 INSERT INTO `admins` (`fldadminid`, `fldadminname`, `fldadminemail`, `fldadminposition`, `fldadmindepartment`, `fldadminpassword`) VALUES
-(2, 'Batman', 'kkay.mudau008@gmail.com', 'Administrator', 'Boss', '12345678'),
+(2, 'Batman', 'kkay.mudau008@gmail.com', 'Administrator', 'Boss', 'OHLord.01'),
 (4, 'Guest', 'guest@gmail.com', 'Visitor', 'None', '12345678');
 
 -- --------------------------------------------------------
@@ -217,12 +217,12 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`fldproductid`, `fldproductsellersid`, `fldproductname`, `fldproductdepartment`, `fldproductcategory`, `fldproducttype`, `fldproductcolor`, `fldproductgender`, `fldproductsize`, `fldproductstock`, `fldproductdescription`, `fldproductimage`, `fldproductimage1`, `fldproductimage2`, `fldproductimage3`, `fldproductimage4`, `fldproductimage5`, `fldproductimage6`, `fldproductprice`, `fldproductdiscount`, `fldproductdiscountcode`, `fldproductlength`, `fldproductwidth`, `fldproductheight`, `fldproductweight`, `fldproductfragile`, `fldproductspecialhandlingreq`, `fldproductinsurancereq`, `fldproductaddressline1`, `fldproductaddressline2`, `fldproductpostalcode`, `fldproductcity`, `fldproductcountry`, `fldproductowner`, `fldproductmostsold`, `fldproductmostrated`, `fldproductmostviewed`) VALUES
-(145, 1, 'Apple iPhone 15 Pro Max', 'Electronics & Devices', 'phones', 'iphone', 'Black', '', '', '97', 'Smartphone · Dual SIM · 5G · Wireless Charging · With Fast Charging · iOS · Facial Recognition · With OLED Display · Black Titanium · Water Resistan', 'Apple iPhone 15 Pro Max 1TB Black Titanium66169da6f0db7.png', 'Apple iPhone 15 Pro Max 1TB Black Titanium66169da6f0dbc 1.png', 'Apple iPhone 15 Pro Max 1TB Black Titanium66169da6f0dbd 2.png', 'Apple iPhone 15 Pro Max 1TB Black Titanium66169da6f0dbe 3.png', 'Apple iPhone 15 Pro Max 1TB Black Titanium66169da6f0dbf 4.png', 'Apple iPhone 15 Pro Max 1TB Black Titanium66169da6f0dc0 5.png', 'Apple iPhone 15 Pro Max 1TB Black Titanium66169da6f0dc1 6.png', 19000.00, 0.20, '', '0', '4', '12', '0.25', 'Yes', '', '', '65 Wisani Street, Shoshanguve', '', '1645', 'Pretoria', 'South_Africa', 'Kay Mudau', 0, 0, 1),
-(154, 2, 'Mac Book Pro II', 'Electronics & Devices', 'Laptop', 'Mac', 'Silver', '', '', '100', 'Very Good', 'MacBook Air 13-inch.png', 'MacBook Air 13-inch top.png', 'MacBook Air 13-inch right.png', 'MacBook Air 13-inch left.png', 'MacBook Air 13-inch bottom.png', 'MacBook Air 13-inch back.png', 'MacBook Air 13-inch side.png', 51000.00, 0.13, 'Awesome33', '50', '30', '19', '1.25', 'Yes', '', '', '65 Wisani Street, Shoshanguve', '', '1645', 'Pretoria', 'South_Africa', 'Kay Mudau', 0, 0, 0),
-(156, 3, 'FURNITURE Parker Mid Back Chair Black', 'Home & Furniture', 'Office Chair', 'Chair', '', '', '', '100', 'PU/PVC combination Gas lift height adjustable Swivel and tilt mechanism Nylon base Maximum weight 120kg Assembly required Black 12 month guarantee', 'FURNITURE Parker Mid Back Chair Black.png', 'FURNITURE Parker Mid Back Chair Black 1.png', 'FURNITURE Parker Mid Back Chair Black 2.png', 'FURNITURE Parker Mid Back Chair Black 3.png', 'FURNITURE Parker Mid Back Chair Black 4.png', 'FURNITURE Parker Mid Back Chair Black 5.png', 'FURNITURE Parker Mid Back Chair Black 6.png', 1999.00, 0.05, '', '0', '0', '0', '0', 'No', '', '', '65 Wisani Street, Shoshanguve', '', '1645', 'Pretoria', 'South_Africa', 'Kay Mudau', 0, 0, 0),
-(157, 3, 'Nike Shirt', 'Clothing, Shoes & Accessories', 'Shirts', 'T-Shirt', 'Black', 'Male', '', '99', 'Original Shirt', 'Nike Shirt.png', 'Nike Shirt 1.png', 'Nike Shirt 2.png', 'Nike Shirt 3.png', 'Nike Shirt 4.png', 'Nike Shirt 5.png', 'Nike Shirt 6.png', 516.00, 0.09, '', '0', '0', '0', '0', 'No', '', '', '65 Wisani Street, Shoshanguve', '', '1645', 'Pretoria', 'South_Africa', 'Kay Mudau', 0, 0, 0),
-(159, 4, 'Absolute Vodka', 'Liquor', 'Vodka', '', '', '', '', '100', '43% Alcohol. Not for sale to persons under the age of 18.', 'Absolute Vodka.jpeg', 'Absolute Vodka 1.jpeg', 'Absolute Vodka 2.jpeg', 'Absolute Vodka 3.jpeg', 'Absolute Vodka 4.jpeg', 'Absolute Vodka 5.jpeg', 'Absolute Vodka 6.jpeg', 399.00, 0.06, 'Friday66', '18', '5', '18', '1.1', 'Yes', '', '', '56 Wisani Street, Soshanguve', '', '1756', 'Pretoria', 'South_Africa', 'Kay Mudau', 0, 0, 0),
-(164, 2, 'Air Jordans', 'Clothing, Shoes & Accessories', 'Shoes', 'High Top Sneakers', 'Red & Black', 'Unisex', 'Medium', '99', 'Very Comfortable', 'Air Jordans.png', 'Air Jordans 1.png', 'Air Jordans 2.png', 'Air Jordans 3.png', 'Air Jordans 4.png', 'Air Jordans 5.png', 'Air Jordans 6.png', 2199.00, 0.10, 'nuuuTT78', '0', '0', '0', '0', 'No', '', '', '45 Birbeck Street, New Park', '', '8301', 'Kimberley', 'South_Africa', 'Amanda Sandla', 0, 3, 27);
+(154, 2, 'Mac Book Pro II', 'Electronics & Devices', 'Laptop', 'Mac', 'Silver', '', '', '99', 'Very Good', 'MacBook Air 13-inch.png', 'MacBook Air 13-inch top.png', 'MacBook Air 13-inch right.png', 'MacBook Air 13-inch left.png', 'MacBook Air 13-inch bottom.png', 'MacBook Air 13-inch back.png', 'MacBook Air 13-inch side.png', 51000.00, 0.13, 'Awesome33', '50', '30', '19', '1.25', 'Yes', '', '', '65 Wisani Street, Shoshanguve', '', '1645', 'Pretoria', 'South_Africa', 'Kay Mudau', 0, 0, 0),
+(156, 3, 'FURNITURE Parker Mid Back Chair Black', 'Home & Furniture', 'Office Chair', 'Chair', '', '', '', '100', 'PU/PVC combination Gas lift height adjustable Swivel and tilt mechanism Nylon base Maximum weight 120kg Assembly required Black 12 month guarantee', 'FURNITURE Parker Mid Back Chair Black.png', 'FURNITURE Parker Mid Back Chair Black 1.png', 'FURNITURE Parker Mid Back Chair Black 2.png', 'FURNITURE Parker Mid Back Chair Black 3.png', 'FURNITURE Parker Mid Back Chair Black 4.png', 'FURNITURE Parker Mid Back Chair Black 5.png', 'FURNITURE Parker Mid Back Chair Black 6.png', 1999.00, 0.00, '', '0', '0', '0', '0', 'No', '', '', '65 Wisani Street, Shoshanguve', '', '1645', 'Pretoria', 'South_Africa', 'Kay Mudau', 0, 0, 0),
+(157, 3, 'Nike Shirt', 'Clothing, Shoes & Accessories', 'Shirts', 'T-Shirt', 'Black', 'Male', '', '94', 'Original Shirt', 'Nike Shirt.png', 'Nike Shirt 1.png', 'Nike Shirt 2.png', 'Nike Shirt 3.png', 'Nike Shirt 4.png', 'Nike Shirt 5.png', 'Nike Shirt 6.png', 516.00, 0.00, '', '0', '0', '0', '0', 'No', '', '', '65 Wisani Street, Shoshanguve', '', '1645', 'Pretoria', 'South_Africa', 'Kay Mudau', 0, 0, 0),
+(159, 4, 'Absolute Vodka', 'Liquor', 'Vodka', '', '', '', '', '90', '43% Alcohol. Not for sale to persons under the age of 18.', 'Absolute Vodka.jpeg', 'Absolute Vodka 1.jpeg', 'Absolute Vodka 2.jpeg', 'Absolute Vodka 3.jpeg', 'Absolute Vodka 4.jpeg', 'Absolute Vodka 5.jpeg', 'Absolute Vodka 6.jpeg', 399.00, 0.06, 'Friday66', '18', '5', '18', '1.1', 'Yes', '', '', '56 Wisani Street, Soshanguve', '', '1756', 'Pretoria', 'South_Africa', 'Kay Mudau', 0, 0, 0),
+(164, 2, 'Air Jordans', 'Clothing, Shoes & Accessories', 'Shoes', 'High Top Sneakers', 'Red & Black', 'Unisex', 'Medium', '28', 'Very Comfortable', 'Air Jordans.png', 'Air Jordans 1.png', 'Air Jordans 2.png', 'Air Jordans 3.png', 'Air Jordans 4.png', 'Air Jordans 5.png', 'Air Jordans 6.png', 2199.00, 0.10, 'nuuuTT78', '0', '0', '0', '0', 'No', '', '', '45 Birbeck Street, New Park', '', '8301', 'Kimberley', 'South_Africa', 'Amanda Sandla', 0, 0, 0),
+(177, 1, 'Apple iPhone 15 Pro Max', 'Electronics & Devices', 'IPhone', 'Mobile', 'Black', 'Unisex', '', '19', 'Worth the money✅', 'Apple iPhone 15 Pro Max.png', 'Apple iPhone 15 Pro Max 1.png', 'Apple iPhone 15 Pro Max 2.png', 'Apple iPhone 15 Pro Max 3.png', 'Apple iPhone 15 Pro Max 4.png', 'Apple iPhone 15 Pro Max 5.png', 'Apple iPhone 15 Pro Max 6.png', 21999.00, 0.05, 'Newstuff44', '50', '24', '69', '0', 'Yes', '', '', '75 Hervanly Street, Naledi', '', '1442', 'Joburg', 'South_Africa', 'Kay Mudau', 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -256,7 +256,8 @@ INSERT INTO `productsellers` (`fldproductsellersid`, `fldproductsellersimage`, `
 (3, 'unknownimage.png', 'Njabulo', 'Moditambi', '67 Wisani Street, Tshiawelo', '', '1892', 'Johannesburg', 'South_Africa', 'njabulo@gmail.com', '0756695434', '0006436514688', '25d55ad283aa400af464c76d713c07ad'),
 (4, 'unknownimage.png', 'Awanda', 'Gumbi', '45 Birbeck Street, New Park', '', '6589', 'Kimberley', 'South_Africa', 'awanda@gmail.com', '0785549870', '0006537769877', '25d55ad283aa400af464c76d713c07ad'),
 (5, 'unknownimage.png', 'Mazuwo', 'Mudau', '21 Truter Street, Luis Trichardt', '', '3301', 'Thohoyandou', 'South_Africa', 'mazuwo@gmail.com', '0853452278', '0807186612966', '25f9e794323b453885f5181f1b624d0b'),
-(6, 'unknownimage.png', 'Londo Junior', 'Mudau', '32 Long Street, Pinetown', '', '4436', 'Durban', 'South_Africa', 'junior@gmail.com', '0764453899', '1011173345977', '25d55ad283aa400af464c76d713c07ad');
+(6, 'unknownimage.png', 'Londo Junior', 'Mudau', '32 Long Street, Pinetown', '', '4436', 'Durban', 'South_Africa', 'junior@gmail.com', '0764453899', '1011173345977', '25d55ad283aa400af464c76d713c07ad'),
+(7, 'unknownimage.png', 'Keabetswe', 'Mogodi', '66 Denlin Road, Albertynshoff', '', '1515', 'Kimberley', 'South_Africa', 'kea@gmail.com', '0670086753', '0071119662709', '25f9e794323b453885f5181f1b624d0b');
 
 -- --------------------------------------------------------
 
@@ -382,61 +383,61 @@ ALTER TABLE `admins`
 -- AUTO_INCREMENT for table `customerbillingaddress`
 --
 ALTER TABLE `customerbillingaddress`
-  MODIFY `fldbillingid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=116;
+  MODIFY `fldbillingid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=148;
 
 --
 -- AUTO_INCREMENT for table `customershippingaddress`
 --
 ALTER TABLE `customershippingaddress`
-  MODIFY `fldshippingid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=320;
+  MODIFY `fldshippingid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=337;
 
 --
 -- AUTO_INCREMENT for table `orderitems`
 --
 ALTER TABLE `orderitems`
-  MODIFY `fldorderitemid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=455;
+  MODIFY `fldorderitemid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=474;
 
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `fldorderid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=311;
+  MODIFY `fldorderid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=328;
 
 --
 -- AUTO_INCREMENT for table `payments`
 --
 ALTER TABLE `payments`
-  MODIFY `fldpaymentid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=155;
+  MODIFY `fldpaymentid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=162;
 
 --
 -- AUTO_INCREMENT for table `productreviews`
 --
 ALTER TABLE `productreviews`
-  MODIFY `fldproductreviewid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=148;
+  MODIFY `fldproductreviewid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=152;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `fldproductid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=177;
+  MODIFY `fldproductid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=178;
 
 --
 -- AUTO_INCREMENT for table `productsellers`
 --
 ALTER TABLE `productsellers`
-  MODIFY `fldproductsellersid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `fldproductsellersid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `testimonials`
 --
 ALTER TABLE `testimonials`
-  MODIFY `fldtestimonialsid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+  MODIFY `fldtestimonialsid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=148;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `flduserid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=116;
+  MODIFY `flduserid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=148;
 
 --
 -- Constraints for dumped tables
