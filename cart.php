@@ -248,7 +248,7 @@ if(empty($_SESSION['cart'])){
 								<span class="error">* <?php //echo $billing_idErr;?></span>
 							</label>
 						</div><br><br>
-						<p><b>Shipping Information, same as Billing Information?<label><input name="check_address" type="checkbox" id="check-address" value="<?php echo $check_address;?>" title="Check Address" placeholder="X"></label></b></p><br><br>
+						<p><b>Shipping Information, same as Billing Information?<label><input name="check_address" type="checkbox" id="check-address" value="<?php echo $check_address;?>" title="Same as Billing Info" placeholder="X"></label></b></p><br><br>
 						<div class="form-group">
 							<label>First Name
 								<input type="text" class="form-control" id="shippingfirstname" name="fldshippingfirstname" placeholder="Shipping First Name" required/>
