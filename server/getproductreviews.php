@@ -1,6 +1,7 @@
 <?php 
 include('connection.php');
 if(isset($_POST['productreviewbtn'])){//If Product Review Button Is Clicked
+  $productid = $_POST['fldproductid'];
 	//Check if user is logged in
 	if(isset($_SESSION['logged_in'])){
 		$userfirstname = $_SESSION['flduserfirstname'];
@@ -8,15 +9,17 @@ if(isset($_POST['productreviewbtn'])){//If Product Review Button Is Clicked
     $usercountry = $_SESSION['fldusercountry'];
 	}
 	else{
-		header('location: productreviewslogin.php?error=Sign Up or Login To Review Products');
+		header('location: productreviewslogin.php?fldproductid='.$productid.'&error=Sign Up or Login To Review Products');
 	}
 
+  //Declare Variables
+  if(isset($_POST['fldproductmostrated'])){ $productmostrated = $_POST['fldproductmostrated']; }
+  else{ $productmostrated = 0; }
   $productid = $_POST['fldproductid'];
   $userid = $_POST['flduserid'];
 	$useremail = $_SESSION['flduseremail'];
   $productreviewcomment = $_POST['fldproductreviewcomment'];
   $productreviewdate = date('Y-m-d H:i:s');
-  $productmostrated = $_POST['fldproductmostrated'];
 
   //check whether there is a user with this email or not
   $stmt = $conn->prepare("SELECT count(*) FROM users WHERE flduseremail=?");
@@ -75,6 +78,6 @@ if(isset($_POST['productreviewbtn'])){//If Product Review Button Is Clicked
 		}
   }
   else{//if no user registered with this email before
-    header('location: productreviewslogin.php?error=Sign Up or Login To Review Products');
+    header('location: productreviewslogin.php?fldproductid='.$productid.'&error=Sign Up or Login To Review Products');
   }
 }

@@ -37,7 +37,7 @@ if(isset($_GET['fldproductid'])){
   }
 }
 else if(isset($_POST['fldproductid'])){
-  $productid = $_POST['fldproductid'];
+  $_SESSION['fldproductid'] = $productid = $_POST['fldproductid'];
   if(isset($_POST['fldproductmostviewed'])){
     $productmostviewed = $_POST['fldproductmostviewed'];
   }

@@ -1,6 +1,7 @@
 <?php
 include('connection.php');
 if(isset($_POST['productreviewsloginbtn'])){
+  $productid = $_SESSION['fldproductid'];
   $productreviewsemail = $_POST['fldproductreviewsemail'];
   $productreviewspassword = md5($_POST['fldproductreviewspassword']);
 
@@ -33,16 +34,14 @@ if(isset($_POST['productreviewsloginbtn'])){
       $_SESSION['fldtestimonialsemail'] = $useremail;
       $_SESSION['fldtestimonialspassword'] = $userpassword;
 
-      //Set Product Session
-      $productid = $_SESSION['fldproductid'];
       $_SESSION['logged_in'] = true;
       header('location: ../productdetails.php?fldproductid='.$productid.'&message=Logged In Successsfully! You Can Now Submit Product Review.');
     }
     else{//Password or Email is Wrong Or not in Database
-      header('location: ../productreviewslogin.php?error=Could Not Verify Your Account!');
+      header('location: ../productreviewslogin.php?fldproductid='.$productid.'&error=Could Not Verify Your Account!');
     }
   }
   else{
-    header('location: ../productreviewslogin.php?error=Could Not Login At The Moment');
+    header('location: ../productreviewslogin.php?fldproductid='.$productid.'&error=Could Not Login At The Moment');
   }
 }
