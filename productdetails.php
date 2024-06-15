@@ -295,32 +295,34 @@ include('server/getproductdetails.php');
 							<div class="reviewcontainer">
 								<h3>Submit Review For The Product</h3>
 								<hr>
-								<form name="productreviewform" id="productreviewform" method="POST" action="productdetails.php?fldproductid=<?php echo $_GET['fldproductid'];?>&message=Updated Review Succesfully!">
-									<div class="row">
-										<div class="reviewrating">
-											<input type="radio" id="star5" name="fldproductmostrated" value="5" title="Select Rating" placeholder="0">
-											<label for="star5"></label>
-											<input type="radio" id="star4" name="fldproductmostrated" value="4" title="Select Rating" placeholder="0">
-											<label for="star4"></label>
-											<input type="radio" id="star3" name="fldproductmostrated" value="3" title="Select Rating" placeholder="0">
-											<label for="star3"></label>
-											<input type="radio" id="star2" name="fldproductmostrated" value="2" title="Select Rating" placeholder="0">
-											<label for="star2"></label>
-											<input type="radio" id="star1" name="fldproductmostrated" value="1" title="Select Rating" placeholder="0">
-											<label for="star1"></label>
+								<?php while($row = $product->fetch_assoc()) { ?>
+									<form name="productreviewform" id="productreviewform" method="POST" action="productdetails.php?fldproductid=<?php echo $row['fldproductid'];?>&message=Updated Review Succesfully!">
+										<div class="row">
+											<div class="reviewrating">
+												<input type="radio" id="star5" name="fldproductmostrated" value="5" title="Select Rating" placeholder="0">
+												<label for="star5"></label>
+												<input type="radio" id="star4" name="fldproductmostrated" value="4" title="Select Rating" placeholder="0">
+												<label for="star4"></label>
+												<input type="radio" id="star3" name="fldproductmostrated" value="3" title="Select Rating" placeholder="0">
+												<label for="star3"></label>
+												<input type="radio" id="star2" name="fldproductmostrated" value="2" title="Select Rating" placeholder="0">
+												<label for="star2"></label>
+												<input type="radio" id="star1" name="fldproductmostrated" value="1" title="Select Rating" placeholder="0">
+												<label for="star1"></label>
+											</div>
+											<div class="form-group">
+												<label>Review
+													<input type="text" class="form-control" id="productreviewinput" name="fldproductreviewcomment" placeholder="write comment here..." required/>
+												</label>
+											</div>
+											<div class="form-group">
+												<input type="hidden" name="fldproductid" value="<?php echo $row['fldproductid']; ?>"/>
+												<input type="hidden" name="flduserid" value="<?php if(isset($_SESSION['flduserid'])){echo $_SESSION['flduserid'];} ?>"/>
+												<button type="submit" name="productreviewbtn" class="btn" id="productreviewbtn" required>Submit Review..</button>
+											</div>
 										</div>
-										<div class="form-group">
-											<label>Review
-												<input type="text" class="form-control" id="productreviewinput" name="fldproductreviewcomment" placeholder="write comment here..." required/>
-											</label>
-										</div>
-										<div class="form-group">
-											<input type="hidden" name="fldproductid" value="<?php echo $_GET['fldproductid']; ?>"/>
-											<input type="hidden" name="flduserid" value="<?php if(isset($_SESSION['flduserid'])){echo $_SESSION['flduserid'];} ?>"/>
-											<button type="submit" name="productreviewbtn" class="btn" id="productreviewbtn" required>Submit Review..</button>
-										</div>
-									</div>
-								</form>
+									</form>
+								<?php } ?>
 							</div>
 							<div class="page-btn1">
 								<span class="page-item <?php if($pagenumber <= 1){ echo 'disabled';} ?>"><a class="page-link" href="<?php if($pagenumber <= 1){ echo '#';}else{ echo "productdetails.php?fldproductid=".$productid."&pagenumber=".($pagenumber - 1);} ?>">Prev</a></span>
