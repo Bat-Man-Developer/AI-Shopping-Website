@@ -2,7 +2,8 @@
 session_start();
 //if user has already logged in then take user to product details page
 if(isset($_SESSION['logged_in'])){
-  header('location: productdetails.php?fldproductid=1');
+	$productid = $_SESSION['fldproductid'];
+  header('location: productdetails.php?fldproductid='.$productid);
   exit;
 }
 include('server/getproductreviewslogin.php');
