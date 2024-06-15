@@ -14,6 +14,8 @@ include('server/getorderdetails.php');
 			<meta name="viewport" content="width=device-width, initial-scale=1.0">
 			<title>NSSA STORE</title>
 			<link rel="stylesheet" type="text/css" href="assets/styles/styledefault.css">
+			<link rel="stylesheet" type="text/css" href="assets/styles/all.css">
+			<link rel="stylesheet" type="text/css" href="assets/styles/fontawesome.css">
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -24,7 +26,7 @@ include('server/getorderdetails.php');
 		  <div class="container">
 		    <div class="navbar">
 			    <div class="logocontainer">
-				    <a href="index.php"><img class="logo" src="assets/images/newstufflogo_pic.png" alt="Snow"></a>
+				    <a href="index.php"><img class="logo" src="assets/images/newstufflogo_pic.png" alt="Snow" align="left"></a>
 			    </div>
 			    <nav>
 						<ul id="menuitems">
@@ -38,16 +40,16 @@ include('server/getorderdetails.php');
 				    </ul>
 					</nav>
 					<!---------------Wishlist Image---------------->
-					<a href="wishlist.php" id="wishlistlink"><img id="wishlistpic" class="wishlistpic" src="assets/images/wishlist_pic.png" alt="Snow"></a>
+					<a href="wishlist.php" id="wishlistlink"><img id="wishlistpic" class="wishlistpic" src="assets/images/wishlist_pic.png" alt="Snow" align="left"></a>
 					<!---------------Account Image---------------->
-					<a href="login.php" class="account_pic_link"><img id="accountpic" class="accountpic" src="assets/images/accounticon_pic.png" alt="Snow" width="30px" height="32px" align="left"></a>
+					<a href="login.php" class="account_pic_link"><img id="accountpic" class="accountpic" src="assets/images/accounticon_pic.png" alt="Snow" align="left"></a>
 					<!---------------Cart Image---------------->
-					<a href="cart.php"><img id="cart-pic" class="cartpic" src="assets/images/cartpic.png" alt="Snow">
+					<a href="cart.php"><img id="cart-pic" class="cartpic" src="assets/images/cartpic.png" alt="Snow" align="left">
 					<?php if(isset($_SESSION['totalquantity']) && $_SESSION['totalquantity'] != 0) { ?>
 						<span class="cartquantity"><?php echo $_SESSION['totalquantity']; ?></span>
 					<?php } ?></a>
 					<!-- Menu icon -->
-					<img src="assets/images/menu.png" alt="Snow" class="menu-icon" onclick="menutoggle()">
+					<img src="assets/images/menu.png" alt="Snow" class="menu-icon" onclick="menutoggle()" align="center">
 				</div>
 				<!---Search Bar--->
 				<div class="searchProductsContainer">

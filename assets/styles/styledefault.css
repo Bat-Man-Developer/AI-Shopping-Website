@@ -133,7 +133,6 @@ h4{
 }
 
 .logo{
-	align-items: left;
 	width: 150px;
   height: 90px;
   border: 2px solid #ffffff; /* Adding border around the logo */
@@ -150,7 +149,6 @@ h4{
 #wishlistpic{
 	width: 27px;
 	height: 27px;
-  align-items: left;
 }
 
 .account_pic_link{
@@ -165,7 +163,6 @@ h4{
 #cart-pic{
 	width: 30px;
 	height: 30px;
-	align-items: left;
 }
 
 .cartquantity{
@@ -178,7 +175,6 @@ h4{
 .menu-icon{
 	width: 28px;
 	margin-left: 20px;
-	align-items: center;
 	display: none;
 }
 
@@ -411,15 +407,14 @@ h4{
 	background-color: #777;
 }
 
-/*-------- website message error--------*/
-.webmessage_red{
+/*-------- website message error / success --------*/
+#webmessage_red{
 	color: red;
 	font-weight: bold;
 	text-align: center;
 }
 
-/*--------- website message success-------*/
-.webmessage_green{
+#webmessage_green{
 	color: green;
 	font-weight: bold;
 	text-align: center;
@@ -903,7 +898,7 @@ ul{
 .formcontainer{
 	background: #fff;
 	width: 30vw;
-	height: 470px;
+	height: auto;
 	text-align: center;
 	padding: 20px 0;
 	margin: auto;
@@ -992,7 +987,7 @@ form a{
 	background-color: rgb(22, 115, 255);
 }
 
-.accountinfo #ordersbtn,#logoutbtn{
+.accountinfo #editprofilebtn,#ordersbtn,#invoicesbtn,#returnsbtn,#settingsbtn,#logoutbtn{
 	color:rgb(22, 115, 255);
 	text-decoration: none;
 }

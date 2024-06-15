@@ -40,16 +40,15 @@ include('server/getpayment.php');
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NSSA Payment</title>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css">
     <link rel="stylesheet" href="assets/styles/stylepayment.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;1,200;1,300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/styles/all.css">
+		<link rel="stylesheet" type="text/css" href="assets/styles/fontawesome.css">
+    <link rel="stylesheet" type="text/css" href="assets/styles/bootstrap.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
@@ -89,7 +88,7 @@ include('server/getpayment.php');
           <p style="text-align: center; font-size: large; font-family: Georgia">Order Information</p><br>
           <?php include('server/getuserorders.php'); ?>
           <?php while($row = $userorders->fetch_assoc()) { ?>
-          <span><img src="assets/images/<?php if(isset($row['fldproductimage'])){ echo $row['fldproductimage']; }?>"></span>
+          <span><img src="assets/images/<?php if(isset($row['fldproductimage'])){ echo $row['fldproductimage']; }?>" alt="snow"></span>
           <p><span><?php if(isset($row['fldproductname'])){ echo $row['fldproductname']; }?></span></p>
           <p><span><?php if(isset($row['fldproductprice'])){ echo $row['fldproductprice']; }?></span></p>
           <p><span><?php if(isset($row['fldproductquantity'])){ echo $row['fldproductquantity']; }?></span>x</p>

@@ -9,6 +9,8 @@ include('server/getcontact.php');
 			<meta name="viewport" content="width=device-width, initial-scale=1.0">
 			<title>NSSA STORE</title>
 			<link rel="stylesheet" type="text/css" href="assets/styles/styledefault.css">
+			<link rel="stylesheet" type="text/css" href="assets/styles/all.css">
+			<link rel="stylesheet" type="text/css" href="assets/styles/fontawesome.css">
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -19,7 +21,7 @@ include('server/getcontact.php');
 		  <div class="container">
 		    <div class="navbar">
 			    <div class="logocontainer">
-				    <a href="index.php"><img class="logo" src="assets/images/newstufflogo_pic.png" alt="Snow"></a>
+				    <a href="index.php"><img class="logo" src="assets/images/newstufflogo_pic.png" alt="Snow" align="left"></a>
 			    </div>
 			    <nav>
 						<ul id="menuitems">
@@ -33,16 +35,16 @@ include('server/getcontact.php');
 				    </ul>
 					</nav>
 					<!---------------Wishlist Image---------------->
-					<a href="wishlist.php" id="wishlistlink"><img id="wishlistpic" class="wishlistpic" src="assets/images/wishlist_pic.png" alt="Snow"></a>
+					<a href="wishlist.php" id="wishlistlink"><img id="wishlistpic" class="wishlistpic" src="assets/images/wishlist_pic.png" alt="Snow" align="left"></a>
 					<!---------------Account Image---------------->
-					<a href="login.php" class="account_pic_link"><img id="accountpic" class="accountpic" src="assets/images/accounticon_pic.png" alt="Snow" width="30px" height="32px" align="left"></a>
+					<a href="login.php" class="account_pic_link"><img id="accountpic" class="accountpic" src="assets/images/accounticon_pic.png" alt="Snow" align="left"></a>
 					<!---------------Cart Image---------------->
-					<a href="cart.php"><img id="cart-pic" class="cartpic" src="assets/images/cartpic.png" alt="Snow">
+					<a href="cart.php"><img id="cart-pic" class="cartpic" src="assets/images/cartpic.png" alt="Snow" align="left">
 					<?php if(isset($_SESSION['totalquantity']) && $_SESSION['totalquantity'] != 0) { ?>
 						<span class="cartquantity"><?php echo $_SESSION['totalquantity']; ?></span>
 					<?php } ?></a>
 					<!-- Menu icon -->
-					<img src="assets/images/menu.png" alt="Snow" class="menu-icon" onclick="menutoggle()">
+					<img src="assets/images/menu.png" alt="Snow" class="menu-icon" onclick="menutoggle()" align="center">
 				</div>
 				<!---Search Bar--->
 				<div class="searchProductsContainer">
@@ -100,18 +102,18 @@ include('server/getcontact.php');
 					<iframe class="googlemaps" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" id="gmap_canvas" src="https://maps.google.com/maps?width=520&amp;height=400&amp;hl=en&amp;q=51%20Kosmos%20Avenue%20Roodepoort+(MR)&amp;t=p&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
 					</iframe>
 					<a href='https://www.easybooking.eu/'>Fetching Google Maps...</a> 
-					<script type='text/javascript' src='https://embedmaps.com/google-maps-authorization/script.js?id=5c8a8dd1d18f664e1a4704f0a64fff04109a8dd8'>
+					<script type='text/javascript' src='https://embedmaps.com/google-maps-authorization/script.js?id=5c8a8dd1d18f664e1a4704f0a64fff04109a8dd8' alt="snow">
 					</script>
 				</div>
 				<div class="contactpage">
 					<p>Send Any Queries And We Will be In Touch Soon.</p><br>
 					<form  action="contact.php" method="POST" enctype="multipart/form-data">
 						Your name:<br>
-						<input name="fldname" type="text" value="" size="30" required/><br>
+						<label><input name="fldname" type="text" value="" size="30" title="Enter Name" placeholder="Your Name" required/></label><br>
 						Your email:<br>
-						<input name="fldemail" type="text" value="" size="30" required/><br>
+						<label><input name="fldemail" type="text" value="" size="30" title="Enter Email" placeholder="Your Email" required/></label><br>
 						Your message:<br>
-						<textarea name="fldmessage" rows="7" cols="30"></textarea><br>
+						<label><textarea name="fldmessage" rows="7" cols="30" title="Enter Message" placeholder="Enter Message Here..."></textarea></label><br>
 						<input class="submitcontactformbtn" type="submit" value="Send Messsage" name="submitcontactformbtn"/>
 					</form><br><br>
 				</div>

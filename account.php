@@ -14,6 +14,8 @@ include('server/getaccount.php');
 			<meta name="viewport" content="width=device-width, initial-scale=1.0">
 			<title>NSSA STORE</title>
 			<link rel="stylesheet" type="text/css" href="assets/styles/styledefault.css">
+			<link rel="stylesheet" type="text/css" href="assets/styles/all.css">
+			<link rel="stylesheet" type="text/css" href="assets/styles/fontawesome.css">
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -24,7 +26,7 @@ include('server/getaccount.php');
 		  <div class="container">
 		    <div class="navbar">
 			    <div class="logocontainer">
-				    <a href="index.php"><img class="logo" src="assets/images/newstufflogo_pic.png" alt="Snow"></a>
+				    <a href="index.php"><img class="logo" src="assets/images/newstufflogo_pic.png" alt="Snow" align="left"></a>
 			    </div>
 			    <nav>
 						<ul id="menuitems">
@@ -38,16 +40,16 @@ include('server/getaccount.php');
 				    </ul>
 					</nav>
 					<!---------------Wishlist Image---------------->
-					<a href="wishlist.php" id="wishlistlink"><img id="wishlistpic" class="wishlistpic" src="assets/images/wishlist_pic.png" alt="Snow"></a>
+					<a href="wishlist.php" id="wishlistlink"><img id="wishlistpic" class="wishlistpic" src="assets/images/wishlist_pic.png" alt="Snow" align="left"></a>
 					<!---------------Account Image---------------->
-					<a href="login.php" class="account_pic_link"><img id="accountpic" class="accountpic" src="assets/images/accounticon_pic.png" alt="Snow" width="30px" height="32px" align="left"></a>
+					<a href="login.php" class="account_pic_link"><img id="accountpic" class="accountpic" src="assets/images/accounticon_pic.png" alt="Snow" align="left"></a>
 					<!---------------Cart Image---------------->
-					<a href="cart.php"><img id="cart-pic" class="cartpic" src="assets/images/cartpic.png" alt="Snow">
+					<a href="cart.php"><img id="cart-pic" class="cartpic" src="assets/images/cartpic.png" alt="Snow" align="left">
 					<?php if(isset($_SESSION['totalquantity']) && $_SESSION['totalquantity'] != 0) { ?>
 						<span class="cartquantity"><?php echo $_SESSION['totalquantity']; ?></span>
 					<?php } ?></a>
 					<!-- Menu icon -->
-					<img src="assets/images/menu.png" alt="Snow" class="menu-icon" onclick="menutoggle()">
+					<img src="assets/images/menu.png" alt="Snow" class="menu-icon" onclick="menutoggle()" align="center">
 				</div>
 				<!---Search Bar--->
 				<div class="searchProductsContainer">
@@ -106,11 +108,11 @@ include('server/getaccount.php');
 						<span><img style="width: 140px; height: 140px; border-radius: 50%" src="<?php if(isset($_SESSION['flduserimage'])){ echo "assets/images/".$_SESSION['flduserimage']; }else{ echo "assets/images/unknownimage.png"; }?>" alt="snow"></span>
 						<p>Name: <span><?php if(isset($_SESSION['flduserfirstname'])){ echo $_SESSION['flduserfirstname']; echo " "; if(isset($_SESSION['flduserlastname'])){ echo $_SESSION['flduserlastname']; }}?></span></p>
 						<p>Email: <span><?php if(isset($_SESSION['flduseremail'])){ echo $_SESSION['flduseremail']; }?></span></p>
-						<p><a href="editprofile.php?flduserid=<?php if(isset($_SESSION['flduserid'])){ echo $_SESSION['flduserid']; }else{ header('location: editprofile.php?error=Opps error, try again.'); } ?>" id="logoutbtn" name="editprofile">Edit Profile</a></p>
+						<p><a href="editprofile.php?flduserid=<?php if(isset($_SESSION['flduserid'])){ echo $_SESSION['flduserid']; }else{ header('location: editprofile.php?error=Opps error, try again.'); } ?>" id="editprofilebtn" name="editprofile">Edit Profile</a></p>
 						<p><a href="#orders" id="ordersbtn">Your Orders</a></p>
-						<p><a href="invoices.php?flduserid=<?php if(isset($_SESSION['flduserid'])){ echo $_SESSION['flduserid']; }else{ header('location: editprofile.php?error=Opps error, try again.'); } ?>" id="logoutbtn" name="invoices">Invoices</a></p>
-						<p><a href="returns.php?flduserid=<?php if(isset($_SESSION['flduserid'])){ echo $_SESSION['flduserid']; }else{ header('location: editprofile.php?error=Opps error, try again.'); } ?>" id="logoutbtn" name="returns">Returns</a></p>
-						<p><a href="settings.php?flduserid=<?php if(isset($_SESSION['flduserid'])){ echo $_SESSION['flduserid']; }else{ header('location: editprofile.php?error=Opps error, try again.'); } ?>" id="logoutbtn" name="settings">Settings</a></p>						
+						<p><a href="invoices.php?flduserid=<?php if(isset($_SESSION['flduserid'])){ echo $_SESSION['flduserid']; }else{ header('location: editprofile.php?error=Opps error, try again.'); } ?>" id="invoicesbtn" name="invoices">Invoices</a></p>
+						<p><a href="returns.php?flduserid=<?php if(isset($_SESSION['flduserid'])){ echo $_SESSION['flduserid']; }else{ header('location: editprofile.php?error=Opps error, try again.'); } ?>" id="returnsbtn" name="returns">Returns</a></p>
+						<p><a href="settings.php?flduserid=<?php if(isset($_SESSION['flduserid'])){ echo $_SESSION['flduserid']; }else{ header('location: editprofile.php?error=Opps error, try again.'); } ?>" id="settingsbtn" name="settings">Settings</a></p>						
 						<p><a href="account.php?logout=1" id="logoutbtn" name="logout">Logout</a></p>
 					</div>
 				</div>

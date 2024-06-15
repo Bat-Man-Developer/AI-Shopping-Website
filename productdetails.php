@@ -10,6 +10,8 @@ include('server/getproductdetails.php');
 			<meta name="viewport" content="width=device-width, initial-scale=1.0">
 			<title>NSSA STORE</title>
 			<link rel="stylesheet" type="text/css" href="assets/styles/styledefault.css">
+			<link rel="stylesheet" type="text/css" href="assets/styles/all.css">
+			<link rel="stylesheet" type="text/css" href="assets/styles/fontawesome.css">
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -20,7 +22,7 @@ include('server/getproductdetails.php');
 		  <div class="container">
 		    <div class="navbar">
 			    <div class="logocontainer">
-				    <a href="index.php"><img class="logo" src="assets/images/newstufflogo_pic.png" alt="Snow"></a>
+				    <a href="index.php"><img class="logo" src="assets/images/newstufflogo_pic.png" alt="Snow" align="left"></a>
 			    </div>
 			    <nav>
 						<ul id="menuitems">
@@ -34,20 +36,20 @@ include('server/getproductdetails.php');
 				    </ul>
 					</nav>
 					<!---------------Wishlist Image---------------->
-					<a href="wishlist.php" id="wishlistlink"><img id="wishlistpic" class="wishlistpic" src="assets/images/wishlist_pic.png" alt="Snow"></a>
+					<a href="wishlist.php" id="wishlistlink"><img id="wishlistpic" class="wishlistpic" src="assets/images/wishlist_pic.png" alt="Snow" align="left"></a>
 					<!---------------Account Image---------------->
-					<a href="login.php" class="account_pic_link"><img id="accountpic" class="accountpic" src="assets/images/accounticon_pic.png" alt="Snow" width="30px" height="32px" align="left"></a>
+					<a href="login.php" class="account_pic_link"><img id="accountpic" class="accountpic" src="assets/images/accounticon_pic.png" alt="Snow" align="left"></a>
 					<!---------------Cart Image---------------->
-					<a href="cart.php"><img id="cart-pic" class="cartpic" src="assets/images/cartpic.png" alt="Snow">
+					<a href="cart.php"><img id="cart-pic" class="cartpic" src="assets/images/cartpic.png" alt="Snow" align="left">
 					<?php if(isset($_SESSION['totalquantity']) && $_SESSION['totalquantity'] != 0) { ?>
 						<span class="cartquantity"><?php echo $_SESSION['totalquantity']; ?></span>
 					<?php } ?></a>
 					<!-- Menu icon -->
-					<img src="assets/images/menu.png" alt="Snow" class="menu-icon" onclick="menutoggle()">
+					<img src="assets/images/menu.png" alt="Snow" class="menu-icon" onclick="menutoggle()" align="center">
 				</div>
 				<!---Search Bar--->
 				<div class="searchProductsContainer">
-					<form name="searchProductsForm" method="POST" action="products.php">
+					<form name="searchProductsForm" id="searchProductsForm" method="POST" action="products.php">
 						<div class="searchProductsDiv">
 								<input type="text" id="searchInput" name="searchproductstring" placeholder="Search...">
 								<button type="submit" id="searchButton">Search</button>
@@ -178,15 +180,15 @@ include('server/getproductdetails.php');
 								<i class="fa fa-star-o"></i>
 								<i class="fa fa-star-o"></i>
 							</div>
-						<?php } ?>
+						<?php } ?><br>
 
-						<form name="productdetailsform" method="POST" action="productdetails.php">
+						<form name="productdetailsform" id="productdetailsform" method="POST" action="productdetails.php">
 							<input type="hidden" name="fldproductid" value="<?php echo $row['fldproductid']; ?>"/>
 							<input type="hidden" name="fldproductsellersid" value="<?php echo $row['fldproductsellersid']; ?>"/>
 							<input type="hidden" name="fldproductimage" value="<?php echo $row['fldproductimage']; ?>"/>
 							<input type="hidden" name="fldproductname" value="<?php echo $row['fldproductname']; ?>"/>
 							<input type="hidden" name="fldproductprice" value="<?php echo $row['fldproductprice']; ?>"/>
-							<input type="number" name="fldproductquantity" value="<?php if($row['fldproductstock']!=0){ echo "1"; }else{ echo "0"; }?>" min="<?php if($row['fldproductstock']!=0){ echo "1"; }else{ echo "0"; }?>" max="<?php echo $row['fldproductstock']; ?>"/>
+							<label><input type="number" name="fldproductquantity" value="<?php if($row['fldproductstock']!=0){ echo "1"; }else{ echo "0"; }?>" min="<?php if($row['fldproductstock']!=0){ echo "1"; }else{ echo "0"; }?>" max="<?php echo $row['fldproductstock']; ?>" title="Select Stock" placeholder="0"/></label>
 							<input type="hidden" name="fldproductdiscount" value="<?php echo $row['fldproductdiscount']; ?>"/>
 							<input type="hidden" name="fldproductstock" value="<?php echo $row['fldproductstock']; ?>"/><br>
 							<?php if($row['fldproductstock']!=0){ ?>
@@ -295,18 +297,18 @@ include('server/getproductdetails.php');
 							<div class="reviewcontainer">
 								<h3>Submit Review For The Product</h3>
 								<hr>
-								<form name="productreviewform" method="POST" action="productdetails.php?fldproductid=<?php echo $_GET['fldproductid'];?>&message=Updated Review Succesfully!">
+								<form name="productreviewform" id="productreviewform" method="POST" action="productdetails.php?fldproductid=<?php echo $_GET['fldproductid'];?>&message=Updated Review Succesfully!">
 									<div class="row">
 										<div class="reviewrating">
-											<input type="radio" id="star5" name="fldproductmostrated" value="5">
+											<input type="radio" id="star5" name="fldproductmostrated" value="5" title="Select Rating" placeholder="0">
 											<label for="star5"></label>
-											<input type="radio" id="star4" name="fldproductmostrated" value="4">
+											<input type="radio" id="star4" name="fldproductmostrated" value="4" title="Select Rating" placeholder="0">
 											<label for="star4"></label>
-											<input type="radio" id="star3" name="fldproductmostrated" value="3">
+											<input type="radio" id="star3" name="fldproductmostrated" value="3" title="Select Rating" placeholder="0">
 											<label for="star3"></label>
-											<input type="radio" id="star2" name="fldproductmostrated" value="2">
+											<input type="radio" id="star2" name="fldproductmostrated" value="2" title="Select Rating" placeholder="0">
 											<label for="star2"></label>
-											<input type="radio" id="star1" name="fldproductmostrated" value="1">
+											<input type="radio" id="star1" name="fldproductmostrated" value="1" title="Select Rating" placeholder="0">
 											<label for="star1"></label>
 										</div>
 										<div class="form-group">
@@ -361,8 +363,8 @@ include('server/getproductdetails.php');
 				<div class="col-4">
 					<div class="image-container">
 						<p class="image-text"><?php $discount = $row['fldproductdiscount']*100; if(isset($row['fldproductdiscount']) && $discount != 0){ echo $discount."% OFF"; } ?><p>
-						<a href="<?php echo "productdetails.php?fldproductid=".$row['fldproductid']."&fldproductmostviewed=1"; ?>"><img class="shop-item-image" src="assets/images/<?php echo $row['fldproductimage']; ?>" alt="Snow"></a>
-						<a href="<?php echo "productdetails.php?fldproductid=".$row['fldproductid']."&fldproductmostviewed=1"; ?>"><h4><?php echo $row['fldproductname']; ?></h4></a>
+						<a href="<?php echo "productdetails.php?fldproductid=".$row['fldproductid']."&fldproductmostviewed=1"; ?>" title="<?php echo $row['fldproductname']; ?>"><img class="shop-item-image" src="assets/images/<?php echo $row['fldproductimage']; ?>" alt="Snow"></a>
+						<a href="<?php echo "productdetails.php?fldproductid=".$row['fldproductid']."&fldproductmostviewed=1"; ?>" title="<?php echo $row['fldproductname']; ?>"><h4><?php echo $row['fldproductname']; ?></h4></a>
 						<?php if($row['fldproductmostrated'] == 0) { ?>
 							<div class="rating">
 								<i class="fa fa-star-o"></i>

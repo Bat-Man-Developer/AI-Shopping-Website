@@ -22,8 +22,8 @@ include('layouts/header.php');
 		<div class="displayallproducts">
 			<div class="image-container">
 				<p class="image-text"><?php $discount = $row['fldproductdiscount']*100; if(isset($row['fldproductdiscount']) && $discount != 0){ echo $discount."% OFF"; } ?><p>
-				<a href="<?php echo "productdetails.php?fldproductid=".$row['fldproductid']."&fldproductmostviewed=1"; ?>"><img class="shop-item-image" src="assets/images/<?php echo $row['fldproductimage']; ?>" alt="Snow"></a>
-				<a href="<?php echo "productdetails.php?fldproductid=".$row['fldproductid']."&fldproductmostviewed=1"; ?>"><h4><?php echo $row['fldproductname']; ?></h4></a>
+				<a href="<?php echo "productdetails.php?fldproductid=".$row['fldproductid']."&fldproductmostviewed=1"; ?>" title="<?php echo $row['fldproductname']; ?>"><img class="shop-item-image" src="assets/images/<?php echo $row['fldproductimage']; ?>" alt="Snow"></a>
+				<a href="<?php echo "productdetails.php?fldproductid=".$row['fldproductid']."&fldproductmostviewed=1"; ?>" title="<?php echo $row['fldproductname']; ?>"><h4><?php echo $row['fldproductname']; ?></h4></a>
 				<?php if($row['fldproductmostrated'] == 0) { ?>
 					<div class="rating">
 						<i class="fa fa-star-o"></i>

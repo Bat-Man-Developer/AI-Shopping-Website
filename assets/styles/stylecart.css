@@ -24,7 +24,6 @@
 
 .cartcustomerinfocontainer{
   position: relative;
-  background-image: url("../images/Rose background3.jpeg");
 }
 
 .cart table{
@@ -124,7 +123,7 @@
   margin: 10px;
   padding: 10px;
   margin-right: 0px;
-  width: fit-content;
+  width: auto;
   cursor: pointer;
 }
 

@@ -5,16 +5,16 @@ if(isset($_GET['fldproductid'])){
   if(isset($_GET['fldproductmostviewed'])){
     $productmostviewed = $_GET['fldproductmostviewed'];
   }
-  $stmt2 = $conn->prepare("SELECT * FROM products WHERE fldproductid=?");
-  $stmt2->bind_param("i",$productid);
-  if($stmt2->execute()){
+  $stmt = $conn->prepare("SELECT * FROM products WHERE fldproductid=?");
+  $stmt->bind_param("i",$productid);
+  if($stmt->execute()){
     // This is an array of 1 product
-    $product = $stmt2->get_result();
+    $product = $stmt->get_result();
     //Look for product most viewed value in database
-    $stmt3 = $conn->prepare("SELECT * FROM products WHERE fldproductid=?");
-    $stmt3->bind_param('i',$productid);
-    if($stmt3->execute()){
-      $mostviewedproducts = $stmt3->get_result();// This is an array
+    $stmt1 = $conn->prepare("SELECT * FROM products WHERE fldproductid=?");
+    $stmt1->bind_param('i',$productid);
+    if($stmt1->execute()){
+      $mostviewedproducts = $stmt1->get_result();// This is an array
       while($row = $mostviewedproducts->fetch_assoc()){
         $productmostviewed = $row['fldproductmostviewed'] + 1;
       }
@@ -23,9 +23,9 @@ if(isset($_GET['fldproductid'])){
       header('index.php?error=Something Went Wrong!! Contact Support Team.');
     }
     //Update product most viewed column in products table
-    $stmt4 = $conn->prepare("UPDATE products SET fldproductmostviewed=? WHERE fldproductid=?");
-    $stmt4->bind_param('ii',$productmostviewed,$productid);
-    if($stmt4->execute()){
+    $stmt2 = $conn->prepare("UPDATE products SET fldproductmostviewed=? WHERE fldproductid=?");
+    $stmt2->bind_param('ii',$productmostviewed,$productid);
+    if($stmt2->execute()){
 
     }
     else{
@@ -41,16 +41,16 @@ else if(isset($_POST['fldproductid'])){
   if(isset($_POST['fldproductmostviewed'])){
     $productmostviewed = $_POST['fldproductmostviewed'];
   }
-  $stmt2 = $conn->prepare("SELECT * FROM products WHERE fldproductid=?");
-  $stmt2->bind_param("i",$productid);
-  if($stmt2->execute()){
+  $stmt = $conn->prepare("SELECT * FROM products WHERE fldproductid=?");
+  $stmt->bind_param("i",$productid);
+  if($stmt->execute()){
     // This is an array of 1 product
-    $product = $stmt2->get_result();
+    $product = $stmt->get_result();
 
     //Update product most viewed column in products table
-    $stmt3 = $conn->prepare("UPDATE products SET fldproductmostviewed=? WHERE fldproductid=?");
-    $stmt3->bind_param('ii',$productmostviewed,$productid);
-    if($stmt3->execute()){
+    $stmt1 = $conn->prepare("UPDATE products SET fldproductmostviewed=? WHERE fldproductid=?");
+    $stmt1->bind_param('ii',$productmostviewed,$productid);
+    if($stmt1->execute()){
 
     }
     else{
@@ -76,11 +76,11 @@ else{
 }
 
 //2. return number of reviews
-$stmt = $conn->prepare("SELECT COUNT(*) AS fldtotalrecords FROM productreviews");
-if($stmt->execute()){
-  $stmt->bind_result($totalrecords);
-  $stmt->store_result();
-  $stmt->fetch();
+$stmt3 = $conn->prepare("SELECT COUNT(*) AS fldtotalrecords FROM productreviews");
+if($stmt3->execute()){
+  $stmt3->bind_result($totalrecords);
+  $stmt3->store_result();
+  $stmt3->fetch();
 }
 else{
   header('location: index.php?error=Something Went Wrong!');
@@ -95,21 +95,21 @@ $adjacents = "2";
 $totalnumberofpages = ceil($totalrecords / $totalrecordsperpage);
 
 //4. View Product Reviews
-$stmt1 = $conn->prepare("SELECT * FROM productreviews WHERE fldproductid = ? LIMIT $offset,$totalrecordsperpage");
-$stmt1->bind_param("i",$productid);
-if($stmt1->execute()){
-  $productreviews = $stmt1->get_result();// This is an array
+$stmt4 = $conn->prepare("SELECT * FROM productreviews WHERE fldproductid = ? LIMIT $offset,$totalrecordsperpage");
+$stmt4->bind_param("i",$productid);
+if($stmt4->execute()){
+  $productreviews = $stmt4->get_result();// This is an array
 }
 else{
   header('location: index.php?error=Something Went Wrong!');
 }
 
-//If Buy Button Is Clicked
+//5. If Buy Button Is Clicked
 if(isset($_POST['buynowbtn'])){
-  //1. if user has already added to cart
+  //5.1. if user has already added to cart
   if(isset($_SESSION['cart'])){
     $productsarrayids = array_column($_SESSION['cart'],"fldproductid");
-    //1.1 if product has already been added to cart or not
+    //5.1.1. if product has already been added to cart or not
     if(!in_array($_POST['fldproductid'], $productsarrayids)){
       $productid = $_POST['fldproductid'];
       $productsellersid = $_POST['fldproductsellersid'];
@@ -125,11 +125,11 @@ if(isset($_POST['buynowbtn'])){
       );
       $_SESSION['cart'][$productid] = $productarray;
     }
-    else{//1.2 product has already been added
+    else{//5.1.2 product has already been added
       echo '<script> alert("Product Was Already Added To Cart!")</script>';   
     }
   }
-  else{//2 if this is the first product
+  else{//5.2 if this is the first product
     $productid = $_POST['fldproductid'];
     $productsellersid = $_POST['fldproductsellersid'];
     $productname = $_POST['fldproductname'];
@@ -151,15 +151,15 @@ if(isset($_POST['buynowbtn'])){
     $_SESSION['cart'][$productid] = $productarray;
   }
 
-  //2.1 calculate total
+  //5.2.1 calculate total
   calculatetotalcart();
   header('location: ../cart.php?editmessage=Added To Cart Succesfully!&fldproductid='.$productid);
 }
-else if(isset($_POST['addtocartbtn'])){//If Add To Cart Button Is Clicked
-  //1. if user has already added to cart
+else if(isset($_POST['addtocartbtn'])){//6. If Add To Cart Button Is Clicked
+  //6.1. if user has already added to cart
   if(isset($_SESSION['cart'])){
     $productsarrayids = array_column($_SESSION['cart'],"fldproductid");
-    //1.1 if product has already been added to cart or not
+    //6.1.1 if product has already been added to cart or not
     if(!in_array($_POST['fldproductid'], $productsarrayids)){
       $productid = $_POST['fldproductid'];
       $productsellersid = $_POST['fldproductsellersid'];
@@ -175,11 +175,11 @@ else if(isset($_POST['addtocartbtn'])){//If Add To Cart Button Is Clicked
       );
       $_SESSION['cart'][$productid] = $productarray;
     }
-    else{//1.2 product has already been added
+    else{//6.1.2 product has already been added
       echo '<script> alert("Product Was Already Added To Cart!")</script>';
     }
   }
-  else{//2 if this is the first product
+  else{//6.2 if this is the first product
     $productid = $_POST['fldproductid'];
     $productsellersid = $_POST['fldproductsellersid'];
     $productname = $_POST['fldproductname'];
@@ -202,12 +202,12 @@ else if(isset($_POST['addtocartbtn'])){//If Add To Cart Button Is Clicked
     $_SESSION['cart'][$productid] = $productarray;
   }
 
-  //2.1 calculate total
+  //6.2.1 calculate total
   calculatetotalcart();
-
   header('location: ../productdetails.php?fldproductid='.$productid);
 }
 
+//7. Function for Calculating Total Amount in Cart
 function calculatetotalcart(){
   $totalprice = 0;
   $totalquantity = 0;

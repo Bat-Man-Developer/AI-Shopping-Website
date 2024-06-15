@@ -15,6 +15,9 @@ if(empty($_SESSION['cart'])){
 			<meta name="viewport" content="width=device-width, initial-scale=1.0">
 			<title>NSSA STORE</title>
 			<link rel="stylesheet" type="text/css" href="assets/styles/styledefault.css">
+			<link rel="stylesheet" type="text/css" href="assets/styles/stylecart.css">
+			<link rel="stylesheet" type="text/css" href="assets/styles/all.css">
+			<link rel="stylesheet" type="text/css" href="assets/styles/fontawesome.css">
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -25,7 +28,7 @@ if(empty($_SESSION['cart'])){
 		  <div class="container">
 		    <div class="navbar">
 			    <div class="logocontainer">
-				    <a href="index.php"><img class="logo" src="assets/images/newstufflogo_pic.png" alt="Snow"></a>
+				    <a href="index.php"><img class="logo" src="assets/images/newstufflogo_pic.png" alt="Snow" align="left"></a>
 			    </div>
 			    <nav>
 						<ul id="menuitems">
@@ -39,23 +42,23 @@ if(empty($_SESSION['cart'])){
 				    </ul>
 					</nav>
 					<!---------------Wishlist Image---------------->
-					<a href="wishlist.php" id="wishlistlink"><img id="wishlistpic" class="wishlistpic" src="assets/images/wishlist_pic.png" alt="Snow"></a>
+					<a href="wishlist.php" id="wishlistlink"><img id="wishlistpic" class="wishlistpic" src="assets/images/wishlist_pic.png" alt="Snow" align="left"></a>
 					<!---------------Account Image---------------->
-					<a href="login.php" class="account_pic_link"><img id="accountpic" class="accountpic" src="assets/images/accounticon_pic.png" alt="Snow" width="30px" height="32px" align="left"></a>
+					<a href="login.php" class="account_pic_link"><img id="accountpic" class="accountpic" src="assets/images/accounticon_pic.png" alt="Snow" align="left"></a>
 					<!---------------Cart Image---------------->
-					<a href="cart.php"><img id="cart-pic" class="cartpic" src="assets/images/cartpic.png" alt="Snow">
+					<a href="cart.php"><img id="cart-pic" class="cartpic" src="assets/images/cartpic.png" alt="Snow" align="left">
 					<?php if(isset($_SESSION['totalquantity']) && $_SESSION['totalquantity'] != 0) { ?>
 						<span class="cartquantity"><?php echo $_SESSION['totalquantity']; ?></span>
 					<?php } ?></a>
 					<!-- Menu icon -->
-					<img src="assets/images/menu.png" alt="Snow" class="menu-icon" onclick="menutoggle()">
+					<img src="assets/images/menu.png" alt="Snow" class="menu-icon" onclick="menutoggle()" align="center">
 				</div>
 				<!---Search Bar--->
 				<div class="searchProductsContainer">
 					<form name="searchProductsForm" method="POST" action="products.php">
 						<div class="searchProductsDiv">
 								<input type="text" id="searchInput" name="searchproductstring" placeholder="Search...">
-							tton type="submit" id="searchButton">Search</button>
+							  <button type="submit" id="searchButton">Search</button>
 								<div id="suggestionsContainer"></div>
 						</div>
 					</form>
@@ -245,7 +248,7 @@ if(empty($_SESSION['cart'])){
 								<span class="error">* <?php //echo $billing_idErr;?></span>
 							</label>
 						</div><br><br>
-						<p><b>Shipping Information, same as Billing Information?<label><input name="check_address" type="checkbox" value="" id="check-address" value="<?php echo $check_address;?>"></label></b></p><br><br>
+						<p><b>Shipping Information, same as Billing Information?<label><input name="check_address" type="checkbox" id="check-address" value="<?php echo $check_address;?>" title="Check Address" placeholder="X"></label></b></p><br><br>
 						<div class="form-group">
 							<label>First Name
 								<input type="text" class="form-control" id="shippingfirstname" name="fldshippingfirstname" placeholder="Shipping First Name" required/>
@@ -394,7 +397,7 @@ if(empty($_SESSION['cart'])){
 						<td>
 							<form method="POST" action="cart.php">
 								<input type="hidden" name="fldproductid" value="<?php echo $value['fldproductid']; ?>"/>
-								<input type="number" name="fldproductquantity" class="productquantity" value="<?php echo $value['fldproductquantity']; ?>" min="1" max="<?php echo $value['fldproductstock']; ?>"/>
+								<label><input type="number" name="fldproductquantity" class="productquantity" value="<?php echo $value['fldproductquantity']; ?>" min="1" max="<?php echo $value['fldproductstock']; ?>" title="Edit Quantity" placeholder="1"/></label>
 								<input type="submit" name="editquantitybtn" class="editbtn" value="edit"/>
 							</form>
 						</td>
@@ -426,7 +429,7 @@ if(empty($_SESSION['cart'])){
 								<td style="color: rgb(46, 131, 187)">+ R
 									<input type="hidden" id="standardcourierchecked" value="100"/>
 									<input type="hidden" id="overnightcourierchecked" value="180"/>
-									<input id="fldcouriercost" value="100" style="color: rgb(46, 131, 187); font-size: medium"/>
+									<label><input id="fldcouriercost" value="100" style="color: rgb(46, 131, 187); font-size: medium" title="Courier Cost" placeholder="100"/></label>
 								</td>
 							</form>
 						</tr>
