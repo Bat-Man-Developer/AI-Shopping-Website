@@ -400,7 +400,7 @@ if(empty($_SESSION['cart'])){
 							</form>
 						</td>
 						<td>
-							<span class="productsubtotal">R<?php echo $value['fldproductquantity'] * $value['fldproductprice']; ?></span>
+							<span class="productsubtotal">R<?php $discount = $value['fldproductprice']-($value['fldproductdiscount']*$value['fldproductprice']); echo $value['fldproductquantity']*$discount ?></span>
 						</td>
 					</tr>
 					<?php } ?>
