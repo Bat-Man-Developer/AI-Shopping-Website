@@ -886,8 +886,13 @@ ul{
 	width: 50%;
 }
 
-#buynowbtn{
-	width: 50%
+#addtowishlistbtn{
+	width: 50%;
+	background-color: rgb(250, 85, 85);
+}
+
+#addtowishlistbtn:hover{
+	background-color: rgb(172, 53, 53);
 }
 
 /*----------login-page------------*/

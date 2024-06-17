@@ -1,11 +1,10 @@
 <?php
 session_start();
-//if user is not logged in then take user to login page
-if(!isset($_SESSION['logged_in'])){
-  header('location: testimonialslogin.php');
-  exit;
+include('server/getwishlist.php');
+if(empty($_SESSION['wishlistcart'])){
+	header('location: index.php?error=Oops.. Wishlist Bag Is Empty');
+	exit;
 }
-include('server/gettestimonials.php');
 ?>
 <!DOCTYPE html>
 	<html lang="en">
@@ -14,6 +13,7 @@ include('server/gettestimonials.php');
 			<meta name="viewport" content="width=device-width, initial-scale=1.0">
 			<title>NSSA STORE</title>
 			<link rel="stylesheet" type="text/css" href="assets/styles/styledefault.css">
+			<link rel="stylesheet" type="text/css" href="assets/styles/stylecart.css">
 			<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css">
     	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -52,7 +52,7 @@ include('server/gettestimonials.php');
 					<form name="searchProductsForm" method="POST" action="products.php">
 						<div class="searchProductsDiv">
 								<input type="text" id="searchInput" name="searchproductstring" placeholder="Search...">
-								<button type="submit" id="searchButton">Search</button>
+							  <button type="submit" id="searchButton">Search</button>
 								<div id="suggestionsContainer"></div>
 						</div>
 					</form>
@@ -91,68 +91,58 @@ include('server/gettestimonials.php');
         </div>
 			</div>
 		</div>
-		<!--------- Testimonials-page ------------>
-    <section class="my-5 py-5" id="account-page">
-    	<div class="container my-5 py-3">
-        <div class="text-center mt-3 pt-5 col-lg-6 col-md-12 col-sm-12">
-				  <p class="text-center" style="color: green"><?php if(isset($_GET['testimonialsmessage'])){ echo $_GET['testimonialsmessage']; }?></p>
-					<p class="text-center" style="color: red"><?php if(isset($_GET['errormessage'])){ echo $_GET['errormessage']; }?></p>
-        </div>
-			</div>
-
-      <!--------- Display User Comments --------->
-      <div id="testimonials" class="testimonials container my-5 py-3">
-        <div class="container mt-2">
-          <h2 class="font-weight-bold text-center" style="color: grey">Testimonials & Suggestions...</h2>
-          <hr class="mx-auto">
-        </div>
-        <table class="row">
-          <tr>
-            <th>Name</th>
-            <th>Status</th>
-            <th>Comments</th>
-            <th>Comments Date</th>
-          </tr>
-
-          <?php while($row = $testimonials->fetch_assoc()) { ?>
-
-          <tr>
-            <td>
-              <span><?php echo $row['fldtestimonialsemail']; ?></span>
-            </td>
-            <td>
-              <span>Member</span>
-            </td>
-            <td>
-              <span><?php echo $row['fldtestimonialscomment']; ?></span>
-            </td>
-            <td>
-              <span><?php echo $row['fldtestimonialsdate']; ?></span>
-            </td>
-          </tr>
-
-          <?php }?>
-
-        </table>
-        <div id="testimonialsbottomspace"></div>
+		<!--------- Wishlist Items Details ------------>
+		<section class="cart container my-5 py-5">
+      <div class="container mt-5">
+        <h2 class="fontweightbold">Wishlist</h2>
+        <hr>
       </div>
-    </section>
+      <!------------- Website Messages----------->
+      <p style="color: red; font-weight: bold; text-align: center" class="text-center"><?php if(isset($_GET['error'])){ echo $_GET['error']; }?></p>
+      <p style="color: green" class="text-center"><?php if(isset($_GET['message'])){ echo $_GET['message']; }?></p>
+			<div class="cartinfo">
+				<table class="mt-5 pt-5">
+					<tr>
+						<th>Product</th>
+						<th>Price</th>
+						<th>Purchase</th>
+					</tr> 
 
-    <div class="row">
-      <form id="testimonialsform" method="POST" action="testimonials.php">
-        <div class="form-group">
-          <label>Comments
-            <input type="text" class="form-control" id="testimonialscomment" name="fldtestimonialscomment" placeholder="write comment here..." required/>
-          </label>
-        </div>
-        <div class="form-group">
-          <button type="submit" name="testimonialscommentbtn" id="testimonialscommentbtn" class="btn" style="background-color: grey" required>Submit Comment..</button>
-        </div>
-      </form>
-    </div>
-  </body>
-</html>
-<!------ Js for Toggle Menu ----->
-<script src="js/getheadertogglemenu.js"></script>
-<!------ Js for Voice Recognition Output ----->
-<script src="js/getvoicerecognitionoutput.js"></script>
+					<?php if(isset($_SESSION['wishlistcart'])) { ?>
+					<?php foreach($_SESSION['wishlistcart'] as $key => $value) { ?>
+					
+					<tr>
+						<td>
+							<div class="productinfo">
+								<img id="wine-pic1" src="assets/images/<?php echo $value['fldproductimage']; ?>" alt="Snow">
+								<div>
+									<p class="productname"><?php echo $value['fldproductname']; ?></p>
+									<small class="productprice"><?php echo $value['fldproductprice']; ?></small>
+									<br>
+									<form method="POST" action="wishlist.php">
+										<input type="hidden" name="fldproductid" class="removebutton" value="<?php echo $value['fldproductid']; ?>"/>
+										<input type="submit" name="removeproductbtn" class="removebutton" value="remove"/>
+									</form>
+								</div>
+							</div>
+						</td>
+						<td>
+							<span class="productsubtotal">R<?php $discount = $value['fldproductprice']-($value['fldproductdiscount']*$value['fldproductprice']); echo $discount; ?></span>
+						</td>
+						<td>
+							<div>
+								<form method="POST" action="wishlist.php">
+									<input type="hidden" name="fldproductid" value="<?php echo $value['fldproductid']; ?>"/>
+									<input type="submit" name="gotoproductbtn" class="btn" id="gotoproductbtn" value="view product"/>
+								</form>
+							</div>
+						</td>
+					</tr>
+					<?php } ?>
+					<?php } ?>
+				</table>
+			</div>
+		</section>
+<?php
+include('layouts/footer.php');
+?>

@@ -34,14 +34,12 @@ include('server/getproductdetails.php');
 				    </ul>
 					</nav>
 					<!---------------Wishlist Image---------------->
-					<a href="wishlist.php" id="wishlistlink"><img id="wishlistpic" class="wishlistpic" src="assets/images/wishlist_pic.png" alt="Snow" align="left"></a>
+					<a href="wishlist.php" id="wishlistlink"><img id="wishlistpic" class="wishlistpic" src="assets/images/wishlist_pic.png" alt="Snow" align="left"><?php if(isset($_SESSION['wishlisttotalitems']) && $_SESSION['wishlisttotalitems'] != 0) { ?><span class="cartquantity"><?php echo $_SESSION['wishlisttotalitems']; } ?></span></a>
 					<!---------------Account Image---------------->
 					<a href="login.php" class="account_pic_link"><img id="accountpic" class="accountpic" src="assets/images/accounticon_pic.png" alt="Snow" align="left"></a>
 					<!---------------Cart Image---------------->
 					<a href="cart.php"><img id="cart-pic" class="cartpic" src="assets/images/cartpic.png" alt="Snow" align="left">
-					<?php if(isset($_SESSION['totalquantity']) && $_SESSION['totalquantity'] != 0) { ?>
-						<span class="cartquantity"><?php echo $_SESSION['totalquantity']; ?></span>
-					<?php } ?></a>
+					<?php if(isset($_SESSION['totalquantity']) && $_SESSION['totalquantity'] != 0) { ?><span class="cartquantity"><?php echo $_SESSION['totalquantity']; } ?></span></a>
 					<!-- Menu icon -->
 					<img src="assets/images/menu.png" alt="Snow" class="menu-icon" onclick="menutoggle()" align="center">
 				</div>
@@ -93,7 +91,7 @@ include('server/getproductdetails.php');
 		<div class="small-container">
 			<!------------- Website Messages----------->
 			<p style="color: red; font-weight: bold; text-align: center" class="text-center"><?php if(isset($_GET['error'])){ echo $_GET['error']; }?></p>
-			<p style="color: green" class="text-center"><?php if(isset($_GET['message'])){ echo $_GET['message']; }?></p>
+			<p style="color: green" class="text-center"><?php if(isset($_GET['message'])){ echo $_GET['message']; }?></p><br><br>
 			<!-------------Product Details ----------->
 			<div class="row">
 				<?php while($row = $product->fetch_assoc()) { ?>
@@ -190,8 +188,8 @@ include('server/getproductdetails.php');
 							<input type="hidden" name="fldproductdiscount" value="<?php echo $row['fldproductdiscount']; ?>"/>
 							<input type="hidden" name="fldproductstock" value="<?php echo $row['fldproductstock']; ?>"/><br>
 							<?php if($row['fldproductstock']!=0){ ?>
+								<button type="submit" name="addtowishlistbtn" class="btn btn-primary shop-item-button" id="addtowishlistbtn">Wishlist</button>
 								<button type="submit" name="addtocartbtn" class="btn btn-primary shop-item-button" id="addtocartbtn">Add To Cart</button><br>
-								<button type="submit" name="buynowbtn" class="btn btn-primary shop-item-button" id="buynowbtn">Buy Now</button>
 							<?php } ?>
 
 							<h3>Product Details <i class="fa fa-indent"></i></h3><br>

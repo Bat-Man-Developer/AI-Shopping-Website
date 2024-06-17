@@ -76,12 +76,59 @@ else{// no product id was given
   header('location: index.php?error=Something Went Wrong!');
 }
 
-//3. If Add To Cart Button Is Clicked
-if(isset($_POST['addtocartbtn'])){
-  //3.1. if user has already added to cart
+if(isset($_POST['addtowishlistbtn'])){//3. If Add to Wishlist Button Is Clicked
+  //3.1. if user has already added to wishlist cart
+  if(isset($_SESSION['wishlistcart'])){
+    $productsarrayids = array_column($_SESSION['wishlistcart'],"fldproductid");
+    //3.1.1. if product has already been added to wishlist cart or not
+    if(!in_array($_POST['fldproductid'], $productsarrayids)){
+      $productid = $_POST['fldproductid'];
+      $productsellersid = $_POST['fldproductsellersid'];
+      $productarray = array(
+        'fldproductid' => $_POST['fldproductid'],
+        'fldproductsellersid' => $_POST['fldproductsellersid'],
+        'fldproductname' => $_POST['fldproductname'],
+        'fldproductprice' => $_POST['fldproductprice'],
+        'fldproductimage' => $_POST['fldproductimage'],
+        'fldproductquantity' => $_POST['fldproductquantity'],
+        'fldproductdiscount' => $_POST['fldproductdiscount'],
+        'fldproductstock' => $_POST['fldproductstock'],
+      );
+      $_SESSION['wishlistcart'][$productid] = $productarray;
+    }
+    else{//3.1.2 product has already been added
+      echo '<script> alert("Product Was Already Added To Wishlist!")</script>';   
+    }
+  }
+  else{//3.2 if this is the first product
+    $productid = $_POST['fldproductid'];
+    $productsellersid = $_POST['fldproductsellersid'];
+    $productname = $_POST['fldproductname'];
+    $productprice = $_POST['fldproductprice'];
+    $productimage = $_POST['fldproductimage'];
+    $productquantity = $_POST['fldproductquantity'];
+    $productdiscount = $_POST['fldproductdiscount'];
+    $productstock = $_POST['fldproductstock'];
+    $productarray = array(
+      'fldproductid' => $productid,
+      'fldproductsellersid' => $productsellersid,
+      'fldproductname' => $productname,
+      'fldproductprice' => $productprice,
+      'fldproductimage' => $productimage,
+      'fldproductquantity' => $productquantity,
+      'fldproductdiscount' => $productdiscount,
+      'fldproductstock' => $productstock,
+    );
+    $_SESSION['wishlistcart'][$productid] = $productarray;
+  }
+  $_SESSION['wishlisttotalitems'] = count($_SESSION['wishlistcart']);
+  header('location: ../productdetails.php?fldproductid='.$productid.'&message=Added To Wishlist Succesfully!');
+}
+else if(isset($_POST['addtocartbtn'])){//4. If Add To Cart Button Is Clicked
+  //4.1. if user has already added to cart
   if(isset($_SESSION['cart'])){
     $productsarrayids = array_column($_SESSION['cart'],'fldproductid');
-    //3.1.1 if product has already been added to cart or not
+    //4.1.1 if product has already been added to cart or not
     if(!in_array($_POST['fldproductid'], $productsarrayids)){
       $productid = $_POST['fldproductid'];
       $productsellersid = $_POST['fldproductsellersid'];
@@ -97,11 +144,11 @@ if(isset($_POST['addtocartbtn'])){
       );
       $_SESSION['cart'][$productid] = $productarray;
     }
-    else{//3.1.2 product has already been added
+    else{//4.1.2 product has already been added
       echo '<script> alert("Product Was Already Added To Cart!")</script>';
     }
   }
-  else{//3.2 if this is the first product
+  else{//4.2 if this is the first product
     $productid = $_POST['fldproductid'];
     $productsellersid = $_POST['fldproductsellersid'];
     $productname = $_POST['fldproductname'];
@@ -121,61 +168,11 @@ if(isset($_POST['addtocartbtn'])){
       'fldproductdiscount' => $productdiscount,
       'fldproductstock' => $productstock,
     );
-    //$_SESSION['cart'][$productid] = $productarray;
-  }
-  //3.2.1 calculate total
-  calculatetotalcart();
-  header('location: ../productdetails.php?fldproductid='.$productid);
-}
-else if(isset($_POST['buynowbtn'])){//4. If Buy Button Is Clicked
-  //4.1. if user has already added to cart
-  if(isset($_SESSION['cart'])){
-    $productsarrayids = array_column($_SESSION['cart'],"fldproductid");
-    //4.1.1. if product has already been added to cart or not
-    if(!in_array($_POST['fldproductid'], $productsarrayids)){
-      $productid = $_POST['fldproductid'];
-      $productsellersid = $_POST['fldproductsellersid'];
-      $productarray = array(
-        'fldproductid' => $_POST['fldproductid'],
-        'fldproductsellersid' => $_POST['fldproductsellersid'],
-        'fldproductname' => $_POST['fldproductname'],
-        'fldproductprice' => $_POST['fldproductprice'],
-        'fldproductimage' => $_POST['fldproductimage'],
-        'fldproductquantity' => $_POST['fldproductquantity'],
-        'fldproductdiscount' => $_POST['fldproductdiscount'],
-        'fldproductstock' => $_POST['fldproductstock'],
-      );
-      $_SESSION['cart'][$productid] = $productarray;
-    }
-    else{//4.1.2 product has already been added
-      echo '<script> alert("Product Was Already Added To Cart!")</script>';   
-    }
-  }
-  else{//4.2 if this is the first product
-    $productid = $_POST['fldproductid'];
-    $productsellersid = $_POST['fldproductsellersid'];
-    $productname = $_POST['fldproductname'];
-    $productprice = $_POST['fldproductprice'];
-    $productimage = $_POST['fldproductimage'];
-    $productquantity = $_POST['fldproductquantity'];
-    $productdiscount = $_POST['fldproductdiscount'];
-    $productstock = $_POST['fldproductstock'];
-    $productarray = array(
-      'fldproductid' => $productid,
-      'fldproductsellersid' => $productsellersid,
-      'fldproductname' => $productname,
-      'fldproductprice' => $productprice,
-      'fldproductimage' => $productimage,
-      'fldproductquantity' => $productquantity,
-      'fldproductdiscount' => $productdiscount,
-      'fldproductstock' => $productstock,
-    );
     $_SESSION['cart'][$productid] = $productarray;
   }
-
   //4.2.1 calculate total
   calculatetotalcart();
-  header('location: ../cart.php?editmessage=Added To Cart Succesfully!&fldproductid='.$productid);
+  header('location: ../productdetails.php?fldproductid='.$productid.'&message=Added To Cart Successfully!');
 }
 
 //5. Function for Calculating Total Amount in Cart
