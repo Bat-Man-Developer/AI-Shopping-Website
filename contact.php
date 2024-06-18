@@ -1,4 +1,4 @@
-<di?php
+<?php
 session_start();
 include('server/getcontact.php');
 ?>
