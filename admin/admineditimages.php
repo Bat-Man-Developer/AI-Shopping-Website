@@ -71,7 +71,8 @@ include('adminserver/getadmineditimages.php');
                   </div>
                   <div class="form-group">
                     <?php while($row = $product->fetch_assoc()) { ?>
-                      <input type="hidden" name="fldproductname" value="<?php if(isset($row['fldproductname'])){ echo $row['fldproductname']; }else{ header('location: ../admin/adminaddproducts.php?errormessage=Error Occured, Try Again.'); }?>"/>
+                      <input type="hidden" name="fldproductname" value="<?php if(isset($row['fldproductname'])){ echo $row['fldproductname']; }else{ header('location: ../admin/adminproducts.php?errormessage=Error Occured, Try Again.'); }?>"/>
+                      <input type="hidden" name="fldproductid" value="<?php if(isset($row['fldproductid'])){ echo $row['fldproductid']; }else{ header('location: ../admin/adminproducts.php?errormessage=Error Occured, Try Again.'); }?>"/>
                       <input class="btn" id="admineditbtn" name="admineditimagesbtn" type="submit" value="Update" style="width: 270px;" required/>
                       <a id="helpurl" href="Help.php"><br>Need Help?</a>
                     <?php } ?>

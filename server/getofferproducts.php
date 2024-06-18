@@ -1,8 +1,6 @@
 <?php
 include('connection.php');
-$productid = "9";
-$stmt = $conn->prepare("SELECT * FROM products WHERE fldproductid = ?");
-$stmt->bind_param('i',$productid);
+$stmt = $conn->prepare("SELECT * FROM products ORDER BY fldproductid DESC LIMIT 1");
 if($stmt->execute()){
   $offerproducts = $stmt->get_result();// This is an array
 }

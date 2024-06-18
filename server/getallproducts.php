@@ -1,7 +1,7 @@
 <?php
 include('connection.php');
 //Search section by category or type
-if(isset($_POST['search']) && isset($_POST['department'])){
+if(isset($_POST['searchproductstring'])){
   //1.determine page number
   if(isset($_GET['pagenumber']) && $_GET['pagenumber'] != ""){
     //if user has already entered page then page number is the one that they selected
@@ -12,12 +12,13 @@ if(isset($_POST['search']) && isset($_POST['department'])){
     $pagenumber = 1;
   }
 
-  //Department Stored In Variable
-  $department = $_POST['department'];
+  //Search Products String Stored In Variable
+  $searchproductstring = $_POST['searchproductstring'];
 
   //2. return number of products
-  $stmt = $conn->prepare("SELECT COUNT(*) AS fldtotalrecords FROM products WHERE fldproductdepartment = ?");
-  $stmt->bind_param("s",$department);
+  // Prepare SQL query with placeholders to prevent SQL injection
+  $stmt = $conn->prepare("SELECT COUNT(*) AS fldtotalrecords FROM products WHERE fldproductname=?");
+  $stmt->bind_param("s",$searchproductstring);
   if($stmt->execute()){
     $stmt->bind_result($totalrecords);
     $stmt->store_result();
@@ -36,11 +37,10 @@ if(isset($_POST['search']) && isset($_POST['department'])){
   $totalnumberofpages = ceil($totalrecords / $totalrecordsperpage);
 
   //4. get all products
-  $stmt1 = $conn->prepare("SELECT * FROM products WHERE fldproductdepartment = ? LIMIT $offset,$totalrecordsperpage");
-  $stmt1->bind_param("s",$department);
+  $stmt1 = $conn->prepare("SELECT * FROM products WHERE fldproductname=? LIMIT $offset,$totalrecordsperpage");
+  $stmt1->bind_param("s",$searchproductstring);
   $stmt1->execute();
   $allproducts = $stmt1->get_result();// This is an array
-
 }
 else{// return all products
 
@@ -74,7 +74,7 @@ else{// return all products
   $totalnumberofpages = ceil($totalrecords / $totalrecordsperpage);
 
   //4. get all products
-  $stmt1 = $conn->prepare("SELECT * FROM products LIMIT $offset,$totalrecordsperpage");
+  $stmt1 = $conn->prepare("SELECT * FROM products ORDER BY fldproductid DESC LIMIT $offset,$totalrecordsperpage");
   if($stmt1->execute()){
     $allproducts = $stmt1->get_result();
   }

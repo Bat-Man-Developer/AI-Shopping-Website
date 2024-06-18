@@ -33,45 +33,45 @@ if(isset($_POST['admineditimagesbtn'])){
   $check6 = getimagesize($productimage6);
 
   // Check image file sizes
-  if($_FILES["fldproductimage"]["size"] > 500000 && $_FILES["fldproductimage1"]["size"] > 500000 && $_FILES["fldproductimage2"]["size"] > 500000 && $_FILES["fldproductimage3"]["size"] > 500000 && $_FILES["fldproductimage4"]["size"] > 500000 && $_FILES["fldproductimage5"]["size"] > 500000 && $_FILES["fldproductimage6"]["size"] > 500000){
+  if($_FILES["fldproductimage"]["size"] > 10000000 && $_FILES["fldproductimage1"]["size"] > 10000000 && $_FILES["fldproductimage2"]["size"] > 10000000 && $_FILES["fldproductimage3"]["size"] > 10000000 && $_FILES["fldproductimage4"]["size"] > 10000000 && $_FILES["fldproductimage5"]["size"] > 10000000 && $_FILES["fldproductimage6"]["size"] > 10000000){
     $uploadOk = 0;
-    header('location: ../admin/admineditimages.php?editmessage=Error Occured, Your File Is Too Large.');
+    header('location: ../admin/admineditimages.php?errormessage=Error Occured, Your File Is Too Large.');
   }
   // Allow certain file formats
   if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
   && $imageFileType != "gif"){
     $uploadOk = 0;
-    header('location: ../admin/admineditimages.php?editmessage=Error Occured, Only JPG, JPEG, PNG & GIF Files Are Allowed.');
+    header('location: ../admin/admineditimages.php?errormessage=Error Occured, Only JPG, JPEG, PNG & GIF Files Are Allowed.');
   }
   else if($imageFileType1 != "jpg" && $imageFileType1 != "png" && $imageFileType1 != "jpeg"
   && $imageFileType1 != "gif"){
     $uploadOk = 0;
-    header('location: ../admin/admineditimages.php?editmessage=Error Occured, Only JPG, JPEG, PNG & GIF Files Are Allowed.');
+    header('location: ../admin/admineditimages.php?errormessage=Error Occured, Only JPG, JPEG, PNG & GIF Files Are Allowed.');
   }
   else if($imageFileType2 != "jpg" && $imageFileType2 != "png" && $imageFileType2 != "jpeg"
   && $imageFileType2 != "gif"){
     $uploadOk = 0;
-    header('location: ../admin/admineditimages.php?editmessage=Error Occured, Only JPG, JPEG, PNG & GIF Files Are Allowed.');
+    header('location: ../admin/admineditimages.php?errormessage=Error Occured, Only JPG, JPEG, PNG & GIF Files Are Allowed.');
   }
   else if($imageFileType3 != "jpg" && $imageFileType3 != "png" && $imageFileType3 != "jpeg"
   && $imageFileType3 != "gif"){
     $uploadOk = 0;
-    header('location: ../admin/admineditimages.php?editmessage=Error Occured, Only JPG, JPEG, PNG & GIF Files Are Allowed.');
+    header('location: ../admin/admineditimages.php?errormessage=Error Occured, Only JPG, JPEG, PNG & GIF Files Are Allowed.');
   }
   else if($imageFileType4 != "jpg" && $imageFileType4 != "png" && $imageFileType4 != "jpeg"
   && $imageFileType4 != "gif"){
     $uploadOk = 0;
-    header('location: ../admin/admineditimages.php?editmessage=Error Occured, Only JPG, JPEG, PNG & GIF Files Are Allowed.');
+    header('location: ../admin/admineditimages.php?errormessage=Error Occured, Only JPG, JPEG, PNG & GIF Files Are Allowed.');
   }
   else if($imageFileType5 != "jpg" && $imageFileType5 != "png" && $imageFileType5 != "jpeg"
   && $imageFileType5 != "gif"){
     $uploadOk = 0;
-    header('location: ../admin/admineditimages.php?editmessage=Error Occured, Only JPG, JPEG, PNG & GIF Files Are Allowed.');
+    header('location: ../admin/admineditimages.php?errormessage=Error Occured, Only JPG, JPEG, PNG & GIF Files Are Allowed.');
   }
   else if($imageFileType6 != "jpg" && $imageFileType6 != "png" && $imageFileType6 != "jpeg"
   && $imageFileType6 != "gif"){
     $uploadOk = 0;
-    header('location: ../admin/admineditimages.php?editmessage=Error Occured, Only JPG, JPEG, PNG & GIF Files Are Allowed.');
+    header('location: ../admin/admineditimages.php?errormessage=Error Occured, Only JPG, JPEG, PNG & GIF Files Are Allowed.');
   }
   else if($imageFileType == "jpg" && $imageFileType1 == "jpg" && $imageFileType2 == "jpg" && $imageFileType3 == "jpg" && $imageFileType4 == "jpg" && $imageFileType5 == "jpg" && $imageFileType6 == "jpg"){
     //Image Names
@@ -142,7 +142,7 @@ if(isset($_POST['admineditimagesbtn'])){
   // Check if file already exists
   if(file_exists($target_file || $target_file1 || $target_file2 || $target_file3 || $target_file4 || $target_file5 || $target_file6)){
     $uploadOk = 0;
-    header('location: ../admin/admineditimages.php?editmessage=Error Occured, File Already Exists.');
+    header('location: ../admin/admineditimages.php?errormessage=Error Occured, File Already Exists.');
   }
   
   // Check if $uploadOk is set to 0 by an error
@@ -187,6 +187,8 @@ if(isset($_POST['admineditimagesbtn'])){
       header('location: ../admin/admineditimages.php?errormessage=Image Upload Failed, Try Again.');
     }
   }
+
+  $productid = $_POST['fldproductid'];
 
   //Update Product Images
   $stmt = $conn->prepare("UPDATE products SET fldproductimage=?, fldproductimage1=?, fldproductimage2=?, fldproductimage3=?, fldproductimage4=?, fldproductimage5=?, fldproductimage6=? WHERE fldproductid=?");

@@ -25,15 +25,18 @@ include('adminserver/getadminaddproducts.php');
               <div class="adminaddproductstable">
                 <form id="adminaddproductsform" enctype="multipart/form-data" method="POST" action="adminaddproducts.php" style="text-align: center;">
                   <p style="color: red;"><?php if(isset($_GET['error'])){ echo $_GET['error'];} ?></p>
+                  <h1 class="admintitle" id="admintitle">Product Details</h1><br>
                   <div class="form-group">
                     <label>Product Name
                       <input type="text" class="form-control" name="fldproductname" placeholder="Product Name" required/>
                     </label>
                   </div>
+                  <div>
+                  </div>
                   <div class="form-group">
                     <label>Product Department
                       <select class="form-select" required name="fldproductdepartment">
-                        <option value="">no selction...</option>
+                        <option value="">no selection...</option>
                         <option value="Automotive">Automotive</option>
                         <option value="DIY">DIY</option>
                         <option value="Baby, Toddler & Kids">Baby, Toddler & Kids</option>
@@ -75,31 +78,31 @@ include('adminserver/getadminaddproducts.php');
                   <div class="form-group">
                     <p id="form-optional">[optional]</p>
                     <label>Product Gender
-                      <select class="form-select" required name="fldproductgender">
-                        <option value="">no selction...</option>
+                      <select class="form-select" name="fldproductgender">
+                        <option value="">no selection...</option>
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
-                        <option value="Other">Other</option>
+                        <option value="Unisex">Unisex</option>
                       </select>
                     </label>
                   </div>
                   <div class="form-group">
                     <p id="form-optional">[optional]</p>
                     <label>Product Size
-                      <select class="form-select" required name="fldproductsize">
-                        <option value="">no selction...</option>
-                        <option value="Male">X-Small</option>
-                        <option value="Male">Small</option>
-                        <option value="Female">Medium</option>
-                        <option value="Other">Large</option>
-                        <option value="Male">X-Large</option>
+                      <select class="form-select" name="fldproductsize">
+                        <option value="">no selection...</option>
+                        <option value="X-Small">X-Small</option>
+                        <option value="Small">Small</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Large">Large</option>
+                        <option value="X-Large">X-Large</option>
                       </select>
                     </label>
                   </div>
                   <div class="form-group">
                     <label>Product Stock
                       <select class="form-select" required name="fldproductstock">
-                        <option value="">no selction...</option>
+                        <option value="">no selection...</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -181,17 +184,104 @@ include('adminserver/getadminaddproducts.php');
                   <div class="form-group">
                     <p id="form-optional">[optional]</p>
                     <label>Product Discount
-                      <input type="number" class="form-control" name="fldproductdiscount" placeholder="Product Discount"/>
+                      <input type="number" class="form-control" name="fldproductdiscount" placeholder="Product Discount (50%)" min="0" max="100"/>
                     </label>
                   </div>
                   <div class="form-group">
                     <p id="form-optional">[optional]</p>
                     <label>Product Discount Code
-                      <input type="number" class="form-control" name="fldproductdiscountcode" placeholder="Product Discount Code"/>
+                      <input type="text" class="form-control" name="fldproductdiscountcode" placeholder="Product Discount Code"/>
+                    </label>
+                  </div><br><br>
+                  <h1 class="admintitle" id="admintitle">Product Specifications</h1><br>
+                  <div class="form-group">
+                    <label>Product Length
+                      <input type="number" class="form-control" name="fldproductlength" placeholder="Product Length (mm)" required/>
                     </label>
                   </div>
                   <div class="form-group">
-                    <input class="btn" id="admineditbtn" name="adminaddproductsbtn" type="submit" value="Edit" style="width: 270px;" required/>
+                    <label>Product Width
+                      <input type="number" class="form-control" name="fldproductwidth" placeholder="Product Width (mm)" required/>
+                    </label>
+                  </div>
+                  <div class="form-group">
+                    <label>Product Height
+                      <input type="number" class="form-control" name="fldproductheight" placeholder="Product Height (mm)" required/>
+                    </label>
+                  </div>
+                  <div class="form-group">
+                    <label>Product Weight
+                      <input type="number" class="form-control" name="fldproductweight" placeholder="Product Weight (kg)" required/>
+                    </label>
+                  </div>
+                  <div class="form-group">
+                    <label>Product Fragile
+                      <select class="form-select" required name="fldproductfragile">
+                        <option value="">no selection...</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                      </select>
+                    </label>
+                  </div>
+                  <div class="form-group">
+                    <p id="form-optional">[optional]</p>
+                    <label>Product Special Handling Requirements
+                      <input type="text" class="form-control" name="fldproductspecialhandlingreq" placeholder="Temp control for perishable goods, hazardous materials, or sensitive electronic components, etc."/>
+                    </label>
+                  </div>
+                  <div class="form-group">
+                    <p id="form-optional">[optional]</p>
+                    <label>Product Insurance Requirements
+                      <input type="text" class="form-control" name="fldproductinsurancereq" placeholder="Product being shipped is valuable or requires insurance coverage"/>
+                    </label>
+                  </div><br><br>
+                  <h1 class="admintitle" id="admintitle">Product Collect-Deliver Details</h1><br>
+                  <div class="form-group">
+                    <label>Product Address Line 1
+                      <input type="text" class="form-control" name="fldproductaddressline1" placeholder="Product Address Line 1" required/>
+                    </label>
+                  </div>
+                  <div class="form-group">
+                    <p id="form-optional">[optional]</p>
+                    <label>Product Address Line 2
+                      <input type="text" class="form-control" name="fldproductaddressline2" placeholder="Product Address Line 2"/>
+                    </label>
+                  </div>
+                  <div class="form-group">
+                    <label>Product Postal Code
+                      <input type="number" class="form-control" name="fldproductpostalcode" placeholder="Product Postal Code" required/>
+                    </label>
+                  </div>
+                  <div class="form-group">
+                    <label>Product City
+                      <input type="text" class="form-control" name="fldproductcity" placeholder="Product City" required/>
+                    </label>
+                  </div>
+                  <div class="form-group">
+                    <label>Product Country
+                      <select class="form-select" name="fldproductcountry" required>
+                        <option value="">no selection...</option>
+                        <option value="Australia">Australia</option>
+                        <option value="Britain">Britain</option>
+                        <option value="China">China</option>
+                        <option value="Egypt">Egypt</option>
+                        <option value="England">England</option>
+                        <option value="France">France</option>
+                        <option value="Germany">Germany</option>
+                        <option value="Italy">Italy</option>
+                        <option value="Mauritius">Mauritius</option>
+                        <option value="Mexico">Mexico</option>
+                        <option value="Nigeria">Nigeria</option>
+                        <option value="Portugal">Portugal</option>
+                        <option value="Russia">Russia</option>  
+                        <option value="South_Africa">South Africa</option>
+                        <option value="Thailand">Thailand</option>
+                        <option value="USA">USA</option>
+                      </select>
+                    </label>
+                  </div>
+                  <div class="form-group">
+                    <input class="btn" id="admineditbtn" name="adminaddproductsbtn" type="submit" value="Add" style="width: 270px;" required/>
                     <a id="helpurl" href="Help.php"><br>Need Help?</a>
                   </div>
                 </form>

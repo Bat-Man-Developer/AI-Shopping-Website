@@ -17,6 +17,7 @@ if(isset($_POST['adminloginbtn'])){
       $_SESSION['fldadminposition'] = $adminposition;
       $_SESSION['fldadmindepartment'] = $admindepartment;
       $_SESSION['fldadminemail'] = $adminemail;
+      $_SESSION['fldproductowner'] = "Newstuffsa";
       $_SESSION['adminlogged_in'] = true;
 
       header('location: ../admin/dashboard.php?loginmessage=Logged In Successfully');

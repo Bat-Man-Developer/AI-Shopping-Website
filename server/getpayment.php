@@ -30,15 +30,81 @@ if(isset($_GET['fldtransactionid'])){
       header('cart.php?error=Something Went Wrong!! Contact Support Team.');
     }
 
-    //Check For Matching Order Id In Customer Shipping Address Table
-    $stmt2 = $conn->prepare("SELECT fldshippingid,fldorderid,fldshippingfirstname,fldshippinglastname,fldshippingaddressline1,fldshippingaddressline2,fldshippingpostalcode,fldshippingcity,fldshippingcountry,fldshippingemail,fldshippingphonenumber,fldshippingdeliverycomment FROM customershippingaddress WHERE fldorderid = ? LIMIT 1");
+    //View Order Items Matching Order Id
+    $stmt2 = $conn->prepare("SELECT * FROM orderitems WHERE fldorderid=?");
     $stmt2->bind_param('i',$orderid);
     if($stmt2->execute()){
-      $stmt2->bind_result($shippingid,$orderid,$shippingfirstname,$shippinglastname,$shippingaddressline1,$shippingaddressline2,$shippingpostalcode,$shippingcity,$shippingcountry,$shippingemail,$shippingphonenumber,$shippingdeliverycomment);
-      $stmt2->store_result();
+      $orderitems = $stmt2->get_result();
+    }
+    else{
+      header('cart.php?error=Something Went Wrong!! Contact Support Team.');
+    }
+
+    //Get Order items As Rows
+    foreach($orderitems as $product){
+      $productid = $product['fldproductid'];
+      unset($_SESSION['cart'][$productid]);
+      calculatetotalcart();
+      //View Products Matching Product Id
+      $stmt3 = $conn->prepare("SELECT * FROM products WHERE fldproductid=?");
+      $stmt3->bind_param('i',$productid);
+      if($stmt3->execute()){
+        $productdetails = $stmt3->get_result();
+      }
+      else{
+        header('cart.php?error=Something Went Wrong!! Contact Support Team.');
+      }
+
+      //Get matching products from database
+      foreach($productdetails as $row){
+        $productstock = $row['fldproductstock'];
+      }
+      $productquantity = $product['fldproductquantity'];
+      $productstock = $productstock-$productquantity;
+      
+      //Update Product Stock by Subtracting the Quantity Sold
+      $stmt4 = $conn->prepare("UPDATE products SET fldproductstock=? WHERE fldproductid=?");
+      $stmt4->bind_param('si',$productstock,$productid);
+      if($stmt4->execute()){
+
+      }
+      else{
+        header('cart.php?error=Something Went Wrong!! Contact Support Team.');
+      }
+      //Look for product most sold value in database
+      $stmt5 = $conn->prepare("SELECT * FROM products WHERE fldproductid=?");
+      $stmt5->bind_param('i',$productid);
+      if($stmt5->execute()){
+        $mostsoldproducts = $stmt5->get_result();// This is an array
+        while($row = $mostsoldproducts->fetch_assoc()){
+          $productmostsold = $row['fldproductmostsold'];
+          $productmostsold = $productmostsold + $productquantity;
+        }
+      }
+      else{
+        header('cart.php?error=Something Went Wrong!! Contact Support Team.');
+      }
+  
+      //Update product most sold column in products table
+      $stmt6 = $conn->prepare("UPDATE products SET fldproductmostsold=? WHERE fldproductid=?");
+      $stmt6->bind_param('ii',$productmostsold,$productid);
+      if($stmt6->execute()){
+
+      }
+      else{
+        header('cart.php?error=Something Went Wrong!! Contact Support Team.');
+      }
+    }
+
+    //Check For Matching Order Id In Customer Shipping Address Table
+    $stmt7 = $conn->prepare("SELECT fldshippingid,fldorderid,fldshippingfirstname,fldshippinglastname,fldshippingaddressline1,fldshippingaddressline2,fldshippingpostalcode,fldshippingcity,fldshippingcountry,fldshippingemail,fldshippingphonenumber,fldshippingdeliverycomment FROM customershippingaddress WHERE fldorderid = ? LIMIT 1");
+    $stmt7->bind_param('i',$orderid);
+    if($stmt7->execute()){
+      $stmt7->bind_result($shippingid,$orderid,$shippingfirstname,$shippinglastname,$shippingaddressline1,$shippingaddressline2,$shippingpostalcode,$shippingcity,$shippingcountry,$shippingemail,$shippingphonenumber,$shippingdeliverycomment);
+      $stmt7->store_result();
       //If Order Id Is Found In Customer Shipping Address Table
-      if($stmt2->num_rows() == 1){
-        $stmt2->fetch();
+      if($stmt7->num_rows() == 1){
+        $stmt7->fetch();
         //Set Shipping Session
         $_SESSION['fldshippingid'] = $shippingid;
         $_SESSION['fldshippingfirstname'] = $shippingfirstname;
@@ -60,10 +126,7 @@ if(isset($_GET['fldtransactionid'])){
       header('index.php?error=Something Went Wrong!! Contact Support Team.');
     }
 
-    //Remove everything from cart -> Delay until Payment is done
-    unset($_SESSION['cart']);
-    unset($_SESSION['total']);
-    unset($_SESSION['totalquantity']);
+    //Remove everything from cart -> After Payment is done
     unset($_SESSION['checkoutbtn']);
     unset($_SESSION['fldorderid']);
     unset($_SESSION['fldorderstatus']);
@@ -78,4 +141,24 @@ if(isset($_GET['fldtransactionid'])){
   else{
     header('location: ../cart.php?error=Something Went Wrong!! Contact Support Team. No Order Id Detected 404');
   }
+}
+
+function calculatetotalcart(){
+  $totalprice = 0;
+  $totalquantity = 0;
+
+  foreach($_SESSION['cart'] as $key => $value){
+    $product = $_SESSION['cart'][$key];
+
+    $price = $product['fldproductprice'];
+    $quantity = $product['fldproductquantity'];
+    $discount = $product['fldproductdiscount'];
+    
+    $totalprice = $totalprice+($price*$quantity)-($price*$quantity*$discount);
+    $totalquantity = $totalquantity + $quantity; 
+
+  }
+  //Store Information in Session
+  $_SESSION['total'] = $totalprice;
+  $_SESSION['totalquantity'] = $totalquantity;
 }

@@ -8,7 +8,7 @@ if(!isset($_SESSION['adminlogged_in'])){
 include('adminserver/getadmindeleteproducts.php');
 ?>
   <body>
-    <!--------- Admin-Edit Product-Page ------------>
+    <!--------- Admin-Delete-Product-Page ------------>
     <section class="dashboard">
       <div class="dashboardcontainer" id="dashboardcontainer">
         <div class="text-center mt-3 pt-5 col-lg-6 col-md-12 col-sm-12">
@@ -20,8 +20,8 @@ include('adminserver/getadmindeleteproducts.php');
                 <img src="<?php echo "../../assets/images/". $product['fldproductimage']; ?>">
                 <p><?php echo $product['fldproductname']; ?></p>
                 <p>R<?php echo $product['fldproductprice']; ?></p>
-                <p><?php echo $product['fldproductdescription']; ?></p>
-                <p><?php echo $product['fldproductspecialoffer']; ?></p>
+                <p><?php echo $product['fldproductdepartment']; ?></p>
+                <p><?php echo $product['fldproductcategory']; ?></p>
                 <p><?php echo $product['fldproducttype']; ?></p>
                 <div class="admindeleteproductstable">
                   <p>Are You Sure You Want To Delete The Product. Changes Made Cannot Be Undone.</p>

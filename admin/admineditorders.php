@@ -63,7 +63,25 @@ include('adminserver/getadmineditorders.php');
                   </div>
                   <div class="form-group">
                     <label>Shipping Country
-                      <input type="text" class="form-control" name="fldshippingcountry" value="<?php echo $order['fldshippingcountry']; ?>" required/>
+                      <select class="form-select" name="fldshippingcountry" required>
+                        <option value="<?php echo $order['fldshippingcountry']; ?>"><?php echo $order['fldshippingcountry']; ?></option>
+                        <option value="Australia">Australia</option>
+                        <option value="Britain">Britain</option>
+                        <option value="China">China</option>
+                        <option value="Egypt">Egypt</option>
+                        <option value="England">England</option>
+                        <option value="France">France</option>
+                        <option value="Germany">Germany</option>
+                        <option value="Italy">Italy</option>
+                        <option value="Mauritius">Mauritius</option>
+                        <option value="Mexico">Mexico</option>
+                        <option value="Nigeria">Nigeria</option>
+                        <option value="Portugal">Portugal</option>
+                        <option value="Russia">Russia</option>  
+                        <option value="South_Africa">South Africa</option>
+                        <option value="Thailand">Thailand</option>
+                        <option value="USA">USA</option>
+                      </select>
                     </label>
                   </div>
                   <div class="form-group">

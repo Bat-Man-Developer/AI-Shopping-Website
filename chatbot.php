@@ -6,14 +6,14 @@ include('layouts/header.php');
 <!------------- Website Messages----------->
 <p style="color: red; font-weight: bold; text-align: center" class="text-center"><?php if(isset($_GET['error'])){ echo $_GET['error']; }?></p>
 <p style="color: green" class="text-center"><?php if(isset($_GET['message'])){ echo $_GET['message']; }?></p>
-
 <!---------Contact-Page--------->
 <section>
   <h1>Chatbot</h1>
   <div id="chat-container">
-      <div id="chat-log"></div>
-      <input type="text" id="user-input" placeholder="Type hello for menu..." autofocus />
-      <button id="send-btn">Send</button>
+      <div id="chat-log"></div><br>
+      Hello How May I Assist You?<br>Type hello for menu<br><br>Type number (1,2,3,4,5) for chatbot response.<br><br>
+      <input type="text" id="user-input" placeholder="Type hello for menu..." autofocus /><br><br>
+      <button class="btn" id="chatbotbtn">Send</button>
   </div>
 
   <script>

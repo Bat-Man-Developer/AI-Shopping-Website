@@ -23,18 +23,18 @@ if(isset($_POST['resetpasswordbtn'])){
       $stmt->fetch();
     }
     else{
-      header('index.php?error=Something Went Wrong!! Contact Support Team.');
+      header('login.php?error=Something Went Wrong!! Contact Support Team.');
     }
 
     //3.1.1 if there is a user already registered with this email
     if($num_rows != 0){
       $stmt1 = $conn->prepare("UPDATE users SET flduserpassword=? WHERE flduseremail=?");
-      $stmt1->bind_param('ss',md5($userpassword),$useremail);
+      $stmt1->bind_param('ss',$userpassword,$useremail);
       if($stmt1->execute()){
         header('location: ../login.php?message=Password Has Been Reset Succesfully. Login To Account!');
       }
       else{
-        header('cart.php?error=Something Went Wrong!! Contact Support Team.');
+        header('login.php?error=Something Went Wrong!! Contact Support Team.');
       }
     }
     else{//3.1.2 if no user registered with this email before
