@@ -5,6 +5,22 @@
   box-sizing: border-box;
   font-family: 'Ubuntu', sans-serif;
 }
+/*------buttons design-------*/
+.btn{
+	width: auto;
+	display: inline-block;
+	background: rgb(0, 104, 189);
+	color: #fff;
+	padding: 8px 15px;
+	margin: 30px 0;
+	border: double;
+	border-radius: 30px;
+	transition: background 0.5s;
+	cursor: pointer;
+}
+.btn:hover{
+	background: rgb(26, 63, 94);
+}
 .width30 {
   width: 30%;
 }
@@ -24,7 +40,6 @@
 
 .cartcustomerinfocontainer{
   position: relative;
-  background-image: url("../images/Rose background3.jpeg");
 }
 
 .cart table{
@@ -77,6 +92,15 @@
   font-size: 12px;
 }
 
+.cart .removebutton{
+  color: rgb(51, 112, 243);
+  text-decoration: none;
+  font-size: 14px;
+  background-color: white;
+  border: none;
+  width: 100%;
+}
+
 .cart .editbtn{
   color: rgb(51, 112, 243);
   text-decoration: none;
@@ -85,12 +109,8 @@
   border: none;
 }
 
-.cart .removebutton{
-  color: rgb(51, 112, 243);
-  text-decoration: none;
+#gotoproductbtn{
   font-size: 14px;
-  background-color: white;
-  border: none;
   width: 100%;
 }
 
@@ -124,7 +144,7 @@
   margin: 10px;
   padding: 10px;
   margin-right: 0px;
-  width: fit-content;
+  width: auto;
   cursor: pointer;
 }
 
