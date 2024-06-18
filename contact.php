@@ -2,190 +2,182 @@
 session_start();
 include('server/getcontact.php');
 ?>
-<!DOCTYPE html>
-
 <style>	
-		.center-heading{
-			text-align: center;
-			color: skyblue	;
-			font-weight: bold;
-			border-radius: 50%;
-			border: 3px solid lightblue;
-			padding: 10px;
-			display: inline-block;
-			margin: 0 auto;
-			margin-bottom: 20px;
-			display: table;
-			font-size: 24px;
-		}
+	.center-heading{
+		text-align: center;
+		color: skyblue	;
+		font-weight: bold;
+		border-radius: 50%;
+		border: 3px solid lightblue;
+		padding: 10px;
+		display: inline-block;
+		margin: 0 auto;
+		margin-bottom: 20px;
+		display: table;
+		font-size: 24px;
+	}
 
-        /* CSS styles for the sections */
-        .section-container {
-            display: flex; /* Use flexbox */
-        }
+	/* CSS styles for the sections */
+	.section-container {
+		display: flex; /* Use flexbox */
+	}
 
-        .section {
-            flex: 1; /* Each section takes equal space */
-            border: 5px solid white; /* Light brown border color */
-            border-radius: 15px;
-			padding: 5px; /* Add some padding inside the sections */
-			background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)), url("assets/images/SellersMarket.jpg"); /*path to your image file */
-			background-size: contain;
-			text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-			width: 450px;
-			height: 450px;
-        }
+	.section {
+		flex: 1; /* Each section takes equal space */
+		border: 5px solid white; /* Light brown border color */
+		border-radius: 15px;
+		padding: 5px; /* Add some padding inside the sections */
+		background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)), url("assets/images/SellersMarket.jpg"); /*path to your image file */
+		background-size: contain;
+		text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+		width: 450px;
+		height: 450px;
+	}
 
-        .section h2 {
-            font-size: 24px; /* Set the font size to 12 pixels */
-            font-family: Georgia, serif; /* Set the font family to Georgia */
-			color: gray;
-			text-align: center;
-			background-color: skyblue;
-			border-width: 50px;
-			border-radius: 40px;
-        }
+	.section h2 {
+		font-size: 24px; /* Set the font size to 12 pixels */
+		font-family: Georgia, serif; /* Set the font family to Georgia */
+		color: gray;
+		text-align: center;
+		background-color: skyblue;
+		border-width: 50px;
+		border-radius: 40px;
+	}
 
-		.section h4 {
-            font-size: 14px; /* Set the font size to 12 pixels */
-            font-family: Georgia, serif; /* Set the font family to Georgia */
-			color: gray;
-			text-align: center;
-			background-color: lightblue;
-        }
+	.section h4 {
+		font-size: 14px; /* Set the font size to 12 pixels */
+		font-family: Georgia, serif; /* Set the font family to Georgia */
+		color: gray;
+		text-align: center;
+		background-color: lightblue;
+	}
 
-		.section p {
-            font-size: 13px; /* Set the font size to 11 pixels */
-            font-family: Georgia, serif; /* Set the font family to Georgia */
-			color: gray;
-			margin-bottom: 10px;	
-			text-align: center;
-			margin-top: 10px;	
-        }
+	.section p {
+		font-size: 13px; /* Set the font size to 11 pixels */
+		font-family: Georgia, serif; /* Set the font family to Georgia */
+		color: gray;
+		margin-bottom: 10px;	
+		text-align: center;
+		margin-top: 10px;	
+	}
 
-		.section p1 {
-            font-size: 14px; /* Set the font size to 11 pixels */
-            font-family: Georgia, serif; /* Set the font family to Georgia */
-			color: gray;
-			margin-bottom: 10px;	
-			text-align: center;
-			margin-top: 10px;	
-        }
+	.section p1 {
+		font-size: 14px; /* Set the font size to 11 pixels */
+		font-family: Georgia, serif; /* Set the font family to Georgia */
+		color: gray;
+		margin-bottom: 10px;	
+		text-align: center;
+		margin-top: 10px;	
+	}
 
-		/* CSS styles for hyperlinks */
-		a {
-            color: darkblue; /* Dark red color for hyperlinks */
-            text-decoration: none; /* Underline the hyperlinks */
-			border: 1px;
-        }
+	/* CSS styles for hyperlinks */
+	a {
+		color: darkblue; /* Dark red color for hyperlinks */
+		text-decoration: none; /* Underline the hyperlinks */
+		border: 1px;
+	}
 
-        a:hover {
-			background-color: #f2f2f2;
-      		padding: 5px 10px;
-      		text-decoration: none;
-            color: orange; /* Darker red color on hover */
-        }
-	
-	
-		.contactform {
-      		max-width: 800px;
-      		margin: 0 auto;
-      		padding: 20px;
-            border: 5px solid brown; /* Light brown border color */
-            border-radius: 15px;
-			padding: 5px; /* Add some padding inside the sections */
-			background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), url("assets/images/QuestionMark.jpeg"); /*path to your image file */
-			background-size: 100%;
-			background-repeat: repeat; /* Ensure the image is not repeated */
-			text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-      		border-radius: 20px;
-			background-color:#e0e0e0;
-    	}
-		.contactform input, contactform textarea {
-      		width: 100%;
-      		padding: 12px;
-      		border: 1px solid #ccc;
-      		border-radius: 4px;
-      		box-sizing: border-box;
-      		margin-top: 6px;
-      		margin-bottom: 16px;
-      		resize: vertical;
-			font-size: 18px; /* Set the font size to 12 pixels */
-            font-family: Georgia, serif; /* Set the font family to Georgia */
-			font-weight:bold;
-			color:red;
-			background-color:brown;
-		}
-		.contactform textarea{
-			height: 400px;
-			width: 700px;
-			border: 10px solid brown;
-			border-radius: 5px;
-			padding: 10px;
-			border-color:lightblue;
-			border: skyblue;
-			background-color: #f2f2f2;
-			color:lightblue;
-			font-weight:bold;
-			font-size:18px;
-		}
+	a:hover {
+		background-color: #f2f2f2;
+		padding: 5px 10px;
+		text-decoration: none;
+		color: orange; /* Darker red color on hover */
+	}
 
-		.contactform textarea[type=message]{
-			height: 400px;
-			width: 700px;
-			border: 10px;
-			border-radius: 50px;
-			border-color:lightblue;
-			border: skyblue;
-			background-color: black;
-			color:lightblue;
-			font-weight:bold;
-			font-size:18px;
-		}
+	.contactform {
+		max-width: 800px;
+		margin: 0 auto;
+		padding: 20px;
+		border: 5px solid brown; /* Light brown border color */
+		border-radius: 15px;
+		padding: 5px; /* Add some padding inside the sections */
+		background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), url("assets/images/QuestionMark.jpeg"); /*path to your image file */
+		background-size: 100%;
+		background-repeat: repeat; /* Ensure the image is not repeated */
+		text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+		border-radius: 20px;
+		background-color:#e0e0e0;
+	}
+	.contactform input, contactform textarea {
+		width: 100%;
+		padding: 12px;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+		box-sizing: border-box;
+		margin-top: 6px;
+		margin-bottom: 16px;
+		resize: vertical;
+		font-size: 18px; /* Set the font size to 12 pixels */
+		font-family: Georgia, serif; /* Set the font family to Georgia */
+		font-weight:bold;
+		color:red;
+		background-color:brown;
+	}
+	.contactform textarea{
+		height: 400px;
+		width: 700px;
+		border: 10px solid brown;
+		border-radius: 5px;
+		padding: 10px;
+		border-color:lightblue;
+		border: skyblue;
+		background-color: #f2f2f2;
+		color:lightblue;
+		font-weight:bold;
+		font-size:18px;
+	}
 
-		.contactform label{
-			font-family: Georgia, serif; /* Set the font family to Georgia */
-			border: 5px;
-			font-weight:bold;
-			color:gray;
-		}
-		.contactform input[type=text]{
-			margin-top: 3px;
-			background-color: #f2f2f2;
-			font-family: Georgia, serif; /* Set the font family to Georgia */
-			border: 5px;
-			font-weight:bold;
-			color:lightblue;
-			width:400px;
-		}
-		.contactform input[type=email]{
-			background-color: #f2f2f2;
-			font-family: Georgia, serif; /* Set the font family to Georgia */
-			border: 5px;
-			font-weight:bold;
-			color:lightblue;
-			width:400px;
-		}
+	.contactform textarea[type=message]{
+		height: 400px;
+		width: 700px;
+		border: 10px;
+		border-radius: 50px;
+		border-color:lightblue;
+		border: skyblue;
+		background-color: black;
+		color:lightblue;
+		font-weight:bold;
+		font-size:18px;
+	}
 
-	    .contactform input[type=submit] {
-    		background-color: #f2f2f2;
-    		color: orange;
-			width: 200px;	
-      		padding: 12px 20px;
-      		border: 5px;
-      		border-radius: 4px;
-      		cursor: pointer;
-		}
+	.contactform label{
+		font-family: Georgia, serif; /* Set the font family to Georgia */
+		border: 5px;
+		font-weight:bold;
+		color:gray;
+	}
+	.contactform input[type=text]{
+		margin-top: 3px;
+		background-color: #f2f2f2;
+		font-family: Georgia, serif; /* Set the font family to Georgia */
+		border: 5px;
+		font-weight:bold;
+		color:lightblue;
+		width:400px;
+	}
+	.contactform input[type=email]{
+		background-color: #f2f2f2;
+		font-family: Georgia, serif; /* Set the font family to Georgia */
+		border: 5px;
+		font-weight:bold;
+		color:lightblue;
+		width:400px;
+	}
 
-	    .contactform input[type=submit]:hover {
-      		background-color: white;
-		}
+	.contactform input[type=submit] {
+		background-color: #f2f2f2;
+		color: orange;
+		width: 200px;	
+		padding: 12px 20px;
+		border: 5px;
+		border-radius: 4px;
+		cursor: pointer;
+	}
 
-
-
-    </style>
-
-
+	.contactform input[type=submit]:hover {
+		background-color: white;
+	}
+</style>
 
 <!DOCTYPE html>
 	<html lang="en">
