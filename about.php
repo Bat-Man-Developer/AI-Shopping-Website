@@ -26,51 +26,60 @@ include('layouts/header.php');
   </div>
   <div class="backimage" style="height: fit-content">
     <div class="categories">
-      <h3 class="title">OUR TEAM MEMBERS</h3>
+        <h3 class="title">OUR TEAM MEMBERS</h3>
 	    <div class="container"> 
 		    <div class="row">
-					<div class="exe">
-						<img class="exeimg" src="assets/images/" alt="snow">
-						<p>Owner / Founder</p>
-					</div>
-					<div class="exe">
-						<img class="exeimg" src="assets/images/" alt="snow">
-						<p>Chief Executive Officer</p>
-					</div>
-					<div class="exe">
-						<img class="exeimg" src="assets/images/" alt="snow">
-						<p>Secretary General</p>
-					</div>
-					<div class="exe">
-						<img class="exeimg" src="assets/images/" alt="snow">
-						<p>Treasurer</p>
-					</div>
-					<div class="exe">
-						<img class="exeimg" src="assets/images/" alt="snow">
-						<p>Lead Customer Support</p>
-					</div>
-					<div class="exe">
-						<img class="exeimg" src="assets/images/" alt="snow">
-						<p>Legal & Policy Officer</p>
-					</div>
-					<div class="exe">
-						<img class="exeimg" src="assets/images/" alt="snow">
-						<p>Product Manager</p>
-					</div>
-					<div class="exe">
-						<img class="exeimg" src="assets/images/" alt="snow">
-						<p>Logistic Operations Manager</p>
-					</div>
-					<div class="exe">
-						<img class="exeimg" src="assets/images/" alt="snow">
-						<p>Lead Marketing Coordinator</p>
-					</div>
-					<div class="exe">
-						<img class="exeimg" src="assets/images/" alt="snow">
-						<p>Diversity and Inclusion Officer</p>
-					</div>
+				<div class="exe">
+				<img class="exeimg" src="assets/images/" alt="snow">
+				<p>Owner / Founder</p>
+				</div>
+
+				<div class="exe">
+				<img class="exeimg" src="assets/images/" alt="snow">
+				<p>Chief Executive Officer</p>
+				</div>
+
+				<div class="exe">
+				<img class="exeimg" src="assets/images/" alt="snow">
+				<p>Secretary General</p>
+				</div>
+
+				<div class="exe">
+				<img class="exeimg" src="assets/images/" alt="snow">
+				<p>Treasurer</p>
+				</div>
+
+				<div class="exe">
+				<img class="exeimg" src="assets/images/" alt="snow">
+				<p>Lead Customer Support</p>
+				</div>
+
+				<div class="exe">
+				<img class="exeimg" src="assets/images/" alt="snow">
+				<p>Legal & Policy Officer</p>
+				</div>
+
+				<div class="exe">
+				<img class="exeimg" src="assets/images/" alt="snow">
+				<p>Product Manager</p>
+				</div>
+
+				<div class="exe">
+				<img class="exeimg" src="assets/images/" alt="snow">
+				<p>Logistic Operations Manager</p>
+				</div>
+
+				<div class="exe">
+				<img class="exeimg" src="assets/images/" alt="snow">
+				<p>Lead Marketing Coordinator</p>
+				</div>
+
+				<div class="exe">
+				<img class="exeimg" src="assets/images/" alt="snow">
+				<p>Diversity and Inclusion Officer</p>
 				</div>
 			</div>
+		</div>
     </div>
   </div>
 </section>

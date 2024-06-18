@@ -8,7 +8,6 @@ if(isset($_GET['adminlogout'])){
     unset($_SESSION['fldadminname']);
     unset($_SESSION['fldadminposition']);
     unset($_SESSION['fldadmindepartment']);
-    unset($_SESSION['fldproductowner']);
     header('location: adminlogin.php');
     exit;
   }

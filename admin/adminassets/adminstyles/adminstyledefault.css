@@ -21,12 +21,6 @@
 		max-width: 50%;
 	}
 
-	#refreshbtn{
-		display: block;
-		margin: auto;
-		max-width: 20%;
-	}
-
 	.btn{
 		display: inline-block;
 		background: rgb(18, 58, 190);
@@ -466,32 +460,6 @@
   .chartcontainer{
     margin-bottom: 20px;
   }
-
-/*----------Admin Local Network Traffic Page--------*/
-	.adminlocalnetworktraffictable{
-		font-family: 'Courier New'; 
-		font-size: 10px;
-		font-style: normal;
-		width: 100%;
-		text-align: center;
-	}
-
-	.adminlocalnetworktraffictitle{
-		text-align: center;
-		font-size: medium;
-	}
-
-/*----------Admin IDS Page--------*/
-	.adminidstable{
-		font-family: 'Courier New'; 
-		font-size: small;
-		font-style: normal;
-		width: 100%;
-	}
-
-	.adminidstitle{
-		text-align: center;
-	}
 
 /*----------Help--------*/
 	#contact-page span{
@@ -1003,11 +971,6 @@
 
 	.adminaddproductstablecontainer label{
 		width: 80px;
-	}
-
-/*----------Admin Local Network Traffic Page--------*/
-	.adminlocalnetworktraffictable{ 
-		font-size: 6px;
 	}
 }
 
@@ -1589,11 +1552,6 @@
 
 	.adminaddproductstablecontainer label{
 		width: 80px;
-	}
-
-/*----------Admin Local Network Traffic Page--------*/
-	.adminlocalnetworktraffictable{ 
-		font-size: 4px;
 	}
 }
 

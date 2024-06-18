@@ -50,7 +50,7 @@ include('adminserver/getadminlogout.php');
                     <td><?php echo $product['fldproducttype']; ?></td>
                     <td><?php echo $product['fldproductstock']; ?></td>
                     <td><?php echo $product['fldproductprice']; ?></td>
-                    <td><?php echo $product['fldproductdiscount']*100; ?>%</td>
+                    <td><?php echo $product['fldproductdiscount']; ?>%</td>
                     <td><a class="btn btn-primary" href="<?php echo "admineditimages.php?fldproductid=".$product['fldproductid']."&fldproductname=".$product['fldproductname'];?>">Edit Images</a></td>
 
                     <td><a class="btn btn-primary" href="admineditproducts.php?fldproductid=<?php echo $product['fldproductid']; ?>">Edit</a></td>

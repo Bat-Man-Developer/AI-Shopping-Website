@@ -44,7 +44,6 @@ if(isset($_POST['checkoutbtn'])){
 	$_SESSION['fldorderdate'] = $orderdate = date('Y-m-d H:i:s');
 	$_SESSION['checkoutbtn'] = $_POST['checkoutbtn'];
 	$_SESSION['flddiscountcode'] = $discountcode = $_POST['flddiscountcode'];
-	
 	if(isset($_POST['couriertype'])){
 		$_SESSION['fldcouriercost'] = $couriercost = $_POST['couriertype'];
 	}
@@ -99,32 +98,26 @@ if(isset($_POST['checkoutbtn'])){
 			VALUES (?,?,?,?,?,?,?,?,?,?,?)");
 			$stmt3->bind_param('issssssssss',$orderid,$shippingfirstname,$shippinglastname,$shippingaddressline1,$shippingaddressline2,$shippingpostalcode,$shippingcity,$shippingcountry,$shippingemail,$shippingphonenumber,$shippingdeliverycomment); 
 
-			// Get Product Sellers Id in Session Cart Array
-			$productsellersid = 0;
-			foreach($_SESSION['cart'] as $key => $value){
-				$product = $_SESSION['cart'][$key];
-				$productsellersid = $productsellersid.",".$product['fldproductsellersid'];
-			}
 			//1.4.1 Insert in Orders Table
-			$stmt4 = $conn->prepare("INSERT INTO orders (fldproductsellersid,fldordercost,fldcouriercost,fldproductdiscountcode,fldorderstatus,flduserid,fldshippingid,fldbillingidnumber,fldbillingphonenumber,fldshippingphonenumber,fldshippingcity,fldshippingcountry,fldshippingaddressline1,fldshippingaddressline2,fldorderdate,fldshippingdeliverycomment)
-			VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
-			$stmt4->bind_param('siissiisssssssss',$productsellersid,$ordercost,$couriercost,$discountcode,$orderstatus,$userid,$shippingid,$billingidnumber,$billingphonenumber,$shippingphonenumber,$shippingcity,$shippingcountry,$shippingaddressline1,$shippingaddressline2,$orderdate,$shippingdeliverycomment);
+			$stmt4 = $conn->prepare("INSERT INTO orders (fldordercost,fldcouriercost,fldproductdiscountcode,fldorderstatus,flduserid,fldshippingid,fldbillingidnumber,fldbillingphonenumber,fldshippingphonenumber,fldshippingcity,fldshippingcountry,fldshippingaddressline1,fldshippingaddressline2,fldorderdate,fldshippingdeliverycomment)
+			VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+			$stmt4->bind_param('iissiisssssssss',$ordercost,$couriercost,$discountcode,$orderstatus,$userid,$shippingid,$billingidnumber,$billingphonenumber,$shippingphonenumber,$shippingcity,$shippingcountry,$shippingaddressline1,$shippingaddressline2,$orderdate,$shippingdeliverycomment);
 
 			//1.8 Update Billing & Shipping Address Table With Order Id Syncronization
-			$stmt5 = $conn->prepare("UPDATE customerbillingaddress SET fldorderid = ? WHERE fldbillingemail = ?");
+			$stmt5 = $conn->prepare("UPDATE customerbillingaddress SET fldorderid = ? WHERE fldorderid = -1 AND fldbillingemail = ?");
 			$stmt5->bind_param('is',$orderid,$billingemail);
 
-			$stmt6 = $conn->prepare("UPDATE customershippingaddress SET fldorderid = ? WHERE fldshippingemail = ?");
+			$stmt6 = $conn->prepare("UPDATE customershippingaddress SET fldorderid = ? WHERE fldorderid = -1 AND fldshippingemail = ?");
 			$stmt6->bind_param('is',$orderid,$shippingemail);
 
 			if($stmt1->execute()){
 				if($stmt2->execute()){
 					if($stmt3->execute()){
 						//1.3.2Issue New Shipping and store Shipping info in database
-						$_SESSION['fldshippingid'] = $shippingid = $stmt3->insert_id;
+					  $_SESSION['fldshippingid'] = $shippingid = $stmt3->insert_id;
 						if($stmt4->execute()){
 							//1.4.2 Issue New Order and store Order info in database
-							$_SESSION['fldorderid'] = $orderid = $stmt4->insert_id;
+						  $_SESSION['fldorderid'] = $orderid = $stmt4->insert_id;
 							if($stmt5->execute()){
 								if($stmt6->execute()){
 
@@ -157,17 +150,15 @@ if(isset($_POST['checkoutbtn'])){
 			foreach($_SESSION['cart'] as $key => $value){
 				$product = $_SESSION['cart'][$key];
 				$productid = $product['fldproductid'];
-				$productsellersid = $product['fldproductsellersid'];
 				$_SESSION['fldproductname'] = $productname = $product['fldproductname'];
 				$_SESSION['fldproductimage'] = $productimage = $product['fldproductimage'];
 				$_SESSION['fldproductprice'] = $productprice = $product['fldproductprice'];
 				$_SESSION['fldproductquantity'] = $productquantity = $product['fldproductquantity'];
-				$productdiscount = $product['fldproductdiscount'];
 
 				//1.9.1 insert each single item in Orders Items Table
-				$stmt7 = $conn->prepare("INSERT INTO orderitems (fldorderid,fldproductid,fldproductsellersid,fldproductname,fldproductdiscount,fldproductimage,fldproductprice,fldproductquantity,fldshippingid,fldbillingidnumber,fldorderdate)
-				VALUES (?,?,?,?,?,?,?,?,?,?,?)");
-				$stmt7->bind_param('iiisssiiiss',$orderid,$productid,$productsellersid,$productname,$productdiscount,$productimage,$productprice,$productquantity,$shippingid,$billingidnumber,$orderdate);
+				$stmt7 = $conn->prepare("INSERT INTO orderitems (fldorderid,fldproductid,fldproductname,fldproductimage,fldproductprice,fldproductquantity,fldshippingid,fldbillingidnumber,fldorderdate)
+				VALUES (?,?,?,?,?,?,?,?,?)");
+				$stmt7->bind_param('iissiiiss',$orderid,$productid,$productname,$productimage,$productprice,$productquantity,$shippingid,$billingidnumber,$orderdate);
 				if($stmt7->execute()){
 
 				}
@@ -198,23 +189,16 @@ if(isset($_POST['checkoutbtn'])){
 			VALUES(?,?,?,?)");
 			$stmt3->bind_param('ssss',$testimonialsimage,$testimonialsfirstname,$testimonialslastname,$testimonialsemail);
 
-			// Get Product Sellers Id in Session Cart Array
-			$productsellersid = 0;
-			foreach($_SESSION['cart'] as $key => $value){
-				$product = $_SESSION['cart'][$key];
-				$productsellersid = $productsellersid.",".$product['fldproductsellersid'];
-			}
-			
 			//1.5.1 Insert In Orders Table
-			$stmt4 = $conn->prepare("INSERT INTO orders (fldproductsellersid,fldordercost,fldcouriercost,fldproductdiscountcode,fldorderstatus,flduserid,fldshippingid,fldbillingidnumber,fldbillingphonenumber,fldshippingphonenumber,fldshippingcity,fldshippingcountry,fldshippingaddressline1,fldshippingaddressline2,fldorderdate,fldshippingdeliverycomment)
-			VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
-			$stmt4->bind_param('siissiisssssssss',$productsellersid,$ordercost,$couriercost,$discountcode,$orderstatus,$userid,$shippingid,$billingidnumber,$billingphonenumber,$shippingphonenumber,$shippingcity,$shippingcountry,$shippingaddressline1,$shippingaddressline2,$orderdate,$shippingdeliverycomment);
+			$stmt4 = $conn->prepare("INSERT INTO orders (fldordercost,fldcouriercost,fldproductdiscountcode,fldorderstatus,flduserid,fldshippingid,fldbillingidnumber,fldbillingphonenumber,fldshippingphonenumber,fldshippingcity,fldshippingcountry,fldshippingaddressline1,fldshippingaddressline2,fldorderdate,fldshippingdeliverycomment)
+			VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+			$stmt4->bind_param('iissiisssssssss',$ordercost,$couriercost,$discountcode,$orderstatus,$userid,$shippingid,$billingidnumber,$billingphonenumber,$shippingphonenumber,$shippingcity,$shippingcountry,$shippingaddressline1,$shippingaddressline2,$orderdate,$shippingdeliverycomment);
 
 			//1.8 Update Billing & Shipping Address Table With Order Id Syncronization
-			$stmt5 = $conn->prepare("UPDATE customerbillingaddress SET fldorderid = ? WHERE fldbillingemail = ?");
+			$stmt5 = $conn->prepare("UPDATE customerbillingaddress SET fldorderid = ? WHERE fldorderid = -1 AND fldbillingemail = ?");
 			$stmt5->bind_param('is',$orderid,$billingemail);
 
-			$stmt6 = $conn->prepare("UPDATE customershippingaddress SET fldorderid = ? WHERE fldshippingemail = ?");
+			$stmt6 = $conn->prepare("UPDATE customershippingaddress SET fldorderid = ? WHERE fldorderid = -1 AND fldshippingemail = ?");
 			$stmt6->bind_param('is',$orderid,$shippingemail);
 
       if($stmt->execute()){
@@ -268,17 +252,14 @@ if(isset($_POST['checkoutbtn'])){
 			foreach($_SESSION['cart'] as $key => $value){
 				$product = $_SESSION['cart'][$key];
 				$productid = $product['fldproductid'];
-				$productsellersid = $product['fldproductsellersid'];
 				$_SESSION['fldproductname'] = $productname = $product['fldproductname'];
 				$_SESSION['fldproductimage'] = $productimage = $product['fldproductimage'];
 				$_SESSION['fldproductprice'] = $productprice = $product['fldproductprice'];
 				$_SESSION['fldproductquantity'] = $productquantity = $product['fldproductquantity'];
-				$productdiscount = $product['fldproductdiscount'];
-				
 				//1.9.1 insert each single item in Orders Items Table
-				$stmt7 = $conn->prepare("INSERT INTO orderitems (fldorderid,fldproductid,fldproductsellersid,fldproductname,fldproductdiscount,fldproductimage,fldproductprice,fldproductquantity,fldshippingid,fldbillingidnumber,fldorderdate)
-				VALUES (?,?,?,?,?,?,?,?,?,?,?)");
-				$stmt7->bind_param('iiisssiiiss',$orderid,$productid,$productsellersid,$productname,$productdiscount,$productimage,$productprice,$productquantity,$shippingid,$billingidnumber,$orderdate);
+				$stmt7 = $conn->prepare("INSERT INTO orderitems (fldorderid,fldproductid,fldproductname,fldproductimage,fldproductprice,fldproductquantity,fldshippingid,fldbillingidnumber,fldorderdate)
+				VALUES (?,?,?,?,?,?,?,?,?)");
+				$stmt7->bind_param('iissiiiss',$orderid,$productid,$productname,$productimage,$productprice,$productquantity,$shippingid,$billingidnumber,$orderdate);
 				if($stmt7->execute()){
 
 				}

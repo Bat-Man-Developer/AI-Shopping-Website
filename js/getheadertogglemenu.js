@@ -1,6 +1,7 @@
 let menuitems = document.getElementById("menuitems");
-let departmentsnavbar = document.getElementById("departmentsnavbar");
 menuitems.style.maxHeight = "0px";
+
+let departmentsnavbar = document.getElementById("departmentsnavbar");
 departmentsnavbar.style.maxHeight = "0px";
 
 //Display Menu Toggle Function
@@ -8,13 +9,11 @@ function menutoggle(){
   if(menuitems.style.maxHeight == "0px")
   {
     menuitems.style.maxHeight = "fit-content"
-    document.getElementById("menuitems").style.display = "list-item";
-    document.getElementById("nav-exit").style.visibility = "visible";
+    document.getElementById("nav-exit").style.visibility = "";
   }
   else
   {
     menuitems.style.maxHeight = "0px"
-    document.getElementById("menuitems").style.display = "none";
     document.getElementById("nav-exit").style.visibility = "collapse";
     
     departmentsnavbar.style.maxHeight = "0px"
@@ -31,6 +30,18 @@ function departmentsmenutoggle(){
   }
   else
   {
+    departmentsnavbar.style.maxHeight = "0px"
+    document.getElementById("departmentsnavbar").style.display = "none";
+  }
+}
+
+//Close all the Menu Toggles
+function closeallmenutoggle(){
+  if(menuitems.style.maxHeight != "0px" || departmentsnavbar.style.maxHeight != "0px")
+  {
+    menuitems.style.maxHeight = "0px"
+    document.getElementById("nav-exit").style.visibility = "collapse";
+
     departmentsnavbar.style.maxHeight = "0px"
     document.getElementById("departmentsnavbar").style.display = "none";
   }

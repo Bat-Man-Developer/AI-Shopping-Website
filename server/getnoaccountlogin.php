@@ -16,10 +16,10 @@ if(isset($_POST['noaccountloginbtn'])){
   }
   else{//3. if there is no error
     $stmt = $conn->prepare("UPDATE users SET flduserpassword=? WHERE flduseremail=?");
-    $stmt->bind_param('ss',$userpassword,$useremail);
+    $stmt->bind_param('ss',md5($userpassword),$useremail);
 
     $stmt1 = $conn->prepare("UPDATE testimonials SET fldtestimonialspassword=? WHERE fldtestimonialsemail=?");
-    $stmt1->bind_param('ss',$testimonialspassword,$useremail);
+    $stmt1->bind_param('ss',md5($testimonialspassword),$useremail);
 
     //if account was created succesfully
     if($stmt->execute()){

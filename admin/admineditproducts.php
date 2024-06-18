@@ -42,20 +42,18 @@ include('adminserver/getadmineditproducts.php');
               <div class="max-auto container">
                 <div class="admineditproductstable">
                   <?php foreach($editproducts as $product){?>
-                  <img src="<?php echo "../../assets/images/".$product['fldproductimage']; ?>">
-                  <p><?php echo "Owner: ".$product['fldproductowner']; ?></p>
-                  <p><?php echo "Name: ".$product['fldproductname']; ?></p>
-                  <p><?php echo "Price: R".$product['fldproductprice']; ?></p>
-                  <p><?php echo "Stock: ".$product['fldproductstock']." left in stock"; ?></p>
-                  <p><?php echo "Department: ".$product['fldproductdepartment']; ?></p>
-                  <p><?php echo "Category: ".$product['fldproductcategory']; ?></p>
-                  <p><?php echo "Type: ".$product['fldproducttype']; ?></p>
-                  <p><?php $discount = $product['fldproductdiscount']*100; echo "Discount: ".$discount."%"; ?></p>
-                  <p><?php echo "Address: ".$product['fldproductaddressline1'].", ".$product['fldproductpostalcode'].", ".$product['fldproductcity'].", ".$product['fldproductcountry']; ?></p>
+                  <img src="<?php echo "../../assets/images/". $product['fldproductimage']; ?>">
+                  <p><?php echo $product['fldproductname']; ?></p>
+                  <p>R<?php echo $product['fldproductprice']; ?></p>
+                  <p><?php echo $product['fldproductdescription']; ?></p>
+                  <p><?php echo $product['fldproductdiscount']; ?></p>
+                  <p><?php echo $product['fldproductdiscountcode']; ?></p>
+                  <p><?php echo $product['fldproductstock']; ?></p>
+                  <p><?php echo $product['fldproductdepartment']; ?></p>
+                  <p><?php echo $product['fldproducttype']; ?></p>
                 </div>
                 <form id="admineditproductsform" method="POST" action="admineditproducts.php" style="text-align: center;">
                   <p style="color: red;"><?php if(isset($_GET['error'])){ echo $_GET['error'];} ?></p>
-                  <h1 class="admintitle" id="admintitle">Product Details</h1><br>
                   <div class="form-group">
                     <label>Product Name
                       <input type="text" class="form-control" name="fldproductname" value="<?php echo $product['fldproductname']; ?>" required/>
@@ -64,7 +62,7 @@ include('adminserver/getadmineditproducts.php');
                   <div class="form-group">
                     <label>Product Department
                       <select class="form-select" required name="fldproductdepartment">
-                        <option value="<?php echo $product['fldproductdepartment']; ?>"><?php echo $product['fldproductdepartment']; ?></option>
+                        <option value="none">no selection...</option>
                         <option value="Automotive">Automotive</option>
                         <option value="DIY">DIY</option>
                         <option value="Baby, Toddler & Kids">Baby, Toddler & Kids</option>
@@ -98,23 +96,23 @@ include('adminserver/getadmineditproducts.php');
                   </div>
                   <div class="form-group">
                     <label>Product Color
-                      <input type="text" class="form-control" name="fldproductcolor" value="<?php echo $product['fldproductcolor']; ?>"/>
+                      <input type="text" class="form-control" name="fldproductcolor" value="<?php echo $product['fldproductcolor']; ?>" required/>
                     </label>
                   </div>
                   <div class="form-group">
                     <label>Product Gender
                       <select class="form-select" name="fldproductgender">
-                        <option value="<?php echo $product['fldproductgender']; ?>"><?php echo $product['fldproductgender']; ?></option>
+                        <option value="none">no selection...</option>
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
-                        <option value="Unisex">Unisex</option>
+                        <option value="Other">Other</option>
                       </select>
                     </label>
                   </div>
                   <div class="form-group">
                     <label>Product Size
                       <select class="form-select" name="fldproductsize">
-                        <option value="<?php echo $product['fldproductsize']; ?>"><?php echo $product['fldproductsize']; ?></option>
+                        <option value="none">no selection...</option>
                         <option value="X-Small">X-Small</option>
                         <option value="Small">Small</option>
                         <option value="Medium">Medium</option>
@@ -125,8 +123,8 @@ include('adminserver/getadmineditproducts.php');
                   </div>
                   <div class="form-group">
                     <label>Product Stock
-                      <select class="form-select" name="fldproductstock" required>
-                        <option value="<?php echo $product['fldproductstock']; ?>"><?php echo $product['fldproductstock']; ?></option>
+                      <select class="form-select" required name="fldproductstock">
+                        <option value="none">no selection...</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -167,101 +165,17 @@ include('adminserver/getadmineditproducts.php');
                   </div>
                   <div class="form-group">
                     <label>Product Price
-                      <input type="number" class="form-control" name="fldproductprice" value="<?php echo $product['fldproductprice']; ?>" required/>
+                      <input type="text" class="form-control" name="fldproductprice" value="<?php echo $product['fldproductprice']; ?>" required/>
                     </label>
                   </div>
                   <div class="form-group">
                     <label>Product Discount
-                      <input type="number" class="form-control" name="fldproductdiscount" value="<?php echo $product['fldproductdiscount']*100; ?>" min="0" max="100"/>
+                      <input type="text" class="form-control" name="fldproductdiscount" value="<?php echo $product['fldproductdiscount']; ?>"/>
                     </label>
                   </div>
                   <div class="form-group">
                     <label>Product Discount Code
                       <input type="text" class="form-control" name="fldproductdiscountcode" value="<?php echo $product['fldproductdiscountcode']; ?>"/>
-                    </label>
-                  </div><br><br>
-                  <h1 class="admintitle" id="admintitle">Product Specifications</h1><br>
-                  <div class="form-group">
-                    <label>Product Length
-                      <input type="number" class="form-control" name="fldproductlength" value="<?php echo $product['fldproductlength']; ?>" required/>
-                    </label>
-                  </div>
-                  <div class="form-group">
-                    <label>Product Width
-                      <input type="number" class="form-control" name="fldproductwidth" value="<?php echo $product['fldproductwidth']; ?>" required/>
-                    </label>
-                  </div>
-                  <div class="form-group">
-                    <label>Product Height
-                      <input type="number" class="form-control" name="fldproductheight" value="<?php echo $product['fldproductheight']; ?>" required/>
-                    </label>
-                  </div>
-                  <div class="form-group">
-                    <label>Product Weight
-                      <input type="number" class="form-control" name="fldproductweight" value="<?php echo $product['fldproductweight']; ?>" required/>
-                    </label>
-                  </div>
-                  <div class="form-group">
-                    <label>Product Fragile
-                      <select class="form-select" name="fldproductfragile" required>
-                        <option value="<?php echo $product['fldproductfragile']; ?>"><?php echo $product['fldproductfragile']; ?></option>
-                        <option value="Yes">Yes</option>
-                        <option value="No">No</option>
-                      </select>
-                    </label>
-                  </div>
-                  <div class="form-group">
-                    <label>Product Special Handling Requirements
-                      <input type="text" class="form-control" name="fldproductspecialhandlingreq" value="<?php echo $product['fldproductspecialhandlingreq']; ?>"/>
-                    </label>
-                  </div>
-                  <div class="form-group">
-                    <label>Product Insurance Requirements
-                      <input type="text" class="form-control" name="fldproductinsurancereq" value="<?php echo $product['fldproductinsurancereq']; ?>"/>
-                    </label>
-                  </div><br><br>
-                  <h1 class="admintitle" id="admintitle">Product Collect-Deliver Details</h1><br>
-                  <div class="form-group">
-                    <label>Product Address Line 1
-                      <input type="text" class="form-control" name="fldproductaddressline1" value="<?php echo $product['fldproductaddressline1']; ?>" required/>
-                    </label>
-                  </div>
-                  <div class="form-group">
-                    <label>Product Address Line 2
-                      <input type="text" class="form-control" name="fldproductaddressline2" value="<?php echo $product['fldproductaddressline2']; ?>"/>
-                    </label>
-                  </div>
-                  <div class="form-group">
-                    <label>Product Postal Code
-                      <input type="number" class="form-control" name="fldproductpostalcode" value="<?php echo $product['fldproductpostalcode']; ?>" required/>
-                    </label>
-                  </div>
-                  <div class="form-group">
-                    <label>Product City
-                      <input type="text" class="form-control" name="fldproductcity" value="<?php echo $product['fldproductcity']; ?>" required/>
-                    </label>
-                  </div>
-                  <div class="form-group">
-                    <label>Product Country
-                      <select class="form-control" name="fldproductcountry" required>
-                        <option value="<?php echo $product['fldproductcountry']; ?>"><?php echo $product['fldproductcountry']; ?></option>
-                        <option value="Australia">Australia</option>
-                        <option value="Britain">Britain</option>
-                        <option value="China">China</option>
-                        <option value="Egypt">Egypt</option>
-                        <option value="England">England</option>
-                        <option value="France">France</option>
-                        <option value="Germany">Germany</option>
-                        <option value="Italy">Italy</option>
-                        <option value="Mauritius">Mauritius</option>
-                        <option value="Mexico">Mexico</option>
-                        <option value="Nigeria">Nigeria</option>
-                        <option value="Portugal">Portugal</option>
-                        <option value="Russia">Russia</option>  
-                        <option value="South_Africa">South Africa</option>
-                        <option value="Thailand">Thailand</option>
-                        <option value="USA">USA</option>
-                      </select>
                     </label>
                   </div>
                   <div class="form-group">

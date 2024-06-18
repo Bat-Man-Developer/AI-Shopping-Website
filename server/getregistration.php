@@ -14,6 +14,8 @@ if(isset($_POST['registrationbtn'])){
   $useridnumber = $_POST['flduseridnumber'];
   $testimonialspassword = $userpassword = md5($_POST['flduserpassword']);
   $userconfirmpassword = md5($_POST['flduserconfirmpassword']);
+  $orderid = -1;
+
   //if password dont match
   if($userpassword !== $userconfirmpassword){
     header('location: ../registration.php?error=passwords dont match');
@@ -43,58 +45,57 @@ if(isset($_POST['registrationbtn'])){
       //Create New User
       $stmt1 = $conn->prepare("INSERT INTO users (flduserimage,flduserfirstname,flduserlastname,flduseraddressline1,flduseraddressline2,flduserpostalcode,fldusercity,fldusercountry,flduseremail,flduserphonenumber,flduseridnumber,flduserpassword)
             VALUES(?,?,?,?,?,?,?,?,?,?,?,?)");
-      $stmt1->bind_param('ssssssssssss',$userimage,$userfirstname,$userlastname,$useraddressline1,$useraddressline2,$userpostalcode,$usercity,$usercountry,$useremail,$userphonenumber,$useridnumber,$userpassword);
-      //if user details was added succesfully
-      if($stmt1->execute()){
-        $userid = $stmt1->insert_id;
-        $orderid = $userid*-1;
-      }
-      else{//user could not be added
-        header('location: ../registration.php?error=Could Not Create An Account At The Moment');
-      }
+      $stmt1->bind_param('ssssssssssss',$userimage,$userfirstname,$userlastname,$useraddressline1,$useraddressline2,$userpostalcode,$usercity,$usercountry,$useremail,$userphonenumber,$useridnumber,md5($userpassword));
 
       //Create New Customer Billing Address
-      $stmt2 = $conn->prepare("INSERT INTO customerbillingaddress (fldbillingid,fldorderid,fldbillingfirstname,fldbillinglastname,fldbillingaddressline1,fldbillingaddressline2,fldbillingpostalcode,fldbillingcity,fldbillingcountry,fldbillingemail,fldbillingphonenumber,fldbillingidnumber)
-            VALUES(?,?,?,?,?,?,?,?,?,?,?,?)");
-      $stmt2->bind_param('iissssssssss',$userid,$orderid,$userfirstname,$userlastname,$useraddressline1,$useraddressline2,$userpostalcode,$usercity,$usercountry,$useremail,$userphonenumber,$useridnumber);
-      //if billing details was added succesfully
-      if($stmt2->execute()){
-      }
-      else{//billing details could not be added
-        header('location: ../registration.php?error=Could Not Create An Account At The Moment');
-      }
+      $stmt2 = $conn->prepare("INSERT INTO customerbillingaddress (fldorderid,fldbillingfirstname,fldbillinglastname,fldbillingaddressline1,fldbillingaddressline2,fldbillingpostalcode,fldbillingcity,fldbillingcountry,fldbillingemail,fldbillingphonenumber,fldbillingidnumber)
+            VALUES(?,?,?,?,?,?,?,?,?,?,?)");
+      $stmt2->bind_param('issssssssss',$orderid,$userfirstname,$userlastname,$useraddressline1,$useraddressline2,$userpostalcode,$usercity,$usercountry,$useremail,$userphonenumber,$useridnumber);
 
       //Create New Testimonial User
-      $stmt3 = $conn->prepare("INSERT INTO testimonials (fldtestimonialsid,fldtestimonialsfirstname,fldtestimonialslastname,fldtestimonialsemail,fldtestimonialspassword,fldtestimonialsimage)
-            VALUES(?,?,?,?,?,?)");
-      $stmt3->bind_param('isssss',$userid,$testimonialsfirstname,$testimonialslastname,$testimonialsemail,$testimonialspassword,$userimage);
-      //if testimonials & suggestions details was added succesfully
-      if($stmt3->execute()){
-        //Set User Session
-        $_SESSION['flduserid'] = $userid;
-        $_SESSION['flduseremail'] = $useremail;
-        $_SESSION['flduserfirstname'] = $userfirstname;
-        $_SESSION['flduserlastname'] = $userlastname;
-        $_SESSION['flduseraddressline1'] = $useraddressline1;
-        $_SESSION['flduseraddressline2'] = $useraddressline2;
-        $_SESSION['flduserpostalcode'] = $userpostalcode;
-        $_SESSION['fldusercity'] = $usercity;
-        $_SESSION['fldusercountry'] = $usercountry;
-        $_SESSION['flduserphonenumber'] = $userphonenumber;
-        $_SESSION['flduseremail'] = $useremail;
-        $_SESSION['flduseridnumber'] = $useridnumber;
-        $_SESSION['flduserpassword'] = $userpassword;
-        //Set Testimonials & Suggestions Session
-        $_SESSION['fldtestimonialsimage'] = $userimage;
-        $_SESSION['fldtestimonialsfirstname'] = $userfirstname;
-        $_SESSION['fldtestimonialslastname'] = $userlastname;
-        $_SESSION['fldtestimonialscountry'] = $usercountry;
-        $_SESSION['fldtestimonialsemail'] = $useremail;
-        $_SESSION['fldtestimonialspassword'] = $userpassword;
-        $_SESSION['logged_in'] = true;
-        header('location: ../account.php?registermessage=You Registered Succesfully');
+      $stmt3 = $conn->prepare("INSERT INTO testimonials (fldtestimonialsfirstname,fldtestimonialslastname,fldtestimonialsemail,fldtestimonialspassword,fldtestimonialsimage)
+            VALUES(?,?,?,?,?)");
+      $stmt3->bind_param('sssss',$testimonialsfirstname,$testimonialslastname,$testimonialsemail,md5
+      ($testimonialspassword),$userimage);
+
+      //if account was created succesfully
+      if($stmt1->execute()){
+        if($stmt2->execute()){
+          if($stmt3->execute()){
+            $userid = $stmt1->insert_id;
+            //Set Testimonials & Suggestions Session
+            $_SESSION['flduserid'] = $userid;
+            $_SESSION['flduseremail'] = $useremail;
+            $_SESSION['flduserfirstname'] = $userfirstname;
+            $_SESSION['flduserlastname'] = $userlastname;
+            $_SESSION['flduseraddressline1'] = $useraddressline1;
+            $_SESSION['flduseraddressline2'] = $useraddressline2;
+            $_SESSION['flduserpostalcode'] = $userpostalcode;
+            $_SESSION['fldusercity'] = $usercity;
+            $_SESSION['fldusercountry'] = $usercountry;
+            $_SESSION['flduserphonenumber'] = $userphonenumber;
+            $_SESSION['flduseremail'] = $useremail;
+            $_SESSION['flduseridnumber'] = $useridnumber;
+            $_SESSION['flduserpassword'] = $userpassword;
+            //Set Testimonials & Suggestions Session
+            $_SESSION['fldtestimonialsimage'] = $userimage;
+            $_SESSION['fldtestimonialsfirstname'] = $userfirstname;
+            $_SESSION['fldtestimonialslastname'] = $userlastname;
+            $_SESSION['fldtestimonialscountry'] = $usercountry;
+            $_SESSION['fldtestimonialsemail'] = $useremail;
+            $_SESSION['fldtestimonialspassword'] = $userpassword;
+            $_SESSION['logged_in'] = true;
+            header('location: ../account.php?registermessage=You Registered Succesfully');
+          }
+          else{//account could not be created
+            header('location: ../registration.php?error=Could Not Create An Account At The Moment');
+          }
+        }
+        else{//account could not be created
+          header('location: ../registration.php?error=Could Not Create An Account At The Moment');
+        }
       }
-      else{//testimonials & suggestions details could not be added
+      else{//account could not be created
         header('location: ../registration.php?error=Could Not Create An Account At The Moment');
       }
     }

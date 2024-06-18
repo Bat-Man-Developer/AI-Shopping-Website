@@ -6,7 +6,7 @@ if(isset($_POST['testimonialsloginbtn'])){
 
   $stmt = $conn->prepare("SELECT flduserid,flduserimage,flduserfirstname,flduserlastname,flduseraddressline1,flduseraddressline2,flduserpostalcode,fldusercity,fldusercountry,flduseremail,flduserphonenumber,flduseridnumber,flduserpassword FROM users WHERE flduseremail = ? AND flduserpassword = ? LIMIT 1");
 
-  $stmt->bind_param('ss',$testimonialsemail,$testimonialspassword);
+  $stmt->bind_param('ss',$testimonialsemail,md5($testimonialspassword));
 
   if($stmt->execute()){
     $stmt->bind_result($userid,$userimage,$userfirstname,$userlastname,$useraddressline1,$useraddressline2,$userpostalcode,$usercity,$usercountry,$useremail,$userphonenumber,$useridnumber,$userpassword);

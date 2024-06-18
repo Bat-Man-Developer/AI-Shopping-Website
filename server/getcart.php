@@ -31,7 +31,6 @@ else if(empty($_SESSION['cart'])){//6. if cart is empty dont let user go to chec
 } 
 else{
 }
-
 function calculatetotalcart(){
   $totalprice = 0;
   $totalquantity = 0;
@@ -41,9 +40,8 @@ function calculatetotalcart(){
 
     $price = $product['fldproductprice'];
     $quantity = $product['fldproductquantity'];
-    $discount = $product['fldproductdiscount'];
     
-    $totalprice = $totalprice+($price*$quantity)-($price*$quantity*$discount);
+    $totalprice = $totalprice + ($price * $quantity);
     $totalquantity = $totalquantity + $quantity; 
 
   }

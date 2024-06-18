@@ -1,6 +1,9 @@
 <?php
+
 session_start();
+	
 ?>
+
 <!DOCTYPE html>
 	<html lang="en">
 		<head>
@@ -11,7 +14,6 @@ session_start();
 			<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;1,200;1,300&display=swap" rel="stylesheet">
 			<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 			<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-			<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 			<div>
 				<nav class="topnavbar">
 					<ul>
@@ -39,11 +41,9 @@ session_start();
 				<a href="dashboard.php">Dashboard</a>
 				<a href="adminorders.php">Orders</a>
 				<a href="adminproducts.php">Products</a>
-				<a href="adminaddproducts.php">Create Product</a>
 				<a href="admincustomers.php">Customers</a>
-				<a href="adminsellers.php">Sellers</a>
-				<a href="adminlocalnetworktraffic.php">LAN Traffic</a>
-				<a href="adminids.php">IDS</a>
+				<a href="adminaddproducts.php">Create Product</a>
+				<a href="adminsecuritysurveilence.php">Security Surveilence</a>
 				<a href="adminaccount.php">Account</a>
 				<a href="adminhelp.php">Help?</a>
 			</div>
