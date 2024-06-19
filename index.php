@@ -23,20 +23,20 @@ include('layouts/header.php');
 <!------- Promotions Slide Show ----------->
 <div id="slideshow">
 	<div class="slide-container">
-		<p class="myslides">1st Launch 50% OFF<br>
-			<img class="picture" src="assets/images/slideshow/retailcartoons_pic.png" alt="snow">
+		<p class="myslides">1st Launch Up To 50% OFF<br>
+			<img class="picture" src="assets/images/slideshow/newstuffsa_advert_pic.png" alt="snow">
 		</p>
 		<p class="myslides">NEWSTUFF For Everyone SALE<br>
-			<img class="picture" src="assets/images/slideshow/deliverytruck_pic.png" alt="now">
+			<img class="picture" src="assets/images/slideshow/newstuffsa_advert_pic1.png" alt="now">
 		</p>
 		<p class="myslides">WINTER SALE UP TO 30% OFF<br>
-			<img class="picture" src="assets/images/slideshow/ecommercestore_pic.png" alt="snow">
+			<img class="picture" src="assets/images/slideshow/newstuffsa_advert_pic2.png" alt="snow">
 		</p>
 		<p class="myslides">EVERY WEEK DEALS<br>
-			<img class="picture" src="assets/images/slideshow/water_pic.png" alt="snow">
+			<img class="picture" src="assets/images/slideshow/newstuffsa_advert_pic3.png" alt="snow">
 		</p>
 		<p class="myslides">10 STEPS AHEAD DEALS<br>
-			<img class="picture" src="assets/images/slideshow/teddybear_pic.png" alt="snow">
+			<img class="picture" src="assets/images/slideshow/newstuffsa_advert_pic4.png" alt="snow">
 		</p>
 	</div>
 	<button class="slide-button prev-button" onclick="plusDivs(-1)">&#10094;</button>

@@ -437,7 +437,7 @@ h4{
 	margin: auto;
 	overflow: hidden;
 	width: 100%;
-	height: 200px;
+	height: 400px;
 }
 
 .slide-container img {
@@ -448,13 +448,13 @@ h4{
 
 .slide-button {
 	position: absolute;
-	top: 50%;
+	top: 54%;
 	transform: translateY(-50%);
-	padding: 10px;
-	font-size: 20px;
+	padding: 7px;
+	font-size: 14px;
 	background-color: #070707;
 	border: solid rgb(61, 211, 24);
-	border-width: 15px;
+	border-width: 10px;
 	border-radius: 50%;
 	color: #fcf9f9;
 	cursor: pointer;
@@ -1270,6 +1270,11 @@ form a{
 	cursor: pointer;
 }
 
+/*---------- Slide Show --------*/
+.slide-button {
+	top: 50%;
+}
+
 /*---------- Track Order Page --------*/
 .realtimetrackingstatuscontainer input{
 	margin-left: 85px;
@@ -1278,6 +1283,10 @@ form a{
 
 /*---------- media query for less than 1000 screen size --------*/
 @media only screen and (max-width: 1000px){
+/*---------- Slide Show --------*/
+.slide-button {
+	top: 45%;
+}
 /*---------- All Products Page --------*/
 .searchprice{
 width: 180px;
@@ -1299,7 +1308,10 @@ margin-left: 70px;
 
 /*---------- media query for less than 900 screen size --------*/
 @media only screen and (max-width: 900px){
-/*---------- Products Page --------*/
+/*---------- Slide Show --------*/
+.slide-button {
+	top: 40%;
+}
 
 /*---------- Track Order Page --------*/
 .realtimetrackingstatuscontainer input{
@@ -1326,14 +1338,32 @@ margin-left: 50px;
 	bottom: 25%;
 }
 
+/*---------- Slide Show --------*/
+.slide-button {
+	top: 38%;
+}
+
 /*---------- Track Order Page --------*/
 .realtimetrackingstatuscontainer input{
 	margin-left: 40px;
 }
 }
 
+/*-------media query for less than 700 screen size----*/
+@media only screen and (max-width: 700px){
+/*---------- Slide Show --------*/
+.slide-button {
+	top: 35%;
+}
+}
+
 /*-------media query for less than 600 screen size----*/
 @media only screen and (max-width: 600px){
+/*---------- Slide Show --------*/
+.slide-button {
+	top: 30%;
+}
+
 /*--------- All Page Responsiveness ---------*/
 .row{
 	text-align: center;
@@ -1401,8 +1431,29 @@ width: 60vw;
 }
 }
 
+/*-------media query for less than 550 screen size----*/
+@media only screen and (max-width: 550px){
+/*---------- Slide Show --------*/
+.slide-button {
+	top: 27%;
+	padding: 4px;
+	font-size: 7px;
+	border-width: 5px;
+}
+
+#slideshow p{
+	font-size: x-large;
+}
+}
+
+
 /*-------media query for less than 500 screen size----*/
 @media only screen and (max-width: 500px){
+/*---------- Slide Show --------*/
+.slide-button {
+	top: 25%;
+}
+
 /*---------- Track Order Page --------*/
 .realtimetrackingstatuscontainer input{
 	margin-left: 40px;
@@ -1411,6 +1462,14 @@ width: 60vw;
 
 /*-------media query for less than 450 screen size----*/
 @media only screen and (max-width: 450px){
+/*---------- Slide Show --------*/
+.slide-button {
+	top: 20%;
+}
+
+#slideshow p{
+	font-size: large;
+}
 /*--------- Voice Recognition ---------*/
 #voicerecognitionbtn{
 	max-width: 20%;
@@ -1531,6 +1590,15 @@ margin-left: 35px;
 #chatbotpicbtn:hover{
 	max-width: 24%;
 	max-height: 29%;
+}
+
+/*---------- Slide Show --------*/
+.slide-button {
+	top: 17%;
+}
+
+#slideshow p{
+	font-size: medium;
 }
 
 /*---------- Product Details Page --------*/
@@ -1683,6 +1751,11 @@ nav{
 
 .col-2 .offer-img{
 	padding: 50px;
+}
+
+/*---------- Slide Show --------*/
+.slide-button {
+	top: 15%;
 }
 
 /*---------testimonial--------*/
@@ -1958,6 +2031,21 @@ form a{
 
 }
 
+/*-------media query for less than 290 screen size---*/
+@media only screen and (max-width: 290px){
+/*---------- Slide Show --------*/
+.slide-button {
+	top: 13%;
+	padding: 2px;
+	font-size: 4px;
+	border-width: 3px;
+}
+
+#slideshow p{
+	font-size: small;
+}
+}
+
 /*-------media query for less than 280 screen size----*/
 @media only screen and (max-width: 280px){
 /*-------Header design-------*/
@@ -2154,6 +2242,14 @@ height: 15px;
 .header .cartpic{
 	width: 5px;
 	height: 5px;
+}
+/*---------- Slide Show --------*/
+.slide-button {
+	top: 12%;
+}
+
+#slideshow p{
+	font-size: x-small;
 }
 }
 
