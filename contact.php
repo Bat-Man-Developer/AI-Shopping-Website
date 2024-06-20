@@ -77,13 +77,6 @@ include('server/getcontact.php');
 		border: 1px;
 	}
 
-	a:hover {
-		background-color: #f2f2f2;
-		padding: 5px 10px;
-		text-decoration: none;
-		color: orange; /* Darker red color on hover */
-	}
-
 	.contactform {
 		height: 40svw;
 		width: 40svw;
@@ -324,8 +317,8 @@ include('server/getcontact.php');
 					<div class="contactpagecontainer">
 						<div class="googlemapscontainer">
 							<a href='https://www.easybooking.eu/'>GOOGLE MAPS</a><br>
-							<iframe class="googlemaps" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" id="gmap_canvas" src="https://maps.google.com/maps?width=520&amp;height=400&amp;hl=en&amp;q=4708%20Mhunti%20Street%20Johannesburg+(MR)&amp;t=p&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"> </iframe> 
-							<script type='text/javascript' src='https://embedmaps.com/google-maps-authorization/script.js?id=5c8a8dd1d18f664e1a4704f0a64fff04109a8dd8'> </script>
+							<iframe class="googlemaps" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" id="gmap_canvas" src="https://maps.google.com/maps?width=520&amp;height=400&amp;hl=en&amp;q=4708%20Mhawa%20Street%20Johannesburg+(MR)&amp;t=p&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
+							<script type='text/javascript' src='https://embedmaps.com/google-maps-authorization/script.js?id=5c8a8dd1d18f664e1a4704f0a64fff04109a8dd8'></script>
 						</div>
 					
 						<div id="section2" class="section">
