@@ -74,7 +74,7 @@ h4{
 }
 
 .container{
-	max-width: 1300px;
+	max-width: 100%;
 	margin: auto;
 	padding-left: 25px;
 	padding-right: 25px;
@@ -825,7 +825,8 @@ ul{
 }
 .image-container{
 	position: relative;
-  display: inline-block;
+  display: block;
+	margin: auto;
 }
 .image-text{
   position: absolute;
@@ -1486,7 +1487,7 @@ font-size: 10px;
 	font-size: x-small;
 }
 
-#buynowbtn{
+#addtowishlistbtn{
 	font-size: x-small;
 }
 
@@ -1552,7 +1553,15 @@ margin-left: 35px;
 	font-size: medium;
 }
 
-/*---------- Product Details Page --------*/
+/*---------- Single Product Page --------*/
+#addtocartbtn{
+	font-size: xx-small;
+}
+
+#addtowishlistbtn{
+	font-size: xx-small;
+}
+
 .reviewdisplaycontainer{
 	font-size: xx-small;
 }
@@ -1861,12 +1870,15 @@ input:focus{
 #addtocartbtn{
 	width: 75%;
 	padding: 10px;
+	font-size: xx-small;
 }
 
-#buynowbtn{
+#addtowishlistbtn{
 	width: 75%;
 	padding: 10px;
+	font-size: xx-small;
 }
+
 
 /*----------login-page------------*/
 .loginpage{

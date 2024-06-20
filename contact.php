@@ -12,6 +12,7 @@ include('server/getcontact.php');
 		padding: 10px;
 		display: inline-block;
 		margin: 0 auto;
+		margin-top: 20px;
 		margin-bottom: 20px;
 		display: table;
 		font-size: 24px;
