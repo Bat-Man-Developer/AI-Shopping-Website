@@ -84,11 +84,11 @@ include('server/getcontact.php');
 	}
 
 	.contactform {
-		height: 40svw;
-		width: 40svw;
+		height: 32svw;
+		width: 32svw;
 		margin: 0 auto;
 		padding: 20px;
-		border: 1px solid skyblue;
+		border: 30px solid #cecdcd;
 		border-radius: 50%;
 		padding: 5px; /* Add some padding inside the sections */
 		background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)), url("assets/images/QuestionMark.jpeg"); /*path to your image file */
@@ -125,6 +125,7 @@ include('server/getcontact.php');
 	}
 	.contactform label{
 		font-family: Georgia, serif; /* Set the font family to Georgia */
+		font-size: 20px;
 		border: 5px;
 		font-weight:bold;
 		color:gray;
@@ -260,7 +261,7 @@ include('server/getcontact.php');
 
 			<!---------Contact-Page--------->
 			<section>
-				<h3 class="center-heading">Contact Us</h3>	
+				<br><h3 class="center-heading">Contact Us</h3>	
 				<div class="section-container">
 					<div id="section1" class="section">
 						<h2>Sellers Market</h2>
@@ -270,51 +271,51 @@ include('server/getcontact.php');
 						<p><a href="https://poe.com/">Market</a>.</p>
 					</div>
 
-				<div id="section1" class="section">
-					<h2>Collections and returns</h2>
-					<p> We grace you with points of pickups and returns at any specified working hours depending on the point of reference. 
-					Our Points are located in the Sandton Region which is the main offices for our organization.
-					We can refer your pickup or collection accoreding to your current location and we can base them from the following points which are our storage locations :</p>
-					
-					<p></p>
-					<h4>SOWETO</h4>
-					<p1> <li>Weekdays (Working Hours) - 08h00-17h00</li>
-					<li>Weekends (Working Hours) - 07h45-14h00</li>
-					<li>Holidays (Working Hours) - Closed</li></p1>
-					
-					<p></p>
-					<h4>KRUGERSDORP</h4>
-					<p1> <li>Weekdays (Working Hours) - 08h00-17h00</li>
-					<li>Weekends (Working Hours) - 07h45-14h00</li>
-					<li>Holidays (Working Hours) - Closed</li></p1>
-					
-					<p></p>
-					<h4>HATFIELD</h4>
-					<p1> <li>Weekdays (Working Hours) - 08h00-17h00</li>
-					<li>Weekends (Working Hours) - 07h45-14h00</li>
-					<li>Holidays (Working Hours) - Closed</li></p1>
-					
-					<p><a href="https://poe.com/">More info.</a>.</p>
-				</div>
+					<div id="section1" class="section">
+						<h2>Collections and returns</h2>
+						<p> We grace you with points of pickups and returns at any specified working hours depending on the point of reference. 
+						Our Points are located in the Sandton Region which is the main offices for our organization.
+						We can refer your pickup or collection accoreding to your current location and we can base them from the following points which are our storage locations :</p>
+						
+						<p></p>
+						<h4>SOWETO</h4>
+							<p1> <li>Weekdays (Working Hours) - 08h00-17h00</li>
+							<li>Weekends (Working Hours) - 07h45-14h00</li>
+							<li>Holidays (Working Hours) - Closed</li></p1>
+							
+						<p></p>
+						<h4>KRUGERSDORP</h4>
+							<p1> <li>Weekdays (Working Hours) - 08h00-17h00</li>
+							<li>Weekends (Working Hours) - 07h45-14h00</li>
+							<li>Holidays (Working Hours) - Closed</li></p1>
+							
+						<p></p>
+						<h4>HATFIELD</h4>
+							<p1> <li>Weekdays (Working Hours) - 08h00-17h00</li>
+							<li>Weekends (Working Hours) - 07h45-14h00</li>
+							<li>Holidays (Working Hours) - Closed</li></p1>
+							
+							<p><a href="https://poe.com/">More info.</a>.</p>
+					</div>
 
-				<div id="section2" class="section">
-					<h2>Offices</h2>
-					<p>For face to face queries and site visit we have two main offices which operate in prescribed business hours.</p>
-					<p>They are situated in the following parts of the country: </p>
-					
-					<p></p>
-					<h4>SOWETO</h4>
-					<p1> <li>Weekdays (Working Hours) - 08h00-16h00</li>
-					<li>Weekends (Working Hours) - 08h00-13h00</li>
-					<li>Holidays (Working Hours) - 09h00-14h00</li></p1>
-					
-					<p></p>
-					<h4>KRUGERSDORP</h4>
-					<p1> <li>Weekdays (Working Hours) - 24/7</li>
-					<li>Weekends (Working Hours) - 08h00-16h00</li>
-					<li>Holidays (Working Hours) - 08h00-16h00</li></p1>
+					<div id="section2" class="section">
+						<h2>Offices</h2>
+							<p>For face to face queries and site visit we have two main offices which operate in prescribed business hours.</p>
+							<p>They are situated in the following parts of the country: </p>
+						
+						<p></p>
+						<h4>SOWETO</h4>
+							<p1> <li>Weekdays (Working Hours) - 08h00-16h00</li>
+							<li>Weekends (Working Hours) - 08h00-13h00</li>
+							<li>Holidays (Working Hours) - 09h00-14h00</li></p1>
+						
+						<p></p>
+						<h4>KRUGERSDORP</h4>
+							<p1> <li>Weekdays (Working Hours) - 24/7</li>
+							<li>Weekends (Working Hours) - 08h00-16h00</li>
+							<li>Holidays (Working Hours) - 08h00-16h00</li></p1>
 
-						<p><a href="https://poe.com/">Active Teams</a>.</p>
+							<p><a href="https://poe.com/">Active Teams</a>.</p>
 					</div>
 				</div>
 			</section>
@@ -322,7 +323,7 @@ include('server/getcontact.php');
 				<hr class="mx-auto">
 					<div class="contactpagecontainer">
 						<div class="googlemapscontainer">
-							<a href='https://www.easybooking.eu/'>GOOGLE MAPS</a><br>
+							<a href='https://www.easybooking.eu/'>Location(Site)</a><br>
 							<iframe class="googlemaps" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" id="gmap_canvas" src="https://maps.google.com/maps?width=520&amp;height=400&amp;hl=en&amp;q=4708%20Mhunti%20Street%20Johannesburg+(MR)&amp;t=p&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"> </iframe> 
 							<script type='text/javascript' src='https://embedmaps.com/google-maps-authorization/script.js?id=5c8a8dd1d18f664e1a4704f0a64fff04109a8dd8'> </script>
 						</div>
@@ -331,18 +332,6 @@ include('server/getcontact.php');
 							<h2>OverSights</h2>
 							<p>For face to face queries and site visit we have two main offices which operate in prescribed business hours.</p>
 							<p>They are situated in the following parts of the country: </p>
-							
-							<p></p>
-							<h4>SOWETO</h4>
-							<p1> <li>Weekdays (Working Hours) - 08h00-16h00</li>
-							<li>Weekends (Working Hours) - 08h00-13h00</li>
-							<li>Holidays (Working Hours) - 09h00-14h00</li></p1>
-							
-							<p></p>
-							<h4>KRUGERSDORP</h4>
-							<p1> <li>Weekdays (Working Hours) - 24/7</li>
-							<li>Weekends (Working Hours) - 08h00-16h00</li>
-							<li>Holidays (Working Hours) - 08h00-16h00</li></p1>
 						
 							<p><a href="https://poe.com/">Active Teams</a>.</p>
 						</div>
@@ -358,13 +347,13 @@ include('server/getcontact.php');
 									<br><br>
 								<label for="message">MESSAGE</label>
 								<textarea id="message" name="message" required></textarea>
-									<br><br>
+									<br><br><br><br><br>
 								<input type="submit" value="Submit">
 									<br><br>	
 							</form><br><br>
 						</div>
 					</div>
-				</section>
+			</section>
 <?php
 include('layouts/footer.php');
 ?>

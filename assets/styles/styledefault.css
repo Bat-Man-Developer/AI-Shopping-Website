@@ -7,7 +7,7 @@
 
 body{
 	font-family: Arial, sans-serif;
-	background-color: white;
+	background-color: #fffdf6;
 }
 
 a{
@@ -1057,6 +1057,7 @@ form a{
 	padding: 20px;
 	display: flex;
 	justify-content: space-between;
+	background-color:skyblue;
 }
 
 .contactpage{
@@ -1078,15 +1079,15 @@ form a{
 	border: 2px solid skyblue;
 	border-radius: 50%;
 	padding: 10px;
-	height: 40svw;
-	width: 40svw;
+	height: 32svw;
+	width: 32svw;
 	background-color: #cecdcd;
 }
 
 .googlemaps{
 	border: 2px solid skyblue;
-	height: 36.95svw;
-	width: 37svw;
+	height: 26.95svw;
+	width: 27svw;
 	border-radius: 50%;
 }
 
