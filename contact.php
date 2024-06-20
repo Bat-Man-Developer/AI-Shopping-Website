@@ -33,7 +33,6 @@ include('server/getcontact.php');
 		width: 450px;
 		height: 450px;
 	}
-
 	.section h2 {
 		font-size: 24px; /* Set the font size to 12 pixels */
 		font-family: Georgia, serif; /* Set the font family to Georgia */
@@ -72,9 +71,18 @@ include('server/getcontact.php');
 
 	/* CSS styles for hyperlinks */
 	a {
-		color: darkblue; /* Dark red color for hyperlinks */
-		text-decoration: none; /* Underline the hyperlinks */
-		border: 1px;
+		border: 20px;
+		padding: 5px;
+		font-size: 14px; /* Set the font size to 12 pixels */
+		font-family: Georgia, serif; /* Set the font family to Georgia */
+		font-weight: bold;
+		color: gray;
+		margin-bottom: 10px;	
+		text-align: center;
+		margin-top: 10px;
+		background-color: #f0f8ff;
+		border-width: 50px;
+		border-radius: 5px;
 	}
 
 	a:hover {
@@ -83,23 +91,21 @@ include('server/getcontact.php');
 		text-decoration: none;
 		color: orange; /* Darker red color on hover */
 	}
-
 	.contactform {
-		max-width: 800px;
+		height: 40svw;
+		width: 40svw;
 		margin: 0 auto;
 		padding: 20px;
-		border: 5px solid brown; /* Light brown border color */
-		border-radius: 15px;
+		border: 1px solid skyblue;
+		border-radius: 50%;
 		padding: 5px; /* Add some padding inside the sections */
-		background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), url("assets/images/QuestionMark.jpeg"); /*path to your image file */
+		background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)), url("assets/images/QuestionMark.jpeg"); /*path to your image file */
 		background-size: 100%;
-		background-repeat: repeat; /* Ensure the image is not repeated */
+		background-repeat: repeat; /* Ensure the image is repeated */
 		text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-		border-radius: 20px;
-		background-color:#e0e0e0;
 	}
-	.contactform input, contactform textarea {
-		width: 100%;
+	.contactform input{
+		width: 20svw;
 		padding: 12px;
 		border: 1px solid #ccc;
 		border-radius: 4px;
@@ -114,32 +120,17 @@ include('server/getcontact.php');
 		background-color:brown;
 	}
 	.contactform textarea{
-		height: 400px;
-		width: 700px;
-		border: 10px solid brown;
-		border-radius: 5px;
-		padding: 10px;
-		border-color:lightblue;
-		border: skyblue;
-		background-color: #f2f2f2;
-		color:lightblue;
+		height: 12svw;
+		width: 28svw;
+		border: 1px solid lightblue;
+		border-radius: 30px;
+		padding: 15px;
+		background-color: rgba(240,248,255,0.8);
+		color:gray;
 		font-weight:bold;
-		font-size:18px;
+		font-size:14px;
+		text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 	}
-
-	.contactform textarea[type=message]{
-		height: 400px;
-		width: 700px;
-		border: 10px;
-		border-radius: 50px;
-		border-color:lightblue;
-		border: skyblue;
-		background-color: black;
-		color:lightblue;
-		font-weight:bold;
-		font-size:18px;
-	}
-
 	.contactform label{
 		font-family: Georgia, serif; /* Set the font family to Georgia */
 		border: 5px;
@@ -148,29 +139,37 @@ include('server/getcontact.php');
 	}
 	.contactform input[type=text]{
 		margin-top: 3px;
-		background-color: #f2f2f2;
+		background-color: rgba(240,248,255,0.8);
 		font-family: Georgia, serif; /* Set the font family to Georgia */
-		border: 5px;
+		border: 1px solid lightblue;
+		border-radius: 30px;
 		font-weight:bold;
-		color:lightblue;
-		width:400px;
+		font-size: 12px;
+		color:gray;
+		width:10svw;
+		height: 1svw;
+		text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 	}
 	.contactform input[type=email]{
-		background-color: #f2f2f2;
+		background-color: rgba(240,248,255,0.8);
 		font-family: Georgia, serif; /* Set the font family to Georgia */
-		border: 5px;
+		font-size: 12px;
+		border: 1px solid lightblue;
+		border-radius: 30px;
 		font-weight:bold;
-		color:lightblue;
-		width:400px;
+		color:gray;
+		width:15svw;
+		height: 1.5svw;
+		text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 	}
-
 	.contactform input[type=submit] {
 		background-color: #f2f2f2;
-		color: orange;
+		color: gray;
 		width: 200px;	
 		padding: 12px 20px;
 		border: 5px;
 		border-radius: 4px;
+		text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 		cursor: pointer;
 	}
 
@@ -268,6 +267,7 @@ include('server/getcontact.php');
 
 			<!---------Contact-Page--------->
 			<section>
+				<br>
 				<h3 class="center-heading">Contact Us</h3>	
 				<div class="section-container">
 					<div id="section1" class="section">
@@ -326,24 +326,47 @@ include('server/getcontact.php');
 					</div>
 				</div>
 			</section>
+
 			<section>
 				<hr class="mx-auto">
 					<div class="contactpagecontainer">
 						<div class="googlemapscontainer">
-							<a href='https://www.easybooking.eu/'>GOOGLE MAPS</a><br>
+							<a href='https://www.easybooking.eu/'>Google Maps</a><br>
 							<iframe class="googlemaps" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" id="gmap_canvas" src="https://maps.google.com/maps?width=520&amp;height=400&amp;hl=en&amp;q=4708%20Mhunti%20Street%20Johannesburg+(MR)&amp;t=p&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"> </iframe> 
 							<script type='text/javascript' src='https://embedmaps.com/google-maps-authorization/script.js?id=5c8a8dd1d18f664e1a4704f0a64fff04109a8dd8'> </script>
 						</div>
+
+						<div id="section2" class="section">
+						<h2>OverSights</h2>
+						<p>For face to face queries and site visit we have two main offices which operate in prescribed business hours.</p>
+						<p>They are situated in the following parts of the country: </p>
+						
+						<p></p>
+						<h4>SOWETO</h4>
+						<p1> <li>Weekdays (Working Hours) - 08h00-16h00</li>
+						<li>Weekends (Working Hours) - 08h00-13h00</li>
+						<li>Holidays (Working Hours) - 09h00-14h00</li></p1>
+						
+						<p></p>
+						<h4>KRUGERSDORP</h4>
+						<p1> <li>Weekdays (Working Hours) - 24/7</li>
+						<li>Weekends (Working Hours) - 08h00-16h00</li>
+						<li>Holidays (Working Hours) - 08h00-16h00</li></p1>
+
+						<p><a href="https://poe.com/">Active Teams</a>.</p>
+					</div>
+
 						<div class="contactform">
 							<form action="contact.php" method="post">
-									<br><br>
-								<label for="name">NAME</label>
+									<br><br><br><br><br><br><br><br><br><br><br><br><br>	
+								<label for="name">Name</label>
 								<input type="text" id="name" name="name" required>
-									<br><br>
-								<label for="email">EMAIL</label>
+									<br>
+								<label for="email">email</label>
 								<input type="email" id="email" name="email" required>
-									<br><br>
-								<label for="message">MESSAGE</label>
+									<br>
+								<label for="message">Opinion/Message</label>
+								<br><br>
 								<textarea id="message" name="message" required></textarea>
 									<br><br>
 								<input type="submit" value="Submit">
