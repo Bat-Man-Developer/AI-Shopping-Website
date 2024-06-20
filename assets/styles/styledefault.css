@@ -7,6 +7,7 @@
 
 body{
 	font-family: Arial, sans-serif;
+	background-color: white;
 }
 
 a{
@@ -1052,6 +1053,11 @@ form a{
 /*----------Contact Page--------*/
 .contactpagecontainer{
 	text-align: center;
+	max-width: 100%;
+	margin: 0 auto;
+	padding: 20px;
+	display: flex;
+	justify-content: space-between;
 }
 
 .contactpage{
@@ -1067,31 +1073,22 @@ form a{
 	border: solid rgb(182, 182, 182);
 }
 
-.submitcontactformbtn{
-	color: #fff;
-	background-color: rgb(22, 115, 255);
-	padding: 5px;
-	width: auto;
-	border: solid #979797;
-	border-radius: 10%;
-	cursor: pointer;
-}
-
-.submitcontactformbtn:hover{
-	background-color: #05598a;
-}
-
 .googlemapscontainer{
 	flex: wrap;
 	display: inline-block;
-	background-color: #FFFFFF;
-	border: solid rgb(240, 240, 240);
-	height: auto;
-	width: 98.95vw;
+	border: 2px solid skyblue;
+	border-radius: 50%;
+	padding: 10px;
+	height: 40svw;
+	width: 40svw;
+	background-color: #cecdcd;
 }
 
 .googlemaps{
-	width: 98vw;
+	border: 2px solid skyblue;
+	height: 36.95svw;
+	width: 37svw;
+	border-radius: 50%;
 }
 
 /*----------Orders Page--------*/

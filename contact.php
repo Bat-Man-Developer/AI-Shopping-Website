@@ -34,7 +34,6 @@ include('server/getcontact.php');
 		width: 450px;
 		height: 450px;
 	}
-
 	.section h2 {
 		font-size: 24px; /* Set the font size to 12 pixels */
 		font-family: Georgia, serif; /* Set the font family to Georgia */
@@ -71,22 +70,35 @@ include('server/getcontact.php');
 		margin-top: 10px;	
 	}
 
+	/* CSS styles for hyperlinks */
+	a {
+		color: darkblue; /* Dark red color for hyperlinks */
+		text-decoration: none; /* Underline the hyperlinks */
+		border: 1px;
+	}
+
+	a:hover {
+		background-color: #f2f2f2;
+		padding: 5px 10px;
+		text-decoration: none;
+		color: orange; /* Darker red color on hover */
+	}
+
 	.contactform {
-		max-width: 800px;
+		height: 40svw;
+		width: 40svw;
 		margin: 0 auto;
 		padding: 20px;
-		border: 5px solid brown; /* Light brown border color */
-		border-radius: 15px;
+		border: 1px solid skyblue;
+		border-radius: 50%;
 		padding: 5px; /* Add some padding inside the sections */
-		background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), url("assets/images/QuestionMark.jpeg"); /*path to your image file */
+		background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)), url("assets/images/QuestionMark.jpeg"); /*path to your image file */
 		background-size: 100%;
-		background-repeat: repeat; /* Ensure the image is not repeated */
+		background-repeat: repeat; /* Ensure the image is repeated */
 		text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-		border-radius: 20px;
-		background-color:#e0e0e0;
 	}
-	.contactform input, contactform textarea {
-		width: 100%;
+	.contactform input{
+		width: 20svw;
 		padding: 12px;
 		border: 1px solid #ccc;
 		border-radius: 4px;
@@ -101,32 +113,17 @@ include('server/getcontact.php');
 		background-color:brown;
 	}
 	.contactform textarea{
-		height: 400px;
-		width: 700px;
-		border: 10px solid brown;
-		border-radius: 5px;
-		padding: 10px;
-		border-color:lightblue;
-		border: skyblue;
-		background-color: #f2f2f2;
-		color:lightblue;
+		height: 12svw;
+		width: 28svw;
+		border: 1px solid lightblue;
+		border-radius: 30px;
+		padding: 15px;
+		background-color: rgba(240,248,255,0.8);
+		color:gray;
 		font-weight:bold;
-		font-size:18px;
+		font-size:14px;
+		text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 	}
-
-	.contactform textarea[type=message]{
-		height: 400px;
-		width: 700px;
-		border: 10px;
-		border-radius: 50px;
-		border-color:lightblue;
-		border: skyblue;
-		background-color: black;
-		color:lightblue;
-		font-weight:bold;
-		font-size:18px;
-	}
-
 	.contactform label{
 		font-family: Georgia, serif; /* Set the font family to Georgia */
 		border: 5px;
@@ -135,29 +132,37 @@ include('server/getcontact.php');
 	}
 	.contactform input[type=text]{
 		margin-top: 3px;
-		background-color: #f2f2f2;
+		background-color: rgba(240,248,255,0.8);
 		font-family: Georgia, serif; /* Set the font family to Georgia */
-		border: 5px;
+		border: 1px solid lightblue;
+		border-radius: 30px;
 		font-weight:bold;
-		color:lightblue;
-		width:400px;
+		font-size: 12px;
+		color:gray;
+		width:10svw;
+		height: 1svw;
+		text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 	}
 	.contactform input[type=email]{
-		background-color: #f2f2f2;
+		background-color: rgba(240,248,255,0.8);
 		font-family: Georgia, serif; /* Set the font family to Georgia */
-		border: 5px;
+		font-size: 12px;
+		border: 1px solid lightblue;
+		border-radius: 30px;
 		font-weight:bold;
-		color:lightblue;
-		width:400px;
+		color:gray;
+		width:15svw;
+		height: 1.5svw;
+		text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 	}
-
 	.contactform input[type=submit] {
 		background-color: #f2f2f2;
-		color: orange;
+		color: gray;
 		width: 200px;	
 		padding: 12px 20px;
 		border: 5px;
 		border-radius: 4px;
+		text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 		cursor: pointer;
 	}
 
@@ -254,17 +259,17 @@ include('server/getcontact.php');
 		<p style="color: red; font-weight: bold; text-align: center" class="text-center"><?php if(isset($_GET['error'])){ echo $_GET['error']; }?></p>
 		<p style="color: green" class="text-center"><?php if(isset($_GET['message'])){ echo $_GET['message']; }?></p>
 
-		<!---------Contact-Page--------->
-		<section>
-			<h3 class="center-heading">Contact Us</h3>	
-			<div class="section-container">
-				<div id="section1" class="section">
-					<h2>Sellers Market</h2>
-					<p>This is our market plartform wherein you get to submit the products you want to sell. We basically screen it and value it for others to purchase.
-					We might take some time to respond on your uploaded goods as we get a lot of products from sellers daily. 
-					A well as a lot of reviews and comment on the values permitted on each product by out marketiong Experts.</p>
-					<p><a href="https://poe.com/">Market</a>.</p>
-				</div>
+			<!---------Contact-Page--------->
+			<section>
+				<h3 class="center-heading">Contact Us</h3>	
+				<div class="section-container">
+					<div id="section1" class="section">
+						<h2>Sellers Market</h2>
+						<p>This is our market plartform wherein you get to submit the products you want to sell. We basically screen it and value it for others to purchase.
+						We might take some time to respond on your uploaded goods as we get a lot of products from sellers daily. 
+						A well as a lot of reviews and comment on the values permitted on each product by out marketiong Experts.</p>
+						<p><a href="https://poe.com/">Market</a>.</p>
+					</div>
 
 				<div id="section1" class="section">
 					<h2>Collections and returns</h2>
@@ -310,32 +315,57 @@ include('server/getcontact.php');
 					<li>Weekends (Working Hours) - 08h00-16h00</li>
 					<li>Holidays (Working Hours) - 08h00-16h00</li></p1>
 
-					<p><a href="https://poe.com/">Active Teams</a>.</p>
-				</div>
-			</div>
-		</section>
-		<section>
-			<hr class="mx-auto">
-				<div class="contactpagecontainer">
-					<div class="googlemapscontainer">
-						<a href='https://www.easybooking.eu/'>GOOGLE MAPS</a><br>
-						<iframe class="googlemaps" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" id="gmap_canvas" src="https://maps.google.com/maps?width=520&amp;height=400&amp;hl=en&amp;q=4708%20Mhunti%20Street%20Johannesburg+(MR)&amp;t=p&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"> </iframe> 
-						<script type='text/javascript' src='https://embedmaps.com/google-maps-authorization/script.js?id=5c8a8dd1d18f664e1a4704f0a64fff04109a8dd8'> </script>
-					</div>
-					<div class="contactpage">
-						<p>Send Any Queries And We Will be In Touch Soon.</p><br>
-						<form  action="contact.php" method="POST" enctype="multipart/form-data">
-							Your name:<br>
-							<label><input name="fldname" type="text" value="" size="30" title="Enter Name" placeholder="Your Name" required/></label><br>
-							Your email:<br>
-							<label><input name="fldemail" type="text" value="" size="30" title="Enter Email" placeholder="Your Email" required/></label><br>
-							Your message:<br>
-							<label><textarea name="fldmessage" rows="7" cols="30" title="Enter Message" placeholder="Enter Message Here..."></textarea></label><br>
-							<input class="submitcontactformbtn" type="submit" value="Send Messsage" name="submitcontactformbtn"/>
-						</form><br><br>
+						<p><a href="https://poe.com/">Active Teams</a>.</p>
 					</div>
 				</div>
 			</section>
+			<section>
+				<hr class="mx-auto">
+					<div class="contactpagecontainer">
+						<div class="googlemapscontainer">
+							<a href='https://www.easybooking.eu/'>GOOGLE MAPS</a><br>
+							<iframe class="googlemaps" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" id="gmap_canvas" src="https://maps.google.com/maps?width=520&amp;height=400&amp;hl=en&amp;q=4708%20Mhunti%20Street%20Johannesburg+(MR)&amp;t=p&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"> </iframe> 
+							<script type='text/javascript' src='https://embedmaps.com/google-maps-authorization/script.js?id=5c8a8dd1d18f664e1a4704f0a64fff04109a8dd8'> </script>
+						</div>
+					
+						<div id="section2" class="section">
+							<h2>OverSights</h2>
+							<p>For face to face queries and site visit we have two main offices which operate in prescribed business hours.</p>
+							<p>They are situated in the following parts of the country: </p>
+							
+							<p></p>
+							<h4>SOWETO</h4>
+							<p1> <li>Weekdays (Working Hours) - 08h00-16h00</li>
+							<li>Weekends (Working Hours) - 08h00-13h00</li>
+							<li>Holidays (Working Hours) - 09h00-14h00</li></p1>
+							
+							<p></p>
+							<h4>KRUGERSDORP</h4>
+							<p1> <li>Weekdays (Working Hours) - 24/7</li>
+							<li>Weekends (Working Hours) - 08h00-16h00</li>
+							<li>Holidays (Working Hours) - 08h00-16h00</li></p1>
+						
+							<p><a href="https://poe.com/">Active Teams</a>.</p>
+						</div>
+
+						<div class="contactform">
+							<form action="contact.php" method="post">
+									<br><br>
+								<label for="name">NAME</label>
+								<input type="text" id="name" name="name" required>
+									<br><br>
+								<label for="email">EMAIL</label>
+								<input type="email" id="email" name="email" required>
+									<br><br>
+								<label for="message">MESSAGE</label>
+								<textarea id="message" name="message" required></textarea>
+									<br><br>
+								<input type="submit" value="Submit">
+									<br><br>	
+							</form><br><br>
+						</div>
+					</div>
+				</section>
 <?php
 include('layouts/footer.php');
 ?>
