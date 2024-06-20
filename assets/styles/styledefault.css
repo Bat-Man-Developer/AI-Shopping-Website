@@ -438,7 +438,7 @@ h4{
 	margin: auto;
 	overflow: hidden;
 	width: 100%;
-	height: 200px;
+	height: auto;
 }
 
 .slide-container img {
@@ -449,13 +449,13 @@ h4{
 
 .slide-button {
 	position: absolute;
-	top: 50%;
+	top: 54%;
 	transform: translateY(-50%);
-	padding: 10px;
-	font-size: 20px;
+	padding: 7px;
+	font-size: 14px;
 	background-color: #070707;
 	border: solid rgb(61, 211, 24);
-	border-width: 15px;
+	border-width: 10px;
 	border-radius: 50%;
 	color: #fcf9f9;
 	cursor: pointer;
@@ -1296,8 +1296,6 @@ margin-left: 70px;
 
 /*---------- media query for less than 900 screen size --------*/
 @media only screen and (max-width: 900px){
-/*---------- Products Page --------*/
-
 /*---------- Track Order Page --------*/
 .realtimetrackingstatuscontainer input{
 margin-left: 50px;
@@ -1398,6 +1396,19 @@ width: 60vw;
 }
 }
 
+/*-------media query for less than 550 screen size----*/
+@media only screen and (max-width: 550px){
+/*---------- Slide Show --------*/
+.slide-button {
+	padding: 4px;
+	font-size: 7px;
+	border-width: 5px;
+}
+#slideshow p{
+	font-size: x-large;
+}
+}
+
 /*-------media query for less than 500 screen size----*/
 @media only screen and (max-width: 500px){
 /*---------- Track Order Page --------*/
@@ -1408,6 +1419,9 @@ width: 60vw;
 
 /*-------media query for less than 450 screen size----*/
 @media only screen and (max-width: 450px){
+#slideshow p{
+	font-size: large;
+}
 /*--------- Voice Recognition ---------*/
 #voicerecognitionbtn{
 	max-width: 20%;
@@ -1528,6 +1542,11 @@ margin-left: 35px;
 #chatbotpicbtn:hover{
 	max-width: 24%;
 	max-height: 29%;
+}
+
+/*---------- Slide Show --------*/
+#slideshow p{
+	font-size: medium;
 }
 
 /*---------- Product Details Page --------*/
@@ -1955,6 +1974,20 @@ form a{
 
 }
 
+/*-------media query for less than 290 screen size---*/
+@media only screen and (max-width: 290px){
+/*---------- Slide Show --------*/
+.slide-button {
+	padding: 2px;
+	font-size: 4px;
+	border-width: 3px;
+}
+
+#slideshow p{
+	font-size: small;
+}
+}
+
 /*-------media query for less than 280 screen size----*/
 @media only screen and (max-width: 280px){
 /*-------Header design-------*/
@@ -2151,6 +2184,10 @@ height: 15px;
 .header .cartpic{
 	width: 5px;
 	height: 5px;
+}
+/*---------- Slide Show --------*/
+#slideshow p{
+	font-size: x-small;
 }
 }
 

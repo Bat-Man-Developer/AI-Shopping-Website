@@ -71,18 +71,9 @@ include('server/getcontact.php');
 
 	/* CSS styles for hyperlinks */
 	a {
-		border: 20px;
-		padding: 5px;
-		font-size: 14px; /* Set the font size to 12 pixels */
-		font-family: Georgia, serif; /* Set the font family to Georgia */
-		font-weight: bold;
-		color: gray;
-		margin-bottom: 10px;	
-		text-align: center;
-		margin-top: 10px;
-		background-color: #f0f8ff;
-		border-width: 50px;
-		border-radius: 5px;
+		color: darkblue; /* Dark red color for hyperlinks */
+		text-decoration: none; /* Underline the hyperlinks */
+		border: 1px;
 	}
 
 	a:hover {
@@ -91,6 +82,7 @@ include('server/getcontact.php');
 		text-decoration: none;
 		color: orange; /* Darker red color on hover */
 	}
+
 	.contactform {
 		height: 40svw;
 		width: 40svw;
@@ -190,84 +182,84 @@ include('server/getcontact.php');
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 		</head>
 	  <body>
-			<div class="header">
-				<div class="container">
-					<div class="navbar">
-						<div class="logocontainer">
-							<a href="index.php"><img class="logo" src="assets/images/newstufflogo_pic.png" alt="Snow" align="left"></a>
-						</div>
-						<nav>
-							<ul id="menuitems">
-								<li class="exitmenutogglebtn" id="nav-exit" onclick="menutoggle()"><a href="#">X</a></li>
-								<li class="active"><a href="index.php">Home</a></li>
-								<li class="active"><a href="about.php">About</a></li>
-								<li class="active" id="departmentitems" onclick="departmentsmenutoggle()"><a href="#">Shop Departments</a></li>
-								<li class="active"><a href="contact.php">Contact</a></li>
-								<li class="active"><a href="sellers/sellerslogin.php" target="_blank" rel="noopener noreferrer">Sell on NSSA</a></li>
-								<li class="active"><a href="#">Careers</a></li>
-							</ul>
-						</nav>
-						<!---------------Wishlist Image---------------->
-						<a href="wishlist.php" id="wishlistlink"><img id="wishlistpic" class="wishlistpic" src="assets/images/wishlist_pic.png" alt="Snow" align="left"><?php if(isset($_SESSION['wishlisttotalitems']) && $_SESSION['wishlisttotalitems'] != 0) { ?><span class="cartquantity"><?php echo $_SESSION['wishlisttotalitems']; } ?></span></a>
-						<!---------------Account Image---------------->
-						<a href="login.php" class="account_pic_link"><img id="accountpic" class="accountpic" src="assets/images/accounticon_pic.png" alt="Snow" align="left"></a>
-						<!---------------Cart Image---------------->
-						<a href="cart.php"><img id="cart-pic" class="cartpic" src="assets/images/cartpic.png" alt="Snow" align="left">
-						<?php if(isset($_SESSION['totalquantity']) && $_SESSION['totalquantity'] != 0) { ?><span class="cartquantity"><?php echo $_SESSION['totalquantity']; } ?></span></a>
-						<!-- Menu icon -->
-						<img src="assets/images/menu.png" alt="Snow" class="menu-icon" onclick="menutoggle()" align="center">
-					</div>
-					<!---Search Bar--->
-					<div class="searchProductsContainer">
-						<form name="searchProductsForm" id="searchProductsForm" method="POST" action="products.php">
-							<div class="searchProductsDiv">
-									<input type="text" id="searchInput" name="searchproductstring" placeholder="Search...">
-									<button type="submit" id="searchButton">Search</button>
-									<div id="suggestionsContainer"></div>
-							</div>
-						</form>
-					</div>
-					<!-------- Departments Navbar ------->
-					<div class="departmentsnavbar" id="departmentsnavbar">
-						<nav class="departmentsnav">
-							<ul class="departmentsnavitems">
-								<li class="departmentsactive" onclick="departmentsmenutoggle()"><a id="departmentsexitmenutogglebtn" href="#">Close</a></li>
-								<li class="departmentsactive" id="departmentsnavlist"><a href="products.php?fldproductdepartment=Automotive">Automotive</a></li>
-								<li class="departmentsactive" id="departmentsnavlist"><a href="products.php?fldproductdepartment=DIY">DIY</a></li>
-								<li class="departmentsactive" id="departmentsnavlist"><a href="products.php?fldproductdepartment=Baby, Toddler & Kids">Baby, Toddler & Kids</a></li>
-								<li class="departmentsactive" id="departmentsnavlist"><a href="products.php?fldproductdepartment=Health, Beauty & Personal Care">Health, Beauty & Personal Care</a></li>
-								<li class="departmentsactive" id="departmentsnavlist"><a href="products.php?fldproductdepartment=Sports">Sports</a></li>
-								<li class="departmentsactive" id="departmentsnavlist"><a href="products.php?fldproductdepartment=Outdoors">Outdoors</a></li>
-								<li class="departmentsactive" id="departmentsnavlist"><a href="products.php?fldproductdepartment=Healthy Living">Healthy Living</a></li>
-								<li class="departmentsactive" id="departmentsnavlist"><a href="products.php?fldproductdepartment=Clothing, Shoes & Accessories">Clothing, Shoes & Accessories</a></li>
-								<li class="departmentsactive" id="departmentsnavlist"><a href="products.php?fldproductdepartment=Electronics & Devices">Electronics & Devices</a></li>
-								<li class="departmentsactive" id="departmentsnavlist"><a href="products.php?fldproductdepartment=Garden, Pool & Patio">Garden, Pool & Patio</a></li>
-								<li class="departmentsactive" id="departmentsnavlist"><a href="products.php?fldproductdepartment=Home & Appliances">Home & Appliances</a></li><li class="departmentsactive" id="departmentsnavlist"><a href="products.php?fldproductdepartment=Home & Furniture">Home & Furniture</a></li>
-								<li class="departmentsactive" id="departmentsnavlist"><a href="products.php?fldproductdepartment=Household Essentials">Household Essentials</a></li>
-								<li class="departmentsactive" id="departmentsnavlist"><a href="products.php?fldproductdepartment=Office, Stationary & Books">Office, Stationary & Books</a></li>
-								<li class="departmentsactive" id="departmentsnavlist"><a href="products.php?fldproductdepartment=Party Ocassions">Party Ocassions</a></li>
-								<li class="departmentsactive" id="departmentsnavlist"><a href="products.php?fldproductdepartment=Pets">Pets</a></li>
-								<li class="departmentsactive" id="departmentsnavlist"><a href="products.php?fldproductdepartment=Liquor">Liquor</a></li>
-								<li class="departmentsactive" id="departmentsnavlist"><a href="products.php?fldproductdepartment=Sweets & Snacks">Sweets & Snacks</a></li>
-							</ul>
-						</nav>
-					</div>
 
-					<!---- Voice Recognition AI Search Button --->
-					<div class="voicerecognitioncontainer">
-						<img src="assets/images/voicerecognitionicon_pic.png" alt="snow" class="btn" id="voicerecognitionbtn"/>
-						<p id="result"></p>
-						<p id="voicerecognitionhelplink">Need Help?<a href="voicerecognitionhelp.php">Voice Command List</a><p>
-					</div>
+	  <div class="header">
+		  <div class="container">
+		    <div class="navbar">
+			    <div class="logocontainer">
+				    <a href="index.php"><img class="logo" src="assets/images/newstufflogo_pic.png" alt="Snow" align="left"></a>
+			    </div>
+			    <nav>
+						<ul id="menuitems">
+							<li class="exitmenutogglebtn" id="nav-exit" onclick="menutoggle()"><a href="#">X</a></li>
+							<li class="active"><a href="index.php">Home</a></li>
+							<li class="active"><a href="about.php">About</a></li>
+							<li class="active" id="departmentitems" onclick="departmentsmenutoggle()"><a href="#">Shop Departments</a></li>
+							<li class="active"><a href="contact.php">Contact</a></li>
+							<li class="active"><a href="sellers/sellerslogin.php" target="_blank" rel="noopener noreferrer">Sell on NSSA</a></li>
+							<li class="active"><a href="#">Careers</a></li>
+				    </ul>
+					</nav>
+					<!---------------Wishlist Image---------------->
+					<a href="wishlist.php" id="wishlistlink"><img id="wishlistpic" class="wishlistpic" src="assets/images/wishlist_pic.png" alt="Snow" align="left"><?php if(isset($_SESSION['wishlisttotalitems']) && $_SESSION['wishlisttotalitems'] != 0) { ?><span class="cartquantity"><?php echo $_SESSION['wishlisttotalitems']; } ?></span></a>
+					<!---------------Account Image---------------->
+					<a href="login.php" class="account_pic_link"><img id="accountpic" class="accountpic" src="assets/images/accounticon_pic.png" alt="Snow" align="left"></a>
+					<!---------------Cart Image---------------->
+					<a href="cart.php"><img id="cart-pic" class="cartpic" src="assets/images/cartpic.png" alt="Snow" align="left">
+					<?php if(isset($_SESSION['totalquantity']) && $_SESSION['totalquantity'] != 0) { ?><span class="cartquantity"><?php echo $_SESSION['totalquantity']; } ?></span></a>
+					<!-- Menu icon -->
+					<img src="assets/images/menu.png" alt="Snow" class="menu-icon" onclick="menutoggle()" align="center">
 				</div>
+				<!---Search Bar--->
+				<div class="searchProductsContainer">
+					<form name="searchProductsForm" method="POST" action="products.php">
+						<div class="searchProductsDiv">
+								<input type="text" id="searchInput" name="searchproductstring" placeholder="Search...">
+								<button type="submit" id="searchButton">Search</button>
+								<div id="suggestionsContainer"></div>
+						</div>
+					</form>
+				</div>
+				<!-------- Departments Navbar ------->
+				<div class="departmentsnavbar" id="departmentsnavbar">
+					<nav class="departmentsnav">
+						<ul class="departmentsnavitems">
+						  <li class="departmentsactive" onclick="departmentsmenutoggle()"><a id="departmentsexitmenutogglebtn" href="#">Close</a></li>
+							<li class="departmentsactive" id="departmentsnavlist"><a href="products.php?fldproductdepartment=Automotive">Automotive</a></li>
+							<li class="departmentsactive" id="departmentsnavlist"><a href="products.php?fldproductdepartment=DIY">DIY</a></li>
+							<li class="departmentsactive" id="departmentsnavlist"><a href="products.php?fldproductdepartment=Baby, Toddler & Kids">Baby, Toddler & Kids</a></li>
+							<li class="departmentsactive" id="departmentsnavlist"><a href="products.php?fldproductdepartment=Health, Beauty & Personal Care">Health, Beauty & Personal Care</a></li>
+							<li class="departmentsactive" id="departmentsnavlist"><a href="products.php?fldproductdepartment=Sports">Sports</a></li>
+							<li class="departmentsactive" id="departmentsnavlist"><a href="products.php?fldproductdepartment=Outdoors">Outdoors</a></li>
+							<li class="departmentsactive" id="departmentsnavlist"><a href="products.php?fldproductdepartment=Healthy Living">Healthy Living</a></li>
+							<li class="departmentsactive" id="departmentsnavlist"><a href="products.php?fldproductdepartment=Clothing, Shoes & Accessories">Clothing, Shoes & Accessories</a></li>
+							<li class="departmentsactive" id="departmentsnavlist"><a href="products.php?fldproductdepartment=Electronics & Devices">Electronics & Devices</a></li>
+							<li class="departmentsactive" id="departmentsnavlist"><a href="products.php?fldproductdepartment=Garden, Pool & Patio">Garden, Pool & Patio</a></li>
+							<li class="departmentsactive" id="departmentsnavlist"><a href="products.php?fldproductdepartment=Home & Appliances">Home & Appliances</a></li><li class="departmentsactive" id="departmentsnavlist"><a href="products.php?fldproductdepartment=Home & Furniture">Home & Furniture</a></li>
+							<li class="departmentsactive" id="departmentsnavlist"><a href="products.php?fldproductdepartment=Household Essentials">Household Essentials</a></li>
+							<li class="departmentsactive" id="departmentsnavlist"><a href="products.php?fldproductdepartment=Office, Stationary & Books">Office, Stationary & Books</a></li>
+							<li class="departmentsactive" id="departmentsnavlist"><a href="products.php?fldproductdepartment=Party Ocassions">Party Ocassions</a></li>
+							<li class="departmentsactive" id="departmentsnavlist"><a href="products.php?fldproductdepartment=Pets">Pets</a></li>
+							<li class="departmentsactive" id="departmentsnavlist"><a href="products.php?fldproductdepartment=Liquor">Liquor</a></li>
+							<li class="departmentsactive" id="departmentsnavlist"><a href="products.php?fldproductdepartment=Sweets & Snacks">Sweets & Snacks</a></li>
+						</ul>
+					</nav>
+				</div>
+
+				<!---- Voice Recognition AI Search Button --->
+				<div class="voicerecognitioncontainer">
+          <img src="assets/images/voicerecognitionicon_pic.png" alt="snow" class="btn" id="voicerecognitionbtn"/>
+					<p id="result"></p>
+					<p id="voicerecognitionhelplink">Need Help?<a href="voicerecognitionhelp.php">Voice Command List</a><p>
+        </div>
 			</div>
-			<!------------- Website Messages----------->
-			<p style="color: red; font-weight: bold; text-align: center" class="text-center"><?php if(isset($_GET['error'])){ echo $_GET['error']; }?></p>
-			<p style="color: green" class="text-center"><?php if(isset($_GET['message'])){ echo $_GET['message']; }?></p>
+		</div>
+		<!------------- Website Messages----------->
+		<p style="color: red; font-weight: bold; text-align: center" class="text-center"><?php if(isset($_GET['error'])){ echo $_GET['error']; }?></p>
+		<p style="color: green" class="text-center"><?php if(isset($_GET['message'])){ echo $_GET['message']; }?></p>
 
 			<!---------Contact-Page--------->
 			<section>
-				<br>
 				<h3 class="center-heading">Contact Us</h3>	
 				<div class="section-container">
 					<div id="section1" class="section">
@@ -278,95 +270,72 @@ include('server/getcontact.php');
 						<p><a href="https://poe.com/">Market</a>.</p>
 					</div>
 
-					<div id="section1" class="section">
-						<h2>Collections and returns</h2>
-						<p> We grace you with points of pickups and returns at any specified working hours depending on the point of reference. 
-						Our Points are located in the Sandton Region which is the main offices for our organization.
-						We can refer your pickup or collection accoreding to your current location and we can base them from the following points which are our storage locations :</p>
-						
-						<p></p>
-						<h4>SOWETO</h4>
-						<p1> <li>Weekdays (Working Hours) - 08h00-17h00</li>
-						<li>Weekends (Working Hours) - 07h45-14h00</li>
-						<li>Holidays (Working Hours) - Closed</li></p1>
-						
-						<p></p>
-						<h4>KRUGERSDORP</h4>
-						<p1> <li>Weekdays (Working Hours) - 08h00-17h00</li>
-						<li>Weekends (Working Hours) - 07h45-14h00</li>
-						<li>Holidays (Working Hours) - Closed</li></p1>
-						
-						<p></p>
-						<h4>HATFIELD</h4>
-						<p1> <li>Weekdays (Working Hours) - 08h00-17h00</li>
-						<li>Weekends (Working Hours) - 07h45-14h00</li>
-						<li>Holidays (Working Hours) - Closed</li></p1>
-						
-						<p><a href="https://poe.com/">More info.</a>.</p>
-					</div>
+				<div id="section1" class="section">
+					<h2>Collections and returns</h2>
+					<p> We grace you with points of pickups and returns at any specified working hours depending on the point of reference. 
+					Our Points are located in the Sandton Region which is the main offices for our organization.
+					We can refer your pickup or collection accoreding to your current location and we can base them from the following points which are our storage locations :</p>
+					
+					<p></p>
+					<h4>SOWETO</h4>
+					<p1> <li>Weekdays (Working Hours) - 08h00-17h00</li>
+					<li>Weekends (Working Hours) - 07h45-14h00</li>
+					<li>Holidays (Working Hours) - Closed</li></p1>
+					
+					<p></p>
+					<h4>KRUGERSDORP</h4>
+					<p1> <li>Weekdays (Working Hours) - 08h00-17h00</li>
+					<li>Weekends (Working Hours) - 07h45-14h00</li>
+					<li>Holidays (Working Hours) - Closed</li></p1>
+					
+					<p></p>
+					<h4>HATFIELD</h4>
+					<p1> <li>Weekdays (Working Hours) - 08h00-17h00</li>
+					<li>Weekends (Working Hours) - 07h45-14h00</li>
+					<li>Holidays (Working Hours) - Closed</li></p1>
+					
+					<p><a href="https://poe.com/">More info.</a>.</p>
+				</div>
 
-					<div id="section2" class="section">
-						<h2>Offices</h2>
-						<p>For face to face queries and site visit we have two main offices which operate in prescribed business hours.</p>
-						<p>They are situated in the following parts of the country: </p>
-						
-						<p></p>
-						<h4>SOWETO</h4>
-						<p1> <li>Weekdays (Working Hours) - 08h00-16h00</li>
-						<li>Weekends (Working Hours) - 08h00-13h00</li>
-						<li>Holidays (Working Hours) - 09h00-14h00</li></p1>
-						
-						<p></p>
-						<h4>KRUGERSDORP</h4>
-						<p1> <li>Weekdays (Working Hours) - 24/7</li>
-						<li>Weekends (Working Hours) - 08h00-16h00</li>
-						<li>Holidays (Working Hours) - 08h00-16h00</li></p1>
+				<div id="section2" class="section">
+					<h2>Offices</h2>
+					<p>For face to face queries and site visit we have two main offices which operate in prescribed business hours.</p>
+					<p>They are situated in the following parts of the country: </p>
+					
+					<p></p>
+					<h4>SOWETO</h4>
+					<p1> <li>Weekdays (Working Hours) - 08h00-16h00</li>
+					<li>Weekends (Working Hours) - 08h00-13h00</li>
+					<li>Holidays (Working Hours) - 09h00-14h00</li></p1>
+					
+					<p></p>
+					<h4>KRUGERSDORP</h4>
+					<p1> <li>Weekdays (Working Hours) - 24/7</li>
+					<li>Weekends (Working Hours) - 08h00-16h00</li>
+					<li>Holidays (Working Hours) - 08h00-16h00</li></p1>
 
 						<p><a href="https://poe.com/">Active Teams</a>.</p>
 					</div>
 				</div>
 			</section>
-
 			<section>
 				<hr class="mx-auto">
 					<div class="contactpagecontainer">
 						<div class="googlemapscontainer">
-							<a href='https://www.easybooking.eu/'>Google Maps</a><br>
+							<a href='https://www.easybooking.eu/'>GOOGLE MAPS</a><br>
 							<iframe class="googlemaps" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" id="gmap_canvas" src="https://maps.google.com/maps?width=520&amp;height=400&amp;hl=en&amp;q=4708%20Mhunti%20Street%20Johannesburg+(MR)&amp;t=p&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"> </iframe> 
 							<script type='text/javascript' src='https://embedmaps.com/google-maps-authorization/script.js?id=5c8a8dd1d18f664e1a4704f0a64fff04109a8dd8'> </script>
 						</div>
-
-						<div id="section2" class="section">
-						<h2>OverSights</h2>
-						<p>For face to face queries and site visit we have two main offices which operate in prescribed business hours.</p>
-						<p>They are situated in the following parts of the country: </p>
-						
-						<p></p>
-						<h4>SOWETO</h4>
-						<p1> <li>Weekdays (Working Hours) - 08h00-16h00</li>
-						<li>Weekends (Working Hours) - 08h00-13h00</li>
-						<li>Holidays (Working Hours) - 09h00-14h00</li></p1>
-						
-						<p></p>
-						<h4>KRUGERSDORP</h4>
-						<p1> <li>Weekdays (Working Hours) - 24/7</li>
-						<li>Weekends (Working Hours) - 08h00-16h00</li>
-						<li>Holidays (Working Hours) - 08h00-16h00</li></p1>
-
-						<p><a href="https://poe.com/">Active Teams</a>.</p>
-					</div>
-
 						<div class="contactform">
 							<form action="contact.php" method="post">
-									<br><br><br><br><br><br><br><br><br><br><br><br><br>	
-								<label for="name">Name</label>
+									<br><br>
+								<label for="name">NAME</label>
 								<input type="text" id="name" name="name" required>
-									<br>
-								<label for="email">email</label>
+									<br><br>
+								<label for="email">EMAIL</label>
 								<input type="email" id="email" name="email" required>
-									<br>
-								<label for="message">Opinion/Message</label>
-								<br><br>
+									<br><br>
+								<label for="message">MESSAGE</label>
 								<textarea id="message" name="message" required></textarea>
 									<br><br>
 								<input type="submit" value="Submit">
