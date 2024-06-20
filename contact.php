@@ -326,6 +326,27 @@ include('server/getcontact.php');
 							<iframe class="googlemaps" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" id="gmap_canvas" src="https://maps.google.com/maps?width=520&amp;height=400&amp;hl=en&amp;q=4708%20Mhunti%20Street%20Johannesburg+(MR)&amp;t=p&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"> </iframe> 
 							<script type='text/javascript' src='https://embedmaps.com/google-maps-authorization/script.js?id=5c8a8dd1d18f664e1a4704f0a64fff04109a8dd8'> </script>
 						</div>
+					
+						<div id="section2" class="section">
+							<h2>OverSights</h2>
+							<p>For face to face queries and site visit we have two main offices which operate in prescribed business hours.</p>
+							<p>They are situated in the following parts of the country: </p>
+							
+							<p></p>
+							<h4>SOWETO</h4>
+							<p1> <li>Weekdays (Working Hours) - 08h00-16h00</li>
+							<li>Weekends (Working Hours) - 08h00-13h00</li>
+							<li>Holidays (Working Hours) - 09h00-14h00</li></p1>
+							
+							<p></p>
+							<h4>KRUGERSDORP</h4>
+							<p1> <li>Weekdays (Working Hours) - 24/7</li>
+							<li>Weekends (Working Hours) - 08h00-16h00</li>
+							<li>Holidays (Working Hours) - 08h00-16h00</li></p1>
+						
+							<p><a href="https://poe.com/">Active Teams</a>.</p>
+						</div>
+
 						<div class="contactform">
 							<form action="contact.php" method="post">
 									<br><br>
