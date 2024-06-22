@@ -69,6 +69,8 @@ include('layouts/header.php');
       });
   </script>
 </section>
+<!------ Js for Voice Recognition Output ----->
+<script src="js/getchatbot.js"></script>
 <?php
 include('layouts/footer.php');
 ?>

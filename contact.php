@@ -12,6 +12,7 @@ include('server/getcontact.php');
 		padding: 10px;
 		display: inline-block;
 		margin: 0 auto;
+		margin-top: 20px;
 		margin-bottom: 20px;
 		display: table;
 		font-size: 24px;
@@ -84,13 +85,6 @@ include('server/getcontact.php');
 		color: darkblue; /* Dark red color for hyperlinks */
 		text-decoration: none; /* Underline the hyperlinks */
 		border: 1px;
-	}
-
-	a:hover {
-		background-color: #f2f2f2;
-		padding: 5px 10px;
-		text-decoration: none;
-		color: orange; /* Darker red color on hover */
 	}
 
 	.contactform {
