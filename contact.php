@@ -2,6 +2,22 @@
 session_start();
 include('server/getcontact.php');
 ?>
+
+<script>
+    // Add hover effect using JavaScript
+    const sectionContainer = document.querySelector('.contactpagecontainer');
+
+    sectionContainer.addEventListener('mouseover', () => {
+      sectionContainer.style.backgroundColor = '#8B0000';
+      sectionContainer.style.boxShadow = '0 0 20px rgba(139, 0, 0, 0.8)';
+    });
+
+    sectionContainer.addEventListener('mouseout', () => {
+      sectionContainer.style.backgroundColor = '#fff';
+      sectionContainer.style.boxShadow = 'none';
+    });
+  </script>
+
 <style>	
 	.center-heading{
 		text-align: center;
@@ -89,8 +105,8 @@ include('server/getcontact.php');
 	}
 
 	.contactform {
-		height: 32svw;
-		width: 32svw;
+		height: 30svw;
+		width: 45svw;
 		margin: 0 auto;
 		padding: 20px;
 		border: 30px solid gray;
@@ -119,8 +135,8 @@ include('server/getcontact.php');
 		background-color:brown;
 	}
 	.contactform textarea{
-		height: 14.5svw;
-		width: 24svw;
+		height: 10svw;
+		width: 40svw;
 		border: 1px solid lightblue;
 		border-radius: 30px;
 		padding: 15px;
@@ -330,23 +346,20 @@ include('server/getcontact.php');
 			
 			<section>
 
-				<div class="contactpagecontainer">
-					<div class="googlemapscontainer">
-						<a href='https://www.easybooking.eu/'>Find Us</a><br>
-						<iframe class="googlemaps" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" id="gmap_canvas" src="https://maps.google.com/maps?width=520&amp;height=400&amp;hl=en&amp;q=4708%20Mhunti%20Street%20Johannesburg+(MR)&amp;t=p&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"> </iframe> 
-						<script type='text/javascript' src='https://embedmaps.com/google-maps-authorization/script.js?id=5c8a8dd1d18f664e1a4704f0a64fff04109a8dd8'> </script>
-					</div>
-
-					<div id="section2" class="section">
-						<h2>OverSights</h2>
-						<p>For face to face queries and site visit we have two main offices which operate in prescribed business hours.</p>
-						<p>They are situated in the following parts of the country: </p>
 					
-						<p><a href="https://poe.com/">Active Teams</a>.</p>
-					</div>
 
+
+				<div class="contactpagecontainer">
+
+					<div class="OverSitesContainer">
+
+						<p><a href="https://poe.com/">Active Teams</a>.</p>
+					
+					</div>
+					
 					<div class="contactform">
 						<br>
+						<h4>Talk to us.</h4>
 						<form action="contact.php" method="post">
 							<br>
 							<label for="name">Name</label>
@@ -362,6 +375,12 @@ include('server/getcontact.php');
 							<input type="submit" value="Submit">
 								<br><br>	
 						</form><br><br>
+					</div>
+
+					<div class="googlemapscontainer">
+						<a href='https://www.easybooking.eu/'>Find Us</a><br>
+						<iframe class="googlemaps" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" id="gmap_canvas" src="https://maps.google.com/maps?width=520&amp;height=400&amp;hl=en&amp;q=4708%20Mhunti%20Street%20Johannesburg+(MR)&amp;t=p&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"> </iframe> 
+						<script type='text/javascript' src='https://embedmaps.com/google-maps-authorization/script.js?id=5c8a8dd1d18f664e1a4704f0a64fff04109a8dd8'> </script>
 					</div>
 				</div>
 			</section>
