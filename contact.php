@@ -105,19 +105,21 @@ include('server/getcontact.php');
 	}
 
 	.contactform {
-		height: 30svw;
-		width: 45svw;
-		margin: 0 auto;
-		padding: 20px;
-		border: 30px solid gray;
-		border-image: linear-gradient(to right, rgba(179, 179, 179, 272.5), rgba(144, 144, 144, 366.5), rgba(179, 179, 179, -397.5)) 1;
-		border-radius: 10%;
-		padding: 5px; /* Add some padding inside the sections */
-		background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)), url("assets/images/QuestionMark.jpeg"); /*path to your image file */
-		background-size: 100%;
-		background-repeat: repeat; /* Ensure the image is repeated */
-		text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-		box-shadow: 0 0 50px rgba(0, 0, 0, 0.45);
+	height: 30svw;
+    width: 45svw;
+    margin: 0 auto;
+    padding: 20px;
+    border: 30px solid lightblue;
+    border-radius: 20px;
+    padding: 5px;
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)), url(assets/images/QuestionMark.jpeg);
+    background-size: 100%;
+    background-repeat: repeat;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.45);
+    page-break-after: left;
+    break-after: left;
+    page-break-after: right;
 	}
 	.contactform input{
 		width: 30svw;
