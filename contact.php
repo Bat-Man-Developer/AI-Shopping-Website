@@ -8,14 +8,14 @@ include('server/getcontact.php');
 		color: skyblue	;
 		font-weight: bold;
 		border-radius: 50%;
-		border: 3px solid lightblue;
+		border: 10px solid lightblue;
 		padding: 10px;
 		display: inline-block;
 		margin: 0 auto;
 		margin-top: 20px;
 		margin-bottom: 20px;
 		display: table;
-		font-size: 24px;
+		font-size: 40px;
 	}
 
 	/* CSS styles for the sections */
@@ -33,17 +33,18 @@ include('server/getcontact.php');
 		text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 		width: 450px;
 		height: 450px;
+		box-shadow: 0 0 50px rgba(0, 0, 0, 0.05);
 	}
 	.section2 {
 		flex: 1; /* Each section takes equal space */
-		border: 5px solid white; /* Light brown border color */
+		border: 5px solid skyblue; /* Light brown border color */
 		border-radius: 15px;
 		padding: 5px; /* Add some padding inside the sections */
-		background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75));
+		background: linear-gradient(to right,#add8e6, #b3e5fc, #add8e6);
 		background-size: contain;
 		text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-		width: 450px;
-		height: 450px;
+		width: 50svw;
+		height: 30svw;
 	}
 	.section h2 {
 		font-size: 24px; /* Set the font size to 12 pixels */
@@ -88,22 +89,22 @@ include('server/getcontact.php');
 	}
 
 	.contactform {
-		height: 50svw;
-		width: 50svw;
+		height: 32svw;
+		width: 32svw;
 		margin: 0 auto;
 		padding: 20px;
 		border: 30px solid gray;
-		border-image: linear-gradient(to right, rgba(179, 179, 179, 0.5), rgba(144, 144, 144, 0.5), rgba(179, 179, 179, 0.5)) 1;
-		border-radius: 0px;
+		border-image: linear-gradient(to right, rgba(179, 179, 179, 272.5), rgba(144, 144, 144, 366.5), rgba(179, 179, 179, -397.5)) 1;
+		border-radius: 10%;
 		padding: 5px; /* Add some padding inside the sections */
 		background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)), url("assets/images/QuestionMark.jpeg"); /*path to your image file */
 		background-size: 100%;
 		background-repeat: repeat; /* Ensure the image is repeated */
 		text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-		box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+		box-shadow: 0 0 50px rgba(0, 0, 0, 0.45);
 	}
 	.contactform input{
-		width: 20svw;
+		width: 30svw;
 		padding: 12px;
 		border: 1px solid #ccc;
 		border-radius: 4px;
@@ -145,11 +146,12 @@ include('server/getcontact.php');
 		font-weight:bold;
 		font-size: 12px;
 		color:gray;
-		width:10svw;
+		width:20svw;
 		height: 1svw;
 		text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 	}
 	.contactform input[type=email]{
+		text-align: center;
 		background-color: rgba(240,248,255,0.8);
 		font-family: Georgia, serif; /* Set the font family to Georgia */
 		font-size: 12px;
@@ -157,7 +159,7 @@ include('server/getcontact.php');
 		border-radius: 5px;
 		font-weight:bold;
 		color:gray;
-		width:15svw;
+		width:22svw;
 		height: 1.5svw;
 		text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 	}
@@ -325,6 +327,7 @@ include('server/getcontact.php');
 					</div>
 				</div>
 			</section>
+			
 			<section>
 
 				<div class="contactpagecontainer">
@@ -332,18 +335,16 @@ include('server/getcontact.php');
 						<a href='https://www.easybooking.eu/'>Find Us</a><br>
 						<iframe class="googlemaps" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" id="gmap_canvas" src="https://maps.google.com/maps?width=520&amp;height=400&amp;hl=en&amp;q=4708%20Mhunti%20Street%20Johannesburg+(MR)&amp;t=p&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"> </iframe> 
 						<script type='text/javascript' src='https://embedmaps.com/google-maps-authorization/script.js?id=5c8a8dd1d18f664e1a4704f0a64fff04109a8dd8'> </script>
-					</div>	
+					</div>
 
-					<div id="section21" class="section2">
+					<div id="section2" class="section">
 						<h2>OverSights</h2>
 						<p>For face to face queries and site visit we have two main offices which operate in prescribed business hours.</p>
 						<p>They are situated in the following parts of the country: </p>
 					
 						<p><a href="https://poe.com/">Active Teams</a>.</p>
 					</div>
-				</div>
-				
-				<div class=".FeedbackContainer">
+
 					<div class="contactform">
 						<br>
 						<form action="contact.php" method="post">
@@ -363,7 +364,6 @@ include('server/getcontact.php');
 						</form><br><br>
 					</div>
 				</div>
-
 			</section>
 <?php
 include('layouts/footer.php');
