@@ -40,15 +40,15 @@ include('server/getcontact.php');
 	}
 
 	.section {
-		flex: 1; /* Each section takes equal space */
-		border: 5px solid white; /* Light brown border color */
-		border-radius: 15px;
-		padding: 5px; /* Add some padding inside the sections */
-		background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)), url("assets/images/SellersMarket.jpg"); /*path to your image file */
+		flex: 1;
+		border: 5px solid white;
+		border-radius: 10px;
+		padding: 0px;
+		background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)), url(assets/images/SellersMarket.jpg);
 		background-size: contain;
 		text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-		width: 450px;
-		height: 450px;
+		width: 400px;
+		height: 400px;
 		box-shadow: 0 0 50px rgba(0, 0, 0, 0.05);
 	}
 	.section2 {
@@ -69,14 +69,16 @@ include('server/getcontact.php');
 		text-align: center;
 		background: linear-gradient(to right,#add8e6, #b3e5fc, #add8e6);
 		border-width: 50px;
-		border-radius: 40px;
+		border-radius: 5px;
 	}
 	.section h4 {
-		font-size: 14px; /* Set the font size to 12 pixels */
-		font-family: Georgia, serif; /* Set the font family to Georgia */
-		color: gray;
-		text-align: center;
-		background-color: lightblue;
+		font-size: 14px;
+		font-family: Georgia, serif;
+		color: steelblue;
+		text-align: -webkit-center;
+		background-color: white;
+		border: 2px solid lightblue;
+		border-radius: 5px;
 	}
 
 	.section p {
@@ -109,7 +111,7 @@ include('server/getcontact.php');
     width: 45svw;
     margin: 0 auto;
     padding: 20px;
-    border: 30px solid lightblue;
+    border: 30px solid rgba(240, 248, 255, 0.8);
     border-radius: 20px;
     padding: 5px;
     background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)), url(assets/images/QuestionMark.jpeg);
