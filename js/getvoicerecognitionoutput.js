@@ -19,32 +19,32 @@ $(document).ready(function() {
     $('#result').text(result);
 
     //Voice Recognition AI Commands
-    if(result == "open home"){
+    if(result.includes("open home")){
       window.location.href="../index.php";
     }
-    else if(result == "open about"){
+    else if(result.includes("open about")){
       window.location.href="../about.php";
     }
-    else if(result == "open contact" || result == "open contacts"){
+    else if(result.includes("open contact")){
       window.location.href="../contact.php";
     }
-    else if(result == "open products" || result == "open products page" || result == "open product page"){
+    else if(result.includes("open product")){
       window.location.href="../products.php";
     }
-    else if(result == "open departments page" || result == "open department page" || result == "open departments" || result == "open department"){
-      window.location.href="../products.php";
-    }
-    else if(result == "open shopping cart"){
+    else if(result.includes("open shopping cart") || result.includes("checkout")){
       window.location.href="../cart.php";
     }
-    else if(result == "open accounts" || result == "open account" || result == "open accounts page" || result == "open account page" || result == "open login" || result == "open login page"){
+    else if(result.includes("open accounts") || result.includes("open login")){
       window.location.href="../account.php";
     }
-    else if(result == "open registration" || result == "open registration page"){
+    else if(result.includes("open registration")){
       window.location.href="../registration.php";
     }
-    else if(result == "search phones"){
-      window.location.href="../products.php?fldproductdepartments=phone&fldproductcategory=phone&fldproducttype=phone";
+    else if(result.includes("search ")){
+      let tempStr = result;
+      let subStr = "search ";
+      let searchproductstring = tempStr.replace(subStr, "");
+      window.location.href="../products.php?searchproductstring="+searchproductstring;
     }
     
   }

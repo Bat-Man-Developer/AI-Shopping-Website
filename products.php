@@ -3,17 +3,24 @@ include('layouts/header.php');
 ?>
 <section>
 	<div class="filterdropdown">
-		<label>Filter
-			<select name="type" id="filtersort">
-			  <option value="">Sort...</option>
-				<option value="Highest - Lowest Price">Highest - Lowest Price</option>
-				<option value="Highest - Lowest Price">Lowest - Highest Price</option>
-				<option value="Highest - Lowest Price">Highest - Lowest Rating</option>
-				<option value="Highest - Lowest Price">Lowest - Highest Rating</option>
-				<option value="Relevance">Relevance</option>
-			</select>
-		</label>
+		<label for="filtersort">Filter</label>
+		<select name="type" id="filtersort" onchange="redirectToPage(this.value)">
+			<option value="">Sort...</option>
+			<option value="products.php?filter=Highest - Lowest Price">Highest - Lowest Price</option>
+			<option value="products.php?filter=Lowest - Highest Price">Lowest - Highest Price</option>
+			<option value="products.php?filter=Highest - Lowest Rating">Highest - Lowest Rating</option>
+			<option value="products.php?filter=Lowest - Highest Rating">Lowest - Highest Rating</option>
+			<option value="products.php?filter=Relevance">Relevance</option>
+		</select>
 	</div>
+	<script>
+		function redirectToPage(url) {
+			if (url) {
+				window.location.href = url;
+			}
+		}
+	</script>
+
 	<hr>
 	<div class="row"> 
 		<?php include('server/getallproducts.php'); ?>
@@ -87,17 +94,17 @@ include('layouts/header.php');
 		<?php } ?>
 	</div>
 	<div class="page-btn">
-		<span class="page-item <?php if($pagenumber <= 1){ echo 'disabled';} ?>"><a class="page-link" href="<?php if($pagenumber <= 1){ echo '#';}else{ echo "?pagenumber=".($pagenumber - 1);} ?>">Prev</a></span>
+		<span class="page-item <?php if($pagenumber <= 1){ echo 'disabled';} ?>"><a class="page-link" href="<?php if($pagenumber <= 1){ echo '#';}else{ if(isset($_SESSION['fldproductdepartment'])){ echo "?pagenumber=".($pagenumber - 1)."&fldproductdepartment=".$_SESSION['fldproductdepartment']; } if(isset($_SESSION['searchproductstring'])){ echo "?pagenumber=".($pagenumber - 1)."&searchproductstring=".$_SESSION['searchproductstring']; } }?>">Prev</a></span>
 
-		<span class="page-item"><a class="page-link" href="?pagenumber=1">1</a></span>
-		<span class="page-item"><a class="page-link" href="?pagenumber=2">2</a></span>
+		<span class="page-item"><a class="page-link" href="<?php if($pagenumber == 1){ if(isset($_SESSION['fldproductdepartment'])){ echo "?pagenumber=".$pagenumber."&fldproductdepartment=".$_SESSION['fldproductdepartment']; } if(isset($_SESSION['searchproductstring'])){ echo "?pagenumber=".$pagenumber."&searchproductstring=".$_SESSION['searchproductstring']; } }?>">1</a></span>
+		<span class="page-item"><a class="page-link" href="<?php if($pagenumber == 2){ if(isset($_SESSION['fldproductdepartment'])){ echo "?pagenumber=".$pagenumber."&fldproductdepartment=".$_SESSION['fldproductdepartment']; } if(isset($_SESSION['searchproductstring'])){ echo "?pagenumber=".$pagenumber."&searchproductstring=".$_SESSION['searchproductstring']; } }?>">2</a></span>
 
 		<?php if($pagenumber >= 3) { ?>
 			<span class="page-item"><a class="page-link" href="#">...</a></span>
-		  <span class="page-item"><a class="page-link" href="<?php echo "?pagenumber=".$pagenumber; ?>"><?php echo $pagenumber; ?></a></span>
+		  <span class="page-item"><a class="page-link" href="<?php if($pagenumber){ if(isset($_SESSION['fldproductdepartment'])){ echo "?pagenumber=".$pagenumber."&fldproductdepartment=".$_SESSION['fldproductdepartment']; } if(isset($_SESSION['searchproductstring'])){ echo "?pagenumber=".$pagenumber."&searchproductstring=".$_SESSION['searchproductstring']; } }?>"><?php echo $pagenumber; ?></a></span>
 		<?php } ?>
 
-		<span class="page-item <?php if($pagenumber >= $totalnumberofpages){ echo 'disabled';} ?>"><a class="page-link" href="<?php if($pagenumber >= $totalnumberofpages){ echo '#';}else{ echo "?pagenumber=".($pagenumber + 1);} ?>">Next</a></span>
+		<span class="page-item <?php if($pagenumber >= $totalnumberofpages){ echo 'disabled';} ?>"><a class="page-link" href="<?php if($pagenumber >= $totalnumberofpages){ echo '#';}else{ if(isset($_SESSION['fldproductdepartment'])){ echo "?pagenumber=".($pagenumber + 1)."&fldproductdepartment=".$_SESSION['fldproductdepartment']; } if(isset($_SESSION['searchproductstring'])){ echo "?pagenumber=".($pagenumber + 1)."&searchproductstring=".$_SESSION['searchproductstring']; } }?>">Next</a></span>
 	</div>
 </section> 
 <?php

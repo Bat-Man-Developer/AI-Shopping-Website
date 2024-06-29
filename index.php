@@ -120,6 +120,14 @@ include('layouts/header.php');
 		<?php } ?>
 	</div>
 </div>
+<!------- Promotions Slide Show 1 ----------->
+<div id="slideshow1">
+	<div class="slide-container1">
+		<p class="myslides1">WINTER SALE UP TO 30% OFF<br>
+			<img class="picture1" src="assets/images/slideshow/newstuffsa_advert_pic2.png" alt="snow">
+		</p>
+	</div>
+</div>
 
 <!------- Most Viewed Products ----------->
 <div class="small-container">
@@ -198,6 +206,15 @@ include('layouts/header.php');
 	</div>
 </div>
 
+<!------- Promotions Slide Show 2 ----------->
+<div id="slideshow2">
+	<div class="slide-container2">
+		<p class="myslides2">EVERY WEEK DEALS<br>
+			<img class="picture2" src="assets/images/slideshow/newstuffsa_advert_pic3.png" alt="snow">
+		</p>
+	</div>
+</div>
+
 <!------- Most Rated Products ----------->
 <div class="small-container">
 	<h2 class="title">Most Rated Products</h2>
@@ -272,6 +289,15 @@ include('layouts/header.php');
 			</div>
 		</div>
 		<?php } ?>
+	</div>
+</div>
+
+<!------- Promotions Slide Show 3 ----------->
+<div id="slideshow3">
+	<div class="slide-container3">
+		<p class="myslides3">NEWSTUFF For Everyone SALE<br>
+			<img class="picture3" src="assets/images/slideshow/newstuffsa_advert_pic1.png" alt="now">
+		</p>
 	</div>
 </div>
 
