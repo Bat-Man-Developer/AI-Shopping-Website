@@ -40,6 +40,9 @@ $(document).ready(function() {
     else if(result.includes("open registration")){
       window.location.href="../registration.php";
     }
+    else if(result.includes("open testimonial") || result.includes("open suggestion")){
+      window.location.href="../testimonials.php";
+    }
     else if(result.includes("search ")){
       let tempStr = result;
       let subStr = "search ";

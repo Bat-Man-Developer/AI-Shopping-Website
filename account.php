@@ -92,9 +92,10 @@ include('server/getaccount.php');
 			</div>
 		</div>
 		<!--------- Account-page ------------>
-		<section class="my-5 py-5" id="account-page">
-			<div class="container my-5 py-3">
+		<section class="account my-5 py-5">
+			<div class="account container my-5 py-3">
 				<div class="text-center mt-3 pt-5 col-lg-6 col-md-12 col-sm-12">
+					<!--------- Website Message ------------>
 					<p class="text-center" style="color: green"><?php if(isset($_GET['registermessage'])){ echo $_GET['registermessage']; }?></p>
 					<p class="text-center" style="color: green"><?php if(isset($_GET['loginmessage'])){ echo $_GET['loginmessage']; }?></p>
 					<p class="text-center" style="color: green"><?php if(isset($_GET['paymentmessage'])){ echo $_GET['paymentmessage']; }?></p>
@@ -128,6 +129,7 @@ include('server/getaccount.php');
 					<th>Order Status</th>
 					<th>Order Date</th>
 					<th>Order Details</th>
+					<th>Log Return</th>
 				</tr>
 
 				<?php while($row = $orders->fetch_assoc()) { ?>
@@ -152,8 +154,20 @@ include('server/getaccount.php');
 							<input type="hidden" name="fldorderstatus" value="<?php echo $row['fldorderstatus']; ?>"/>
 							<input type="hidden" name="fldorderid" value="<?php echo $row['fldorderid']; ?>"/>
 							<input type="hidden" name="flduserid" value="<?php echo $row['flduserid']; ?>"/>
-							<input class="btn" name="ordersbtn" type="submit" value="details"/>
+							<input class="btn" name="ordersbtn" type="submit" value="Details"/>
 						</form>
+					</td>
+					<td>
+						<?php if(isset($row['fldorderstatus']) && $row['fldorderstatus'] != "Not Paid") { ?>
+						<form method="POST" action="#">
+							<input type="hidden" name="fldordercost" value="<?php echo $row['fldordercost']; ?>"/>
+							<input type="hidden" name="fldcouriercost" value="<?php echo $row['fldcouriercost']; ?>"/>
+							<input type="hidden" name="fldorderstatus" value="<?php echo $row['fldorderstatus']; ?>"/>
+							<input type="hidden" name="fldorderid" value="<?php echo $row['fldorderid']; ?>"/>
+							<input type="hidden" name="flduserid" value="<?php echo $row['flduserid']; ?>"/>
+							<input class="btn" name="returnsbtn" type="submit" value="Return"/>
+						</form>
+						<?php } ?>
 					</td>
 				</tr>
 

@@ -92,8 +92,8 @@ if(empty($_SESSION['wishlistcart'])){
 			</div>
 		</div>
 		<!--------- Wishlist Items Details ------------>
-		<section class="wishlistContainer">
-      <div class="cartHeading">
+		<section class="wishlistContainer my-5 py-5">
+			<div class="wishlistContainer container mt-5">
         <h2 class="fontweightbold">Wishlist</h2>
         <hr>
       </div>
@@ -117,11 +117,11 @@ if(empty($_SESSION['wishlistcart'])){
 								<img id="cartProductPic" src="assets/images/<?php echo $value['fldproductimage']; ?>" alt="Snow">
 								<div>
 									<p class="cartProductName"><?php echo $value['fldproductname']; ?></p>
-									<small class="cartProductPrice"><?php echo $value['fldproductprice']; ?></small>
+									<small class="cartProductPrice">R<?php echo $value['fldproductprice']; ?></small>
 									<br>
 									<form method="POST" action="wishlist.php">
 										<input type="hidden" name="fldproductid" value="<?php echo $value['fldproductid']; ?>"/>
-										<input type="submit" name="removeproductbtn" class="cartRemoveButton" value="remove"/>
+										<input type="submit" name="removeproductbtn" class="wishlistRemoveBtn" value="remove"/>
 									</form>
 								</div>
 							</div>

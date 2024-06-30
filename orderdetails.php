@@ -92,7 +92,7 @@ include('server/getorderdetails.php');
 			</div>
 		</div>
 		<!--------- Order details--------->
-		<section id="orderdetails" class="orderdetails container my-5 py-3">
+		<section class="orderdetails container my-5 py-3">
 			<div class="container mt-2">
 				<h2 class="font-weight-bold text-center">Your Orders</h2>
 				<hr class="mx-auto">

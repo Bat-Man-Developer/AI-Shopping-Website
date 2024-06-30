@@ -651,40 +651,7 @@ small{
 	border-radius: 1px;
 }
 
-/*---------testimonial--------*/
-.testimonials table{
-	width: auto;
-	font-size: auto;
-	border-collapse: collapse;
-}
-
-.testimonials .productinfo{
-	display: flex;
-	flex-wrap: wrap;
-}
-
-.testimonials th{
-	padding: 5px 20px;
-	color: #fff;
-	background-color: grey;
-	text-align: center;
-}
-
-.testimonials th:nth-child(2){
-	text-align: center;
-}
-
-.testimonials td{
-	padding: 10px 20px;
-	text-align: center;
-}
-
-.testimonials td img{
-	width: 80px;
-	height: 80px;
-	margin-right: 10px;
-}
-
+/*---------Index Page--Testimonials section--------*/
 .testimonials #testimonialsbottomspace{
 	margin-bottom: 30px;
 }
@@ -726,6 +693,60 @@ small{
 
 .titledescription{
 	text-align: center;
+}
+
+/*-------Testimonials Page-------*/
+.testimonials table{
+	margin-left: 5%;
+	width: 90%;
+}
+
+.testimonials h2{
+	color: grey;
+	font-size: x-large;
+}
+
+.testimonials hr{
+	max-width: 90%;
+}
+
+.testimonials table{
+	max-width: 100%;
+  border-collapse: collapse;
+}
+
+.testimonials th{
+	padding: 5px 20px;
+	color: #fff;
+	background-color: grey;
+	text-align: center;
+}
+
+.testimonials th:nth-child(2){
+	text-align: center;
+}
+
+.testimonials td{
+	padding: 10px 20px;
+	text-align: center;
+}
+
+.testimonials td img{
+	width: 80px;
+	height: 80px;
+	margin-right: 10px;
+}
+
+#testimonialscomment{
+	width: auto;
+	height: auto;
+}
+
+#testimonialscommentbtn{
+	background-color: grey;
+	display: block;
+	margin: auto;
+	margin-top: 20px;
 }
 
 /*----------brands-----------*/
@@ -1114,6 +1135,14 @@ form a{
 }
 
 /*----------Account-page--------*/
+.account{
+	width: 100%;
+}
+
+.account hr{
+	max-width: 80%;
+}
+
 #accountform{
 	width: 50%;
 	margin: 35px;
@@ -1138,11 +1167,6 @@ form a{
 #sub-container{
 	padding: 0px;
 	margin-right: 140px;
-}
-
-#account-page{
-	padding: 0px;
-	margin-right: -140px;
 }
 
 /*----------Edit Profile Page--------*/
@@ -1254,8 +1278,19 @@ form a{
 }
 
 /*----------Orders Page--------*/
+.orders{
+	width: 100%;
+}
+
+.orders h2{
+	font-size: large;
+}
+
+.orders hr{
+	width: 80%;
+}
+
 .orders table{
-	font-size: auto;
 	width: 100%;
 	border-collapse: collapse;
 }
@@ -1283,7 +1318,7 @@ form a{
 
 .orders td img{
 	width: 80px;
-	height: 80px;
+	height: auto;
 	margin-right: 10px;
 }
 
@@ -1293,8 +1328,16 @@ form a{
 }
 
 /*----------Orders Details page--------*/
-.orderdetails table{
+.orderdetails{
 	width: 100%;
+}
+
+.orderdetails h2{
+	font-size: large;
+}
+
+.orderdetails table{
+	max-width: 100%;
 	border-collapse: collapse;
 }
 
@@ -1490,6 +1533,14 @@ margin-left: 50px;
 }
 }
 
+/*-------media query for less than 650 screen size----*/
+@media only screen and (max-width: 650px){
+/*------Orders----------*/
+.orders{
+	font-size: xx-small;
+}
+}
+
 /*-------media query for less than 600 screen size----*/
 @media only screen and (max-width: 600px){
 /*--------- All Page Responsiveness ---------*/
@@ -1503,6 +1554,11 @@ margin-left: 50px;
 /*--------- Chat Bot Button ---------*/
 #chatbotpicbtn{
 	bottom: 15%;
+}
+
+/*---------testimonial--------*/
+.testimonials table{
+	font-size: small;
 }
 
 /*----------single products------------*/
@@ -1553,6 +1609,15 @@ margin-left: 50px;
 width: 60vw;
 }
 
+/*------Orders----------*/
+.orders{
+	font-size: 6px;
+}
+
+.orders table td input{
+	font-size: 6px;
+}
+
 /*---------- Track Order Page --------*/
 .realtimetrackingstatuscontainer input{
 	margin-left: 90px;
@@ -1570,10 +1635,26 @@ width: 60vw;
 #slideshow p{
 	font-size: x-large;
 }
+/*---------testimonial--------*/
+.testimonials table{
+	font-size: xx-small;
+}
 }
 
 /*-------media query for less than 500 screen size----*/
 @media only screen and (max-width: 500px){
+/*---------testimonial--------*/
+.testimonials h2{
+	font-size: medium;
+}
+/*------Orders----------*/
+.orders{
+	font-size: 4px;
+}
+
+.orders table td input{
+	font-size: 4px;
+}
 /*---------- Track Order Page --------*/
 .realtimetrackingstatuscontainer input{
 	margin-left: 40px;
@@ -1606,9 +1687,23 @@ width: 60vw;
 	max-height: 24%;
 }
 
+/*---------testimonial--------*/
+.testimonials table{
+	font-size: 6px;
+}
+
 /*---------- Product Details Page --------*/
 .reviewdisplaycontainer{
 font-size: x-small;
+}
+
+/*------Orders----------*/
+.orders{
+	font-size: 2px;
+}
+
+.orders table td input{
+	font-size: 2px;
 }
 }
 
@@ -1636,6 +1731,7 @@ font-size: x-small;
 	width: 100px;
 	height: 60px;
 }
+
 /*---------- All Products Page --------*/
 .searchbtn{
 font-size: 10px;
@@ -1653,6 +1749,21 @@ font-size: 10px;
 /*----------Login Page--------*/
 .formcontainer{
 width: 70vw;
+}
+
+/*------Orders----------*/
+.orders{
+	font-size: 2px;
+}
+
+.orders table td input{
+	padding: 2px;
+	font-size: 2px;
+}
+
+/*----------Orders Details page--------*/
+.orderdetails{
+	font-size: xx-small;
 }
 
 /*---------- Track Order Page --------*/
@@ -1712,6 +1823,14 @@ margin-left: 35px;
 	font-size: medium;
 }
 
+/*---------testimonial--------*/
+.testimonials h2{
+	font-size: small;
+}
+.testimonials table{
+	font-size: 4px;
+}
+
 /*---------- Single Product Page --------*/
 #addtocartbtn{
 	font-size: xx-small;
@@ -1722,6 +1841,29 @@ margin-left: 35px;
 }
 
 .reviewdisplaycontainer{
+	font-size: xx-small;
+}
+/*------Orders----------*/
+.orders{
+	font-size: 1px;
+}
+
+.orders table td input{
+	font-size: 1px;
+}
+
+/*----------Orders Details page--------*/
+.orderdetails{
+	font-size: 8px;
+}
+
+.orderdetails td div img{
+	width: 40px;
+	height: auto;
+}
+
+.orderdetails input{
+	padding: 5px;
 	font-size: xx-small;
 }
 }
@@ -1872,11 +2014,7 @@ nav{
 	padding: 50px;
 }
 
-/*---------testimonial--------*/
-.testimonial{
-	padding-top: 100px;
-}
-
+/*-------Index Page--Testimonials Section------*/
 .testimonial .col-3{
 	padding: 40px 20px;
 }
@@ -1897,6 +2035,25 @@ nav{
 
 .testimonial .col-3 h3{
 	font-size: 16px;
+}
+
+/*---------Testimonials Page--------*/
+.testimonials h2{
+	font-size: xx-small;
+}
+
+.testimonials table{
+	font-size: 2px;
+	margin-left: 10%;
+	max-width: 80%;
+}
+
+#testimonialscomment{
+	font-size: xx-small;
+}
+
+#testimonialscommentbtn{
+	font-size: xx-small;
 }
 
 /*----------brands-----------*/
@@ -2097,48 +2254,19 @@ form a{
 	margin-right: -140px;
 }
 
-/*----------Orders page--------*/
-.orders table{
-	font-size: auto;
-	width: 100%;
-}
-
-.orders th{
-	padding: 5px 20px;
-}
-
-.orders td{
-	padding: 10px 20px;
-}
-
-.orders td img{
-	width: 80px;
-	height: 80px;
-	margin-right: 10px;
-}
-
-.orders #accountbottomspace{
-	margin-top: 50px;
-	margin-bottom: 200px;
-}
-
 /*----------Orders Details page--------*/
-.orderdetails table{
-	width: 100%;
+.orderdetails{
+	font-size: 6px;
 }
 
-.orderdetails th{
-	padding: 5px 20px;
+.orderdetails td div img{
+	width: 20px;
+	height: auto;
 }
 
-.orderdetails td{
-	padding: 10px 20px;
-}
-
-.orderdetails td img{
-	width: 80px;
-	height: 80px;
-	margin-right: 10px;
+.orderdetails input{
+	padding: 5px;
+	font-size: 6px;
 }
 
 /*---------- Track Order Page --------*/
@@ -2262,6 +2390,20 @@ height: 15px;
 	bottom: 30%;
 }
 
+/*---------Testimonials Page--------*/
+.testimonials table{
+	font-size: 2px;
+	margin-left: 10%;
+	max-width: 80%;
+}
+
+#testimonialscomment{
+	font-size: 6px;
+}
+
+#testimonialscommentbtn{
+	font-size: 6px;
+}
 }
 
 /*-------media query for less than 260 screen size----*/
@@ -2335,6 +2477,15 @@ height: 15px;
 #registration-btn:focus{
 	outline: none;
 }
+
+/*----------Orders Details page--------*/
+.orderdetails{
+	font-size: 4px;
+}
+
+.orderdetails input{
+	font-size: 4px;
+}
 	
 /*---------- Track Order Page --------*/
 .realtimetrackingstatuscontainer input{
@@ -2362,6 +2513,20 @@ height: 15px;
 /*---------- Slide Show --------*/
 #slideshow p{
 	font-size: x-small;
+}
+/*---------Testimonials Page--------*/
+.testimonials table{
+	font-size: 1px;
+	margin-left: 10%;
+	max-width: 80%;
+}
+
+#testimonialscomment{
+	font-size: 4px;
+}
+
+#testimonialscommentbtn{
+	font-size: 4px;
 }
 }
 

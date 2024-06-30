@@ -360,12 +360,12 @@ if(empty($_SESSION['cart'])){
 					<input class="cartbtn" name="cartbtn" type="submit" id="submit" value="Proceed To Checkout"/>
 				</div><br>
 			</form>
-			<div class="cartContainer">
-				<div class="cartHeading">
+			<div class="cartinfo">
+				<div class="container mt-5">
 					<h2 class="fontweightbold">Cart Information</h2>
 					<hr>
 				</div>
-				<table class="cartTable">
+				<table class="mt-5 pt-5">
 					<tr>
 						<th>Product</th>
 						<th>Quantity</th>
@@ -377,55 +377,55 @@ if(empty($_SESSION['cart'])){
 					
 					<tr>
 						<td>
-							<div class="cartProductInfo">
-								<img id="cartProductPic" src="assets/images/<?php echo $value['fldproductimage']; ?>" alt="Snow">
+							<div class="productinfo">
+								<img id="cartproductpic" src="assets/images/<?php echo $value['fldproductimage']; ?>" alt="Snow">
 								<div>
-									<p class="cartProductName"><?php echo $value['fldproductname']; ?></p>
-									<small class="cartProductPrice"><?php echo $value['fldproductprice']; ?></small>
+									<p class="productname"><?php echo $value['fldproductname']; ?></p>
+									<small class="productprice">R<?php echo $value['fldproductprice']; ?></small>
 									<br>
 									<form method="POST" action="cart.php">
-										<input type="hidden" name="fldproductid" value="<?php echo $value['fldproductid']; ?>"/>
-										<input type="submit" name="removeproductbtn" class="cartRemoveButton" value="remove"/>
+										<input type="hidden" name="fldproductid" class="removebutton" value="<?php echo $value['fldproductid']; ?>"/>
+										<input type="submit" name="removeproductbtn" class="removebutton" value="remove"/>
 									</form>
 								</div>
 							</div>
 						</td>
-						<td class="cartProductStock">
+						<td>
 							<form method="POST" action="cart.php">
 								<input type="hidden" name="fldproductid" value="<?php echo $value['fldproductid']; ?>"/>
-								<label class="cartProductQuantity"><input type="number" name="fldproductquantity" value="<?php echo $value['fldproductquantity']; ?>" min="1" max="<?php echo $value['fldproductstock']; ?>" title="Edit Quantity" placeholder="1"/></label>
-								<input type="submit" name="editquantitybtn" class="cartEditBtn" value="edit"/>
+								<label><input type="number" name="fldproductquantity" class="productquantity" value="<?php echo $value['fldproductquantity']; ?>" min="1" max="<?php echo $value['fldproductstock']; ?>" title="Edit Quantity" placeholder="1"/></label>
+								<input type="submit" name="editquantitybtn" class="editbtn" value="edit"/>
 							</form>
 						</td>
 						<td>
-							<span class="cartProductSubTotal">R<?php $discount = $value['fldproductprice']-($value['fldproductdiscount']*$value['fldproductprice']); echo $value['fldproductquantity']*$discount ?></span>
+							<span class="productsubtotal">R<?php $discount = $value['fldproductprice']-($value['fldproductdiscount']*$value['fldproductprice']); echo $value['fldproductquantity']*$discount ?></span>
 						</td>
 					</tr>
 					<?php } ?>
 					<?php } ?>
 				</table>
 
-				<div class="cartTotal">
+				<div class="carttotal">
 					<table>
 						<tr>
-							<td class="cartProductSubTotal">Subtotal</td>
+							<td class="productssubtotal">Subtotal</td>
 							<td>R <?php if(isset($_SESSION['total'])){echo $_SESSION['total']-($_SESSION['total']*0.15); }else{echo "0";} ?></td>
 						</tr>
 						<tr>
-							<td class="cartProductTax">Tax</td>
+							<td class="productstax">Tax</td>
 							<td>R <?php if(isset($_SESSION['total'])){echo $_SESSION['total']*0.15; }else{echo "0";} ?></td>
 						</tr>
 						<tr>
-							<td class="cartProductTotal">Total</td>
+							<td class="productstotal">Total</td>
 							<td>R <?php if(isset($_SESSION['total'])){echo $_SESSION['total']; }else{echo "0";} ?></td>
 						</tr>
 						<tr>
 							<form form="checkoutform" method="POST" action="cart.php">
-								<td>Shipping</td>
-								<td class="cartProductShipping">+ R
+								<td class="productsshipping">Shipping</td>
+								<td style="color: rgb(46, 131, 187)">+ R
 									<input type="hidden" id="standardcourierchecked" value="100"/>
 									<input type="hidden" id="overnightcourierchecked" value="180"/>
-									<label class="cartCourierCost"><input id="fldcouriercost" value="100" title="Courier Cost" placeholder="100"/></label>
+									<label><input id="fldcouriercost" value="100" style="color: rgb(46, 131, 187); font-size: medium" title="Courier Cost" placeholder="100"/></label>
 								</td>
 							</form>
 						</tr>
