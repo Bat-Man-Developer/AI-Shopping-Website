@@ -1280,6 +1280,7 @@ form a{
 /*----------Orders Page--------*/
 .orders{
 	width: 100%;
+	font-size: large;
 }
 
 .orders h2{
@@ -1291,8 +1292,8 @@ form a{
 }
 
 .orders table{
-	width: 100%;
-	border-collapse: collapse;
+  width: 90%;
+  border-collapse: collapse;
 }
 
 .orders .productinfo{
@@ -1329,7 +1330,7 @@ form a{
 
 /*----------Orders Details page--------*/
 .orderdetails{
-	width: 100%;
+	font-size: larger;
 }
 
 .orderdetails h2{
@@ -1337,8 +1338,9 @@ form a{
 }
 
 .orderdetails table{
-	max-width: 100%;
-	border-collapse: collapse;
+	margin-left: 5%;
+  width: 90%;
+  border-collapse: collapse;
 }
 
 .orderdetails .productinfo{
@@ -1527,17 +1529,28 @@ margin-left: 50px;
 	bottom: 25%;
 }
 
+/*-----Account Page--Orders Section-----*/
+.orders table{
+	font-size: small;
+	margin-left: 1%;
+}
+
 /*---------- Track Order Page --------*/
 .realtimetrackingstatuscontainer input{
 	margin-left: 40px;
 }
 }
 
-/*-------media query for less than 650 screen size----*/
-@media only screen and (max-width: 650px){
-/*------Orders----------*/
-.orders{
+/*---------- media query for less than 700 screen size --------*/
+@media only screen and (max-width: 700px){
+/*-----Account Page--Orders Section-----*/
+.orders table{
 	font-size: xx-small;
+}
+
+/*---------- Track Order Page --------*/
+.realtimetrackingstatuscontainer input{
+	margin-left: 40px;
 }
 }
 
@@ -1615,6 +1628,7 @@ width: 60vw;
 }
 
 .orders table td input{
+	padding: 5px;
 	font-size: 6px;
 }
 
@@ -1647,14 +1661,17 @@ width: 60vw;
 .testimonials h2{
 	font-size: medium;
 }
+
 /*------Orders----------*/
 .orders{
 	font-size: 4px;
 }
 
 .orders table td input{
+	padding: 5px;
 	font-size: 4px;
 }
+
 /*---------- Track Order Page --------*/
 .realtimetrackingstatuscontainer input{
 	margin-left: 40px;
@@ -1697,13 +1714,9 @@ width: 60vw;
 font-size: x-small;
 }
 
-/*------Orders----------*/
-.orders{
-	font-size: 2px;
-}
-
-.orders table td input{
-	font-size: 2px;
+/*----------Orders Details page--------*/
+.orderdetails{
+	font-size: medium;
 }
 }
 
@@ -1749,16 +1762,6 @@ font-size: 10px;
 /*----------Login Page--------*/
 .formcontainer{
 width: 70vw;
-}
-
-/*------Orders----------*/
-.orders{
-	font-size: 2px;
-}
-
-.orders table td input{
-	padding: 2px;
-	font-size: 2px;
 }
 
 /*----------Orders Details page--------*/
@@ -1842,14 +1845,6 @@ margin-left: 35px;
 
 .reviewdisplaycontainer{
 	font-size: xx-small;
-}
-/*------Orders----------*/
-.orders{
-	font-size: 1px;
-}
-
-.orders table td input{
-	font-size: 1px;
 }
 
 /*----------Orders Details page--------*/
@@ -2527,6 +2522,10 @@ height: 15px;
 
 #testimonialscommentbtn{
 	font-size: 4px;
+}
+
+.orderdetails table{
+	margin-left: 2%;
 }
 }
 
