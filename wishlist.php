@@ -92,16 +92,16 @@ if(empty($_SESSION['wishlistcart'])){
 			</div>
 		</div>
 		<!--------- Wishlist Items Details ------------>
-		<section class="cart container my-5 py-5">
-      <div class="container mt-5">
+		<section class="wishlistContainer">
+      <div class="cartHeading">
         <h2 class="fontweightbold">Wishlist</h2>
         <hr>
       </div>
       <!------------- Website Messages----------->
       <p style="color: red; font-weight: bold; text-align: center" class="text-center"><?php if(isset($_GET['error'])){ echo $_GET['error']; }?></p>
       <p style="color: green" class="text-center"><?php if(isset($_GET['message'])){ echo $_GET['message']; }?></p>
-			<div class="cartinfo">
-				<table class="mt-5 pt-5">
+			<div class="cartDiv">
+				<table class="cartTable">
 					<tr>
 						<th>Product</th>
 						<th>Price</th>
@@ -113,27 +113,27 @@ if(empty($_SESSION['wishlistcart'])){
 					
 					<tr>
 						<td>
-							<div class="productinfo">
-								<img id="wine-pic1" src="assets/images/<?php echo $value['fldproductimage']; ?>" alt="Snow">
+							<div class="cartProductInfo">
+								<img id="cartProductPic" src="assets/images/<?php echo $value['fldproductimage']; ?>" alt="Snow">
 								<div>
-									<p class="productname"><?php echo $value['fldproductname']; ?></p>
-									<small class="productprice"><?php echo $value['fldproductprice']; ?></small>
+									<p class="cartProductName"><?php echo $value['fldproductname']; ?></p>
+									<small class="cartProductPrice"><?php echo $value['fldproductprice']; ?></small>
 									<br>
 									<form method="POST" action="wishlist.php">
-										<input type="hidden" name="fldproductid" class="removebutton" value="<?php echo $value['fldproductid']; ?>"/>
-										<input type="submit" name="removeproductbtn" class="removebutton" value="remove"/>
+										<input type="hidden" name="fldproductid" value="<?php echo $value['fldproductid']; ?>"/>
+										<input type="submit" name="removeproductbtn" class="cartRemoveButton" value="remove"/>
 									</form>
 								</div>
 							</div>
 						</td>
 						<td>
-							<span class="productsubtotal">R<?php $discount = $value['fldproductprice']-($value['fldproductdiscount']*$value['fldproductprice']); echo $discount; ?></span>
+							<span class="cartProductSubTotal">R<?php $discount = $value['fldproductprice']-($value['fldproductdiscount']*$value['fldproductprice']); echo $discount; ?></span>
 						</td>
 						<td>
 							<div>
 								<form method="POST" action="wishlist.php">
 									<input type="hidden" name="fldproductid" value="<?php echo $value['fldproductid']; ?>"/>
-									<input type="submit" name="gotoproductbtn" class="btn" id="gotoproductbtn" value="view product"/>
+									<input type="submit" name="gotoproductbtn" class="cartBtn" id="goToProductBtn" value="view product"/>
 								</form>
 							</div>
 						</td>

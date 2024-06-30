@@ -8,46 +8,53 @@ if(!isset($_SESSION['adminlogged_in'])){
 include('adminserver/getadminlogout.php');
 ?>
   <body>
-    <!--------- Admin-Sellers-Page ------------>
+    <!--------- Admin-Products-Approvals-Page ------------>
     <section class="dashboard">
       <div class="dashboardcontainer" id="dashboardcontainer">
         <div class="text-center mt-3 pt-5 col-lg-6 col-md-12 col-sm-12">
           <p class="text-center" style="color: green"><?php if(isset($_GET['editmessage'])){ echo $_GET['editmessage']; }?></p>
           <p class="text-center" style="color: red"><?php if(isset($_GET['errormessage'])){ echo $_GET['errormessage']; }?></p>
-          <h3>Product Sellers</h3>
+          <h3>Products Approvals</h3>
           <hr class="mx-auto">
           <div class="dashboardadmininfo">
             <p>Name: <span><?php if(isset($_SESSION['fldadminname'])){ echo $_SESSION['fldadminname']; }?></span> Position: <span><?php if(isset($_SESSION['fldadminposition'])){ echo $_SESSION['fldadminposition']; }?></span> Department: <span><?php if(isset($_SESSION['fldadmindepartment'])){ echo $_SESSION['fldadmindepartment']; }?></span></p>
           </div>
           <div class="dashboardinfo">
-            <div class="adminsellerstablecontainer">
-              <table class="adminsellerstable">
+            <div class="adminproductstablecontainer">
+              <table class="adminproductstable">
                 <thead>
                   <tr>
-                    <th scope="col">Seller Id</th>
-                    <th scope="col">Seller Name</th>
-                    <th scope="col">Seller Address</th>
-                    <th scope="col">Seller Postal Code</th>
-                    <th scope="col">Seller City</th>
-                    <th scope="col">Seller Country</th>
-                    <th scope="col">Seller Email</th>
-                    <th scope="col">Seller Phone Number</th>
-                    <th scope="col">Manage Seller's Products</th>
+                    <th scope="col">Product Id</th>
+                    <th scope="col">Product Image</th>
+                    <th scope="col">Product Name</th>
+                    <th scope="col">Product Department</th>
+                    <th scope="col">Product Category</th>
+                    <th scope="col">Product Type</th>
+                    <th scope="col">Product Stock</th>
+                    <th scope="col">Product Price</th>
+                    <th scope="col">Product Discount</th>
+                    <th scope="col">View Product</th>
+                    <th scope="col">Approve Product</th>
+                    <th scope="col">Reject Product</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <?php include('adminserver/getadminsellers.php');
-                    foreach($productsellers as $sellers){?>
+                  <?php include('adminserver/getadminproductsapprovals.php');
+                    foreach($products as $product){?>
                   <tr>
-                    <td><?php echo $sellers['fldproductsellersid']; ?></td>
-                    <td><?php echo $sellers['fldproductsellersfirstname']." ";  echo $sellers['fldproductsellerslastname']; ?></td>
-                    <td><?php echo $sellers['fldproductsellersaddressline1']; ?></td>
-                    <td><?php echo $sellers['fldproductsellerspostalcode']; ?></td>
-                    <td><?php echo $sellers['fldproductsellerscity']; ?></td>
-                    <td><?php echo $sellers['fldproductsellerscountry']; ?></td>
-                    <td><?php echo $sellers['fldproductsellersemail']; ?></td>
-                    <td><?php echo $sellers['fldproductsellersphonenumber']; ?></td>
-                    <td><a class="btn btn-primary" href="<?php echo "adminviewsellersproducts.php?fldproductsellersid=".$sellers['fldproductsellersid'];?>">Manage Products</a></td>
+                    <td><?php echo $product['fldapproveproductid']; ?></td>
+                    <td><img src="<?php echo "../../assets/images/". $product['fldapproveproductimage']; ?>"></td>
+                    <td><?php echo $product['fldapproveproductname']; ?></td>
+                    <td><?php echo $product['fldapproveproductdepartment']; ?></td>
+                    <td><?php echo $product['fldapproveproductcategory']; ?></td>
+                    <td><?php echo $product['fldapproveproducttype']; ?></td>
+                    <td><?php echo $product['fldapproveproductstock']; ?></td>
+                    <td><?php echo $product['fldapproveproductprice']; ?></td>
+                    <td><?php echo $product['fldapproveproductdiscount']*100; ?>%</td>
+                    <td><a class="btn btn-primary" href="<?php echo "adminviewproductapproval.php?fldapproveproductid=".$product['fldapproveproductid']."&fldapproveproductname=".$product['fldapproveproductname'];?>">View Product</a></td>
+
+                    <td><a class="btn btn-primary" href="adminapproveproduct.php?fldapproveproductid=<?php echo $product['fldapproveproductid']; ?>">Approve</a></td>
+                    <td><a class="btn btn-danger" href="adminrejectproduct.php?fldapproveproductid=<?php echo $product['fldapproveproductid']; ?>">Reject</a></td>
                   </tr>
                   <?php } ?>
                 </tbody>

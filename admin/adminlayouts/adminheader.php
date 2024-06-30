@@ -38,6 +38,7 @@ session_start();
 				</div>
 				<a href="dashboard.php">Dashboard</a>
 				<a href="adminorders.php">Orders</a>
+				<a href="adminproductsapprovals.php">Products Approvals</a>
 				<a href="adminproducts.php">Products</a>
 				<a href="adminaddproducts.php">Create Product</a>
 				<a href="admincustomers.php">Customers</a>

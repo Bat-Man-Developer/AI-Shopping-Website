@@ -414,10 +414,19 @@
 		font-family: Verdana;
 	}
 
+/*----------Admin Approve Product Page--------*/
+	#approvebtn{
+		border: solid #818181;
+		background-color: #32e40e;
+	}
+	#approvebtn:hover{
+		background-color: #818181;
+	}
+
 /*----------Admin Products Page--------*/
 	.adminproductstable{
 		font-family: 'Courier New'; 
-		font-size: large;
+		font-size: medium;
 		font-style: normal;
 		width: 100%;
 	}
@@ -454,6 +463,23 @@
 	.adminaddproductstablecontainer select{
 		width: 100%;
 	}
+
+/*----------Admin Sellers Page--------*/
+.adminsellerstable{
+	font-family: 'Courier New'; 
+	font-size: medium;
+	font-style: normal;
+	width: 100%;
+}
+
+.adminsellerstable td{
+	text-align: center;
+}
+
+.adminsellerstable img{
+	width: 70px;
+	height: 70px;
+}
 
 /*----------Admin Security Surveilence Page--------*/
 	.securitysurveilencecontainer{
@@ -590,7 +616,7 @@
 
 /*----------Admin Products Page--------*/
 	.adminproductstable{
-		font-size: 20px;
+		font-size: large;
 	}
 
 /*----------Admin Edit Products Page--------*/
@@ -688,7 +714,7 @@
 
 /*----------Admin Products Page--------*/
 	.adminproductstable{
-		font-size: 16px;
+		font-size: small;
 	}
 
 /*----------Admin Edit Products Page--------*/
@@ -786,7 +812,7 @@
 
 /*----------Admin Products Page--------*/
 	.adminproductstable{
-		font-size: 12px;
+		font-size: small;
 	}
 
 /*----------Admin Edit Products Page--------*/
@@ -805,6 +831,11 @@
 
 	.adminaddproductstablecontainer label{
 		width: 80px;
+	}
+
+/*----------Admin Sellers Page--------*/
+	.adminsellerstable{ 
+		font-size: small;
 	}
 }
 
@@ -1003,6 +1034,10 @@
 
 	.adminaddproductstablecontainer label{
 		width: 80px;
+	}
+/*----------Admin Sellers Page--------*/
+	.adminsellerstable{ 
+		font-size: xx-small;
 	}
 
 /*----------Admin Local Network Traffic Page--------*/
@@ -1431,6 +1466,11 @@
 	.adminaddproductstablecontainer label{
 		width: 80px;
 	}
+
+/*----------Admin Sellers Page--------*/
+	.adminsellerstable{ 
+		font-size: 6px;
+	}
 }
 
 /*-------media query for less than 550 screen size----*/
@@ -1589,6 +1629,11 @@
 
 	.adminaddproductstablecontainer label{
 		width: 80px;
+	}
+
+/*----------Admin Sellers Page--------*/
+	.adminsellerstable{ 
+		font-size: 4px;
 	}
 
 /*----------Admin Local Network Traffic Page--------*/
@@ -1970,6 +2015,11 @@
 
 	.adminaddproductstablecontainer label{
 		width: 80px;
+	}
+
+/*----------Admin Sellers Page--------*/
+	.adminsellerstable{ 
+		font-size: 2px;
 	}
 }
 

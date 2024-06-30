@@ -76,6 +76,12 @@ include('sellersserver/getsellersaddproducts.php');
                   </div>
                   <div class="form-group">
                     <p id="form-optional">[optional]</p>
+                    <label>Product Brand
+                      <input type="text" class="form-control" name="fldproductbrand" placeholder="Product Brand"/>
+                    </label>
+                  </div>
+                  <div class="form-group">
+                    <p id="form-optional">[optional]</p>
                     <label>Product Color
                       <input type="text" class="form-control" name="fldproductcolor" placeholder="Product Color"/>
                     </label>
@@ -240,7 +246,7 @@ include('sellersserver/getsellersaddproducts.php');
                       <input type="text" class="form-control" name="fldproductinsurancereq" placeholder="Product being shipped is valuable or requires insurance coverage"/>
                     </label>
                   </div><br><br>
-                  <h1 class="admintitle" id="admintitle">Product Collect-Deliver Details</h1><br>
+                  <h1 class="admintitle" id="admintitle">Product Address Details</h1><br>
                   <div class="form-group">
                     <label>Product Address Line 1
                       <input type="text" class="form-control" name="fldproductaddressline1" placeholder="Product Address Line 1" required/>

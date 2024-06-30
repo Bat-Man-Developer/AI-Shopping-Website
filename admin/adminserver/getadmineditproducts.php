@@ -15,6 +15,7 @@ else if($_POST['admineditproductsbtn']){//Edit Product Details
   $productdepartment = $_POST['fldproductdepartment'];
   $productcategory = $_POST['fldproductcategory'];
   $producttype = $_POST['fldproducttype'];
+  $productbrand = $_POST['fldproductbrand'];
   $productcolor = $_POST['fldproductcolor'];
   $productgender = $_POST['fldproductgender'];
   $productsize = $_POST['fldproductsize'];
@@ -37,9 +38,9 @@ else if($_POST['admineditproductsbtn']){//Edit Product Details
   $productcountry = $_POST['fldproductcountry'];
   $productowner = $_POST['fldproductowner'];
 
-  $stmt = $conn->prepare("UPDATE products SET fldproductname=?,fldproductdepartment=?,fldproductcategory=?,fldproducttype=?,fldproductcolor=?,fldproductgender=?,fldproductsize=?,fldproductstock=?,fldproductdescription=?,fldproductprice=?, fldproductdiscount=?,fldproductdiscountcode=?,fldproductlength=?,fldproductwidth=?,fldproductheight=?,fldproductweight=?,fldproductfragile=?,fldproductspecialhandlingreq=?,fldproductinsurancereq=?,fldproductaddressline1=?,fldproductaddressline2=?,fldproductpostalcode=?,fldproductcity=?,fldproductcountry=?,fldproductowner=? WHERE fldproductid=?");
+  $stmt = $conn->prepare("UPDATE products SET fldproductname=?,fldproductdepartment=?,fldproductcategory=?,fldproducttype=?,fldproductbrand=?,fldproductcolor=?,fldproductgender=?,fldproductsize=?,fldproductstock=?,fldproductdescription=?,fldproductprice=?, fldproductdiscount=?,fldproductdiscountcode=?,fldproductlength=?,fldproductwidth=?,fldproductheight=?,fldproductweight=?,fldproductfragile=?,fldproductspecialhandlingreq=?,fldproductinsurancereq=?,fldproductaddressline1=?,fldproductaddressline2=?,fldproductpostalcode=?,fldproductcity=?,fldproductcountry=?,fldproductowner=? WHERE fldproductid=?");
 
-  $stmt->bind_param('sssssssssssssssssssssssssi',$productname,$productdepartment,$productcategory,$producttype,$productcolor,$productgender,$productsize,$productstock,$productdescription,$productprice,$productdiscount,$productdiscountcode,$productlength,$productwidth,$productheight,$productweight,$productfragile,$productspecialhandlingreq,$productinsurancereq,$productaddressline1,$productaddressline2,$productpostalcode,$productcity,$productcountry,$productowner,$productid);
+  $stmt->bind_param('ssssssssssssssssssssssssssi',$productname,$productdepartment,$productcategory,$producttype,$productbrand,$productcolor,$productgender,$productsize,$productstock,$productdescription,$productprice,$productdiscount,$productdiscountcode,$productlength,$productwidth,$productheight,$productweight,$productfragile,$productspecialhandlingreq,$productinsurancereq,$productaddressline1,$productaddressline2,$productpostalcode,$productcity,$productcountry,$productowner,$productid);
   
   if($stmt->execute()){
     header('location: ../admin/adminproducts.php?editmessage=Product Updated Succesfully!');

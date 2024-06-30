@@ -9,6 +9,7 @@ if(isset($_POST['productsellersaddproductsbtn'])){
   $productdepartment = $_POST['fldproductdepartment'];
   $productcategory = $_POST['fldproductcategory'];
   $producttype = $_POST['fldproducttype'];
+  $productbrand = $_POST['fldproductbrand'];
   $productcolor = $_POST['fldproductcolor'];
   $productgender = $_POST['fldproductgender'];
   $productsize = $_POST['fldproductsize'];
@@ -218,14 +219,14 @@ if(isset($_POST['productsellersaddproductsbtn'])){
   }
 
   //1. insert in Products Table
-  $stmt = $conn->prepare("INSERT INTO products (fldproductsellersid,fldproductname,fldproductdepartment,fldproductcategory,fldproducttype,fldproductcolor,fldproductgender,fldproductsize,fldproductstock,fldproductdescription,fldproductimage,fldproductimage1,fldproductimage2,fldproductimage3,fldproductimage4,fldproductimage5,fldproductimage6,fldproductprice,fldproductdiscount,fldproductdiscountcode,fldproductlength,fldproductwidth,fldproductheight,fldproductweight,fldproductfragile,fldproductspecialhandlingreq,fldproductinsurancereq,fldproductaddressline1,fldproductaddressline2,fldproductpostalcode,fldproductcity,fldproductcountry,fldproductowner)
-  VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
-  $stmt->bind_param('issssssssssssssssssssssssssssssss',$productsellersid,$productname,$productdepartment,$productcategory,$producttype,$productcolor,$productgender,$productsize,$productstock,$productdescription,$productimagename,$productimagename1,$productimagename2,$productimagename3,$productimagename4,$productimagename5,$productimagename6,$productprice,$productdiscount,$productdiscountcode,$productlength,$productwidth,$productheight,$productweight,$productfragile,$productspecialhandlingreq,$productinsurancereq,$productaddressline1,$productaddressline2,$productpostalcode,$productcity,$productcountry,$productowner); 
+  $stmt = $conn->prepare("INSERT INTO productsapprovals (fldapproveproductsellersid,fldapproveproductname,fldapproveproductdepartment,fldapproveproductcategory,fldapproveproducttype,fldapproveproductbrand,fldapproveproductcolor,fldapproveproductgender,fldapproveproductsize,fldapproveproductstock,fldapproveproductdescription,fldapproveproductimage,fldapproveproductimage1,fldapproveproductimage2,fldapproveproductimage3,fldapproveproductimage4,fldapproveproductimage5,fldapproveproductimage6,fldapproveproductprice,fldapproveproductdiscount,fldapproveproductdiscountcode,fldapproveproductlength,fldapproveproductwidth,fldapproveproductheight,fldapproveproductweight,fldapproveproductfragile,fldapproveproductspecialhandlingreq,fldapproveproductinsurancereq,fldapproveproductaddressline1,fldapproveproductaddressline2,fldapproveproductpostalcode,fldapproveproductcity,fldapproveproductcountry,fldapproveproductowner)
+  VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+  $stmt->bind_param('isssssssssssssssssssssssssssssssss',$productsellersid,$productname,$productdepartment,$productcategory,$producttype,$productbrand,$productcolor,$productgender,$productsize,$productstock,$productdescription,$productimagename,$productimagename1,$productimagename2,$productimagename3,$productimagename4,$productimagename5,$productimagename6,$productprice,$productdiscount,$productdiscountcode,$productlength,$productwidth,$productheight,$productweight,$productfragile,$productspecialhandlingreq,$productinsurancereq,$productaddressline1,$productaddressline2,$productpostalcode,$productcity,$productcountry,$productowner); 
   //1.2 Issue New Product ID & store Product info in Database
   $_SESSION['fldproductid'] = $productid = $stmt->insert_id;
   
   if($stmt->execute()){
-    header('location: ../sellers/sellersaddproducts.php?editmessage=Product Added Succesfully!');
+    header('location: ../sellers/sellersaddproducts.php?editmessage=Product Sent For Approval Succesfully!');
   }
   else{
     header('location: ../sellers/sellersaddproducts.php?errormessage=Error Occured, Try Again Later.');

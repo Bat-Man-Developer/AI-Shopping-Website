@@ -98,6 +98,11 @@ include('adminserver/getadmineditsellersproducts.php');
                     </label>
                   </div>
                   <div class="form-group">
+                    <label>Product Brand
+                      <input type="text" class="form-control" name="fldproductbrand" value="<?php echo $productsellers['fldproductbrand']; ?>"/>
+                    </label>
+                  </div>
+                  <div class="form-group">
                     <label>Product Color
                       <input type="text" class="form-control" name="fldproductcolor" value="<?php echo $productsellers['fldproductcolor']; ?>"/>
                     </label>
@@ -221,7 +226,7 @@ include('adminserver/getadmineditsellersproducts.php');
                       <input type="text" class="form-control" name="fldproductinsurancereq" value="<?php echo $productsellers['fldproductinsurancereq']; ?>"/>
                     </label>
                   </div><br><br>
-                  <h1 class="admintitle" id="admintitle">Product Collect-Deliver Details</h1><br>
+                  <h1 class="admintitle" id="admintitle">Product Address Details</h1><br>
                   <div class="form-group">
                     <label>Product Address Line 1
                       <input type="text" class="form-control" name="fldproductaddressline1" value="<?php echo $productsellers['fldproductaddressline1']; ?>" required/>
